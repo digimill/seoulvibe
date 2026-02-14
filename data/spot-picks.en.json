@@ -1,0 +1,254 @@
+[
+  {
+    "id": "eql-seongsu",
+    "area": "Seongsu",
+    "name": "EQL Seongsu",
+    "summary": "Fashion and lifestyle concept store with fast popup turnover.",
+    "price": "Free entry / Products ₩₩-₩₩₩",
+    "closed": "Open daily",
+    "map_query": "EQL Seongsu"
+  },
+  {
+    "id": "lowkey-seongsu",
+    "area": "Seongsu",
+    "name": "Lowkey Seongsu",
+    "summary": "Natural wine-focused spot with a refined and calm mood.",
+    "price": "₩₩-₩₩₩",
+    "closed": "Closed on Monday",
+    "map_query": "Lowkey Seongsu"
+  },
+  {
+    "id": "hebe-coffee",
+    "area": "Seongsu",
+    "name": "Hebe Coffee",
+    "summary": "Less crowded roastery with a minimal interior vibe.",
+    "price": "₩",
+    "closed": "Closed on Tuesday",
+    "map_query": "Hebe Coffee Seongsu"
+  },
+  {
+    "id": "chapterone-hannam",
+    "area": "Hannam-Yongsan",
+    "name": "Chapter One Hannam",
+    "summary": "Large furniture and object showroom with strong spatial direction.",
+    "price": "Free",
+    "closed": "Closed on Monday",
+    "map_query": "Chapter One Hannam"
+  },
+  {
+    "id": "oasis-hannam",
+    "area": "Hannam-Itaewon",
+    "name": "Oasis Hannam",
+    "summary": "Cafe by day and wine bar at night with bright natural light.",
+    "price": "Day ₩ / Evening ₩₩",
+    "closed": "Open daily",
+    "map_query": "Oasis Hannam"
+  },
+  {
+    "id": "downtowner-hannam",
+    "area": "Hannam-Itaewon",
+    "name": "Downtowner Hannam",
+    "summary": "Known for avocado burgers, casual but still stylish.",
+    "price": "₩₩",
+    "closed": "Open daily",
+    "map_query": "Downtowner Hannam"
+  },
+  {
+    "id": "hellcafe-yeonnam",
+    "area": "Yeonnam-Mangwon",
+    "name": "Hell Cafe Yeonnam",
+    "summary": "Dark-roast specialty coffee with a signature moody tone.",
+    "price": "₩",
+    "closed": "Closed on Monday",
+    "map_query": "Hell Cafe Yeonnam"
+  },
+  {
+    "id": "saseum-bookstore",
+    "area": "Yeonnam-Mangwon",
+    "name": "Saseum Bookstore",
+    "summary": "Indie publishing and graphics-focused bookstore with small exhibitions.",
+    "price": "Free entry / Books ₩",
+    "closed": "Closed on Monday",
+    "map_query": "Saseum Bookstore"
+  },
+  {
+    "id": "tailor-coffee-yeonnam",
+    "area": "Yeonnam-Mangwon",
+    "name": "Tailor Coffee Yeonnam",
+    "summary": "Brown-toned interior and strong dessert lineup.",
+    "price": "₩",
+    "closed": "Open daily",
+    "map_query": "Tailor Coffee Yeonnam"
+  },
+  {
+    "id": "allthatjazz-mullae",
+    "area": "Mullae",
+    "name": "All That Jazz Mullae",
+    "summary": "Live-performance jazz bar with stronger night atmosphere.",
+    "price": "₩₩-₩₩₩ (depends on show)",
+    "closed": "Closed on Monday",
+    "map_query": "All That Jazz Mullae"
+  },
+  {
+    "id": "ofcoha",
+    "area": "Mullae",
+    "name": "Ofcoha",
+    "summary": "Gallery-style cafe with frequent photo and exhibition collaborations.",
+    "price": "₩",
+    "closed": "Closed on Tuesday",
+    "map_query": "Ofcoha Mullae"
+  },
+  {
+    "id": "boan1942",
+    "area": "Seochon-Samcheong",
+    "name": "Boan 1942",
+    "summary": "Renovated historic building turned into a mixed cultural space.",
+    "price": "Exhibitions vary / Cafe ₩",
+    "closed": "Depends on exhibition",
+    "map_query": "Boan 1942"
+  },
+  {
+    "id": "susu-coffee",
+    "area": "Seochon-Samcheong",
+    "name": "Susu Coffee",
+    "summary": "Hanok-view cafe that is usually less packed than major hotspots.",
+    "price": "₩",
+    "closed": "Open daily",
+    "map_query": "Susu Coffee"
+  },
+  {
+    "id": "cnp-gallery-cafe",
+    "area": "Hapjeong-Sangsu",
+    "name": "CNP Gallery Cafe",
+    "summary": "Exhibition-based cafe with a quiet work-friendly vibe.",
+    "price": "₩",
+    "closed": "Closed on Monday",
+    "map_query": "CNP Gallery Cafe"
+  },
+  {
+    "id": "midnight-blue",
+    "area": "Hapjeong-Sangsu",
+    "name": "Midnight Blue",
+    "summary": "Natural wine-focused bar with generous table spacing.",
+    "price": "₩₩-₩₩₩",
+    "closed": "Closed on Sunday",
+    "map_query": "Midnight Blue Sangsu"
+  },
+  {
+    "id": "daelim-changgo-seongsu",
+    "area": "Seongsu",
+    "name": "Daelim Changgo",
+    "summary": "First-generation Seongsu warehouse complex space, reactivated around exhibitions and performances.",
+    "price": "Free to paid depending on event",
+    "closed": "Varies by event schedule",
+    "map_query": "Daelim Changgo Seongsu"
+  },
+  {
+    "id": "lcdc-seoul",
+    "area": "Seongsu",
+    "name": "LCDC Seoul",
+    "summary": "Curated space combining fashion, exhibitions, and lifestyle.",
+    "price": "Free to paid depending on exhibition",
+    "closed": "Closed on Monday (varies by exhibition)",
+    "map_query": "LCDC Seoul"
+  },
+  {
+    "id": "layer41-seongsu",
+    "area": "Seongsu",
+    "name": "Layer 41",
+    "summary": "Popup and fashion-brand experimentation space with fast floor turnover.",
+    "price": "Free",
+    "closed": "Varies by popup schedule",
+    "map_query": "Layer 41 Seongsu"
+  },
+  {
+    "id": "adererror-space-seongsu",
+    "area": "Seongsu",
+    "name": "Ader Error Space Seongsu",
+    "summary": "Brand architecture space presenting fashion like an exhibition.",
+    "price": "Free",
+    "closed": "Open daily",
+    "map_query": "Ader Error Space Seongsu"
+  },
+  {
+    "id": "musinsa-terrace-seongsu",
+    "area": "Seongsu",
+    "name": "Musinsa Terrace Seongsu",
+    "summary": "Retail space for brand collaboration exhibitions and hands-on experiences.",
+    "price": "Free",
+    "closed": "Varies by event schedule",
+    "map_query": "Musinsa Terrace Seongsu"
+  },
+  {
+    "id": "studio-concrete",
+    "area": "Hannam-Yongsan",
+    "name": "Studio Concrete",
+    "summary": "Archive-style venue combining exhibitions, publishing, and fashion.",
+    "price": "Varies by exhibition",
+    "closed": "Closed on Monday",
+    "map_query": "Studio Concrete Hannam"
+  },
+  {
+    "id": "dmuseum-yongsan",
+    "area": "Hannam-Yongsan",
+    "name": "D Museum (Yongsan)",
+    "summary": "Immersive exhibition-focused museum with fast trend-responsive staging.",
+    "price": "₩-₩₩",
+    "closed": "Closed on Monday",
+    "map_query": "D Museum Yongsan"
+  },
+  {
+    "id": "sewoon-daelim-3f",
+    "area": "Euljiro-Chungmuro",
+    "name": "Sewoon-Daelim 3F Zone",
+    "summary": "Cluster of creative studios and exhibition spaces above the electronics market.",
+    "price": "Mostly free",
+    "closed": "Varies by store (many closed on Sunday)",
+    "map_query": "Sewoon Sangga Daelim Sangga 3F"
+  },
+  {
+    "id": "eulji-art-center",
+    "area": "Euljiro-Chungmuro",
+    "name": "Eulji Art Center",
+    "summary": "Independent exhibition and performance venue rooted in Euljiro metalwork alleys.",
+    "price": "Varies by exhibition",
+    "closed": "Varies by exhibition schedule",
+    "map_query": "Eulji Art Center Seoul"
+  },
+  {
+    "id": "paper-press-seoul",
+    "area": "Euljiro-Chungmuro",
+    "name": "Paper Press Seoul",
+    "summary": "Graphic and publishing-based venue for exhibitions and workshops.",
+    "price": "Free to paid depending on event",
+    "closed": "Irregular operation",
+    "map_query": "Paper Press Seoul"
+  },
+  {
+    "id": "sounds-hannam",
+    "area": "Other",
+    "name": "Sounds Hannam",
+    "summary": "Architecturally strong mixed-cultural space and brand experimentation stage.",
+    "price": "Free",
+    "closed": "Open daily",
+    "map_query": "Sounds Hannam"
+  },
+  {
+    "id": "piknic-namchang",
+    "area": "Other",
+    "name": "Piknic (Namchang-dong)",
+    "summary": "Renovated industrial-building exhibition space with strong international curation.",
+    "price": "₩-₩₩",
+    "closed": "Closed on Monday",
+    "map_query": "Piknic Namchangdong"
+  },
+  {
+    "id": "platform-l",
+    "area": "Other",
+    "name": "Platform-L Contemporary Art Center",
+    "summary": "Contemporary art venue run by a fashion company, strong in installation exhibitions.",
+    "price": "₩",
+    "closed": "Closed on Monday",
+    "map_query": "Platform-L Contemporary Art Center"
+  }
+]

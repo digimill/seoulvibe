@@ -1,0 +1,254 @@
+[
+  {
+    "id": "eql-seongsu",
+    "area": "聖水",
+    "name": "EQL 聖水",
+    "summary": "時尚與生活選品複合店，快閃轉換快。",
+    "price": "入場免費 / 商品 ₩₩-₩₩₩",
+    "closed": "全年無休",
+    "map_query": "EQL 성수"
+  },
+  {
+    "id": "lowkey-seongsu",
+    "area": "聖水",
+    "name": "Lowkey 聖水",
+    "summary": "以自然酒為主，空間精緻又安靜。",
+    "price": "₩₩-₩₩₩",
+    "closed": "星期一休息",
+    "map_query": "로우키 성수"
+  },
+  {
+    "id": "hebe-coffee",
+    "area": "聖水",
+    "name": "Hebe Coffee",
+    "summary": "相對冇咁迫嘅烘焙咖啡店，偏極簡風。",
+    "price": "₩",
+    "closed": "星期二休息",
+    "map_query": "헤베커피 성수"
+  },
+  {
+    "id": "chapterone-hannam",
+    "area": "漢南-龍山",
+    "name": "Chapter One 漢南",
+    "summary": "以家具同物件為主嘅大型展廳，空間演繹感強。",
+    "price": "免費",
+    "closed": "星期一休息",
+    "map_query": "챕터원 한남"
+  },
+  {
+    "id": "oasis-hannam",
+    "area": "漢南-梨泰院",
+    "name": "Oasis 漢南",
+    "summary": "日頭咖啡、夜晚酒吧，採光好。",
+    "price": "日間 ₩ / 夜晚 ₩₩",
+    "closed": "全年無休",
+    "map_query": "오아시스 한남"
+  },
+  {
+    "id": "downtowner-hannam",
+    "area": "漢南-梨泰院",
+    "name": "Downtowner 漢南",
+    "summary": "牛油果漢堡代表店，休閒但有質感。",
+    "price": "₩₩",
+    "closed": "全年無休",
+    "map_query": "다운타우너 한남"
+  },
+  {
+    "id": "hellcafe-yeonnam",
+    "area": "延南-望遠",
+    "name": "Hell Cafe 延南",
+    "summary": "深焙特調見稱，整體偏暗調。",
+    "price": "₩",
+    "closed": "星期一休息",
+    "map_query": "헬카페 연남"
+  },
+  {
+    "id": "saseum-bookstore",
+    "area": "延南-望遠",
+    "name": "鹿書店",
+    "summary": "獨立出版同圖像類書店，經常有小型展覽。",
+    "price": "入場免費 / 書籍 ₩",
+    "closed": "星期一休息",
+    "map_query": "사슴책방"
+  },
+  {
+    "id": "tailor-coffee-yeonnam",
+    "area": "延南-望遠",
+    "name": "Tailor Coffee 延南",
+    "summary": "啡棕色系室內設計，甜品表現唔錯。",
+    "price": "₩",
+    "closed": "全年無休",
+    "map_query": "테일러커피 연남"
+  },
+  {
+    "id": "allthatjazz-mullae",
+    "area": "文來",
+    "name": "All That Jazz 文來",
+    "summary": "以現場演出為主嘅爵士酒吧，夜晚氣氛更好。",
+    "price": "₩₩-₩₩₩（視乎演出）",
+    "closed": "星期一休息",
+    "map_query": "올댓재즈 문래"
+  },
+  {
+    "id": "ofcoha",
+    "area": "文來",
+    "name": "Ofcoha",
+    "summary": "畫廊型咖啡店，常有攝影同展覽合作。",
+    "price": "₩",
+    "closed": "星期二休息",
+    "map_query": "오브코하 문래"
+  },
+  {
+    "id": "boan1942",
+    "area": "西村-三清",
+    "name": "保安1942",
+    "summary": "舊建築翻新嘅複合文化空間。",
+    "price": "展覽收費不一 / 咖啡 ₩",
+    "closed": "按展覽安排",
+    "map_query": "보안1942"
+  },
+  {
+    "id": "susu-coffee",
+    "area": "西村-三清",
+    "name": "Susu Coffee",
+    "summary": "韓屋景觀咖啡店，通常唔算太迫。",
+    "price": "₩",
+    "closed": "全年無休",
+    "map_query": "수수커피"
+  },
+  {
+    "id": "cnp-gallery-cafe",
+    "area": "合井-上水",
+    "name": "CNP 畫廊咖啡",
+    "summary": "展覽型咖啡店，適合安靜工作。",
+    "price": "₩",
+    "closed": "星期一休息",
+    "map_query": "CNP 갤러리 카페"
+  },
+  {
+    "id": "midnight-blue",
+    "area": "合井-上水",
+    "name": "Midnight Blue",
+    "summary": "以自然酒為主，枱與枱之間距離較闊。",
+    "price": "₩₩-₩₩₩",
+    "closed": "星期日休息",
+    "map_query": "미드나잇블루 상수"
+  },
+  {
+    "id": "daelim-changgo-seongsu",
+    "area": "聖水",
+    "name": "大林倉庫",
+    "summary": "保留倉庫結構嘅聖水初代複合文化空間，以展覽同演出再活化。",
+    "price": "免費-展覽收費混合",
+    "closed": "按活動檔期而定",
+    "map_query": "대림창고 성수"
+  },
+  {
+    "id": "lcdc-seoul",
+    "area": "聖水",
+    "name": "LCDC 首爾",
+    "summary": "結合時裝、展覽同生活選品嘅策展空間。",
+    "price": "免費-展覽收費混合",
+    "closed": "星期一休館（按展覽調整）",
+    "map_query": "LCDC 서울"
+  },
+  {
+    "id": "layer41-seongsu",
+    "area": "聖水",
+    "name": "Layer 41",
+    "summary": "快閃同時裝品牌實驗空間，樓層轉換快。",
+    "price": "免費",
+    "closed": "按快閃檔期而定",
+    "map_query": "Layer 41 성수"
+  },
+  {
+    "id": "adererror-space-seongsu",
+    "area": "聖水",
+    "name": "Ader Error Space 聖水",
+    "summary": "將時裝以展覽方式呈現嘅品牌建築空間。",
+    "price": "免費",
+    "closed": "全年無休",
+    "map_query": "아더에러 스페이스 성수"
+  },
+  {
+    "id": "musinsa-terrace-seongsu",
+    "area": "聖水",
+    "name": "Musinsa Terrace 聖水",
+    "summary": "品牌合作展同體驗式零售空間。",
+    "price": "免費",
+    "closed": "按活動檔期而定",
+    "map_query": "무신사 테라스 성수"
+  },
+  {
+    "id": "studio-concrete",
+    "area": "漢南-龍山",
+    "name": "Studio Concrete",
+    "summary": "結合展覽、出版同時裝嘅檔案型空間。",
+    "price": "按展覽而定",
+    "closed": "星期一休館",
+    "map_query": "스튜디오 콘크리트 한남"
+  },
+  {
+    "id": "dmuseum-yongsan",
+    "area": "漢南-龍山",
+    "name": "D Museum（龍山新空間）",
+    "summary": "以沉浸式展覽為主，空間趨勢反應快。",
+    "price": "₩-₩₩",
+    "closed": "星期一休館",
+    "map_query": "디뮤지엄 용산"
+  },
+  {
+    "id": "sewoon-daelim-3f",
+    "area": "乙支路-忠武路",
+    "name": "世運商街・大林商街3樓一帶",
+    "summary": "電子商街上面聚集創作工作室同展覽空間。",
+    "price": "大多免費",
+    "closed": "店舖各有不同（星期日休息較多）",
+    "map_query": "세운상가 대림상가 3층"
+  },
+  {
+    "id": "eulji-art-center",
+    "area": "乙支路-忠武路",
+    "name": "乙支藝術中心",
+    "summary": "以鐵工巷為基礎嘅獨立展覽同表演空間。",
+    "price": "按展覽而定",
+    "closed": "按展覽檔期而定",
+    "map_query": "을지예술센터"
+  },
+  {
+    "id": "paper-press-seoul",
+    "area": "乙支路-忠武路",
+    "name": "Paper Press 首爾",
+    "summary": "以平面同出版為主嘅展覽及工作坊空間。",
+    "price": "免費-活動收費混合",
+    "closed": "不定期營運",
+    "map_query": "페이퍼프레스 서울"
+  },
+  {
+    "id": "sounds-hannam",
+    "area": "其他",
+    "name": "Sounds Hannam",
+    "summary": "建築完成度高嘅複合文化空間，亦係品牌實驗舞台。",
+    "price": "免費",
+    "closed": "全年無休",
+    "map_query": "사운즈 한남"
+  },
+  {
+    "id": "piknic-namchang",
+    "area": "其他",
+    "name": "Piknic（南倉洞）",
+    "summary": "工業建築改造展覽空間，海外策展能力突出。",
+    "price": "₩-₩₩",
+    "closed": "星期一休館",
+    "map_query": "피크닉 남창동"
+  },
+  {
+    "id": "platform-l",
+    "area": "其他",
+    "name": "Platform-L 當代藝術中心",
+    "summary": "由時裝企業營運嘅當代藝術空間，裝置展見長。",
+    "price": "₩",
+    "closed": "星期一休館",
+    "map_query": "플랫폼엘 컨템포러리 아트센터"
+  }
+]

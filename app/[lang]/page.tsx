@@ -8,7 +8,7 @@ import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
 import { getAreas, getHeroImage, getKorea101, getThemes, getTips } from "@/lib/content";
 import { getCopy, isLang, type Lang } from "@/lib/i18n";
-import { toSpotLink } from "@/lib/maps";
+import { getSpotPicks, pickRandomSpots, toGoogleMapSearchUrl, toPerplexitySearchUrl } from "@/lib/spot-picks";
 import { getSiteUrl } from "@/lib/site";
 
 type HomePageProps = {
@@ -32,8 +32,8 @@ export default async function HomePage({ params }: HomePageProps) {
       : "A curated list of places with strong local taste and practical flow.";
   const sourceLabel =
     locale === "ko"
-      ? { area: "지역", theme: "테마", tip: "팁" }
-      : { area: "Area", theme: "Theme", tip: "Tip" };
+      ? { area: "대략적 위치", spot: "스팟", note: "설명", price: "가격대(비용)", closed: "휴무일", map: "지도", pplx: "검색", more: "전체 보기" }
+      : { area: "Area", spot: "Spot", note: "Description", price: "Price", closed: "Closed days", map: "Map", pplx: "Search", more: "View all" };
   const [areas, themes, tips, korea101, heroImage] = await Promise.all([
     getAreas(locale),
     getThemes(locale),
@@ -41,43 +41,8 @@ export default async function HomePage({ params }: HomePageProps) {
     getKorea101(locale),
     getHeroImage(locale),
   ]);
-  const curatedSpots = [
-    ...areas.flatMap((area) =>
-      (area.real_spots ?? []).map((spot) => {
-        const link = toSpotLink(spot);
-        return {
-          ...link,
-          source: "area" as const,
-          sourceTitle: area.name,
-          note: area.hook ?? area.summary,
-        };
-      }),
-    ),
-    ...themes.flatMap((theme) =>
-      (theme.real_spots ?? []).map((spot) => {
-        const link = toSpotLink(spot);
-        return {
-          ...link,
-          source: "theme" as const,
-          sourceTitle: theme.title,
-          note: theme.highlight ?? theme.summary,
-        };
-      }),
-    ),
-    ...tips.flatMap((tip) =>
-      (tip.real_spots ?? []).map((spot) => {
-        const link = toSpotLink(spot);
-        return {
-          ...link,
-          source: "tip" as const,
-          sourceTitle: tip.title,
-          note: tip.quick_fix ?? tip.summary,
-        };
-      }),
-    ),
-  ]
-    .filter((spot, index, arr) => arr.findIndex((item) => item.name === spot.name) === index)
-    .slice(0, 9);
+  const spotPool = getSpotPicks(locale);
+  const featuredSpots = pickRandomSpots(spotPool, 6);
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/${locale}`;
   const jsonLd = {
@@ -130,6 +95,9 @@ export default async function HomePage({ params }: HomePageProps) {
                 </Link>
                 <Link className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 font-medium" href={`/${locale}/tips`}>
                   {t.nav.tips}
+                </Link>
+                <Link className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 font-medium" href={`/${locale}/spots`}>
+                  {t.nav.spots}
                 </Link>
                 <Link className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 font-medium" href={`/${locale}/korea-101`}>
                   {t.nav.korea101}
@@ -213,27 +181,65 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </SectionBlock>
 
-      {curatedSpots.length > 0 ? (
+      {featuredSpots.length > 0 ? (
         <SectionBlock title={t.featuredSpots} description={spotsDescription}>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {curatedSpots.map((spot) => (
-              <a
-                key={spot.name}
-                href={spot.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex h-full flex-col rounded-3xl border border-black/5 bg-white/90 p-5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
-                  {sourceLabel[spot.source]} · {spot.sourceTitle}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold tracking-tight">{spot.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">{spot.note}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <TagBadge>{locale === "ko" ? "지도 열기" : "Open map"}</TagBadge>
-                </div>
-              </a>
-            ))}
+          <div className="mb-3 flex justify-end">
+            <Link
+              href={`/${locale}/spots`}
+              className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+            >
+              {sourceLabel.more}
+            </Link>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+            <div className="overflow-auto">
+              <table className="min-w-full divide-y divide-zinc-200 text-sm">
+                <thead className="bg-zinc-50/95">
+                  <tr className="text-left text-xs uppercase tracking-wide text-zinc-500">
+                    <th className="px-4 py-3">{sourceLabel.spot}</th>
+                    <th className="px-4 py-3">{sourceLabel.area}</th>
+                    <th className="px-4 py-3">{sourceLabel.note}</th>
+                    <th className="px-4 py-3">{sourceLabel.price}</th>
+                    <th className="px-4 py-3">{sourceLabel.closed}</th>
+                    <th className="px-4 py-3">{sourceLabel.map}</th>
+                    <th className="px-4 py-3">{sourceLabel.pplx}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-100">
+                  {featuredSpots.map((spot) => (
+                    <tr key={spot.name} className="align-top">
+                      <td className="px-4 py-3 font-semibold text-zinc-900">{spot.name}</td>
+                      <td className="px-4 py-3">
+                        <TagBadge>{spot.area}</TagBadge>
+                      </td>
+                      <td className="max-w-[420px] px-4 py-3 text-zinc-600">{spot.summary}</td>
+                      <td className="px-4 py-3 text-zinc-700">{spot.price}</td>
+                      <td className="px-4 py-3 text-zinc-700">{spot.closed}</td>
+                      <td className="px-4 py-3">
+                        <a
+                          href={toGoogleMapSearchUrl(spot.map_query)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex whitespace-nowrap rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+                        >
+                          {sourceLabel.map}
+                        </a>
+                      </td>
+                      <td className="px-4 py-3">
+                        <a
+                          href={toPerplexitySearchUrl(spot.map_query, locale)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex whitespace-nowrap rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+                        >
+                          {sourceLabel.pplx}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </SectionBlock>
       ) : null}

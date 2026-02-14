@@ -1,0 +1,254 @@
+[
+  {
+    "id": "eql-seongsu",
+    "area": "성수",
+    "name": "EQL 성수",
+    "summary": "패션·라이프스타일 큐레이션 복합 스토어, 팝업 전환 빠름",
+    "price": "입장 무료 / 제품 ₩₩-₩₩₩",
+    "closed": "연중무휴",
+    "map_query": "EQL 성수"
+  },
+  {
+    "id": "lowkey-seongsu",
+    "area": "성수",
+    "name": "로우키 성수",
+    "summary": "내추럴 와인 중심, 공간 세련되고 차분함",
+    "price": "₩₩-₩₩₩",
+    "closed": "월요일 휴무",
+    "map_query": "로우키 성수"
+  },
+  {
+    "id": "hebe-coffee",
+    "area": "성수",
+    "name": "헤베커피",
+    "summary": "비교적 덜 붐비는 로스터리, 미니멀 무드",
+    "price": "₩",
+    "closed": "화요일 휴무",
+    "map_query": "헤베커피 성수"
+  },
+  {
+    "id": "chapterone-hannam-v2",
+    "area": "한남-용산",
+    "name": "챕터원 한남",
+    "summary": "가구·오브제 중심 대형 쇼룸, 공간 연출 강함",
+    "price": "무료",
+    "closed": "월요일 휴무",
+    "map_query": "챕터원 한남"
+  },
+  {
+    "id": "oasis-hannam",
+    "area": "한남-이태원",
+    "name": "오아시스 한남",
+    "summary": "낮 카페·밤 와인바, 채광 좋은 공간",
+    "price": "낮 ₩ / 저녁 ₩₩",
+    "closed": "연중무휴",
+    "map_query": "오아시스 한남"
+  },
+  {
+    "id": "downtowner-hannam",
+    "area": "한남-이태원",
+    "name": "다운타우너 한남",
+    "summary": "아보카도 버거 대표, 캐주얼하지만 감도 유지",
+    "price": "₩₩",
+    "closed": "연중무휴",
+    "map_query": "다운타우너 한남"
+  },
+  {
+    "id": "hellcafe-yeonnam",
+    "area": "연남-망원",
+    "name": "헬카페 연남",
+    "summary": "강배전 스페셜티, 어두운 톤의 시그니처 무드",
+    "price": "₩",
+    "closed": "월요일 휴무",
+    "map_query": "헬카페 연남"
+  },
+  {
+    "id": "saseum-bookstore",
+    "area": "연남-망원",
+    "name": "사슴책방",
+    "summary": "독립출판·그래픽 기반 서점, 소형 전시 자주 진행",
+    "price": "입장 무료 / 도서 ₩",
+    "closed": "월요일 휴무",
+    "map_query": "사슴책방"
+  },
+  {
+    "id": "tailor-coffee-yeonnam",
+    "area": "연남-망원",
+    "name": "테일러커피 연남",
+    "summary": "브라운 톤 인테리어, 디저트 강점",
+    "price": "₩",
+    "closed": "연중무휴",
+    "map_query": "테일러커피 연남"
+  },
+  {
+    "id": "allthatjazz-mullae",
+    "area": "문래",
+    "name": "올댓재즈 문래",
+    "summary": "라이브 공연 중심 재즈바, 밤에 분위기 집중",
+    "price": "₩₩-₩₩₩ (공연별 상이)",
+    "closed": "월요일 휴무",
+    "map_query": "올댓재즈 문래"
+  },
+  {
+    "id": "ofcoha",
+    "area": "문래",
+    "name": "오브코하",
+    "summary": "갤러리형 카페, 사진·전시 협업 잦음",
+    "price": "₩",
+    "closed": "화요일 휴무",
+    "map_query": "오브코하 문래"
+  },
+  {
+    "id": "boan1942",
+    "area": "서촌-삼청",
+    "name": "보안1942",
+    "summary": "오래된 건물 리노베이션 복합문화공간",
+    "price": "전시 유료-무료 혼합 / 카페 ₩",
+    "closed": "전시별 상이",
+    "map_query": "보안1942"
+  },
+  {
+    "id": "susu-coffee",
+    "area": "서촌-삼청",
+    "name": "수수커피",
+    "summary": "한옥뷰 카페, 과하게 붐비지 않는 편",
+    "price": "₩",
+    "closed": "연중무휴",
+    "map_query": "수수커피"
+  },
+  {
+    "id": "cnp-gallery-cafe",
+    "area": "합정-상수",
+    "name": "CNP 갤러리 카페",
+    "summary": "전시 기반 카페, 조용한 작업 공간",
+    "price": "₩",
+    "closed": "월요일 휴무",
+    "map_query": "CNP 갤러리 카페"
+  },
+  {
+    "id": "midnight-blue",
+    "area": "합정-상수",
+    "name": "미드나잇블루",
+    "summary": "내추럴 와인 중심, 테이블 간 간격 여유 있음",
+    "price": "₩₩-₩₩₩",
+    "closed": "일요일 휴무",
+    "map_query": "미드나잇블루 상수"
+  },
+  {
+    "id": "daelim-changgo-seongsu",
+    "area": "성수",
+    "name": "대림창고",
+    "summary": "창고 구조를 유지한 성수 1세대 복합문화공간, 전시·공연 중심 재활성화",
+    "price": "무료-전시 유료 혼합",
+    "closed": "행사 일정별 상이",
+    "map_query": "대림창고 성수"
+  },
+  {
+    "id": "lcdc-seoul",
+    "area": "성수",
+    "name": "LCDC 서울",
+    "summary": "패션·전시·라이프스타일 결합된 큐레이션형 공간",
+    "price": "무료-전시 유료 혼합",
+    "closed": "월요일 휴관 (전시별 상이)",
+    "map_query": "LCDC 서울"
+  },
+  {
+    "id": "layer41-seongsu",
+    "area": "성수",
+    "name": "Layer 41",
+    "summary": "팝업·패션 브랜드 실험 공간, 층별 전환 빠름",
+    "price": "무료",
+    "closed": "팝업 일정별 상이",
+    "map_query": "Layer 41 성수"
+  },
+  {
+    "id": "adererror-space-seongsu",
+    "area": "성수",
+    "name": "아더에러 스페이스 성수",
+    "summary": "패션을 전시처럼 풀어내는 브랜드 아키텍처 공간",
+    "price": "무료",
+    "closed": "연중무휴",
+    "map_query": "아더에러 스페이스 성수"
+  },
+  {
+    "id": "musinsa-terrace-seongsu",
+    "area": "성수",
+    "name": "무신사 테라스 성수",
+    "summary": "브랜드 협업 전시·체험형 리테일 공간",
+    "price": "무료",
+    "closed": "행사 일정별 상이",
+    "map_query": "무신사 테라스 성수"
+  },
+  {
+    "id": "studio-concrete",
+    "area": "한남-용산",
+    "name": "스튜디오 콘크리트",
+    "summary": "전시·출판·패션 결합 아카이브형 공간",
+    "price": "전시별 상이",
+    "closed": "월요일 휴관",
+    "map_query": "스튜디오 콘크리트 한남"
+  },
+  {
+    "id": "dmuseum-yongsan",
+    "area": "한남-용산",
+    "name": "디뮤지엄 (용산 신공간)",
+    "summary": "몰입형 전시 중심, 공간 연출 트렌드 반영 빠름",
+    "price": "₩-₩₩",
+    "closed": "월요일 휴관",
+    "map_query": "디뮤지엄 용산"
+  },
+  {
+    "id": "sewoon-daelim-3f",
+    "area": "을지로-충무로",
+    "name": "세운상가 대림상가 3층 일대",
+    "summary": "전자상가 위 창작 스튜디오·전시 공간 집적 구간",
+    "price": "대부분 무료",
+    "closed": "매장별 상이 (일요일 휴무 많음)",
+    "map_query": "세운상가 대림상가 3층"
+  },
+  {
+    "id": "eulji-art-center",
+    "area": "을지로-충무로",
+    "name": "을지예술센터",
+    "summary": "철공소 골목 기반 독립 전시·퍼포먼스 공간",
+    "price": "전시별 상이",
+    "closed": "전시 일정별 상이",
+    "map_query": "을지예술센터"
+  },
+  {
+    "id": "paper-press-seoul",
+    "area": "을지로-충무로",
+    "name": "페이퍼프레스 서울",
+    "summary": "그래픽·출판 기반 전시·워크숍 공간",
+    "price": "무료-행사 유료 혼합",
+    "closed": "비정기 운영",
+    "map_query": "페이퍼프레스 서울"
+  },
+  {
+    "id": "sounds-hannam",
+    "area": "기타",
+    "name": "사운즈 한남",
+    "summary": "건축 완성도 높은 복합문화공간, 브랜드 실험 무대",
+    "price": "무료",
+    "closed": "연중무휴",
+    "map_query": "사운즈 한남"
+  },
+  {
+    "id": "piknic-namchang",
+    "area": "기타",
+    "name": "피크닉 (남창동)",
+    "summary": "산업 건물 리모델링 전시공간, 해외 큐레이션 강점",
+    "price": "₩-₩₩",
+    "closed": "월요일 휴관",
+    "map_query": "피크닉 남창동"
+  },
+  {
+    "id": "platform-l",
+    "area": "기타",
+    "name": "플랫폼엘 컨템포러리 아트센터",
+    "summary": "패션 기업 운영 현대미술 공간, 설치전시 강점",
+    "price": "₩",
+    "closed": "월요일 휴관",
+    "map_query": "플랫폼엘 컨템포러리 아트센터"
+  }
+]
