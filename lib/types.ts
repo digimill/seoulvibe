@@ -15,6 +15,13 @@ export type ContentMeta = {
   real_spots?: Array<string | { name: string; map_url?: string }>;
 };
 
+export type LineToUseDetail = {
+  ko: string;
+  pronunciation_en: string;
+  pronunciation_local: string;
+  meaning: string;
+};
+
 export type Area = ContentMeta & {
   id: string;
   name: string;
@@ -61,7 +68,7 @@ export type Tip = ContentMeta & {
   tags: string[];
   real_scene?: string;
   local_move?: string;
-  line_to_use?: string;
+  line_to_use?: string | LineToUseDetail;
   quick_checklist?: string[];
 };
 

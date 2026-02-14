@@ -455,7 +455,12 @@
       "quick_fix": "보조카드 1장 + 소액 현금을 항상 준비.",
       "real_scene": "광장시장 일부 점포는 같은 가게도 단말기 상태에 따라 카드가 안 될 때가 있어요.",
       "local_move": "교통카드 충전 + 비상 1만원권 유지",
-      "line_to_use": "카드 안 돼요? 현금 돼요?",
+      "line_to_use": {
+        "ko": "카드 안 돼요? 현금 돼요?",
+        "pronunciation_en": "Kadeu an dwaeyo? Hyeongeum dwaeyo?",
+        "pronunciation_local": "카드 안 돼요? 현금 돼요?",
+        "meaning": "카드 결제가 안 되면 현금 결제가 가능한지 묻는 표현."
+      },
       "quick_checklist": [
         "카드 2장",
         "현금 소액",
@@ -490,7 +495,12 @@
       "quick_fix": "핵심 이동은 17:30 이전 또는 19:30 이후로 배치.",
       "real_scene": "홍대·강남 구간은 피크 시간에 한두 대 보내고 탑승하는 편이 더 편할 때가 많아요.",
       "local_move": "장거리 지하철 + 마지막 구간 택시 혼합",
-      "line_to_use": "이 열차 홍대 가나요?",
+      "line_to_use": {
+        "ko": "이 열차 홍대 가나요?",
+        "pronunciation_en": "I yeolcha Hongdae ganayo?",
+        "pronunciation_local": "이 열차 홍대 가나요?",
+        "meaning": "이 지하철이 홍대 방향인지 확인할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "교통카드 충전",
         "종점 방향 확인",
@@ -525,7 +535,12 @@
       "quick_fix": "먼저 비켜선 뒤 촬영하는 습관 유지.",
       "real_scene": "성수 카페 밀집 구간은 촬영 동선이 겹치면 바로 이동 요청을 받는 편입니다.",
       "local_move": "감사 인사 한마디가 체감 차이를 만듦",
-      "line_to_use": "잠깐만요, 지나갈게요.",
+      "line_to_use": {
+        "ko": "잠깐만요, 지나갈게요.",
+        "pronunciation_en": "Jamkkanmanyo, jinagalgeyo.",
+        "pronunciation_local": "잠깐만요, 지나갈게요.",
+        "meaning": "좁은 공간에서 정중하게 길을 비켜 달라고 말할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "작은 목소리",
         "줄 정렬",
@@ -560,7 +575,12 @@
       "quick_fix": "AREX로 허브역 이동 후 택시로 마무리.",
       "real_scene": "야간 도착+짐 2개 상황에서 체감 차이가 큼",
       "local_move": "택시 기사에게 보여줄 한글 주소 미리 준비",
-      "line_to_use": "이 주소로 가주세요.",
+      "line_to_use": {
+        "ko": "이 주소로 가주세요.",
+        "pronunciation_en": "I juso-ro gajuseyo.",
+        "pronunciation_local": "이 주소로 가주세요.",
+        "meaning": "택시 기사에게 목적지 주소를 보여주며 이동 요청할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "AREX 우선",
         "마지막 구간 택시",
@@ -595,7 +615,12 @@
       "quick_fix": "공항에서 eSIM 활성화 후 첫 경로 테스트.",
       "real_scene": "환승역 무데이터 상태면 예약 동선이 바로 꼬임",
       "local_move": "오프라인 지도 1개 저장",
-      "line_to_use": "eSIM 설정 도와주실 수 있나요?",
+      "line_to_use": {
+        "ko": "eSIM 설정 도와주실 수 있나요?",
+        "pronunciation_en": "eSIM seoljeong dowajusil su innayo?",
+        "pronunciation_local": "이심 설정 도와주실 수 있나요?",
+        "meaning": "통신 설정이 안 될 때 직원에게 도움을 요청하는 표현."
+      },
       "quick_checklist": [
         "데이터 on",
         "지도앱 로그인",
@@ -630,7 +655,12 @@
       "quick_fix": "메뉴판 확인 -> 한번에 주문 -> 번호 호출 대기.",
       "real_scene": "성수 피크타임 카페는 주문 처리 속도가 매우 빠름",
       "local_move": "헷갈리면 결제 전 화면 보여주고 확인 요청",
-      "line_to_use": "매장에서 먹을게요 / 포장할게요.",
+      "line_to_use": {
+        "ko": "매장에서 먹을게요 / 포장할게요.",
+        "pronunciation_en": "Maejangeseo meogeulgeyo / pojanghalgeyo.",
+        "pronunciation_local": "매장에서 머글게요 / 포장할게요.",
+        "meaning": "매장 식사인지 테이크아웃인지 주문 방식 선택 표현."
+      },
       "quick_checklist": [
         "매장/포장 확인",
         "자리 먼저",
@@ -665,7 +695,12 @@
       "quick_fix": "입장 전 대표 메뉴를 정하고, 벨이 있으면 활용.",
       "real_scene": "홍대·성수 인기 식당은 착석 직후 1분 내 주문하는 팀이 많아요.",
       "local_move": "반찬/물은 먼저 확인하고 필요한 요청만 짧게 하기",
-      "line_to_use": "반찬 조금만 더 주실 수 있을까요?",
+      "line_to_use": {
+        "ko": "반찬 조금만 더 주실 수 있을까요?",
+        "pronunciation_en": "Banchan jogeumman deo jusil su isseulkkayo?",
+        "pronunciation_local": "반찬 조금만 더 주실 수 있을까요?",
+        "meaning": "식당에서 반찬 추가를 정중하게 요청하는 표현."
+      },
       "quick_checklist": [
         "호출벨 확인",
         "메뉴 미리 결정",
@@ -695,7 +730,12 @@
       "quick_fix": "입구 무인기기/서비스 안내 스티커 먼저 확인.",
       "real_scene": "공항 도착 직후 숙소 주변 편의점에서 첫날 준비를 끝내는 경우가 많아요.",
       "local_move": "교통카드 잔액 + 물 + 간단식 동시 보충",
-      "line_to_use": "여기서 교통카드 충전되나요?",
+      "line_to_use": {
+        "ko": "여기서 교통카드 충전되나요?",
+        "pronunciation_en": "Yeogiseo gyotongkadeu chungjeon doenayo?",
+        "pronunciation_local": "여기서 교통카드 충전되나요?",
+        "meaning": "편의점에서 교통카드 충전 가능 여부를 물을 때 쓰는 표현."
+      },
       "quick_checklist": [
         "충전 가능 여부",
         "전자레인지",
@@ -725,7 +765,12 @@
       "quick_fix": "작은 우산+얇은 겉옷+미세먼지 앱 확인을 기본 루틴으로.",
       "real_scene": "아침 맑음-점심 비-밤 강풍처럼 하루 내 변화가 큰 날이 있습니다.",
       "local_move": "실내 대체 코스 1개를 항상 준비",
-      "line_to_use": "오늘 오후에 비 오나요?",
+      "line_to_use": {
+        "ko": "오늘 오후에 비 오나요?",
+        "pronunciation_en": "Oneul ohu-e bi onayo?",
+        "pronunciation_local": "오늘 오후에 비 오나요?",
+        "meaning": "당일 오후 강수 여부를 확인할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "우산",
         "겉옷",
@@ -755,7 +800,12 @@
       "quick_fix": "증상 지속 시 바로 병원으로 전환하고, 주소·증상 메모를 보여주기.",
       "real_scene": "야간 감기 증상으로 약국 먼저 찾고, 호전 없으면 병원으로 이동하는 흐름이 흔합니다.",
       "local_move": "여권 사본·보험 정보·숙소 주소를 휴대폰 메모 상단에 고정",
-      "line_to_use": "감기약이 필요해요.",
+      "line_to_use": {
+        "ko": "감기약이 필요해요.",
+        "pronunciation_en": "Gamgiyak-i piryohaeyo.",
+        "pronunciation_local": "감기약이 필요해요.",
+        "meaning": "약국에서 감기약이 필요하다고 전달할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "여권 사본",
         "보험 정보",
@@ -791,7 +841,12 @@
       ],
       "real_scene": "성수 인기 팝업은 토요일 14시 이후 현장 대기 40분+가 흔합니다.",
       "local_move": "팝업 대기 길면 반경 10분 카페로 즉시 피벗 후 재진입.",
-      "line_to_use": "혹시 현장 대기랑 온라인 예약 중 어떤 방식으로 입장하나요?",
+      "line_to_use": {
+        "ko": "혹시 현장 대기랑 온라인 예약 중 어떤 방식으로 입장하나요?",
+        "pronunciation_en": "Hoksi hyeonjang daegirang onrain yeyak jung eotteon bangsigeuro ipjanghanayo?",
+        "pronunciation_local": "혹시 현장 대기랑 온라인 예약 중 어떤 방식으로 입장하나요?",
+        "meaning": "팝업 입장 방식(현장/예약)을 확인할 때 쓰는 표현."
+      },
       "quick_checklist": [
         "운영일 확인",
         "입장 방식 확인",
@@ -823,7 +878,12 @@
       ],
       "real_scene": "연남/성수 인기 식당은 토요일 12시대 대기줄이 가장 길어지는 경우가 많습니다.",
       "local_move": "대기 20분 초과 시 주변 같은 장르 매장으로 즉시 전환.",
-      "line_to_use": "지금 웨이팅이 어느 정도고, 조금 뒤에 오면 줄이 줄어들까요?",
+      "line_to_use": {
+        "ko": "지금 웨이팅이 어느 정도고, 조금 뒤에 오면 줄이 줄어들까요?",
+        "pronunciation_en": "Jigeum weiting-i eoneu jeongdogo, jogeum dwie omyeon jul-i jureodeulkkayo?",
+        "pronunciation_local": "지금 웨이팅이 어느 정도고, 조금 뒤에 오면 줄이 줄어들까요?",
+        "meaning": "현재 대기시간과 재방문 시 대기 감소 가능성을 물을 때 쓰는 표현."
+      },
       "quick_checklist": [
         "식사 시간대 먼저 고정",
         "피크 타임 대체 코스 준비",
@@ -855,7 +915,12 @@
       ],
       "real_scene": "홍대/강남 심야 시간대는 같은 거리도 호출 지연 편차가 큰 편입니다.",
       "local_move": "귀가 1시간 전 앱으로 예상 이동시간을 먼저 체크.",
-      "line_to_use": "여기서 이 시간대에 택시 잘 잡히는 위치가 어디예요?",
+      "line_to_use": {
+        "ko": "여기서 이 시간대에 택시 잘 잡히는 위치가 어디예요?",
+        "pronunciation_en": "Yeogiseo i sigandae-e taeksi jal japhineun wichi-ga eodiyeyo?",
+        "pronunciation_local": "여기서 이 시간대에 택시 잘 잡히는 위치가 어디예요?",
+        "meaning": "심야 시간대 택시 승차 위치를 물을 때 쓰는 표현."
+      },
       "quick_checklist": [
         "막차 시간 확인",
         "택시 승차 위치 파악",
@@ -887,7 +952,12 @@
       ],
       "real_scene": "망원/을지로는 소액 예산으로도 로컬 무드를 체험하기 좋은 구간이 많습니다.",
       "local_move": "현금 소액(5천원~1만원)을 백업으로 들고 다니면 선택지가 늘어납니다.",
-      "line_to_use": "이 근처에서 가볍게 먹고 산책하기 좋은 코스 추천해주실 수 있을까요?",
+      "line_to_use": {
+        "ko": "이 근처에서 가볍게 먹고 산책하기 좋은 코스 추천해주실 수 있을까요?",
+        "pronunciation_en": "I geuncheoeseo gabyeopge meokgo sanchaekhagi joeun koseu chucheonhaejusil su isseulkkayo?",
+        "pronunciation_local": "이 근처에서 가볍게 먹고 산책하기 좋은 코스 추천해주실 수 있을까요?",
+        "meaning": "근처 가성비 식사+산책 코스를 추천받을 때 쓰는 표현."
+      },
       "quick_checklist": [
         "예산 상한선 정하기",
         "이동 2회 이하로 제한",

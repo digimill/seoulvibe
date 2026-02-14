@@ -5,12 +5,24 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { TagBadge } from "@/components/TagBadge";
 import { getTips } from "@/lib/content";
+import type { LineToUseDetail } from "@/lib/types";
 import { getCopy, isLang, type Lang } from "@/lib/i18n";
 import { toSpotLink } from "@/lib/maps";
 
 type TipDetailPageProps = {
   params: Promise<{ lang: string; id: string }>;
 };
+
+function isLineDetail(value: unknown): value is LineToUseDetail {
+  if (!value || typeof value !== "object") return false;
+  const v = value as Record<string, unknown>;
+  return (
+    typeof v.ko === "string" &&
+    typeof v.pronunciation_en === "string" &&
+    typeof v.pronunciation_local === "string" &&
+    typeof v.meaning === "string"
+  );
+}
 
 export default async function TipDetailPage({ params }: TipDetailPageProps) {
   const { lang, id } = await params;
@@ -83,7 +95,24 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
           {tip.line_to_use ? (
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Line to use</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.line_to_use}</dd>
+              {isLineDetail(tip.line_to_use) ? (
+                <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
+                  <p>
+                    <span className="font-medium">한국어 원문:</span> {tip.line_to_use.ko}
+                  </p>
+                  <p>
+                    <span className="font-medium">영어발음:</span> {tip.line_to_use.pronunciation_en}
+                  </p>
+                  <p>
+                    <span className="font-medium">해당언어 발음:</span> {tip.line_to_use.pronunciation_local}
+                  </p>
+                  <p>
+                    <span className="font-medium">뜻:</span> {tip.line_to_use.meaning}
+                  </p>
+                </dd>
+              ) : (
+                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.line_to_use}</dd>
+              )}
             </div>
           ) : null}
           {tip.quick_checklist && tip.quick_checklist.length > 0 ? (
