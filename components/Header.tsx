@@ -12,9 +12,10 @@ export function Header({ lang }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/75 backdrop-blur-xl">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href={`/${lang}`} className="text-sm font-semibold tracking-tight">
-          {t.appName}
+      <Container className="flex min-h-16 items-center justify-between py-2">
+        <Link href={`/${lang}`} className="leading-tight">
+          <span className="block text-sm font-semibold tracking-tight">{t.appName}</span>
+          <span className="hidden text-[11px] text-zinc-500 sm:block">{t.tagline}</span>
         </Link>
         <nav className="flex items-center gap-5 text-sm text-zinc-600">
           <Link href={`/${lang}/areas`} className="transition-colors hover:text-zinc-900">

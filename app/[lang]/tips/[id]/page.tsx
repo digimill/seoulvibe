@@ -40,9 +40,11 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
           </div>
         ) : null}
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{tip.title}</h1>
-        <p className="mt-3 max-w-3xl text-base text-zinc-600">{tip.summary}</p>
-        {tip.hook ? <p className="mt-3 text-sm font-medium text-zinc-900">{tip.hook}</p> : null}
-        {tip.friend_note ? <p className="mt-2 text-sm leading-6 text-zinc-700">{tip.friend_note}</p> : null}
+        <div className="mt-3 max-w-3xl space-y-2 text-base leading-7 text-zinc-700">
+          <p>{tip.summary}</p>
+          {tip.hook ? <p>{tip.hook}</p> : null}
+          {tip.friend_note ? <p>{tip.friend_note}</p> : null}
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {tip.tags.map((tag) => (
             <TagBadge key={tag}>{tag}</TagBadge>

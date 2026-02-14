@@ -499,11 +499,323 @@
         "src": "/images/tips/cafe-ordering.jpg",
         "alt": "ソウルのカフェカウンター"
       }
+    },
+    {
+      "id": "restaurant-culture",
+      "title": "韓国レストランで通じる実践リズム",
+      "summary": "呼び出しベル・おかわり・注文テンポを知るだけで食事がかなり楽になります。",
+      "hook": "完璧な韓国語より、店のリズム理解が効きます。",
+      "friend_note": "スタッフの速い動きは失礼ではなく運営テンポであることが多いです。",
+      "what_to_know": "呼び出しベル、水セルフ、反菜おかわりのルールは店ごとに違います。",
+      "why_it_matters": "ピーク時に注文タイミングを逃すと待ち時間が一気に増えます。",
+      "avoid_this": "混雑時間に着席後長くメニューを迷わない。",
+      "quick_fix": "入店前に主メニューを決め、ベルがあれば活用。",
+      "real_scene": "弘大・聖水の人気店では着席1分以内に注文する組が多いです。",
+      "local_move": "まず反菜と水を確認し、必要な要請だけ短く伝える。",
+      "line_to_use": "おかずを少し追加していただけますか？",
+      "quick_checklist": [
+        "呼び出しベル確認",
+        "先にメニュー決定",
+        "おかわりマナー確認"
+      ],
+      "tags": [
+        "食堂",
+        "文化",
+        "実戦"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/mangwon.jpg",
+        "alt": "ソウルのローカル食堂と市場の風景"
+      }
+    },
+    {
+      "id": "convenience-life-hub",
+      "title": "コンビニを生活ハブとして使う方法",
+      "summary": "韓国のコンビニは軽食だけでなく旅行中の小さな問題を素早く解決します。",
+      "hook": "詰まったらまずコンビニへ、が意外と正解です。",
+      "friend_note": "食事、充電、交通カード、日用品を一度に処理できることが多いです。",
+      "what_to_know": "電子レンジ、宅配、チケット、印刷の対応範囲は店舗で異なります。",
+      "why_it_matters": "初訪問では小さなトラブルが連続しやすく、コンビニが緩衝になります。",
+      "avoid_this": "全店舗が同じサービスだと思い込まない。",
+      "quick_fix": "入口の案内ステッカーと端末表示を先に確認。",
+      "real_scene": "ホテル近くのコンビニで初日の準備をまとめて終える旅行者が多いです。",
+      "local_move": "交通カード補充 + 水 + 軽食を同時に確保。",
+      "line_to_use": "ここで交通カードをチャージできますか？",
+      "quick_checklist": [
+        "チャージ可否",
+        "電子レンジ",
+        "緊急用品"
+      ],
+      "tags": [
+        "コンビニ",
+        "基礎",
+        "インフラ"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/seongsu.jpg",
+        "alt": "ソウル都心の生活インフラ風景"
+      }
+    },
+    {
+      "id": "season-weather-dust",
+      "title": "季節・天気・微細粉じんに合わせる服装感覚",
+      "summary": "ソウルは季節変化が大きく、日単位での対応が重要です。",
+      "hook": "同じ都市でも季節と天気で体感は大きく変わります。",
+      "friend_note": "重ね着と微細粉じんチェックだけで一日の満足度が変わります。",
+      "what_to_know": "梅雨、寒波、猛暑、微細粉じんが時期ごとに現れます。",
+      "why_it_matters": "天気を軽く見ると動線と体力が同時に崩れます。",
+      "avoid_this": "固定コーデだけで終日屋外予定を組まない。",
+      "quick_fix": "折りたたみ傘・薄手アウター・粉じんアプリ確認を基本ルーチンに。",
+      "real_scene": "朝は晴れ、昼は雨、夜は強風に変わる日もあります。",
+      "local_move": "室内代替コースを常に1つ用意。",
+      "line_to_use": "今日の午後は雨ですか？",
+      "quick_checklist": [
+        "傘",
+        "薄手アウター",
+        "微細粉じん確認"
+      ],
+      "tags": [
+        "天気",
+        "季節",
+        "微細粉じん"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/rainy-seoul.jpg",
+        "alt": "雨のソウルと季節ムード"
+      }
+    },
+    {
+      "id": "pharmacy-hospital-emergency",
+      "title": "体調不良時に慌てない薬局・病院対応",
+      "summary": "基本の医療動線を知っていれば急な状況でも落ち着いて対応できます。",
+      "hook": "小さな準備が大きな不安を防ぎます。",
+      "friend_note": "宿の韓国語住所とパスポート控えは早めに保存しておくと安心です。",
+      "what_to_know": "軽症は薬局、悪化や緊急症状は病院へ段階対応が基本です。",
+      "why_it_matters": "夜間や週末は混乱で時間を失いやすいです。",
+      "avoid_this": "明らかに悪化しているのに薬局だけを繰り返さない。",
+      "quick_fix": "症状が続くなら早めに病院へ切り替え、症状メモを見せる。",
+      "real_scene": "夜の風邪症状で薬局に行き、改善しなければ病院へ移る流れはよくあります。",
+      "local_move": "パスポート控え・保険情報・宿住所をメモ上部に固定。",
+      "line_to_use": "風邪薬が必要です。",
+      "quick_checklist": [
+        "パスポート控え",
+        "保険情報",
+        "宿の韓国語住所"
+      ],
+      "tags": [
+        "薬局",
+        "病院",
+        "緊急"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/morning-seoul.jpg",
+        "alt": "朝のソウルと移動動線"
+      }
     }
   ],
   "korea101": [
     {
-      "id": "transport-basics",
+      "id": "name-origin-and-identity",
+      "title": "呼称のレイヤー: Korea・韓国・朝鮮",
+      "summary": "国の呼び方を理解すると、歴史とアイデンティティの文脈が早く見えてきます。",
+      "hook": "地名より先に、呼称の使い分けを押さえるのが近道です。",
+      "friend_note": "呼び名の多さは混乱ではなく、圧縮された歴史情報です。",
+      "comic_scene": "Korea、韓国、朝鮮という語が半島地図の上で重なる場面。",
+      "core_idea": "呼称は単なる翻訳ではなく、歴史・政治・正体性の重なりです。",
+      "fun_fact": "海外ではK-culture、韓国国内では韓流という表現が併存します。",
+      "real_life_tip": "公式文脈では大韓民国/韓国、歴史文脈では時代名を使い分けると自然です。",
+      "line_to_use": "Koreaは高麗に由来するんですか？",
+      "quick_checklist": [
+        "Korea=高麗由来",
+        "公式名: 大韓民国",
+        "文脈で呼称を区分"
+      ],
+      "tags": [
+        "名称由来",
+        "アイデンティティ",
+        "基礎知識"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "air-routes-airports-impression",
+      "title": "空路の第一印象: 仁川と金浦",
+      "summary": "韓国の第一印象は観光地より先に空港で始まります。",
+      "hook": "旅のトーンは入国ルートで大きく決まります。",
+      "friend_note": "仁川は国際ハブ感、金浦は都心接続の速さが印象的です。",
+      "comic_scene": "大規模な仁川ターミナルとコンパクトな金浦接続が並ぶ場面。",
+      "core_idea": "違いは規模より役割分担にあります。",
+      "fun_fact": "韓国は空港から都心への切り替わりが速いという感想が多いです。",
+      "real_life_tip": "韓国紹介では空港体験を添えると伝わりやすくなります。",
+      "line_to_use": "仁川と金浦はどう違いますか？",
+      "quick_checklist": [
+        "仁川=国際ハブ",
+        "金浦=都心接続",
+        "入国動線が鍵"
+      ],
+      "tags": [
+        "フライト",
+        "空港",
+        "旅行体感"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "timezone-and-daily-tempo",
+      "title": "時差より強いもの: 韓国の一日テンポ",
+      "summary": "UTC+9で計算は単純でも、実体験は都市テンポに左右されます。",
+      "hook": "韓国の時間感覚は数字より街のリズムで記憶されます。",
+      "friend_note": "時差適応より都市速度への適応が難しいという声が多いです。",
+      "comic_scene": "朝ラッシュの地下鉄と深夜ネオン街が一本の時間軸でつながる場面。",
+      "core_idea": "時差適応は技術、テンポ適応は文化に近い課題です。",
+      "fun_fact": "短期旅行でも一日の情報密度が高いと感じる人が多いです。",
+      "real_life_tip": "UTC値だけでなく朝昼夜のリズム差も説明すると伝わります。",
+      "line_to_use": "韓国は夜もいつもこんなに活発ですか？",
+      "quick_checklist": [
+        "UTC+9",
+        "サマータイムなし",
+        "夜間リズム強い"
+      ],
+      "tags": [
+        "時差",
+        "時間帯",
+        "都市リズム"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "korea-big-picture-expanded",
+      "title": "韓国を一望: なぜ強く記憶に残るのか",
+      "summary": "旅行者が共通して挙げる感覚は「密度」です。",
+      "hook": "速さだけでなく、対比の圧縮が韓国の核心です。",
+      "friend_note": "時間不足より感覚の飽和を先に感じるという反応が多いです。",
+      "comic_scene": "韓屋の屋根、高層ビル、ネオン街、地下鉄が一画面で重なる場面。",
+      "core_idea": "韓国は旧と新を分離せず、同時稼働させる社会です。",
+      "fun_fact": "「一日で三都市を回った感じ」という感想がよく出ます。",
+      "real_life_tip": "同日に伝統空間1つと超現代商圏1つを意図的に組み合わせましょう。",
+      "line_to_use": "ソウルはなぜエリアごとに雰囲気がこんなに違うんですか？",
+      "quick_checklist": [
+        "伝統空間",
+        "現代商圏",
+        "夜の街"
+      ],
+      "tags": [
+        "韓国紹介",
+        "都市感覚",
+        "対比"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "history-core-journey",
+      "title": "歴史: 圧縮成長と記憶の共存",
+      "summary": "韓国の近現代史は短期間の急変として語られることが多いです。",
+      "hook": "過去は博物館だけでなく、日常導線の中に残っています。",
+      "friend_note": "歴史を知って歩くと同じ通りでも見え方が変わります。",
+      "comic_scene": "古い看板街から未来的ビジネス街へ切り替わる場面。",
+      "core_idea": "現在の速度感そのものが歴史的再編の結果です。",
+      "fun_fact": "近現代展示を見た後に街歩きの情報量が増えるという声が多いです。",
+      "real_life_tip": "宮殿・近現代展示・新都心を一つのルートで見ると把握が早いです。",
+      "line_to_use": "近現代史はどこから見るのが良いですか？",
+      "quick_checklist": [
+        "宮殿/伝統",
+        "近現代展示",
+        "新都心比較"
+      ],
+      "tags": [
+        "歴史",
+        "近現代",
+        "文脈"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "geography-climate-structure",
+      "title": "地理と自然: 半島・山地・四季",
+      "summary": "韓国は地形と季節変化が強く、旅行動線にも直接影響します。",
+      "hook": "韓国の天気は背景情報ではなく主役変数です。",
+      "friend_note": "同じ気温でも体感が違うことを現地で実感しやすいです。",
+      "comic_scene": "春夏秋冬の場面が一つの都市の上で高速に切り替わる場面。",
+      "core_idea": "地理・気候は難易度より旅行スタイルを変える要素です。",
+      "fun_fact": "冬のダウン文化が都市景観を作るという表現も見られます。",
+      "real_life_tip": "観光地より先に季節シナリオを組むと疲労が減ります。",
+      "line_to_use": "最近はどんな服装が多いですか？",
+      "quick_checklist": [
+        "季節体感",
+        "風/湿度",
+        "微細粉じん"
+      ],
+      "tags": [
+        "地理",
+        "自然環境",
+        "季節"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "politics-democracy-citizens",
+      "title": "政治: 民主主義の速度と市民参加",
+      "summary": "韓国の公共イシューはニュース・オンライン・現場で速く連動します。",
+      "hook": "韓国の政治体感は静的よりリアルタイムに近いです。",
+      "friend_note": "短期滞在でも社会の温度変化を感じるという反応があります。",
+      "comic_scene": "広場、ニュース画面、モバイル討論が同じリズムでつながる場面。",
+      "core_idea": "市民参加文化は制度と世論の距離を縮める動力です。",
+      "fun_fact": "韓国の社会反応速度を速いと感じる海外反応は多いです。",
+      "real_life_tip": "生活現場と主要ニュースを並行して見ると理解が深まります。",
+      "line_to_use": "韓国では社会イシューをどこで確認する人が多いですか？",
+      "quick_checklist": [
+        "公式発表",
+        "主要メディア",
+        "現場空気"
+      ],
+      "tags": [
+        "政治",
+        "民主主義",
+        "市民社会"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "economy-industry-tech",
+      "title": "経済: 製造基盤の上に広がるデジタルとコンテンツ",
+      "summary": "韓国経済は製造力を基礎に、半導体・電池・プラットフォーム・コンテンツへ拡張しました。",
+      "hook": "韓国経済の変化は統計より生活UXで先に体感されます。",
+      "friend_note": "ニュースの産業キーワードを旅行中の生活場面で見つけやすいです。",
+      "comic_scene": "製品ショールーム、決済システム、コンテンツ広告が一つの通りで続く場面。",
+      "core_idea": "ハード・ソフト・ストーリーが日常に速く統合される構造です。",
+      "fun_fact": "現金を使う機会が想像より少ないという感想が多いです。",
+      "real_life_tip": "産業/技術展示を1つ見るだけでも全体像が立体的になります。",
+      "line_to_use": "韓国の産業変化を体感できる場所はありますか？",
+      "quick_checklist": [
+        "製造業の痕跡",
+        "デジタル基盤",
+        "コンテンツ産業"
+      ],
+      "tags": [
+        "経済",
+        "産業",
+        "技術"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "society-education-work-life",
       "title": "Subway & Bus Basics",
       "summary": "How locals move fast in Seoul without burning energy.",
       "hook": "One transit card can save your whole trip pace.",
@@ -527,7 +839,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "payment-money",
+      "id": "culture-code-etiquette",
       "title": "Payment & Cash Reality",
       "summary": "Cards work almost everywhere, but backup still matters.",
       "hook": "Korea is card-friendly, not card-perfect.",
@@ -551,7 +863,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "food-culture",
+      "id": "korean-cinema-famous",
       "title": "Restaurant Culture 101",
       "summary": "From side dishes to table bells, the flow can feel different for newcomers.",
       "hook": "Knowing the rhythm makes meals smoother than speaking perfect Korean.",
@@ -575,7 +887,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "cafe-rules",
+      "id": "kdrama-pop-culture",
       "title": "Cafe Rules & Kiosk Flow",
       "summary": "Seat, order, pickup: the order sequence matters in popular cafes.",
       "hook": "The line looks scary, but the system is usually efficient.",
@@ -599,7 +911,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "convenience-store",
+      "id": "kpop-entertainment",
       "title": "Convenience Store Is a Life Hub",
       "summary": "Korean convenience stores are far more than snack shops.",
       "hook": "When confused, start from the nearest convenience store.",
@@ -623,7 +935,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "weather-seasons",
+      "id": "food-culture-famous",
       "title": "Seasons, Rain, and Dust",
       "summary": "Korean weather can swing hard, so daily adaptation matters.",
       "hook": "Same city, totally different vibe by season.",
@@ -647,7 +959,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "language-honorifics",
+      "id": "technology-daily-infra",
       "title": "Basic Korean Speech Mode",
       "summary": "You do not need fluency, but tone level changes social comfort.",
       "hook": "Polite endings beat perfect grammar.",
@@ -671,7 +983,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "social-night",
+      "id": "security-military-context-expanded",
       "title": "Social & Night Culture",
       "summary": "Dinner, drinks, and second rounds are part of social rhythm.",
       "hook": "The night often continues longer than visitors expect.",
@@ -695,7 +1007,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "work-school-vibe",
+      "id": "currency-payment-finance-expanded",
       "title": "Work & School Vibe",
       "summary": "Group chats, punctuality, and context reading are key.",
       "hook": "Fast replies can feel like teamwork, not pressure.",
@@ -719,20 +1031,23 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "health-emergency",
-      "title": "Health, Pharmacy, and Emergency",
-      "summary": "Basic medical navigation is easier when prepared in advance.",
-      "hook": "A small prep list prevents big panic moments.",
-      "friend_note": "Save your hotel address in Korean and one emergency contact early.",
-      "comic_scene": "Late-night cold symptoms hit, and the nearest pharmacy search becomes a mini mission.",
-      "core_idea": "Know where to go: pharmacy for mild issues, clinic/hospital for escalation.",
-      "fun_fact": "Many neighborhoods have multiple pharmacies clustered near stations or hospitals.",
-      "real_life_tip": "Keep your passport copy and insurance details accessible on phone.",
-      "line_to_use": "I need medicine for a cold.",
+      "id": "korea-famous-facts-encyclopedic-fun",
+      "title": "韓国人でも「へえ」となる生活ディテールTMI",
+      "summary": "韓国の話になると、K-POPや半導体が先に出てきますよね。でもそこをいったん外して見ると、日常の中にかなり不思議で面白いポイントが多いです。マンションのエレベーターで4階の代わりにF表記が残っていたり、最新スマート住宅でもその慣習が生きていたりします。玄関で靴を脱ぐ流れ、床排水のある浴室、水を使った掃除前提の構造も、韓国では自然ですが来訪者には新鮮です。",
+      "hook": "韓国の面白さはランドマークより、生活ディテールで一気に立ち上がります。",
+      "friend_note": "管理室アナウンス、ブランド風の団地名、見えないデジタル待機列などは、数日いるだけで「なるほど」と体感できます。",
+      "comic_scene": "4の代わりにFがあるエレベーター、団地放送、カカオ待機通知、コンビニ生活サービス、夜の塾バスが一枚につながる場面。",
+      "core_idea": "韓国の特異性は派手な象徴より「運用の緻密さ」にあります。店前は空いて見えてもアプリでは30組待ち、コンビニは軽食店ではなく生活インフラとして動きます。路上ゴミ箱は少ないのに分別ルールは細かく、見える秩序と見えないシステムが同時に回っています。",
+      "fun_fact": "韓国の自動ドアは感度が高く、遠めでも先に開くことが多いです。冬は床暖房文化の延長で一部路面の雪が早く溶ける場面もあります。夜10時を過ぎても団地に塾バスが入る風景から、都市のリズムがきれいに止まらないことも分かります。",
+      "real_life_tip": "有名スポットだけでなく、F表記、管理室放送、デジタル待機列、コンビニ機能、分別方式、夜の塾バス動線を1日1つ観察してみてください。韓国がぐっと立体的に見えてきます。",
+      "line_to_use": "有名な場所以外で、韓国らしさはどこに一番出ますか？",
       "quick_checklist": [
-        "Passport copy",
-        "Insurance info",
-        "Local address in Korean"
+        "4階=F表記",
+        "管理室/団地放送",
+        "デジタル待機システム",
+        "コンビニ生活インフラ",
+        "分別ルール",
+        "夜間の塾バスリズム"
       ],
       "tags": [
         "health",

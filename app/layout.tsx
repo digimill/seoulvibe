@@ -12,18 +12,18 @@ export const metadata: Metadata = {
     default: "Seoul Vibe",
     template: "%s | Seoul Vibe",
   },
-  description: "Your local friend in Seoul.",
+  description: "Seoul Vibe - 거의 서울에 관한 모든 것.",
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Seoul Vibe",
-    description: "Your local friend in Seoul.",
+    description: "Seoul Vibe - 거의 서울에 관한 모든 것.",
     siteName: "Seoul Vibe",
   },
   twitter: {
     card: "summary_large_image",
     title: "Seoul Vibe",
-    description: "Your local friend in Seoul.",
+    description: "Seoul Vibe - 거의 서울에 관한 모든 것.",
   },
   robots: {
     index: true,

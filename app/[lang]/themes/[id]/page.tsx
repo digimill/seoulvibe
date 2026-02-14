@@ -40,9 +40,11 @@ export default async function ThemeDetailPage({ params }: ThemeDetailPageProps) 
           </div>
         ) : null}
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{theme.title}</h1>
-        <p className="mt-3 max-w-3xl text-base text-zinc-600">{theme.summary}</p>
-        {theme.hook ? <p className="mt-3 text-sm font-medium text-zinc-900">{theme.hook}</p> : null}
-        {theme.friend_note ? <p className="mt-2 text-sm leading-6 text-zinc-700">{theme.friend_note}</p> : null}
+        <div className="mt-3 max-w-3xl space-y-2 text-base leading-7 text-zinc-700">
+          <p>{theme.summary}</p>
+          {theme.hook ? <p>{theme.hook}</p> : null}
+          {theme.friend_note ? <p>{theme.friend_note}</p> : null}
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {theme.tags.map((tag) => (
             <TagBadge key={tag}>{tag}</TagBadge>

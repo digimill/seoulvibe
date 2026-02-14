@@ -40,9 +40,11 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
           </div>
         ) : null}
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{area.name}</h1>
-        <p className="mt-3 max-w-3xl text-base text-zinc-600">{area.summary}</p>
-        {area.hook ? <p className="mt-3 text-sm font-medium text-zinc-900">{area.hook}</p> : null}
-        {area.friend_note ? <p className="mt-2 text-sm leading-6 text-zinc-700">{area.friend_note}</p> : null}
+        <div className="mt-3 max-w-3xl space-y-2 text-base leading-7 text-zinc-700">
+          <p>{area.summary}</p>
+          {area.hook ? <p>{area.hook}</p> : null}
+          {area.friend_note ? <p>{area.friend_note}</p> : null}
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {area.tags.map((tag) => (
             <TagBadge key={tag}>{tag}</TagBadge>

@@ -45,7 +45,7 @@ export const detectPreferredLanguage = (acceptLanguage: string | null): Lang => 
 export const copy = {
   en: {
     appName: "Seoul Vibe",
-    tagline: "Your local friend in Seoul.",
+    tagline: "Almost everything about Seoul.",
     nav: {
       areas: "Areas",
       themes: "Themes",
@@ -58,6 +58,7 @@ export const copy = {
     featuredAreas: "Popular Areas",
     featuredThemes: "Travel Themes",
     featuredTips: "Street-Smart Tips",
+    featuredSpots: "Curated Spots",
     featuredKorea101: "Korea 101: First-Time Guide",
     discover: "Discover",
     detail: "View details",
@@ -70,7 +71,7 @@ export const copy = {
   },
   ko: {
     appName: "Seoul Vibe",
-    tagline: "서울에서 만나는 로컬 친구.",
+    tagline: "거의 서울에 관한 모든 것.",
     nav: {
       areas: "지역",
       themes: "테마",
@@ -83,6 +84,7 @@ export const copy = {
     featuredAreas: "인기 지역",
     featuredThemes: "여행 테마",
     featuredTips: "실전 팁",
+    featuredSpots: "감각 스팟",
     featuredKorea101: "Korea 101: 한국 기본 가이드",
     discover: "둘러보기",
     detail: "자세히 보기",
@@ -95,7 +97,7 @@ export const copy = {
   },
   "zh-cn": {
     appName: "Seoul Vibe",
-    tagline: "你的首尔本地朋友。",
+    tagline: "关于首尔，几乎所有你会好奇的内容。",
     nav: {
       areas: "区域",
       themes: "主题",
@@ -107,6 +109,7 @@ export const copy = {
     featuredAreas: "热门区域",
     featuredThemes: "旅行主题",
     featuredTips: "街头实用贴士",
+    featuredSpots: "真实地点",
     featuredKorea101: "韩国101：新手指南",
     discover: "探索",
     detail: "查看详情",
@@ -119,7 +122,7 @@ export const copy = {
   },
   ja: {
     appName: "Seoul Vibe",
-    tagline: "ソウルで頼れるローカルフレンド。",
+    tagline: "ソウルのことを、ほぼまるごと。",
     nav: {
       areas: "エリア",
       themes: "テーマ",
@@ -131,6 +134,7 @@ export const copy = {
     featuredAreas: "人気エリア",
     featuredThemes: "旅のテーマ",
     featuredTips: "実用ガイド",
+    featuredSpots: "リアルスポット",
     featuredKorea101: "韓国101：はじめてガイド",
     discover: "見る",
     detail: "詳細を見る",
@@ -143,7 +147,7 @@ export const copy = {
   },
   "zh-tw": {
     appName: "Seoul Vibe",
-    tagline: "你在首爾的在地朋友。",
+    tagline: "關於首爾，幾乎所有你會好奇的內容。",
     nav: {
       areas: "區域",
       themes: "主題",
@@ -155,6 +159,7 @@ export const copy = {
     featuredAreas: "熱門區域",
     featuredThemes: "旅行主題",
     featuredTips: "街頭實用技巧",
+    featuredSpots: "真實景點",
     featuredKorea101: "韓國101：新手指南",
     discover: "探索",
     detail: "查看詳情",
@@ -167,7 +172,7 @@ export const copy = {
   },
   "zh-hk": {
     appName: "Seoul Vibe",
-    tagline: "你喺首爾嘅在地朋友。",
+    tagline: "關於首爾，幾乎所有你會好奇嘅內容。",
     nav: {
       areas: "地區",
       themes: "主題",
@@ -179,6 +184,7 @@ export const copy = {
     featuredAreas: "人氣地區",
     featuredThemes: "旅行主題",
     featuredTips: "街頭實用貼士",
+    featuredSpots: "真實景點",
     featuredKorea101: "韓國101：新手指南",
     discover: "探索",
     detail: "查看詳情",

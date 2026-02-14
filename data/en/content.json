@@ -579,11 +579,323 @@
         "Anthracite Hapjeong",
         "Blue Bottle Samcheong"
       ]
+    },
+    {
+      "id": "restaurant-culture",
+      "title": "Local Restaurant Rhythm That Actually Works",
+      "summary": "If you understand call buttons, side-dish refills, and fast ordering flow, meals get much easier.",
+      "hook": "Perfect Korean is less important than reading the restaurant rhythm.",
+      "friend_note": "Fast staff tempo is often operational rhythm, not rudeness.",
+      "what_to_know": "Call button, self-water, and refill rules vary by place.",
+      "why_it_matters": "If you miss the order window at peak time, your wait and fatigue increase fast.",
+      "avoid_this": "Do not spend too long deciding after sitting during peak hours.",
+      "quick_fix": "Pick your main menu before entering and use the call button when available.",
+      "real_scene": "In busy Hongdae or Seongsu spots, many tables order within one minute of sitting.",
+      "local_move": "Check side dishes and water first, then make short requests only when needed.",
+      "line_to_use": "Could I get a little more side dish, please?",
+      "quick_checklist": [
+        "Check for call button",
+        "Decide menu early",
+        "Follow refill manners"
+      ],
+      "tags": [
+        "restaurant",
+        "culture",
+        "practical"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/mangwon.jpg",
+        "alt": "Local Seoul restaurant and market scene"
+      }
+    },
+    {
+      "id": "convenience-life-hub",
+      "title": "Using Convenience Stores as a Survival Hub",
+      "summary": "In Korea, convenience stores solve small travel problems quickly, not just snacks.",
+      "hook": "When your plan breaks, a convenience store usually gives the first solution.",
+      "friend_note": "Meals, charging, transit card top-up, and basics can often be handled in one stop.",
+      "what_to_know": "Microwave, parcel, ticket, and print services vary by branch.",
+      "why_it_matters": "For first-time visitors, these stores buffer many small failures during the day.",
+      "avoid_this": "Do not assume every branch offers the same services.",
+      "quick_fix": "Check kiosk/service stickers at the entrance first.",
+      "real_scene": "Many travelers finish first-night setup at a store near their hotel.",
+      "local_move": "Top up transit card + buy water + grab a light meal at once.",
+      "line_to_use": "Can I top up my transit card here?",
+      "quick_checklist": [
+        "Top-up availability",
+        "Microwave access",
+        "Emergency items"
+      ],
+      "tags": [
+        "convenience store",
+        "basics",
+        "infrastructure"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/seongsu.jpg",
+        "alt": "Seoul urban daily infrastructure"
+      }
+    },
+    {
+      "id": "season-weather-dust",
+      "title": "Seasons, Weather, and Fine Dust: Outfit Strategy",
+      "summary": "Seoul changes sharply by season, so day-level weather response matters.",
+      "hook": "The same city feels completely different by weather and season.",
+      "friend_note": "Layering and a quick dust check can change your whole day quality.",
+      "what_to_know": "Rainy spells, cold snaps, heat waves, and fine dust rotate through the year.",
+      "why_it_matters": "If you underestimate weather, both route and condition can collapse.",
+      "avoid_this": "Do not run all-day outdoor plans with one fixed outfit assumption.",
+      "quick_fix": "Carry a compact umbrella, light outer layer, and check dust app before leaving.",
+      "real_scene": "Some days shift from clear morning to rain and strong wind at night.",
+      "local_move": "Always keep one indoor backup route.",
+      "line_to_use": "Will it rain this afternoon?",
+      "quick_checklist": [
+        "Umbrella",
+        "Outer layer",
+        "Fine-dust check"
+      ],
+      "tags": [
+        "weather",
+        "season",
+        "fine dust"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/rainy-seoul.jpg",
+        "alt": "Rainy Seoul street and seasonal mood"
+      }
+    },
+    {
+      "id": "pharmacy-hospital-emergency",
+      "title": "Pharmacy vs Hospital: Calm Response When Sick",
+      "summary": "Knowing the basic medical flow helps you stay calm in sudden situations.",
+      "hook": "Small prep prevents big panic.",
+      "friend_note": "Save your hotel address in Korean and passport copy early.",
+      "what_to_know": "Start with a pharmacy for mild symptoms, move to hospital for worsening or urgent signs.",
+      "why_it_matters": "At night or on weekends, confusion can waste critical time.",
+      "avoid_this": "Do not keep repeating pharmacy visits when symptoms are clearly worsening.",
+      "quick_fix": "Switch to hospital quickly and show a short note with symptoms and address.",
+      "real_scene": "A common flow is pharmacy first for cold symptoms, then hospital if no improvement.",
+      "local_move": "Pin passport copy, insurance info, and hotel address at top of your notes app.",
+      "line_to_use": "I need cold medicine.",
+      "quick_checklist": [
+        "Passport copy",
+        "Insurance info",
+        "Hotel address in Korean"
+      ],
+      "tags": [
+        "pharmacy",
+        "hospital",
+        "emergency"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/morning-seoul.jpg",
+        "alt": "Morning Seoul street and movement flow"
+      }
     }
   ],
   "korea101": [
     {
-      "id": "transport-basics",
+      "id": "name-origin-and-identity",
+      "title": "Name Layers: Korea, Hanguk, Joseon",
+      "summary": "Understanding Korean naming layers helps you read history and identity faster.",
+      "hook": "Before places, learn what people call the country in each context.",
+      "friend_note": "Different names are not confusion; they are compressed history.",
+      "comic_scene": "Words like Korea, Hanguk, and Joseon overlap above the peninsula map.",
+      "core_idea": "Naming is not simple translation but history, politics, and identity stacked together.",
+      "fun_fact": "Global audiences say K-culture while local discourse often says Hallyu.",
+      "real_life_tip": "Use Republic of Korea or Korea in formal contexts and era names in history talk.",
+      "line_to_use": "Is the name Korea derived from Goryeo?",
+      "quick_checklist": [
+        "Korea from Goryeo",
+        "Official name: Republic of Korea",
+        "Context-based naming"
+      ],
+      "tags": [
+        "name origin",
+        "identity",
+        "basics"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "air-routes-airports-impression",
+      "title": "Air Routes and First Impression: Incheon vs Gimpo",
+      "summary": "Your first Korean impression often starts at the airport, not downtown.",
+      "hook": "The trip tone is set by entry route and airport-to-city flow.",
+      "friend_note": "Incheon feels global-hub scale; Gimpo feels compact and city-near.",
+      "comic_scene": "A large Incheon terminal and compact Gimpo transfer line are shown side by side.",
+      "core_idea": "The key difference is role split: long-haul hub vs urban connector.",
+      "fun_fact": "Travelers often mention how quickly Korea switches from airport mode to city mode.",
+      "real_life_tip": "Mention airport experience when explaining Korea; people understand the pace faster.",
+      "line_to_use": "How does Incheon feel different from Gimpo?",
+      "quick_checklist": [
+        "Incheon: hub",
+        "Gimpo: city access",
+        "Entry route matters"
+      ],
+      "tags": [
+        "flight",
+        "airport",
+        "travel feel"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "timezone-and-daily-tempo",
+      "title": "Beyond Time Zone: Korea’s Daily Tempo",
+      "summary": "Korea uses UTC+9 without daylight saving, but city rhythm defines the real experience.",
+      "hook": "People remember Korean time as street tempo, not clock math.",
+      "friend_note": "Many visitors adapt to time difference first, then struggle with city speed.",
+      "comic_scene": "Morning rush subway and late-night neon streets connect on one timeline.",
+      "core_idea": "Jet lag is technical; tempo adaptation is cultural.",
+      "fun_fact": "Even short-term visitors say days in Korea feel longer and denser.",
+      "real_life_tip": "Explain morning-lunch-night rhythm, not only UTC number.",
+      "line_to_use": "Is Korea always this active at night?",
+      "quick_checklist": [
+        "UTC+9",
+        "No DST",
+        "Strong night rhythm"
+      ],
+      "tags": [
+        "time zone",
+        "tempo",
+        "city rhythm"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "korea-big-picture-expanded",
+      "title": "Korea at a Glance: Why the Memory Feels Intense",
+      "summary": "Travelers often describe Korea with one word: density.",
+      "hook": "The point is not just speed, but sharp contrasts in one day.",
+      "friend_note": "People say they do not run out of time first; they run out of processing capacity first.",
+      "comic_scene": "Hanok roofs, skyscrapers, neon streets, and subway lines appear in one frame.",
+      "core_idea": "Korea runs multiple time layers at once, rather than separating old and new.",
+      "fun_fact": "Many reviews say a single day feels like visiting three different cities.",
+      "real_life_tip": "Pair one traditional place and one hyper-modern district on the same day.",
+      "line_to_use": "Why does each Seoul district feel like a different city?",
+      "quick_checklist": [
+        "Traditional space",
+        "Modern district",
+        "Night streets"
+      ],
+      "tags": [
+        "overview",
+        "city feel",
+        "contrast"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "history-core-journey",
+      "title": "History: Coexistence of Compression and Memory",
+      "summary": "Korea’s modern timeline is often read as rapid transformation in a short period.",
+      "hook": "The past is not only in museums; it is layered into daily routes.",
+      "friend_note": "With historical context, the same street looks completely different.",
+      "comic_scene": "An old-sign alley transitions into a futuristic business district.",
+      "core_idea": "Current speed itself is a historical product of repeated breaks and rebuilds.",
+      "fun_fact": "Visitors often report that a second city walk after museum visits feels information-rich.",
+      "real_life_tip": "Build one route with palace, modern history exhibition, and new business zone.",
+      "line_to_use": "Where should I start to understand modern Korean history?",
+      "quick_checklist": [
+        "Traditional sites",
+        "Modern history",
+        "New districts"
+      ],
+      "tags": [
+        "history",
+        "modern era",
+        "context"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "geography-climate-structure",
+      "title": "Geography and Climate: Peninsula, Mountains, Four Seasons",
+      "summary": "Korean urban routes and travel style are strongly shaped by terrain and seasonal shifts.",
+      "hook": "Weather in Korea is not background; it is a core route variable.",
+      "friend_note": "People quickly feel that the same temperature number can feel very different here.",
+      "comic_scene": "Spring, summer, autumn, and winter rotate quickly over one city view.",
+      "core_idea": "Geography and climate change travel style more than travel difficulty.",
+      "fun_fact": "Online reviews often mention winter padding culture as part of city scenery.",
+      "real_life_tip": "Set season scenarios first, then choose places.",
+      "line_to_use": "How are people dressing these days in Seoul?",
+      "quick_checklist": [
+        "Season feel",
+        "Wind/humidity",
+        "Fine dust"
+      ],
+      "tags": [
+        "geography",
+        "climate",
+        "seasons"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "politics-democracy-citizens",
+      "title": "Politics: Fast Democratic Rhythm and Civic Participation",
+      "summary": "Korean public issues often move quickly across media, online debate, and street discourse.",
+      "hook": "Political atmosphere in Korea often feels close to real-time.",
+      "friend_note": "Even short visitors can sense shifts in public mood.",
+      "comic_scene": "Public square, news screens, and mobile debate streams connect in one flow.",
+      "core_idea": "Civic participation narrows the distance between institutions and public sentiment.",
+      "fun_fact": "Many outsiders describe Korean social response speed as notably fast.",
+      "real_life_tip": "Read official news and on-the-ground mood together for better context.",
+      "line_to_use": "Where do people usually track social issues in Korea?",
+      "quick_checklist": [
+        "Official announcements",
+        "Major media",
+        "Street mood"
+      ],
+      "tags": [
+        "politics",
+        "democracy",
+        "civil society"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "economy-industry-tech",
+      "title": "Economy: Manufacturing Base with Digital and Content Power",
+      "summary": "Korea expanded from manufacturing strength into semiconductors, batteries, platforms, and content.",
+      "hook": "Korean economic change is visible in daily UX, not only in reports.",
+      "friend_note": "Industry keywords from news appear in normal travel scenes quickly.",
+      "comic_scene": "A product showroom, payment systems, and content ads line one street.",
+      "core_idea": "Korea is strong where hardware, software, and storytelling meet fast in real life.",
+      "fun_fact": "Visitors often say they use less cash than expected due to mature payment infrastructure.",
+      "real_life_tip": "Visit one industry or innovation space to understand the big picture faster.",
+      "line_to_use": "Where can I see Korea’s industry changes in one place?",
+      "quick_checklist": [
+        "Manufacturing roots",
+        "Digital infrastructure",
+        "Content ecosystem"
+      ],
+      "tags": [
+        "economy",
+        "industry",
+        "technology"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "society-education-work-life",
       "title": "Subway & Bus Basics",
       "summary": "How locals move fast in Seoul without burning energy.",
       "hook": "One transit card can save your whole trip pace.",
@@ -607,7 +919,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "payment-money",
+      "id": "culture-code-etiquette",
       "title": "Payment & Cash Reality",
       "summary": "Cards work almost everywhere, but backup still matters.",
       "hook": "Korea is card-friendly, not card-perfect.",
@@ -631,7 +943,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "food-culture",
+      "id": "korean-cinema-famous",
       "title": "Restaurant Culture 101",
       "summary": "From side dishes to table bells, the flow can feel different for newcomers.",
       "hook": "Knowing the rhythm makes meals smoother than speaking perfect Korean.",
@@ -655,7 +967,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "cafe-rules",
+      "id": "kdrama-pop-culture",
       "title": "Cafe Rules & Kiosk Flow",
       "summary": "Seat, order, pickup: the order sequence matters in popular cafes.",
       "hook": "The line looks scary, but the system is usually efficient.",
@@ -679,7 +991,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "convenience-store",
+      "id": "kpop-entertainment",
       "title": "Convenience Store Is a Life Hub",
       "summary": "Korean convenience stores are far more than snack shops.",
       "hook": "When confused, start from the nearest convenience store.",
@@ -703,7 +1015,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "weather-seasons",
+      "id": "food-culture-famous",
       "title": "Seasons, Rain, and Dust",
       "summary": "Korean weather can swing hard, so daily adaptation matters.",
       "hook": "Same city, totally different vibe by season.",
@@ -727,7 +1039,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "language-honorifics",
+      "id": "technology-daily-infra",
       "title": "Basic Korean Speech Mode",
       "summary": "You do not need fluency, but tone level changes social comfort.",
       "hook": "Polite endings beat perfect grammar.",
@@ -751,7 +1063,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "social-night",
+      "id": "security-military-context-expanded",
       "title": "Social & Night Culture",
       "summary": "Dinner, drinks, and second rounds are part of social rhythm.",
       "hook": "The night often continues longer than visitors expect.",
@@ -775,7 +1087,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "work-school-vibe",
+      "id": "currency-payment-finance-expanded",
       "title": "Work & School Vibe",
       "summary": "Group chats, punctuality, and context reading are key.",
       "hook": "Fast replies can feel like teamwork, not pressure.",
@@ -799,20 +1111,23 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "health-emergency",
-      "title": "Health, Pharmacy, and Emergency",
-      "summary": "Basic medical navigation is easier when prepared in advance.",
-      "hook": "A small prep list prevents big panic moments.",
-      "friend_note": "Save your hotel address in Korean and one emergency contact early.",
-      "comic_scene": "Late-night cold symptoms hit, and the nearest pharmacy search becomes a mini mission.",
-      "core_idea": "Know where to go: pharmacy for mild issues, clinic/hospital for escalation.",
-      "fun_fact": "Many neighborhoods have multiple pharmacies clustered near stations or hospitals.",
-      "real_life_tip": "Keep your passport copy and insurance details accessible on phone.",
-      "line_to_use": "I need medicine for a cold.",
+      "id": "korea-famous-facts-encyclopedic-fun",
+      "title": "Korean Micro-Details Even Locals Find Fascinating",
+      "summary": "When people talk about Korea, they usually start with K-pop or semiconductors. But if you set those aside for a moment, there are many quietly unusual details in everyday life. In many apartment elevators, you still see F instead of 4. Even in high-end smart towers, this old linguistic taboo survives. Housing layouts are also distinctive: shoes-off entryways, floor-drain bathrooms, and wet-cleaning habits feel normal in Korea but surprisingly new to many visitors.",
+      "hook": "Korea becomes most interesting not at landmark scale, but at daily-detail scale.",
+      "friend_note": "After a few days, things like management-office announcements, brand-like apartment names, and invisible digital waiting lines feel less random and more like a tightly tuned system.",
+      "comic_scene": "An elevator with F instead of 4, apartment PA announcements, Kakao waiting alerts, convenience-store service counters, and late academy buses in one frame.",
+      "core_idea": "Korea’s uniqueness often lives in operational habits. A restaurant can look empty while 30 teams wait in an app queue. Convenience stores function as neighborhood infrastructure for parcels, bills, lotteries, and more. Street trash bins are rare, yet recycling rules are granular. The visible layer and the system layer are both active at the same time.",
+      "fun_fact": "Automatic doors in Korea are often very sensitive, opening earlier than many visitors expect. In winter, heated-floor culture extends into some public surfaces, so snow can melt quickly in specific zones. And after 10 p.m., academy buses still move through apartment complexes, showing how the city rhythm rarely stops cleanly.",
+      "real_life_tip": "Beyond famous spots, watch for small signals: F-floor labeling, apartment announcements, app-based queues, convenience-store service range, recycling sorting, and late-night academy traffic. Those details make Korea feel much more three-dimensional.",
+      "line_to_use": "Beyond famous places, where does Korea feel most “Korean” in daily life?",
       "quick_checklist": [
-        "Passport copy",
-        "Insurance info",
-        "Local address in Korean"
+        "F instead of 4",
+        "Apartment announcement culture",
+        "Digital waiting queues",
+        "Convenience-store infrastructure",
+        "Detailed recycling rules",
+        "Late-night academy bus rhythm"
       ],
       "tags": [
         "health",

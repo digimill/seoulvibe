@@ -499,11 +499,323 @@
         "src": "/images/tips/cafe-ordering.jpg",
         "alt": "首尔的咖啡厅柜台"
       }
+    },
+    {
+      "id": "restaurant-culture",
+      "title": "韩国餐厅里最实用的节奏感",
+      "summary": "看懂呼叫铃、续小菜和快速点单节奏，吃饭会轻松很多。",
+      "hook": "比起完美韩语，更重要的是读懂餐厅节奏。",
+      "friend_note": "店员节奏快通常是运营方式，不是无礼。",
+      "what_to_know": "呼叫铃、饮水自助、续小菜规则会因店而异。",
+      "why_it_matters": "高峰时错过点单时机会明显增加等待和疲劳。",
+      "avoid_this": "高峰入座后不要长时间纠结菜单。",
+      "quick_fix": "进店前先定主菜，有呼叫铃就使用。",
+      "real_scene": "弘大、圣水热门店里，很多桌会在坐下1分钟内点单。",
+      "local_move": "先确认小菜和水，再做简短请求。",
+      "line_to_use": "可以再给一点小菜吗？",
+      "quick_checklist": [
+        "确认呼叫铃",
+        "提前决定菜单",
+        "确认续菜礼仪"
+      ],
+      "tags": [
+        "餐厅",
+        "文化",
+        "实战"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/mangwon.jpg",
+        "alt": "首尔本地餐馆与市场场景"
+      }
+    },
+    {
+      "id": "convenience-life-hub",
+      "title": "把便利店用成生活中枢",
+      "summary": "在韩国，便利店不只是买零食，而是快速解决小问题的节点。",
+      "hook": "行程卡住时，先找便利店通常有解。",
+      "friend_note": "吃喝、充电、交通卡、日用品常能一次搞定。",
+      "what_to_know": "微波炉、快递、票务、打印服务因门店不同。",
+      "why_it_matters": "初访时小问题会连发，便利店能当缓冲层。",
+      "avoid_this": "不要默认每家店服务都一样。",
+      "quick_fix": "先看门口服务贴纸和自助机说明。",
+      "real_scene": "很多人落地后先在住处附近便利店完成第一晚补给。",
+      "local_move": "同时补交通卡余额 + 买水 + 轻食。",
+      "line_to_use": "这里可以给交通卡充值吗？",
+      "quick_checklist": [
+        "是否可充值",
+        "是否有微波炉",
+        "应急用品"
+      ],
+      "tags": [
+        "便利店",
+        "基础知识",
+        "基础设施"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/seongsu.jpg",
+        "alt": "首尔城市日常基础设施"
+      }
+    },
+    {
+      "id": "season-weather-dust",
+      "title": "季节、天气、空气：穿搭应对法",
+      "summary": "首尔四季变化明显，按天应对比想象中更重要。",
+      "hook": "同一座城市会因季节与天气呈现完全不同体感。",
+      "friend_note": "分层穿搭和空气质量确认就能明显提升一天体验。",
+      "what_to_know": "梅雨、寒潮、酷暑和空气污染会轮替出现。",
+      "why_it_matters": "低估天气会同时打乱路线和体力。",
+      "avoid_this": "不要只靠一套固定穿搭安排全天户外。",
+      "quick_fix": "随身小雨伞+薄外套+出门前查看空气指数。",
+      "real_scene": "有些天会从早上晴天转成下午雨、晚上大风。",
+      "local_move": "始终准备一个室内替代路线。",
+      "line_to_use": "今天下午会下雨吗？",
+      "quick_checklist": [
+        "雨伞",
+        "外套",
+        "空气质量检查"
+      ],
+      "tags": [
+        "天气",
+        "季节",
+        "空气"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/rainy-seoul.jpg",
+        "alt": "雨天首尔街景与季节氛围"
+      }
+    },
+    {
+      "id": "pharmacy-hospital-emergency",
+      "title": "生病时不慌：药店与医院分流",
+      "summary": "提前知道基础就医流程，突发情况会冷静很多。",
+      "hook": "小准备能挡住大慌张。",
+      "friend_note": "尽早保存酒店韩文地址和护照副本。",
+      "what_to_know": "轻症先药店，恶化或紧急症状直接去医院。",
+      "why_it_matters": "夜间和周末最容易因慌乱浪费关键时间。",
+      "avoid_this": "症状明显加重时不要只反复跑药店。",
+      "quick_fix": "尽快转医院，并出示症状与地址简短备忘。",
+      "real_scene": "夜间感冒先去药店，没改善再去医院是常见路径。",
+      "local_move": "把护照副本、保险信息、住址置顶在备忘录。",
+      "line_to_use": "我需要感冒药。",
+      "quick_checklist": [
+        "护照副本",
+        "保险信息",
+        "酒店韩文地址"
+      ],
+      "tags": [
+        "药店",
+        "医院",
+        "紧急"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/morning-seoul.jpg",
+        "alt": "首尔清晨街景与移动动线"
+      }
     }
   ],
   "korea101": [
     {
-      "id": "transport-basics",
+      "id": "name-origin-and-identity",
+      "title": "名称与身份：Korea、韩国、朝鲜",
+      "summary": "先理解名称层次，能更快读懂韩国历史与身份语境。",
+      "hook": "比地名更先要掌握的是称呼的使用场景。",
+      "friend_note": "称呼多并非混乱，而是压缩历史。",
+      "comic_scene": "Korea、韩国、朝鲜等词叠加在半岛地图上。",
+      "core_idea": "名称不是单纯翻译，而是历史、政治与身份的叠层。",
+      "fun_fact": "海外常说K-culture，韩国本土常说韩流。",
+      "real_life_tip": "正式语境用韩国/大韩民国，历史语境按时代称呼。",
+      "line_to_use": "Korea这个名字是来自高丽吗？",
+      "quick_checklist": [
+        "Korea=高丽来源",
+        "官方国名: 大韩民国",
+        "按语境区分称呼"
+      ],
+      "tags": [
+        "名称由来",
+        "身份",
+        "基础"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "air-routes-airports-impression",
+      "title": "空路第一印象：仁川与金浦",
+      "summary": "韩国旅程的第一印象通常从机场就开始了。",
+      "hook": "入境路线与进城动线会直接决定旅行开场感。",
+      "friend_note": "仁川更像国际枢纽，金浦更像城市近接入口。",
+      "comic_scene": "大型仁川航站楼与紧凑金浦动线并列。",
+      "core_idea": "重点不在大小，而在“国际枢纽/城市连接”分工。",
+      "fun_fact": "很多人会提到韩国从机场到城市的转换感很快。",
+      "real_life_tip": "介绍韩国时加入机场体验，理解会更快。",
+      "line_to_use": "仁川和金浦氛围有什么不同？",
+      "quick_checklist": [
+        "仁川=枢纽",
+        "金浦=进城快",
+        "入境动线重要"
+      ],
+      "tags": [
+        "航班",
+        "机场",
+        "旅行体感"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "timezone-and-daily-tempo",
+      "title": "不只是时区：韩国的一天节奏",
+      "summary": "韩国是UTC+9且无夏令时，但真实体感更由城市节奏决定。",
+      "hook": "韩国时间往往是被“街头节奏”记住的。",
+      "friend_note": "很多人时差适应后，才发现更难的是城市速度。",
+      "comic_scene": "早高峰地铁与深夜霓虹街在同一时间轴上连接。",
+      "core_idea": "时差适应是技术问题，节奏适应是文化问题。",
+      "fun_fact": "短住旅客也常说在韩国一天信息密度很高。",
+      "real_life_tip": "讲韩国时别只说UTC数字，也讲早中晚节奏差。",
+      "line_to_use": "韩国夜里一直都这么有活力吗？",
+      "quick_checklist": [
+        "UTC+9",
+        "无夏令时",
+        "夜间节奏强"
+      ],
+      "tags": [
+        "时区",
+        "节奏",
+        "城市韵律"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "korea-big-picture-expanded",
+      "title": "韩国全景：为什么记忆感这么强",
+      "summary": "许多初访者对韩国的共同关键词是“高密度”。",
+      "hook": "核心不只是快，而是强烈对比在同一天并存。",
+      "friend_note": "很多人先不是觉得时间不够，而是感官先满了。",
+      "comic_scene": "韩屋屋顶、高楼、霓虹街和地铁同框出现。",
+      "core_idea": "韩国更像是让不同时间层同时运行的社会。",
+      "fun_fact": "常见评价是“一天像逛了三座城市”。",
+      "real_life_tip": "同一天刻意搭配1个传统空间+1个现代商圈。",
+      "line_to_use": "为什么首尔每个片区都像不同城市？",
+      "quick_checklist": [
+        "传统空间",
+        "现代商圈",
+        "夜间街景"
+      ],
+      "tags": [
+        "韩国概览",
+        "城市体感",
+        "对比"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "history-core-journey",
+      "title": "历史：压缩增长与记忆共存",
+      "summary": "韩国近现代常被理解为短时间内的剧烈转型。",
+      "hook": "过去不只在博物馆，也在日常路线上。",
+      "friend_note": "带着历史背景去走街区，会看到完全不同的信息层。",
+      "comic_scene": "老招牌街巷转入未来感商务区。",
+      "core_idea": "当下速度本身就是历史重构的产物。",
+      "fun_fact": "看过近现代展后再逛城，信息量会明显上升。",
+      "real_life_tip": "把宫殿、近现代展、新城区串成一条线看最有效。",
+      "line_to_use": "第一次看韩国近现代史该从哪里开始？",
+      "quick_checklist": [
+        "传统场所",
+        "近现代展",
+        "新城对比"
+      ],
+      "tags": [
+        "历史",
+        "近现代",
+        "语境"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "geography-climate-structure",
+      "title": "地理与自然：半岛、山地与四季",
+      "summary": "韩国地形与季节变化对城市动线和旅行方式影响很大。",
+      "hook": "韩国天气不是背景，而是行程主变量。",
+      "friend_note": "同样气温数字，体感可能很不一样。",
+      "comic_scene": "春夏秋冬在同一城市上快速切换。",
+      "core_idea": "地理与气候更像“改变旅行风格”而非“提高难度”。",
+      "fun_fact": "海外评论常把冬季羽绒文化视作城市风景的一部分。",
+      "real_life_tip": "先做季节场景判断，再排具体景点。",
+      "line_to_use": "最近大家一般怎么穿？",
+      "quick_checklist": [
+        "季节体感",
+        "风/湿度",
+        "空气质量"
+      ],
+      "tags": [
+        "地理",
+        "自然环境",
+        "季节"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "politics-democracy-citizens",
+      "title": "政治：民主节奏与公民参与",
+      "summary": "韩国公共议题常在新闻、网络与线下快速联动。",
+      "hook": "韩国政治体感更接近“实时变化”而非静态背景。",
+      "friend_note": "短期停留也能感知社会温度变化。",
+      "comic_scene": "广场、新闻屏与手机讨论流同频连接。",
+      "core_idea": "公民参与让制度与舆论的距离更近。",
+      "fun_fact": "许多海外观察者会提到韩国社会反应速度快。",
+      "real_life_tip": "把正式资讯与现场氛围一起看，理解更完整。",
+      "line_to_use": "韩国人通常在哪里关注社会议题？",
+      "quick_checklist": [
+        "官方公告",
+        "主流媒体",
+        "现场氛围"
+      ],
+      "tags": [
+        "政治",
+        "民主",
+        "公民社会"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "economy-industry-tech",
+      "title": "经济：制造底盘上的数字与内容力量",
+      "summary": "韩国从制造业优势扩展到半导体、电池、平台与内容产业。",
+      "hook": "产业变化不只在报告里，也在日常体验里可见。",
+      "friend_note": "新闻里的产业词，旅行中很快就能遇到实景对应。",
+      "comic_scene": "产品展厅、支付系统与内容广告在同一街区串联。",
+      "core_idea": "韩国优势在于硬件、软件与叙事能快速落地到生活。",
+      "fun_fact": "很多访客会说比预想中更少需要现金。",
+      "real_life_tip": "看一个产业/创新展示点就能快速建立整体感。",
+      "line_to_use": "哪里可以直观看到韩国产业变化？",
+      "quick_checklist": [
+        "制造基础",
+        "数字基础设施",
+        "内容生态"
+      ],
+      "tags": [
+        "经济",
+        "产业",
+        "技术"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "society-education-work-life",
       "title": "Subway & Bus Basics",
       "summary": "How locals move fast in Seoul without burning energy.",
       "hook": "One transit card can save your whole trip pace.",
@@ -527,7 +839,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "payment-money",
+      "id": "culture-code-etiquette",
       "title": "Payment & Cash Reality",
       "summary": "Cards work almost everywhere, but backup still matters.",
       "hook": "Korea is card-friendly, not card-perfect.",
@@ -551,7 +863,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "food-culture",
+      "id": "korean-cinema-famous",
       "title": "Restaurant Culture 101",
       "summary": "From side dishes to table bells, the flow can feel different for newcomers.",
       "hook": "Knowing the rhythm makes meals smoother than speaking perfect Korean.",
@@ -575,7 +887,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "cafe-rules",
+      "id": "kdrama-pop-culture",
       "title": "Cafe Rules & Kiosk Flow",
       "summary": "Seat, order, pickup: the order sequence matters in popular cafes.",
       "hook": "The line looks scary, but the system is usually efficient.",
@@ -599,7 +911,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "convenience-store",
+      "id": "kpop-entertainment",
       "title": "Convenience Store Is a Life Hub",
       "summary": "Korean convenience stores are far more than snack shops.",
       "hook": "When confused, start from the nearest convenience store.",
@@ -623,7 +935,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "weather-seasons",
+      "id": "food-culture-famous",
       "title": "Seasons, Rain, and Dust",
       "summary": "Korean weather can swing hard, so daily adaptation matters.",
       "hook": "Same city, totally different vibe by season.",
@@ -647,7 +959,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "language-honorifics",
+      "id": "technology-daily-infra",
       "title": "Basic Korean Speech Mode",
       "summary": "You do not need fluency, but tone level changes social comfort.",
       "hook": "Polite endings beat perfect grammar.",
@@ -671,7 +983,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "social-night",
+      "id": "security-military-context-expanded",
       "title": "Social & Night Culture",
       "summary": "Dinner, drinks, and second rounds are part of social rhythm.",
       "hook": "The night often continues longer than visitors expect.",
@@ -695,7 +1007,7 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "work-school-vibe",
+      "id": "currency-payment-finance-expanded",
       "title": "Work & School Vibe",
       "summary": "Group chats, punctuality, and context reading are key.",
       "hook": "Fast replies can feel like teamwork, not pressure.",
@@ -719,20 +1031,23 @@
       "updated_at": "2026-02-14"
     },
     {
-      "id": "health-emergency",
-      "title": "Health, Pharmacy, and Emergency",
-      "summary": "Basic medical navigation is easier when prepared in advance.",
-      "hook": "A small prep list prevents big panic moments.",
-      "friend_note": "Save your hotel address in Korean and one emergency contact early.",
-      "comic_scene": "Late-night cold symptoms hit, and the nearest pharmacy search becomes a mini mission.",
-      "core_idea": "Know where to go: pharmacy for mild issues, clinic/hospital for escalation.",
-      "fun_fact": "Many neighborhoods have multiple pharmacies clustered near stations or hospitals.",
-      "real_life_tip": "Keep your passport copy and insurance details accessible on phone.",
-      "line_to_use": "I need medicine for a cold.",
+      "id": "korea-famous-facts-encyclopedic-fun",
+      "title": "连韩国人都觉得有意思的韩国细节TMI",
+      "summary": "一说韩国，大家通常先想到K-pop和半导体。但把这些先放一边，日常里其实有很多很“奇妙”的细节。比如不少公寓电梯里仍会把4层写成F。更有意思的是，这个习惯在高端智能公寓里也还在。再比如住宅结构：进门脱鞋、浴室地漏、可直接冲洗的湿区逻辑，在韩国很自然，但对很多访客来说很新鲜。",
+      "hook": "韩国真正好玩的地方，往往不在大地标，而在生活细节。",
+      "friend_note": "管理室广播、品牌化公寓名、看不见的数字排队系统，这些细节住几天就会有明显体感。",
+      "comic_scene": "电梯F层按钮、小区广播、Kakao排队提醒、便利店生活服务、夜间补习班校车同框。",
+      "core_idea": "韩国的特别之处常在“系统化的日常运营”。门口看着不排队，App里可能已经等30组；便利店不只是零食店，而是社区生活节点。路边垃圾桶少，但垃圾分类规则非常细。表面的秩序和背后的系统同时运转。",
+      "fun_fact": "韩国自动门灵敏度通常很高，人还没走近就先开了。冬季在部分区域还能看到地面更快化雪的场景。晚上10点后小区里仍有补习班车辆进出，也说明城市节奏并不会整齐地停下来。",
+      "real_life_tip": "除了打卡景点，也可以每天观察一个“生活信号”：F层标记、管理室广播、数字排队、便利店服务范围、分类细则、夜间校车动线。这样看韩国会更立体。",
+      "line_to_use": "不看热门景点的话，韩国味最强的细节通常在哪里？",
       "quick_checklist": [
-        "Passport copy",
-        "Insurance info",
-        "Local address in Korean"
+        "4层=F标记",
+        "管理室/小区广播",
+        "数字排队系统",
+        "便利店生活基础设施",
+        "精细分类规则",
+        "夜间补习班校车节奏"
       ],
       "tags": [
         "health",
