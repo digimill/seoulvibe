@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
 import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
 import { getAreas, getHeroImage, getKorea101, getThemes, getTips } from "@/lib/content";
 import { getCopy, isLang, type Lang } from "@/lib/i18n";
+import { getSiteUrl } from "@/lib/site";
 
 type HomePageProps = {
   params: Promise<{ lang: string }>;
@@ -30,9 +32,26 @@ export default async function HomePage({ params }: HomePageProps) {
     getKorea101(locale),
     getHeroImage(locale),
   ]);
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/${locale}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Seoul Vibe",
+    url: pageUrl,
+    inLanguage: locale,
+    description: t.tagline,
+    publisher: {
+      "@type": "Organization",
+      name: "Seoul Vibe",
+    },
+  };
 
   return (
     <>
+      <Script id={`website-jsonld-${locale}`} type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </Script>
       <section className="pt-14 pb-12 sm:pt-20 sm:pb-16">
         <Container>
           <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white/70 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:p-12">
