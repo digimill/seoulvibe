@@ -382,7 +382,12 @@
       "quick_fix": "Carry one backup card and a small amount of cash.",
       "real_scene": "At some Gwangjang stalls, cards work one day and fail the next depending on terminal status.",
       "local_move": "Top-up transit and keep a 10,000 KRW emergency note.",
-      "line_to_use": "Card an dwaeyo? Hyeongeum do dwaeyo?",
+      "line_to_use": {
+        "ko": "카드 안 돼요? 현금 돼요?",
+        "pronunciation_en": "Kadeu an dwaeyo? Hyeongeum dwaeyo?",
+        "pronunciation_local": "Kadeu an dwaeyo? Hyeongeum dwaeyo?",
+        "meaning": "Use this to ask whether cash payment is possible when card fails."
+      },
       "quick_checklist": [
         "2 cards",
         "small cash",
@@ -417,7 +422,12 @@
       "quick_fix": "Travel major moves before 17:30 or after 19:30.",
       "real_scene": "Line 2 around Gangnam and Hongdae can feel packed enough to skip one train during peak.",
       "local_move": "Use subway for long moves and short taxi for final uphill blocks.",
-      "line_to_use": "T-money chungjeon jom butakhaeyo.",
+      "line_to_use": {
+        "ko": "이 열차 홍대 가나요?",
+        "pronunciation_en": "I yeolcha Hongdae ganayo?",
+        "pronunciation_local": "I yeolcha Hongdae ganayo?",
+        "meaning": "Use this to confirm whether the train is going toward Hongdae."
+      },
       "quick_checklist": [
         "Transit card",
         "Naver/Kakao map",
@@ -452,7 +462,12 @@
       "quick_fix": "Step aside first, then take your shot.",
       "real_scene": "In tight cafe aisles in Seongsu, staff will quickly ask people to move if photo lines block flow.",
       "local_move": "Quick bow + gamsahamnida after help goes a long way.",
-      "line_to_use": "Jamkkanmanyo, jinan-galgeyo.",
+      "line_to_use": {
+        "ko": "잠깐만요, 지나갈게요.",
+        "pronunciation_en": "Jamkkanmanyo, jinagalgeyo.",
+        "pronunciation_local": "Jamkkanmanyo, jinagalgeyo.",
+        "meaning": "Use this to politely ask to pass through in a narrow space."
+      },
       "quick_checklist": [
         "Low voice",
         "Queue flow",
@@ -487,7 +502,12 @@
       "quick_fix": "Take AREX to a major hub then taxi to hotel.",
       "real_scene": "Late evening arrival with two bags feels much easier this way.",
       "local_move": "Prepare hotel name in Korean on your phone before taxi.",
-      "line_to_use": "I juso-ro ga juseyo.",
+      "line_to_use": {
+        "ko": "이 주소로 가주세요.",
+        "pronunciation_en": "I juso-ro gajuseyo.",
+        "pronunciation_local": "I juso-ro gajuseyo.",
+        "meaning": "Use this when showing your destination address to a taxi driver."
+      },
       "quick_checklist": [
         "AREX first",
         "Taxi last leg",
@@ -522,7 +542,12 @@
       "quick_fix": "Activate eSIM at airport and test map route before departure.",
       "real_scene": "No data in a transfer station can derail dinner reservations quickly.",
       "local_move": "Save one offline map area as backup.",
-      "line_to_use": "eSIM setup help jom butakhaeyo.",
+      "line_to_use": {
+        "ko": "eSIM 설정 도와주실 수 있나요?",
+        "pronunciation_en": "eSIM seoljeong dowajusil su innayo?",
+        "pronunciation_local": "eSIM seoljeong dowajusil su innayo?",
+        "meaning": "Use this to ask staff for help when eSIM setup is not working."
+      },
       "quick_checklist": [
         "Data active",
         "Map app logged in",
@@ -557,7 +582,12 @@
       "quick_fix": "Check menu board, order once, then wait by number call.",
       "real_scene": "Peak-hour Seongsu cafes can clear 20+ orders quickly.",
       "local_move": "If unsure, show screen and politely ask staff for confirmation.",
-      "line_to_use": "Yeogiseo meogeulgeyo / gajigo galgeyo.",
+      "line_to_use": {
+        "ko": "매장에서 먹을게요 / 포장할게요.",
+        "pronunciation_en": "Maejangeseo meogeulgeyo / pojanghalgeyo.",
+        "pronunciation_local": "Maejangeseo meogeulgeyo / pojanghalgeyo.",
+        "meaning": "Use this to specify dine-in or takeout while ordering."
+      },
       "quick_checklist": [
         "Dine-in vs takeout",
         "Table first",
@@ -592,7 +622,12 @@
       "quick_fix": "Pick your main menu before entering and use the call button when available.",
       "real_scene": "In busy Hongdae or Seongsu spots, many tables order within one minute of sitting.",
       "local_move": "Check side dishes and water first, then make short requests only when needed.",
-      "line_to_use": "Could I get a little more side dish, please?",
+      "line_to_use": {
+        "ko": "반찬 조금만 더 주실 수 있을까요?",
+        "pronunciation_en": "Banchan jogeumman deo jusil su isseulkkayo?",
+        "pronunciation_local": "Banchan jogeumman deo jusil su isseulkkayo?",
+        "meaning": "Use this to politely request a small side-dish refill."
+      },
       "quick_checklist": [
         "Check for call button",
         "Decide menu early",
@@ -622,7 +657,12 @@
       "quick_fix": "Check kiosk/service stickers at the entrance first.",
       "real_scene": "Many travelers finish first-night setup at a store near their hotel.",
       "local_move": "Top up transit card + buy water + grab a light meal at once.",
-      "line_to_use": "Can I top up my transit card here?",
+      "line_to_use": {
+        "ko": "여기서 교통카드 충전되나요?",
+        "pronunciation_en": "Yeogiseo gyotongkadeu chungjeon doenayo?",
+        "pronunciation_local": "Yeogiseo gyotongkadeu chungjeon doenayo?",
+        "meaning": "Use this to ask if transit-card top-up is available here."
+      },
       "quick_checklist": [
         "Top-up availability",
         "Microwave access",
@@ -636,7 +676,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/areas/seongsu.jpg",
+        "src": "/images/tips/convenience-life-hub.jpg",
         "alt": "Seoul urban daily infrastructure"
       }
     },
@@ -652,7 +692,12 @@
       "quick_fix": "Carry a compact umbrella, light outer layer, and check dust app before leaving.",
       "real_scene": "Some days shift from clear morning to rain and strong wind at night.",
       "local_move": "Always keep one indoor backup route.",
-      "line_to_use": "Will it rain this afternoon?",
+      "line_to_use": {
+        "ko": "오늘 오후에 비 오나요?",
+        "pronunciation_en": "Oneul ohu-e bi onayo?",
+        "pronunciation_local": "Oneul ohu-e bi onayo?",
+        "meaning": "Use this to check whether it will rain this afternoon."
+      },
       "quick_checklist": [
         "Umbrella",
         "Outer layer",
@@ -682,7 +727,12 @@
       "quick_fix": "Switch to hospital quickly and show a short note with symptoms and address.",
       "real_scene": "A common flow is pharmacy first for cold symptoms, then hospital if no improvement.",
       "local_move": "Pin passport copy, insurance info, and hotel address at top of your notes app.",
-      "line_to_use": "I need cold medicine.",
+      "line_to_use": {
+        "ko": "감기약이 필요해요.",
+        "pronunciation_en": "Gamgiyak-i piryohaeyo.",
+        "pronunciation_local": "Gamgiyak-i piryohaeyo.",
+        "meaning": "Use this at a pharmacy to say you need cold medicine."
+      },
       "quick_checklist": [
         "Passport copy",
         "Insurance info",

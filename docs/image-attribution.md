@@ -30,6 +30,7 @@ These images are sourced from Unsplash under the Unsplash License.
 - `/images/tips/airport-to-city.jpg`: https://unsplash.com/photos/8CIinzqQ56o
 - `/images/tips/sim-wifi.jpg`: https://unsplash.com/photos/o0kPG3RirHs
 - `/images/tips/cafe-ordering.jpg`: https://unsplash.com/photos/39oM9gUMuqA
+- `/images/tips/convenience-life-hub.jpg`: https://unsplash.com/photos/UpGCgVDPTVo
 - `/images/tips/popup-radar-weekly.jpg`: https://unsplash.com/photos/a-road-lined-with-tall-buildings-cpAXFletdR8
 - `/images/tips/queue-cut-meal-timing.jpg`: https://unsplash.com/photos/a-man-cooking-food-on-a-stove-iMJBSOi01Uk
 - `/images/tips/late-night-safe-return.jpg`: https://unsplash.com/photos/a-street-with-cars-and-buildings-at-night-PpE_d8UKnMw

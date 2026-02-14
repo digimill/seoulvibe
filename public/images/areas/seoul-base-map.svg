@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" fill="none">
+  <rect width="1200" height="900" fill="#EFF4FA"/>
+  <path d="M181 467C201 386 260 320 338 283L432 238C518 200 617 194 708 222L848 266C933 293 1002 354 1037 435L1072 517C1093 566 1095 621 1079 671L1052 752H276L227 694C187 646 171 582 181 517V467Z" fill="#DFE9F5"/>
+  <path d="M197 480C211 409 264 349 333 316L436 267C520 233 614 228 701 254L838 296C914 319 975 373 1007 445L1037 513C1057 557 1061 607 1048 654L1028 721H292L250 670C213 627 198 571 206 518L197 480Z" stroke="#B8C8DC" stroke-width="2"/>
+  <path d="M214 544C280 520 359 508 437 507C534 505 637 519 739 535C818 548 889 557 960 558" stroke="#C9D8EA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M246 530C320 560 390 572 455 573C523 574 597 559 671 539C741 521 813 507 883 509C927 510 970 518 1014 537" stroke="#79A7E8" stroke-width="22" stroke-linecap="round" opacity="0.82"/>
+  <g opacity="0.9">
+    <path d="M302 402L344 384" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M385 364L431 349" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M476 333L526 323" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M573 325L623 323" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M664 334L719 343" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M758 357L815 377" stroke="#B9C8DB" stroke-width="2"/>
+    <path d="M843 402L890 430" stroke="#B9C8DB" stroke-width="2"/>
+  </g>
+  <text x="54" y="78" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="24" font-weight="600" fill="#5E7187">Seoul City Map (Simplified)</text>
+  <text x="54" y="112" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="17" fill="#7A8EA6">Han River and district positions for quick orientation</text>
+  <text x="236" y="515" font-family="Pretendard, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="15" font-weight="600" fill="#4D78B7">Han River</text>
+</svg>

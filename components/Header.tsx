@@ -27,9 +27,28 @@ export function Header({ lang }: HeaderProps) {
           <Link href={`/${lang}/tips`} className="transition-colors hover:text-zinc-900">
             {t.nav.tips}
           </Link>
+          <Link href={`/${lang}/spots`} className="transition-colors hover:text-zinc-900">
+            {t.nav.spots}
+          </Link>
           <Link href={`/${lang}/korea-101`} className="transition-colors hover:text-zinc-900">
             {t.nav.korea101}
           </Link>
+          <details className="relative md:hidden">
+            <summary className="list-none rounded-full border border-zinc-900 bg-zinc-900 px-3 py-1 text-xs font-medium tracking-wide text-white">
+              {LANG_LABELS[lang]}
+            </summary>
+            <div className="absolute right-0 z-50 mt-2 min-w-44 rounded-lg border border-zinc-200 bg-white p-1 shadow-lg">
+              {LANGS.filter((item) => item !== lang).map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item}`}
+                  className="block rounded-md px-3 py-2 text-xs text-zinc-700 transition-colors hover:bg-zinc-100"
+                >
+                  {LANG_LABELS[item]}
+                </Link>
+              ))}
+            </div>
+          </details>
           <div className="group relative hidden md:block">
             <button
               type="button"

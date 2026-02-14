@@ -13,6 +13,25 @@ Build check:
 npm run build
 ```
 
+## Google Places Spot Photos (Optional)
+
+To show live Google place photos on curated spot cards, set:
+
+```bash
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+GOOGLE_SPOT_IMAGE_LIMIT=6
+```
+
+The app uses `/api/places-photo` server route:
+- Text Search (`places:searchText`) to find a place photo
+- Place Photo media fetch to return image bytes
+
+If the key is missing, cards fall back to existing local images.
+
+Usage-minimizing defaults:
+- Home page uses local spot images only.
+- `/[lang]/spots` uses Google photos only for the first `GOOGLE_SPOT_IMAGE_LIMIT` cards.
+
 ## Dynamic Content + Image Flow
 
 Content is loaded at runtime from:

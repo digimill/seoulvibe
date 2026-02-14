@@ -75,7 +75,42 @@ export default async function SpotsPage({ params, searchParams }: SpotsPageProps
         </div>
       </div>
       <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
-        <div className="max-h-[70vh] overflow-auto">
+        <div className="space-y-3 p-3 md:hidden">
+          {curatedSpots.map((spot) => (
+            <div key={spot.id} className="rounded-2xl border border-black/5 bg-white p-4">
+              <p className="text-base font-semibold text-zinc-900">{spot.name}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <TagBadge>{spot.area}</TagBadge>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-zinc-600">{spot.summary}</p>
+              <p className="mt-2 text-xs text-zinc-600">
+                <span className="font-medium">{sourceLabel.price}:</span> {spot.price}
+              </p>
+              <p className="mt-1 text-xs text-zinc-600">
+                <span className="font-medium">{sourceLabel.closed}:</span> {spot.closed}
+              </p>
+              <div className="mt-3 flex gap-2">
+                <a
+                  href={toGoogleMapSearchUrl(spot.map_query)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex whitespace-nowrap rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+                >
+                  {sourceLabel.map}
+                </a>
+                <a
+                  href={toPerplexitySearchUrl(spot.map_query, locale)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex whitespace-nowrap rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-50"
+                >
+                  {sourceLabel.pplx}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="hidden max-h-[70vh] overflow-auto md:block">
           <table className="min-w-full divide-y divide-zinc-200 text-sm">
             <thead className="sticky top-0 bg-zinc-50/95 backdrop-blur">
               <tr className="text-left text-xs uppercase tracking-wide text-zinc-500">

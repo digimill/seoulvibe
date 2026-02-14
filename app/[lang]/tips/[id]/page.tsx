@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
+import { SpeakButton } from "@/components/SpeakButton";
 import { TagBadge } from "@/components/TagBadge";
 import { getTips } from "@/lib/content";
 import type { LineToUseDetail } from "@/lib/types";
@@ -24,12 +25,74 @@ function isLineDetail(value: unknown): value is LineToUseDetail {
   );
 }
 
+function getLineLabels(locale: Lang) {
+  if (locale === "ko") {
+    return {
+      title: "Line to use",
+      localPronunciation: "해당언어 발음",
+      meaning: "해당언어 뜻",
+      meaningMissing: "의미 정보 준비 중",
+      listen: "한국어 듣기",
+      stop: "정지",
+    };
+  }
+  if (locale === "ja") {
+    return {
+      title: "Line to use",
+      localPronunciation: "この言語の発音",
+      meaning: "この言語での意味",
+      meaningMissing: "意味情報を準備中",
+      listen: "韓国語を再生",
+      stop: "停止",
+    };
+  }
+  if (locale === "zh-cn") {
+    return {
+      title: "Line to use",
+      localPronunciation: "本语言发音",
+      meaning: "本语言含义",
+      meaningMissing: "含义信息准备中",
+      listen: "播放韩语",
+      stop: "停止",
+    };
+  }
+  if (locale === "zh-tw") {
+    return {
+      title: "Line to use",
+      localPronunciation: "此語言發音",
+      meaning: "此語言意思",
+      meaningMissing: "意思資訊準備中",
+      listen: "播放韓文",
+      stop: "停止",
+    };
+  }
+  if (locale === "zh-hk") {
+    return {
+      title: "Line to use",
+      localPronunciation: "此語言讀音",
+      meaning: "此語言意思",
+      meaningMissing: "意思資訊準備中",
+      listen: "播放韓文",
+      stop: "停止",
+    };
+  }
+  return {
+    title: "Line to use",
+    localPronunciation: "Local pronunciation",
+    meaning: "Local meaning",
+    meaningMissing: "Meaning info coming soon",
+    listen: "Play Korean",
+    stop: "Stop",
+  };
+}
+
 export default async function TipDetailPage({ params }: TipDetailPageProps) {
   const { lang, id } = await params;
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
   const t = getCopy(locale);
+  const lineLabels = getLineLabels(locale);
   const tip = (await getTips(locale)).find((item) => item.id === id);
 
   if (!tip) notFound();
@@ -94,24 +157,34 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
           ) : null}
           {tip.line_to_use ? (
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Line to use</dt>
+              <dt className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                <span>{lineLabels.title}</span>
+                <SpeakButton
+                  text={isLineDetail(tip.line_to_use) ? tip.line_to_use.ko : tip.line_to_use}
+                  lang="ko-KR"
+                  idleLabel={lineLabels.listen}
+                  speakingLabel={lineLabels.stop}
+                />
+              </dt>
               {isLineDetail(tip.line_to_use) ? (
                 <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
                   <p>
-                    <span className="font-medium">한국어 원문:</span> {tip.line_to_use.ko}
+                    <span className="font-medium">{lineLabels.localPronunciation}:</span>{" "}
+                    {tip.line_to_use.pronunciation_local}
                   </p>
                   <p>
-                    <span className="font-medium">영어발음:</span> {tip.line_to_use.pronunciation_en}
-                  </p>
-                  <p>
-                    <span className="font-medium">해당언어 발음:</span> {tip.line_to_use.pronunciation_local}
-                  </p>
-                  <p>
-                    <span className="font-medium">뜻:</span> {tip.line_to_use.meaning}
+                    <span className="font-medium">{lineLabels.meaning}:</span> {tip.line_to_use.meaning}
                   </p>
                 </dd>
               ) : (
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.line_to_use}</dd>
+                <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
+                  <p>
+                    <span className="font-medium">{lineLabels.localPronunciation}:</span> {tip.line_to_use}
+                  </p>
+                  <p>
+                    <span className="font-medium">{lineLabels.meaning}:</span> {lineLabels.meaningMissing}
+                  </p>
+                </dd>
               )}
             </div>
           ) : null}

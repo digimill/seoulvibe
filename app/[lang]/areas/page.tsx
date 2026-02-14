@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { AreasMiniMap } from "@/components/AreasMiniMap";
 import { Card } from "@/components/Card";
 import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
@@ -19,6 +20,7 @@ export default async function AreasPage({ params }: AreasPageProps) {
 
   return (
     <SectionBlock title={t.nav.areas} description={t.discover}>
+      <AreasMiniMap areas={areas} lang={locale} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {areas.map((area) => (
           <Card

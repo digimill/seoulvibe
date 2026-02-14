@@ -332,7 +332,12 @@
       "quick_fix": "攜帶一張備用卡和少量現金。",
       "real_scene": "夜宵店僅在卡片終端重置後才接受現金。",
       "local_move": "為交通充值並保留 10,000 韓元的緊急票據。",
-      "line_to_use": "卡dwaeyo？ Hyungeum do dwaeyo？",
+      "line_to_use": {
+        "ko": "카드 안 돼요? 현금 돼요?",
+        "pronunciation_en": "Kadeu an dwaeyo? Hyeongeum dwaeyo?",
+        "pronunciation_local": "可以刷卡嗎？也可以付現嗎？",
+        "meaning": "用來詢問刷卡失敗時是否可以付現。"
+      },
       "quick_checklist": [
         "2張卡",
         "小額現金",
@@ -362,7 +367,12 @@
       "quick_fix": "主要出遊時間為17:30之前或19:30之後。",
       "real_scene": "機場行李箱+2號線高峰=緊張的第一印象。",
       "local_move": "長途出行請搭乘地鐵，最後上坡路段請搭乘短程計程車。",
-      "line_to_use": "T-money chungjeon jom butakhaeyo。",
+      "line_to_use": {
+        "ko": "이 열차 홍대 가나요?",
+        "pronunciation_en": "I yeolcha Hongdae ganayo?",
+        "pronunciation_local": "這班車去弘大嗎？",
+        "meaning": "用來確認這班列車是否往弘大方向。"
+      },
       "quick_checklist": [
         "交通卡",
         "Naver/Kakao 地圖",
@@ -392,7 +402,12 @@
       "quick_fix": "先退到一邊，然後再開槍。",
       "real_scene": "繁忙的咖啡館過道被擋住拍照可以快速觸發工作人員提醒。",
       "local_move": "快速弓+gamsahamnida幫助後有很長的路要走。",
-      "line_to_use": "Jamkkanmanyo，濟南加爾格約。",
+      "line_to_use": {
+        "ko": "잠깐만요, 지나갈게요.",
+        "pronunciation_en": "Jamkkanmanyo, jinagalgeyo.",
+        "pronunciation_local": "不好意思，借過一下。",
+        "meaning": "在狹窄空間中禮貌表示「借過」時使用。"
+      },
       "quick_checklist": [
         "聲音小",
         "隊列流量",
@@ -422,7 +437,12 @@
       "quick_fix": "搭乘 AREX 前往主要樞紐，然後搭乘計程車前往飯店。",
       "real_scene": "這樣晚上帶著兩個行李到達就覺得輕鬆多了。",
       "local_move": "計程車前在手機上準備好韓文飯店名稱。",
-      "line_to_use": "我十三羅嘎十世喲。",
+      "line_to_use": {
+        "ko": "이 주소로 가주세요.",
+        "pronunciation_en": "I juso-ro gajuseyo.",
+        "pronunciation_local": "請照這個地址走。",
+        "meaning": "向計程車司機出示地址並請他前往時使用。"
+      },
       "quick_checklist": [
         "首先是阿雷克斯",
         "出租車最後一站",
@@ -452,7 +472,12 @@
       "quick_fix": "在機場啟動 eSIM 並在出發前測試地圖路線。",
       "real_scene": "中轉站中的任何數據都不會迅速破壞晚餐預訂。",
       "local_move": "保存一個離線地圖區域作為備份。",
-      "line_to_use": "eSIM 設定幫助 jom butakhaeyo。",
+      "line_to_use": {
+        "ko": "eSIM 설정 도와주실 수 있나요?",
+        "pronunciation_en": "eSIM seoljeong dowajusil su innayo?",
+        "pronunciation_local": "可以幫我設定一下 eSIM 嗎？",
+        "meaning": "eSIM設定卡住時向店員請求協助。"
+      },
       "quick_checklist": [
         "數據活躍",
         "地圖應用程式已登入",
@@ -482,7 +507,12 @@
       "quick_fix": "查看菜單板，點餐一次，然後按號碼等待。",
       "real_scene": "尖峰時段聖水咖啡館可快速清除20+訂單。",
       "local_move": "如果不確定，請出示螢幕並禮貌地要求工作人員確認。",
-      "line_to_use": "Yeogiseo meogeulgeyo / gajigo galgeyo。",
+      "line_to_use": {
+        "ko": "매장에서 먹을게요 / 포장할게요.",
+        "pronunciation_en": "Maejangeseo meogeulgeyo / pojanghalgeyo.",
+        "pronunciation_local": "內用 / 外帶。",
+        "meaning": "點餐時用來說明內用或外帶。"
+      },
       "quick_checklist": [
         "堂食與外賣",
         "先表",
@@ -512,7 +542,12 @@
       "quick_fix": "進店前先決定主菜，有叫號鈴就使用。",
       "real_scene": "弘大、聖水熱門店常見坐下1分鐘內就點餐。",
       "local_move": "先確認小菜與水，再提出簡短需求。",
-      "line_to_use": "可以再給我一點小菜嗎？",
+      "line_to_use": {
+        "ko": "반찬 조금만 더 주실 수 있을까요?",
+        "pronunciation_en": "Banchan jogeumman deo jusil su isseulkkayo?",
+        "pronunciation_local": "可以再給我一點小菜嗎？",
+        "meaning": "在餐廳禮貌地請求再補一點小菜。"
+      },
       "quick_checklist": [
         "確認叫號鈴",
         "先決定菜單",
@@ -542,7 +577,12 @@
       "quick_fix": "先看門口服務貼紙與機台說明。",
       "real_scene": "很多人落地後先在住宿附近便利商店完成第一晚補給。",
       "local_move": "同時補交通卡 + 買水 + 輕食。",
-      "line_to_use": "這裡可以加值交通卡嗎？",
+      "line_to_use": {
+        "ko": "여기서 교통카드 충전되나요?",
+        "pronunciation_en": "Yeogiseo gyotongkadeu chungjeon doenayo?",
+        "pronunciation_local": "這裡可以加值交通卡嗎？",
+        "meaning": "詢問這裡是否可以儲值交通卡。"
+      },
       "quick_checklist": [
         "可否加值",
         "是否有微波",
@@ -556,7 +596,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/areas/seongsu.jpg",
+        "src": "/images/tips/convenience-life-hub.jpg",
         "alt": "首爾都會日常基礎設施"
       }
     },
@@ -572,7 +612,12 @@
       "quick_fix": "隨身小雨傘+薄外套+出門前看空污。",
       "real_scene": "有些天會從早上晴天轉為午後下雨、夜間強風。",
       "local_move": "永遠準備一條室內替代路線。",
-      "line_to_use": "今天下午會下雨嗎？",
+      "line_to_use": {
+        "ko": "오늘 오후에 비 오나요?",
+        "pronunciation_en": "Oneul ohu-e bi onayo?",
+        "pronunciation_local": "今天下午會下雨嗎？",
+        "meaning": "用來確認今天下午會不會下雨。"
+      },
       "quick_checklist": [
         "雨傘",
         "外套",
@@ -602,7 +647,12 @@
       "quick_fix": "盡快轉醫院，並出示症狀與地址簡短備註。",
       "real_scene": "常見流程是先去藥局，未改善再去醫院。",
       "local_move": "把護照副本、保險資訊、住宿地址置頂在備忘錄。",
-      "line_to_use": "我需要感冒藥。",
+      "line_to_use": {
+        "ko": "감기약이 필요해요.",
+        "pronunciation_en": "Gamgiyak-i piryohaeyo.",
+        "pronunciation_local": "我需要感冒藥。",
+        "meaning": "在藥局表達自己需要感冒藥。"
+      },
       "quick_checklist": [
         "護照副本",
         "保險資訊",
