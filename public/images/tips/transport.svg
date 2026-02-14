@@ -1,0 +1,9 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="80" y1="120" x2="1100" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#E3EFF8"/><stop offset="1" stop-color="#C3D8EC"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="260" y="260" width="680" height="470" rx="55" fill="#29527D" fill-opacity="0.28"/>
+  <rect x="330" y="340" width="540" height="180" rx="22" fill="#29527D" fill-opacity="0.36"/>
+  <circle cx="390" cy="655" r="44" fill="#29527D" fill-opacity="0.52"/>
+  <circle cx="810" cy="655" r="44" fill="#29527D" fill-opacity="0.52"/>
+  <text x="175" y="175" fill="#17314B" fill-opacity="0.76" font-size="74" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Transport</text>
+</svg>

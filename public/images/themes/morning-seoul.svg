@@ -1,0 +1,22 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Morning Seoul Theme</title>
+  <desc id="desc">Soft sunrise skyline with calm early-day mood.</desc>
+  <defs>
+    <linearGradient id="morning" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff2cf"/>
+      <stop offset="55%" stop-color="#ffd9b4"/>
+      <stop offset="100%" stop-color="#f3b29f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#morning)"/>
+  <circle cx="280" cy="210" r="90" fill="#ffe58e" opacity="0.8"/>
+  <rect y="600" width="1400" height="300" fill="#42546a"/>
+  <rect x="120" y="360" width="120" height="240" fill="#667f97"/>
+  <rect x="260" y="310" width="170" height="290" fill="#5f7590"/>
+  <rect x="470" y="260" width="150" height="340" fill="#546a83"/>
+  <rect x="650" y="340" width="130" height="260" fill="#617a92"/>
+  <rect x="820" y="280" width="180" height="320" fill="#51667f"/>
+  <rect x="1030" y="330" width="140" height="270" fill="#60788f"/>
+  <rect x="1200" y="390" width="110" height="210" fill="#536981"/>
+  <path d="M0 640 C280 600, 520 710, 780 650 C1030 590, 1220 690, 1400 640 V900 H0 Z" fill="#5f7388" opacity="0.55"/>
+</svg>

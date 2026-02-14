@@ -1,0 +1,35 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Euljiro Night Alleys</title>
+  <desc id="desc">Retro neon alley mood with layered windows and light signs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#120914"/>
+      <stop offset="45%" stop-color="#2a1638"/>
+      <stop offset="100%" stop-color="#50315f"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff7eb8"/>
+      <stop offset="100%" stop-color="#7afcff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect x="70" y="240" width="360" height="520" rx="18" fill="#261432" opacity="0.86"/>
+  <rect x="470" y="200" width="420" height="560" rx="18" fill="#1f1029" opacity="0.9"/>
+  <rect x="940" y="250" width="390" height="510" rx="18" fill="#28163a" opacity="0.84"/>
+  <rect x="110" y="300" width="280" height="24" rx="12" fill="url(#neon)" opacity="0.95"/>
+  <rect x="510" y="280" width="340" height="28" rx="14" fill="#ff8ad4" opacity="0.8"/>
+  <rect x="980" y="320" width="300" height="22" rx="11" fill="#70f0ff" opacity="0.85"/>
+  <g fill="#f5b8d8" opacity="0.45">
+    <rect x="120" y="380" width="58" height="58" rx="8"/>
+    <rect x="205" y="380" width="58" height="58" rx="8"/>
+    <rect x="290" y="380" width="58" height="58" rx="8"/>
+    <rect x="530" y="360" width="62" height="62" rx="8"/>
+    <rect x="620" y="360" width="62" height="62" rx="8"/>
+    <rect x="710" y="360" width="62" height="62" rx="8"/>
+    <rect x="1000" y="400" width="54" height="54" rx="8"/>
+    <rect x="1080" y="400" width="54" height="54" rx="8"/>
+    <rect x="1160" y="400" width="54" height="54" rx="8"/>
+  </g>
+  <rect x="0" y="700" width="1400" height="200" fill="#140b1f"/>
+  <path d="M0 710 C240 650, 420 760, 700 710 C980 660, 1160 760, 1400 700 V900 H0 Z" fill="#221235" opacity="0.8"/>
+</svg>

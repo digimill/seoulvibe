@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="40" y1="90" x2="1160" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#F7E0BC"/><stop offset="1" stop-color="#ECD6B4"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="160" y="360" width="880" height="360" rx="20" fill="#7E6248" fill-opacity="0.25"/>
+  <path d="M130 510L600 270L1070 510" stroke="#4F3A2C" stroke-opacity="0.45" stroke-width="28" stroke-linecap="round"/>
+  <path d="M220 624H980" stroke="#4F3A2C" stroke-opacity="0.35" stroke-width="20" stroke-linecap="round"/>
+  <text x="190" y="190" fill="#2A1E15" fill-opacity="0.76" font-size="78" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Bukchon</text>
+</svg>

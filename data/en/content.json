@@ -1,0 +1,826 @@
+{
+  "hero": {
+    "src": "/images/hero-seoul.jpg",
+    "alt": "Seoul skyline at night"
+  },
+  "areas": [
+    {
+      "id": "bukchon",
+      "name": "Bukchon",
+      "summary": "Quiet hanok lanes with polished galleries and tea spots.",
+      "hook": "If you start Seoul with one soft morning, make it this one.",
+      "friend_note": "I still like Bukchon most before 10am. By noon, the same lane can feel like a photo queue.",
+      "vibe": "Calm, traditional, photogenic",
+      "best_time": "08:30-11:00 for soft light and fewer groups",
+      "how_to_get": "Anguk Station (Line 3), Exit 2, then 10-minute uphill walk",
+      "must_do": "Walk Gahoe-dong alley loop and stop at a hanok tea house",
+      "hidden_tip": "Use side streets near Bukchon-ro 11-gil for quieter views",
+      "do_not": "Avoid loud calls and door-front photos in residential lanes",
+      "budget": "Mid (coffee + tea + small gallery ticket)",
+      "crowd": "Medium to high after lunch",
+      "photo_spot": "Bukchon Observatory side lane at around 09:00",
+      "food_pairing": "Doenjang jjigae lunch in Insadong after the walk",
+      "rain_option": "Swap to nearby craft museums and a longer tea break",
+      "night_option": "Keep night elsewhere; Bukchon is best daytime",
+      "one_line_route": "Anguk Exit 2 -> hanok lanes -> tea house -> Samcheong walk",
+      "tags": [
+        "hanok",
+        "culture",
+        "walking",
+        "quiet"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/bukchon.jpg",
+        "alt": "Bukchon traditional lanes"
+      },
+      "real_spots": [
+        "London Bagel Museum Anguk",
+        "Blue Bottle Samcheong",
+        "Baek In-je House"
+      ]
+    },
+    {
+      "id": "seongsu",
+      "name": "Seongsu",
+      "summary": "Creative warehouse district with fashion pop-ups and coffee labs.",
+      "hook": "Seongsu is where your camera roll fills up fast.",
+      "friend_note": "Seongsu feels fun but can get exhausting fast. I cap it at two key spots and one solid meal.",
+      "vibe": "Trendy, industrial, design-forward",
+      "best_time": "11:00-16:00 for stores and cafe flow",
+      "how_to_get": "Seongsu Station (Line 2), Exit 3, walk toward Yeonmujang-gil",
+      "must_do": "Pair one flagship store visit with a specialty cafe",
+      "hidden_tip": "Weekdays before noon are much easier for popular lines",
+      "do_not": "Do not plan too many stops, queues can eat your schedule",
+      "budget": "Mid to high depending on shopping",
+      "crowd": "High on weekends",
+      "photo_spot": "Brick warehouse corners around Yeonmujang-gil",
+      "food_pairing": "Add one modern Korean dinner near Ttukseom",
+      "rain_option": "Use pop-up stores and indoor galleries as the core",
+      "night_option": "Shift to Seoul Forest side bars after 20:00",
+      "one_line_route": "Seongsu Exit 3 -> pop-up -> coffee lab -> Seoul Forest",
+      "tags": [
+        "cafes",
+        "fashion",
+        "creative",
+        "modern"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/seongsu.jpg",
+        "alt": "Seongsu creative district"
+      },
+      "real_spots": [
+        "Cafe Onion Seongsu",
+        "Daelim Changgo",
+        "Seoul Forest"
+      ]
+    },
+    {
+      "id": "hongdae",
+      "name": "Hongdae",
+      "summary": "Youthful street energy, live busking, and late-night food options.",
+      "hook": "This is your loud, fun, low-commitment night.",
+      "friend_note": "Hongdae is chaos in a good way. I usually warm up in Yeonnam first, then jump into the main blocks.",
+      "vibe": "Lively, playful, social",
+      "best_time": "18:00-23:30 for music and night street mood",
+      "how_to_get": "Hongik Univ. Station (Line 2/Airport), Exit 9",
+      "must_do": "Watch buskers near main square then move to side alley bars",
+      "hidden_tip": "Use Yeonnam side streets for slower pace between peak blocks",
+      "do_not": "Skip main strip restaurants at 19:00-20:30 unless you pre-book",
+      "budget": "Low to mid",
+      "crowd": "Very high after sunset",
+      "photo_spot": "Street murals in Yeonnam before full dark",
+      "food_pairing": "Fried chicken + draft beer combo near Sangsu",
+      "rain_option": "Arcades, indoor bars, and basement live clubs",
+      "night_option": "Best after 21:00 if you like busking crowds",
+      "one_line_route": "Yeonnam warm-up -> busking square -> dinner -> late bar",
+      "tags": [
+        "nightlife",
+        "music",
+        "street",
+        "food"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/hongdae.jpg",
+        "alt": "Hongdae nightlife streets"
+      },
+      "real_spots": [
+        "Gyeongui Line Forest Park",
+        "Rolling Hall",
+        "Club FF"
+      ]
+    },
+    {
+      "id": "euljiro",
+      "name": "Euljiro",
+      "summary": "Old-printing alley charm mixed with hip bars and rooftops.",
+      "hook": "Euljiro feels like your cool local friend showed you a secret floor.",
+      "friend_note": "Euljiro is the place where you trust floor numbers, not first impressions from street level.",
+      "vibe": "Retro, gritty, creative",
+      "best_time": "17:30-22:30 for sunset to bar transition",
+      "how_to_get": "Euljiro 3-ga Station (Line 2/3), Exit 4",
+      "must_do": "Start with roast pork alley then rooftop or speakeasy",
+      "hidden_tip": "Google Maps pin names can differ from signboards here",
+      "do_not": "Do not expect polished interiors everywhere",
+      "budget": "Mid",
+      "crowd": "High on Friday and Saturday nights",
+      "photo_spot": "Neon-lit alley corners near Sewoon Plaza",
+      "food_pairing": "Charcoal grilled pork + highball",
+      "rain_option": "Lean into indoor bars connected by short walks",
+      "night_option": "Prime at 20:00-23:30",
+      "one_line_route": "Euljiro 3-ga -> pork alley -> craft bar -> rooftop",
+      "tags": [
+        "retro",
+        "bars",
+        "local",
+        "night"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/euljiro.jpg",
+        "alt": "Euljiro night mood"
+      },
+      "real_spots": [
+        "Manseon Hof",
+        "Sewoon Sangga rooftop walk",
+        "Euljiro Nogari Alley"
+      ]
+    },
+    {
+      "id": "mangwon",
+      "name": "Mangwon",
+      "summary": "Neighborhood market life with relaxed local cafes and river access.",
+      "hook": "Mangwon is the easiest area to feel like you are not rushing.",
+      "friend_note": "Mangwon feels like a real weekend Seoul pace: snack, walk, sit, then snack again.",
+      "vibe": "Local, relaxed, food-forward",
+      "best_time": "10:30-15:30 for market and riverside pace",
+      "how_to_get": "Mangwon Station (Line 6), Exit 2",
+      "must_do": "Mangwon Market snack crawl then Hangang riverside walk",
+      "hidden_tip": "Carry small cash for older market stalls",
+      "do_not": "Do not stack too many far-away reservations on the same day",
+      "budget": "Low to mid",
+      "crowd": "Medium",
+      "photo_spot": "Mangwon Market entrance + Han River sunset edge",
+      "food_pairing": "Kimbap, croquette, and bingsu split with friends",
+      "rain_option": "Focus on market aisles and cafe hopping",
+      "night_option": "Keep it short and move to Hapjeong for dinner",
+      "one_line_route": "Mangwon market -> cafe -> riverside -> Hapjeong dinner",
+      "tags": [
+        "market",
+        "local",
+        "food",
+        "river"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/mangwon.jpg",
+        "alt": "Mangwon market atmosphere"
+      },
+      "real_spots": [
+        "Mangwon Market",
+        "Manggwon Hangang Park access",
+        "Ttang Ttang Chicken Mangwon"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "cafe-day",
+      "title": "Cafe Day",
+      "summary": "A full day of Seoul cafe culture with pace, not pressure.",
+      "hook": "No speedrun, just really good coffee and streets you want to stay in.",
+      "friend_note": "Pick one signature drink per stop instead of full meals. You will enjoy the day longer.",
+      "ideal_for": "Solo travelers and couples who enjoy long conversations",
+      "flow": "Morning in Bukchon, afternoon in Seongsu, evening in Hannam",
+      "highlight": "Three distinct cafe moods in one day without rushing",
+      "budget": "Mid",
+      "route_stops": [
+        "Anguk",
+        "Seongsu",
+        "Hannam"
+      ],
+      "food_break": "Light pasta or sandwich between second and third cafe",
+      "rain_swap": "Swap Bukchon walk with indoor bookstore cafe",
+      "creator_note": "Best when it feels like a voice memo from a friend, not a polished ad cut.",
+      "tags": [
+        "coffee",
+        "slow",
+        "design"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/cafe-day.jpg",
+        "alt": "Cafe Day in Seoul"
+      },
+      "real_spots": [
+        "Cafe Onion Anguk",
+        "Center Coffee Seoul Forest",
+        "Anthracite Hannam"
+      ]
+    },
+    {
+      "id": "traditional",
+      "title": "Traditional",
+      "summary": "Classic Seoul texture through palaces, hanok lanes, and tea.",
+      "hook": "This is the route people thank themselves for not skipping.",
+      "friend_note": "Start with palace first. Once crowd grows, move to lanes and tea.",
+      "ideal_for": "First-time visitors wanting depth in one compact route",
+      "flow": "Gyeongbokgung, Bukchon walk, Insadong tea and crafts",
+      "highlight": "Strong cultural context without feeling tourist-heavy",
+      "budget": "Low to mid",
+      "route_stops": [
+        "Gyeongbokgung",
+        "Bukchon",
+        "Insadong"
+      ],
+      "food_break": "Bibimbap or kalguksu around Insadong",
+      "rain_swap": "National Museum + tea house combo",
+      "creator_note": "This route works because the texture changes every hour: palace stone, hanok wood, tea steam.",
+      "tags": [
+        "history",
+        "hanok",
+        "culture"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/traditional.jpg",
+        "alt": "Traditional palace architecture in Seoul"
+      },
+      "real_spots": [
+        "Gyeongbokgung",
+        "Bukchon Hanok Village",
+        "Shin Old Tea House (Insadong)"
+      ]
+    },
+    {
+      "id": "night-seoul",
+      "title": "Night Seoul",
+      "summary": "An after-dark route with skyline, food, and creative streets.",
+      "hook": "Seoul after sunset has layers. This route lets you feel all three.",
+      "friend_note": "Keep one hour buffer between dinner and late spot. Traffic and queues happen.",
+      "ideal_for": "Groups and outgoing travelers",
+      "flow": "Sunset at Namsan area, dinner in Euljiro, late walk in Hongdae",
+      "highlight": "Balanced energy from scenic to social",
+      "budget": "Mid",
+      "route_stops": [
+        "Namsan",
+        "Euljiro",
+        "Hongdae"
+      ],
+      "food_break": "Korean BBQ in Euljiro before bar move",
+      "rain_swap": "Indoor observatory + Euljiro bar crawl",
+      "creator_note": "The emotional peak is usually right after dinner when neon lights kick in.",
+      "tags": [
+        "night",
+        "cityview",
+        "street-food"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/night-seoul.jpg",
+        "alt": "Night Seoul skyline view"
+      },
+      "real_spots": [
+        "N Seoul Tower area",
+        "Euljiro Nogari Alley",
+        "Myeongdong Kyoja (late meal option)"
+      ]
+    },
+    {
+      "id": "rainy-seoul",
+      "title": "Rainy Seoul",
+      "summary": "A weather-proof day with covered markets, museum breaks, and cozy cafes.",
+      "hook": "Rain day does not kill Seoul. It actually gives you better mood shots.",
+      "friend_note": "Use short taxi hops between indoor clusters and keep shoes water-safe.",
+      "ideal_for": "Travelers visiting in monsoon season or shoulder weather",
+      "flow": "Museum morning, covered market lunch, cafe-heavy afternoon",
+      "highlight": "Low stress and high comfort without wasting a day",
+      "budget": "Mid",
+      "route_stops": [
+        "Museum",
+        "Gwangjang Market",
+        "Jongno cafe"
+      ],
+      "food_break": "Hot noodle soup or jeon on rainy noon",
+      "rain_swap": "Already rain-ready theme",
+      "creator_note": "Rainy day footage looks best when you include reflections and crowded indoor heat.",
+      "tags": [
+        "rain",
+        "indoor",
+        "cozy",
+        "museum"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/rainy-seoul.jpg",
+        "alt": "Rainy day in Seoul"
+      },
+      "real_spots": [
+        "National Museum of Korea",
+        "Gwangjang Market",
+        "Cheonggyecheon covered sections"
+      ]
+    },
+    {
+      "id": "morning-seoul",
+      "title": "Morning Seoul",
+      "summary": "An early-day itinerary for travelers who want calm streets and cleaner photos.",
+      "hook": "If you wake up early, Seoul gives you private-looking moments.",
+      "friend_note": "Finish your key shots before 10:30, then brunch while crowds build.",
+      "ideal_for": "Photographers and travelers adjusting to jet lag",
+      "flow": "Sunrise view, market breakfast, quiet lane walk",
+      "highlight": "Low crowd density and efficient movement",
+      "budget": "Low to mid",
+      "route_stops": [
+        "Naksan",
+        "Gwangjang",
+        "Seochon"
+      ],
+      "food_break": "Early kalguksu or toast and coffee",
+      "rain_swap": "Switch sunrise view to covered observatory",
+      "creator_note": "Morning Seoul feels cleaner and quieter; footsteps and ambient sound carry the story.",
+      "tags": [
+        "morning",
+        "photography",
+        "quiet",
+        "local"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/morning-seoul.jpg",
+        "alt": "Morning Seoul streets"
+      },
+      "real_spots": [
+        "Naksan Park wall trail",
+        "Gwangjang Market breakfast lane",
+        "Tongin Market"
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "id": "payment",
+      "title": "Payment",
+      "summary": "Cards are widely accepted, but not every global card works equally.",
+      "hook": "Seoul is card-friendly, but backup is still the smart move.",
+      "friend_note": "I always carry two cards and enough cash for one meal + one taxi.",
+      "what_to_know": "Visa and Mastercard usually work in most chains and larger shops.",
+      "why_it_matters": "Small places and older kiosks may reject foreign cards without warning.",
+      "avoid_this": "Do not rely on one card for your full trip.",
+      "quick_fix": "Carry one backup card and a small amount of cash.",
+      "real_scene": "At some Gwangjang stalls, cards work one day and fail the next depending on terminal status.",
+      "local_move": "Top-up transit and keep a 10,000 KRW emergency note.",
+      "line_to_use": "Card an dwaeyo? Hyeongeum do dwaeyo?",
+      "quick_checklist": [
+        "2 cards",
+        "small cash",
+        "tap works"
+      ],
+      "tags": [
+        "money",
+        "cards",
+        "backup"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/payment.jpg",
+        "alt": "Card payment terminal"
+      },
+      "real_spots": [
+        "Gwangjang Market",
+        "Mangwon Market",
+        "Euljiro pojangmacha clusters"
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transport",
+      "summary": "Subway + bus is the easiest way to move fast across neighborhoods.",
+      "hook": "One transit card solves 80 percent of city movement.",
+      "friend_note": "Plan your big cross-city move before dinner peak, not during it.",
+      "what_to_know": "Buy a transit card once and recharge at convenience stores.",
+      "why_it_matters": "Transfers are cheaper and smoother with one tap-based card.",
+      "avoid_this": "Avoid rush hour with luggage when possible.",
+      "quick_fix": "Travel major moves before 17:30 or after 19:30.",
+      "real_scene": "Line 2 around Gangnam and Hongdae can feel packed enough to skip one train during peak.",
+      "local_move": "Use subway for long moves and short taxi for final uphill blocks.",
+      "line_to_use": "T-money chungjeon jom butakhaeyo.",
+      "quick_checklist": [
+        "Transit card",
+        "Naver/Kakao map",
+        "Last train check"
+      ],
+      "tags": [
+        "metro",
+        "bus",
+        "transit-card"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/transport.jpg",
+        "alt": "Seoul subway interior"
+      },
+      "real_spots": [
+        "Hongik Univ. Station",
+        "Express Bus Terminal",
+        "Seoul Station AREX transfer"
+      ]
+    },
+    {
+      "id": "etiquette",
+      "title": "Etiquette",
+      "summary": "Simple social cues keep interactions warm and respectful.",
+      "hook": "Small manners make service warmer almost instantly.",
+      "friend_note": "You do not need perfect Korean, just calm tone and spatial awareness.",
+      "what_to_know": "Keep voice low on public transport and queues orderly.",
+      "why_it_matters": "Small behavior signals strongly affect service tone.",
+      "avoid_this": "Avoid blocking narrow alleys for photos.",
+      "quick_fix": "Step aside first, then take your shot.",
+      "real_scene": "In tight cafe aisles in Seongsu, staff will quickly ask people to move if photo lines block flow.",
+      "local_move": "Quick bow + gamsahamnida after help goes a long way.",
+      "line_to_use": "Jamkkanmanyo, jinan-galgeyo.",
+      "quick_checklist": [
+        "Low voice",
+        "Queue flow",
+        "Step aside for photos"
+      ],
+      "tags": [
+        "manners",
+        "culture",
+        "street"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/etiquette.jpg",
+        "alt": "Pedestrian crossing in Seoul"
+      },
+      "real_spots": [
+        "Seongsu cafe alleys",
+        "Bukchon residential lanes",
+        "Yeonnam side streets"
+      ]
+    },
+    {
+      "id": "airport-to-city",
+      "title": "Airport to City",
+      "summary": "AREX + short taxi is often the smoothest first-day combo.",
+      "hook": "Do not overthink your first transfer. Keep it simple and low-friction.",
+      "friend_note": "If you land tired, spend a little more for the final 10-minute taxi.",
+      "what_to_know": "Airport Railroad is predictable and avoids highway traffic variables.",
+      "why_it_matters": "You protect energy for day one instead of burning it on logistics.",
+      "avoid_this": "Avoid multi-transfer subway routes with heavy luggage.",
+      "quick_fix": "Take AREX to a major hub then taxi to hotel.",
+      "real_scene": "Late evening arrival with two bags feels much easier this way.",
+      "local_move": "Prepare hotel name in Korean on your phone before taxi.",
+      "line_to_use": "I juso-ro ga juseyo.",
+      "quick_checklist": [
+        "AREX first",
+        "Taxi last leg",
+        "Hotel address in Korean"
+      ],
+      "tags": [
+        "airport",
+        "arrival",
+        "logistics"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/airport-to-city.jpg",
+        "alt": "Airport rail platform"
+      },
+      "real_spots": [
+        "Incheon T1 AREX",
+        "Seoul Station",
+        "Hongdae Exit 9 taxi stand"
+      ]
+    },
+    {
+      "id": "sim-wifi",
+      "title": "SIM and Wi-Fi",
+      "summary": "Reliable data makes every map, booking, and translation easier.",
+      "hook": "Good connection is not optional in Seoul travel, it is core infrastructure.",
+      "friend_note": "Set this up before leaving the airport and your first day gets much easier.",
+      "what_to_know": "eSIM is fastest if your phone supports it; pocket Wi-Fi is best for groups.",
+      "why_it_matters": "Map apps and reservation links are used constantly in Seoul.",
+      "avoid_this": "Do not wait until your battery and patience are low.",
+      "quick_fix": "Activate eSIM at airport and test map route before departure.",
+      "real_scene": "No data in a transfer station can derail dinner reservations quickly.",
+      "local_move": "Save one offline map area as backup.",
+      "line_to_use": "eSIM setup help jom butakhaeyo.",
+      "quick_checklist": [
+        "Data active",
+        "Map app logged in",
+        "Offline map"
+      ],
+      "tags": [
+        "esim",
+        "wifi",
+        "navigation"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/sim-wifi.jpg",
+        "alt": "Phone map in Seoul"
+      },
+      "real_spots": [
+        "Incheon airport telecom booths",
+        "CU/GS25 convenience stores",
+        "Seoul Station public zones"
+      ]
+    },
+    {
+      "id": "cafe-ordering",
+      "title": "Cafe Ordering",
+      "summary": "Many popular cafes use kiosk ordering and quick pick-up flow.",
+      "hook": "Cafe lines move fast here if you know the pattern.",
+      "friend_note": "Decide your menu before you reach the kiosk. It keeps everyone happy.",
+      "what_to_know": "Takeout and dine-in can be separate options on kiosks.",
+      "why_it_matters": "Wrong option can cause seating confusion and delays.",
+      "avoid_this": "Avoid standing at pick-up counter while deciding.",
+      "quick_fix": "Check menu board, order once, then wait by number call.",
+      "real_scene": "Peak-hour Seongsu cafes can clear 20+ orders quickly.",
+      "local_move": "If unsure, show screen and politely ask staff for confirmation.",
+      "line_to_use": "Yeogiseo meogeulgeyo / gajigo galgeyo.",
+      "quick_checklist": [
+        "Dine-in vs takeout",
+        "Table first",
+        "Number call"
+      ],
+      "tags": [
+        "cafe",
+        "kiosk",
+        "ordering"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/cafe-ordering.jpg",
+        "alt": "Cafe counter in Seoul"
+      },
+      "real_spots": [
+        "Cafe Onion Seongsu",
+        "Anthracite Hapjeong",
+        "Blue Bottle Samcheong"
+      ]
+    }
+  ],
+  "korea101": [
+    {
+      "id": "transport-basics",
+      "title": "Subway & Bus Basics",
+      "summary": "How locals move fast in Seoul without burning energy.",
+      "hook": "One transit card can save your whole trip pace.",
+      "friend_note": "Mix subway for long moves and short taxi hops for the final 10 minutes.",
+      "comic_scene": "A traveler runs to the wrong platform, then a local points to line color + direction and everything clicks.",
+      "core_idea": "Seoul transit is easy once you track line color, terminal station, and transfer signs.",
+      "fun_fact": "Many transfer stations are like underground mini-cities with shops and long walking paths.",
+      "real_life_tip": "Avoid rush peaks around 8:00-9:00 and 18:00-19:30 for easier rides.",
+      "line_to_use": "Does this train go to Hongdae?",
+      "quick_checklist": [
+        "Transit card ready",
+        "Line color check",
+        "Last train check"
+      ],
+      "tags": [
+        "transport",
+        "subway",
+        "first-day"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "payment-money",
+      "title": "Payment & Cash Reality",
+      "summary": "Cards work almost everywhere, but backup still matters.",
+      "hook": "Korea is card-friendly, not card-perfect.",
+      "friend_note": "Carry two cards and small cash to avoid awkward dead-ends.",
+      "comic_scene": "Card works at a flagship cafe, fails at a tiny market stall two hours later.",
+      "core_idea": "Use card by default, but expect occasional terminal mismatch in smaller shops.",
+      "fun_fact": "Convenience stores often become emergency hubs for top-up, snacks, and backup cash handling.",
+      "real_life_tip": "Keep 10,000-30,000 KRW cash for markets, old kiosks, or late-night spots.",
+      "line_to_use": "Card is not working. Can I pay cash?",
+      "quick_checklist": [
+        "Two cards",
+        "Small cash",
+        "Transit top-up"
+      ],
+      "tags": [
+        "money",
+        "payment",
+        "survival"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "food-culture",
+      "title": "Restaurant Culture 101",
+      "summary": "From side dishes to table bells, the flow can feel different for newcomers.",
+      "hook": "Knowing the rhythm makes meals smoother than speaking perfect Korean.",
+      "friend_note": "If staff seem fast, that is normal service tempo, not rudeness.",
+      "comic_scene": "A visitor waits quietly while locals press the call bell and order in 20 seconds.",
+      "core_idea": "Korean dining often rewards quick decisions and direct requests.",
+      "fun_fact": "At many places, side dishes are refillable and water is self-serve.",
+      "real_life_tip": "Decide menu before sitting in busy areas to reduce queue stress.",
+      "line_to_use": "Can we get one more side dish, please?",
+      "quick_checklist": [
+        "Menu decided",
+        "Call bell check",
+        "Refill etiquette"
+      ],
+      "tags": [
+        "food",
+        "etiquette",
+        "local-flow"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "cafe-rules",
+      "title": "Cafe Rules & Kiosk Flow",
+      "summary": "Seat, order, pickup: the order sequence matters in popular cafes.",
+      "hook": "The line looks scary, but the system is usually efficient.",
+      "friend_note": "Pick one signature menu fast, then move to pickup flow.",
+      "comic_scene": "Someone freezes at the kiosk while the queue behind moves like a speedrun.",
+      "core_idea": "Korean cafes optimize speed with clear self-service zones and pickup counters.",
+      "fun_fact": "Some cafes enforce one drink per person during busy hours.",
+      "real_life_tip": "Check if it is dine-in or takeaway before payment to avoid reorder.",
+      "line_to_use": "For here, please.",
+      "quick_checklist": [
+        "Dine-in/takeout",
+        "Pickup number",
+        "Seat timing"
+      ],
+      "tags": [
+        "cafe",
+        "ordering",
+        "daily-life"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "convenience-store",
+      "title": "Convenience Store Is a Life Hub",
+      "summary": "Korean convenience stores are far more than snack shops.",
+      "hook": "When confused, start from the nearest convenience store.",
+      "friend_note": "You can solve meals, chargers, transit top-up, and quick logistics in one stop.",
+      "comic_scene": "A traveler enters for water and exits with a hot meal, umbrella, and recharged transit card.",
+      "core_idea": "24/7 convenience stores are practical infrastructure in urban Korea.",
+      "fun_fact": "Microwave + instant noodle station culture is common in many branches.",
+      "real_life_tip": "Look for machine corners: ticketing, delivery services, and print options vary by branch.",
+      "line_to_use": "Can I top up my transit card here?",
+      "quick_checklist": [
+        "Top-up",
+        "Hot food station",
+        "Emergency supplies"
+      ],
+      "tags": [
+        "convenience-store",
+        "basics",
+        "infrastructure"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "weather-seasons",
+      "title": "Seasons, Rain, and Dust",
+      "summary": "Korean weather can swing hard, so daily adaptation matters.",
+      "hook": "Same city, totally different vibe by season.",
+      "friend_note": "Layering and checking fine-dust apps matter more than many first-timers expect.",
+      "comic_scene": "Sunny morning selfie, surprise rain at lunch, and chilly night wind after dinner.",
+      "core_idea": "Plan with weather buffers, not rigid outfit assumptions.",
+      "fun_fact": "Monsoon season can turn short walks into full reroutes within one hour.",
+      "real_life_tip": "Carry a compact umbrella and light outerwear from spring to autumn.",
+      "line_to_use": "Will it rain later today?",
+      "quick_checklist": [
+        "Umbrella",
+        "Dust check",
+        "Layered outfit"
+      ],
+      "tags": [
+        "weather",
+        "season",
+        "planning"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "language-honorifics",
+      "title": "Basic Korean Speech Mode",
+      "summary": "You do not need fluency, but tone level changes social comfort.",
+      "hook": "Polite endings beat perfect grammar.",
+      "friend_note": "Start polite, then mirror the other person’s tone if they soften first.",
+      "comic_scene": "A beginner uses one polite phrase and receives unexpectedly warm help.",
+      "core_idea": "Respect markers in speech are a social signal in everyday interactions.",
+      "fun_fact": "Korean has multiple speech levels, and locals switch levels by context fast.",
+      "real_life_tip": "Use short polite phrases: hello, thank you, excuse me, please.",
+      "line_to_use": "Excuse me, can you help me?",
+      "quick_checklist": [
+        "Polite tone",
+        "Simple phrases",
+        "Friendly facial cue"
+      ],
+      "tags": [
+        "language",
+        "culture",
+        "manners"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "social-night",
+      "title": "Social & Night Culture",
+      "summary": "Dinner, drinks, and second rounds are part of social rhythm.",
+      "hook": "The night often continues longer than visitors expect.",
+      "friend_note": "You can enjoy the vibe without matching every round of alcohol.",
+      "comic_scene": "Someone thinks the night is over after dinner, then friends say, “Round 2 starts now.”",
+      "core_idea": "Group bonding often extends across multiple venues in one evening.",
+      "fun_fact": "Second round culture (2-cha) is common in both friend groups and work circles.",
+      "real_life_tip": "Set your own pace early and suggest non-alcohol options confidently.",
+      "line_to_use": "I am good with one drink, thank you.",
+      "quick_checklist": [
+        "Personal pace",
+        "Late transit plan",
+        "Hydration"
+      ],
+      "tags": [
+        "nightlife",
+        "social",
+        "culture"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "work-school-vibe",
+      "title": "Work & School Vibe",
+      "summary": "Group chats, punctuality, and context reading are key.",
+      "hook": "Fast replies can feel like teamwork, not pressure.",
+      "friend_note": "If you are late, message early with one clear sentence.",
+      "comic_scene": "A newcomer misses a group chat update and arrives at the wrong cafe.",
+      "core_idea": "Digital coordination is central to Korean work and student routines.",
+      "fun_fact": "Many plans are finalized in chat right before the event time.",
+      "real_life_tip": "Check group chat before leaving and again on arrival.",
+      "line_to_use": "I might be 10 minutes late. Sorry.",
+      "quick_checklist": [
+        "Chat checked",
+        "Location pin verified",
+        "ETA message"
+      ],
+      "tags": [
+        "work",
+        "school",
+        "communication"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "health-emergency",
+      "title": "Health, Pharmacy, and Emergency",
+      "summary": "Basic medical navigation is easier when prepared in advance.",
+      "hook": "A small prep list prevents big panic moments.",
+      "friend_note": "Save your hotel address in Korean and one emergency contact early.",
+      "comic_scene": "Late-night cold symptoms hit, and the nearest pharmacy search becomes a mini mission.",
+      "core_idea": "Know where to go: pharmacy for mild issues, clinic/hospital for escalation.",
+      "fun_fact": "Many neighborhoods have multiple pharmacies clustered near stations or hospitals.",
+      "real_life_tip": "Keep your passport copy and insurance details accessible on phone.",
+      "line_to_use": "I need medicine for a cold.",
+      "quick_checklist": [
+        "Passport copy",
+        "Insurance info",
+        "Local address in Korean"
+      ],
+      "tags": [
+        "health",
+        "emergency",
+        "safety"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    }
+  ]
+}

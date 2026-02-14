@@ -1,0 +1,22 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Mangwon Market and River</title>
+  <desc id="desc">Warm market lights blending into a calm riverside sunset.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd7a6"/>
+      <stop offset="55%" stop-color="#ffb58f"/>
+      <stop offset="100%" stop-color="#f07f7f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#sky)"/>
+  <rect y="560" width="1400" height="340" fill="#5e7ca4"/>
+  <path d="M0 620 C260 590, 470 680, 710 630 C960 580, 1180 670, 1400 620 V900 H0 Z" fill="#7292b7" opacity="0.8"/>
+  <rect x="70" y="330" width="520" height="300" rx="16" fill="#b84545"/>
+  <rect x="110" y="380" width="160" height="70" rx="10" fill="#ffce7a"/>
+  <rect x="290" y="380" width="130" height="70" rx="10" fill="#ffe08f"/>
+  <rect x="440" y="380" width="110" height="70" rx="10" fill="#ffd48e"/>
+  <rect x="120" y="470" width="410" height="130" rx="12" fill="#7f2f2f" opacity="0.7"/>
+  <rect x="670" y="350" width="660" height="220" rx="20" fill="#ffffff" opacity="0.24"/>
+  <circle cx="1090" cy="250" r="70" fill="#fff1b0" opacity="0.72"/>
+  <path d="M760 530 L1220 530 L1180 620 L720 620 Z" fill="#304b68" opacity="0.65"/>
+</svg>

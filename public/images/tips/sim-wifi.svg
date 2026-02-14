@@ -1,0 +1,15 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SIM and Wi-Fi Tip</title>
+  <desc id="desc">Connectivity setup visual with phone and signal shapes.</desc>
+  <rect width="1400" height="900" fill="#eef6f3"/>
+  <rect x="430" y="140" width="540" height="620" rx="46" fill="#2f5f59"/>
+  <rect x="470" y="200" width="460" height="480" rx="28" fill="#f8fffd"/>
+  <circle cx="700" cy="715" r="22" fill="#8fd1c2"/>
+  <g stroke="#3f8a7f" stroke-width="20" fill="none" stroke-linecap="round">
+    <path d="M540 390 C620 300, 780 300, 860 390"/>
+    <path d="M590 450 C650 390, 750 390, 810 450"/>
+    <path d="M640 510 C670 480, 730 480, 760 510"/>
+  </g>
+  <rect x="200" y="260" width="170" height="120" rx="18" fill="#74b8a9"/>
+  <text x="237" y="337" font-family="Arial, sans-serif" font-size="46" fill="#ffffff">SIM</text>
+</svg>

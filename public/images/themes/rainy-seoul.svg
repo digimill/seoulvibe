@@ -1,0 +1,26 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Rainy Seoul Theme</title>
+  <desc id="desc">Rainy-day route mood with reflections and umbrella accents.</desc>
+  <defs>
+    <linearGradient id="rainBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fa8bf"/>
+      <stop offset="100%" stop-color="#32475e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#rainBg)"/>
+  <g stroke="#d8e8ff" stroke-width="4" opacity="0.5">
+    <line x1="140" y1="120" x2="100" y2="260"/>
+    <line x1="320" y1="80" x2="280" y2="230"/>
+    <line x1="520" y1="110" x2="480" y2="250"/>
+    <line x1="740" y1="70" x2="700" y2="220"/>
+    <line x1="960" y1="90" x2="920" y2="240"/>
+    <line x1="1160" y1="80" x2="1120" y2="230"/>
+  </g>
+  <rect y="620" width="1400" height="280" fill="#233449"/>
+  <ellipse cx="720" cy="650" rx="500" ry="70" fill="#86a6c8" opacity="0.45"/>
+  <path d="M700 430 C610 430, 550 500, 550 560 H850 C850 500, 790 430, 700 430 Z" fill="#ff6b6b"/>
+  <rect x="690" y="560" width="20" height="140" rx="10" fill="#f4f4f4"/>
+  <circle cx="620" cy="720" r="34" fill="#a8bfda" opacity="0.5"/>
+  <circle cx="760" cy="750" r="26" fill="#b6cde6" opacity="0.45"/>
+  <circle cx="840" cy="710" r="18" fill="#a8bfda" opacity="0.5"/>
+</svg>

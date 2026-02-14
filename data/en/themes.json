@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cafe-day",
+    "title": "Cafe Day",
+    "summary": "A full day of Seoul cafe culture with pace, not pressure.",
+    "ideal_for": "Solo travelers and couples who enjoy long conversations",
+    "flow": "Morning in Bukchon, afternoon in Seongsu, evening in Hannam",
+    "highlight": "Three distinct cafe moods in one day without rushing",
+    "budget": "Mid",
+    "tags": ["coffee", "slow", "design"]
+  },
+  {
+    "id": "traditional",
+    "title": "Traditional",
+    "summary": "Classic Seoul texture through palaces, hanok lanes, and tea.",
+    "ideal_for": "First-time visitors wanting depth in one compact route",
+    "flow": "Gyeongbokgung, Bukchon walk, Insadong tea and crafts",
+    "highlight": "Strong cultural context without feeling tourist-heavy",
+    "budget": "Low to mid",
+    "tags": ["history", "hanok", "culture"]
+  },
+  {
+    "id": "night-seoul",
+    "title": "Night Seoul",
+    "summary": "An after-dark route with skyline, food, and creative streets.",
+    "ideal_for": "Groups and outgoing travelers",
+    "flow": "Sunset at Namsan area, dinner in Euljiro, late walk in Hongdae",
+    "highlight": "Balanced energy from scenic to social",
+    "budget": "Mid",
+    "tags": ["night", "cityview", "street-food"]
+  }
+]

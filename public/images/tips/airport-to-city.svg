@@ -1,0 +1,13 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Airport to City Tip</title>
+  <desc id="desc">Simple transport map style from airport to central Seoul.</desc>
+  <rect width="1400" height="900" fill="#f2f6fb"/>
+  <rect x="120" y="130" width="300" height="170" rx="24" fill="#97b6d7"/>
+  <text x="170" y="225" font-family="Arial, sans-serif" font-size="54" fill="#ffffff">ICN</text>
+  <rect x="980" y="600" width="300" height="170" rx="24" fill="#5c7da1"/>
+  <text x="1030" y="695" font-family="Arial, sans-serif" font-size="54" fill="#ffffff">SEOUL</text>
+  <path d="M390 220 C620 220, 690 400, 1010 680" stroke="#4f6f92" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <circle cx="540" cy="300" r="26" fill="#7fa4c8"/>
+  <circle cx="700" cy="410" r="26" fill="#7fa4c8"/>
+  <circle cx="860" cy="540" r="26" fill="#7fa4c8"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="120" y1="100" x2="1080" y2="820" gradientUnits="userSpaceOnUse"><stop stop-color="#EFE7DD"/><stop offset="1" stop-color="#DCCEBE"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <circle cx="430" cy="430" r="110" fill="#6E4B36" fill-opacity="0.22"/>
+  <circle cx="760" cy="430" r="110" fill="#6E4B36" fill-opacity="0.22"/>
+  <path d="M450 580C505 620 563 642 600 642C637 642 695 620 750 580" stroke="#6E4B36" stroke-opacity="0.46" stroke-width="20" stroke-linecap="round"/>
+  <text x="175" y="175" fill="#2D2119" fill-opacity="0.74" font-size="74" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Etiquette</text>
+</svg>

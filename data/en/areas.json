@@ -1,0 +1,44 @@
+[
+  {
+    "id": "bukchon",
+    "name": "Bukchon",
+    "summary": "Quiet hanok lanes with polished galleries and tea spots.",
+    "vibe": "Calm, traditional, photogenic",
+    "best_time": "08:30-11:00 for soft light and fewer groups",
+    "how_to_get": "Anguk Station (Line 3), Exit 2, then 10-minute uphill walk",
+    "must_do": "Walk Gahoe-dong alley loop and stop at a hanok tea house",
+    "hidden_tip": "Use side streets near Bukchon-ro 11-gil for quieter views",
+    "do_not": "Avoid loud calls and door-front photos in residential lanes",
+    "budget": "Mid (coffee + tea + small gallery ticket)",
+    "crowd": "Medium to high after lunch",
+    "tags": ["hanok", "culture", "walking", "quiet"]
+  },
+  {
+    "id": "seongsu",
+    "name": "Seongsu",
+    "summary": "Creative warehouse district with fashion pop-ups and coffee labs.",
+    "vibe": "Trendy, industrial, design-forward",
+    "best_time": "11:00-16:00 for stores and cafe flow",
+    "how_to_get": "Seongsu Station (Line 2), Exit 3, walk toward Yeonmujang-gil",
+    "must_do": "Pair one flagship store visit with a specialty cafe",
+    "hidden_tip": "Weekdays before noon are much easier for popular lines",
+    "do_not": "Do not plan too many stops, queues can eat your schedule",
+    "budget": "Mid to high depending on shopping",
+    "crowd": "High on weekends",
+    "tags": ["cafes", "fashion", "creative", "modern"]
+  },
+  {
+    "id": "hongdae",
+    "name": "Hongdae",
+    "summary": "Youthful street energy, live busking, and late-night food options.",
+    "vibe": "Lively, playful, social",
+    "best_time": "18:00-23:30 for music and night street mood",
+    "how_to_get": "Hongik Univ. Station (Line 2/Airport), Exit 9",
+    "must_do": "Watch buskers near main square then move to side alley bars",
+    "hidden_tip": "Use Yeonnam side streets for slower pace between peak blocks",
+    "do_not": "Skip main strip restaurants at 19:00-20:30 unless you pre-book",
+    "budget": "Low to mid",
+    "crowd": "Very high after sunset",
+    "tags": ["nightlife", "music", "street", "food"]
+  }
+]

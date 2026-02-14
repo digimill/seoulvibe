@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg02" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ecfeff"/>
+      <stop offset="1" stop-color="#cffafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg02)"/>
+  <rect x="68" y="64" width="1464" height="772" rx="42" fill="white" fill-opacity="0.54"/>
+  <rect x="96" y="96" width="768" height="560" rx="34" fill="#0891b2" fill-opacity="0.16"/>
+  <g transform="translate(180,180)"><rect x="74" y="84" width="92" height="56" rx="12" fill="white" opacity="0.92"/><rect x="74" y="98" width="92" height="10" fill="#67e8f9"/><rect x="84" y="116" width="32" height="8" rx="4" fill="#0e7490"/></g>
+
+  <circle cx="1060" cy="330" r="118" fill="white"/>
+  <circle cx="1060" cy="302" r="46" fill="#fde68a"/>
+  <rect x="982" y="352" width="156" height="142" rx="72" fill="#1f2937"/>
+  <circle cx="1310" cy="360" r="104" fill="white"/>
+  <circle cx="1310" cy="336" r="40" fill="#a7f3d0"/>
+  <rect x="1242" y="382" width="136" height="130" rx="62" fill="#334155"/>
+
+  <rect x="960" y="520" width="200" height="70" rx="35" fill="white"/>
+  <text x="1060" y="564" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" fill="#111827">카드 오류</text>
+  <rect x="1204" y="520" width="220" height="70" rx="35" fill="white"/>
+  <text x="1314" y="564" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" fill="#111827">현금 OK</text>
+
+  <text x="110" y="720" font-size="72" font-weight="700" font-family="Arial, sans-serif" fill="#111827">결제의 현실</text>
+  <text x="110" y="786" font-size="40" font-family="Arial, sans-serif" fill="#374151">카드 중심, 백업은 필수</text>
+  <rect x="110" y="810" width="260" height="10" rx="5" fill="#0891b2"/>
+</svg>

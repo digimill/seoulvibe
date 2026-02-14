@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="140" y1="130" x2="1080" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#E4EFE8"/><stop offset="1" stop-color="#C8DDD0"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="250" y="290" width="700" height="380" rx="38" fill="#2D5A47" fill-opacity="0.3"/>
+  <rect x="250" y="395" width="700" height="72" fill="#2D5A47" fill-opacity="0.4"/>
+  <circle cx="360" cy="565" r="36" fill="#2D5A47" fill-opacity="0.45"/>
+  <text x="175" y="175" fill="#1A3228" fill-opacity="0.74" font-size="74" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Payment</text>
+</svg>

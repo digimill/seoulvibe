@@ -1,0 +1,12 @@
+<svg width="1600" height="1067" viewBox="0 0 1600 1067" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1067" fill="#fff7ed"/>
+  <rect x="80" y="80" width="1440" height="907" rx="40" fill="#ffedd5"/>
+  <rect x="180" y="220" width="1240" height="620" rx="28" fill="#ffffff"/>
+  <rect x="260" y="300" width="480" height="340" rx="24" fill="#fed7aa"/>
+  <circle cx="500" cy="460" r="90" fill="#fdba74"/>
+  <rect x="780" y="320" width="540" height="60" rx="20" fill="#9a3412"/>
+  <rect x="780" y="420" width="430" height="38" rx="16" fill="#c2410c"/>
+  <rect x="780" y="490" width="500" height="38" rx="16" fill="#c2410c"/>
+  <rect x="780" y="560" width="360" height="38" rx="16" fill="#c2410c"/>
+  <text x="780" y="700" font-size="58" font-family="Arial, sans-serif" font-weight="700" fill="#7c2d12">식당 문화 101</text>
+</svg>

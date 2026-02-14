@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="90" y1="100" x2="1120" y2="830" gradientUnits="userSpaceOnUse"><stop stop-color="#1B2240"/><stop offset="1" stop-color="#312A56"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <circle cx="290" cy="290" r="130" fill="#E15BD8" fill-opacity="0.6"/>
+  <circle cx="890" cy="390" r="190" fill="#53C0F2" fill-opacity="0.5"/>
+  <path d="M180 690C300 590 430 610 560 690C690 770 810 770 980 670" stroke="#F5F17A" stroke-width="20" stroke-linecap="round" stroke-opacity="0.86"/>
+  <text x="180" y="170" fill="#FFFFFF" fill-opacity="0.88" font-size="78" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Hongdae</text>
+</svg>

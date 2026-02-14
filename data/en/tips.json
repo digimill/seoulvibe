@@ -1,0 +1,32 @@
+[
+  {
+    "id": "payment",
+    "title": "Payment",
+    "summary": "Cards are widely accepted, but not every global card works equally.",
+    "what_to_know": "Visa and Mastercard usually work in most chains and larger shops.",
+    "why_it_matters": "Small places and older kiosks may reject foreign cards without warning.",
+    "avoid_this": "Do not rely on one card for your full trip.",
+    "quick_fix": "Carry one backup card and a small amount of cash.",
+    "tags": ["money", "cards", "backup"]
+  },
+  {
+    "id": "transport",
+    "title": "Transport",
+    "summary": "Subway + bus is the easiest way to move fast across neighborhoods.",
+    "what_to_know": "Buy a transit card once and recharge at convenience stores.",
+    "why_it_matters": "Transfers are cheaper and smoother with one tap-based card.",
+    "avoid_this": "Avoid rush hour with luggage when possible.",
+    "quick_fix": "Travel major moves before 17:30 or after 19:30.",
+    "tags": ["metro", "bus", "transit-card"]
+  },
+  {
+    "id": "etiquette",
+    "title": "Etiquette",
+    "summary": "Simple social cues keep interactions warm and respectful.",
+    "what_to_know": "Keep voice low on public transport and queues orderly.",
+    "why_it_matters": "Small behavior signals strongly affect service tone.",
+    "avoid_this": "Avoid blocking narrow alleys for photos.",
+    "quick_fix": "Step aside first, then take your shot.",
+    "tags": ["manners", "culture", "street"]
+  }
+]

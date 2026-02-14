@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="60" y1="120" x2="1120" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#E8E3D9"/><stop offset="1" stop-color="#D5CBBB"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <path d="M170 520L600 290L1030 520" stroke="#2A2F3A" stroke-opacity="0.42" stroke-width="28" stroke-linecap="round"/>
+  <rect x="260" y="520" width="680" height="200" rx="20" fill="#2A2F3A" fill-opacity="0.2"/>
+  <path d="M330 610H870" stroke="#2A2F3A" stroke-opacity="0.32" stroke-width="14"/>
+  <text x="170" y="170" fill="#18130D" fill-opacity="0.74" font-size="74" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Traditional</text>
+</svg>

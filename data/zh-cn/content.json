@@ -1,0 +1,746 @@
+{
+  "hero": {
+    "src": "/images/hero-seoul.jpg",
+    "alt": "首尔的夜景"
+  },
+  "areas": [
+    {
+      "id": "bukchon",
+      "name": "北村",
+      "summary": "安静的韩屋小巷，设有精致的画廊和茶馆。",
+      "hook": "如果你以一个柔和的早晨开始首尔，就选这个吧。",
+      "friend_note": "早点去，小声点，这个地方感觉不像一个旅游站，而更像一个生活社区。",
+      "vibe": "平静、传统、上镜",
+      "best_time": "08:30-11:00 光线柔和，人数较少",
+      "how_to_get": "地铁3号线安国站2号出口，步行10分钟上坡",
+      "must_do": "沿着嘉会洞胡同环路漫步，在韩屋茶馆停下来",
+      "hidden_tip": "使用北村路 11 街附近的小巷可以欣赏更安静的景色",
+      "do_not": "避免在住宅巷内大声喧哗和门口拍照",
+      "budget": "中餐（咖啡+茶+小画廊门票）",
+      "crowd": "午餐后中至高",
+      "photo_spot": "北村展望台侧巷 09:00 左右",
+      "food_pairing": "散步后在仁寺洞享用大酱汤午餐",
+      "rain_option": "前往附近的工艺博物馆并享受更长的茶歇",
+      "night_option": "在别处过夜；北村最好是白天",
+      "one_line_route": "安国2号出口 -> 韩屋巷 -> 茶馆 -> 三清步行街",
+      "tags": [
+        "韩屋",
+        "文化",
+        "步行",
+        "安静的"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/bukchon.jpg",
+        "alt": "北村传统小巷"
+      }
+    },
+    {
+      "id": "seongsu",
+      "name": "圣水",
+      "summary": "创意仓库区，设有时尚快闪店和咖啡实验室。",
+      "hook": "圣水是您的相机胶卷很快就会被填满的地方。",
+      "friend_note": "只选择两个主要站点。如果您超额预订该区域，排队时间可能会破坏完美的计划。",
+      "vibe": "时尚、工业、设计前卫",
+      "best_time": "11:00-16:00 商店和咖啡馆人流",
+      "how_to_get": "2号线圣水站3号出口，朝延武场路方向步行",
+      "must_do": "参观一家旗舰店并参观一家特色咖啡馆",
+      "hidden_tip": "工作日中午之前对于热门线路来说更容易",
+      "do_not": "不要计划太多停靠站，排队会占用您的日程",
+      "budget": "中到高取决于购物",
+      "crowd": "周末高",
+      "photo_spot": "延武场路周围的砖仓库一角",
+      "food_pairing": "在纛岛附近添加一顿现代韩国晚餐",
+      "rain_option": "以快闪店和室内画廊为核心",
+      "night_option": "20:00后转移到首尔林侧酒吧",
+      "one_line_route": "圣水3号出口 -> 快闪店 -> 咖啡实验室 -> 首尔森林",
+      "tags": [
+        "咖啡馆",
+        "时尚",
+        "有创造力的",
+        "现代的"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/seongsu.jpg",
+        "alt": "圣水创意区"
+      }
+    },
+    {
+      "id": "hongdae",
+      "name": "弘大",
+      "summary": "充满活力的街头活力、现场街头表演和深夜美食。",
+      "hook": "这是你喧闹、有趣、低承诺的夜晚。",
+      "friend_note": "从小巷开始，然后进入主街。它可以帮助你为后期保持能量。",
+      "vibe": "活泼、俏皮、社交",
+      "best_time": "18:00-23:30 享受音乐和夜间街头气氛",
+      "how_to_get": "弘益大学地铁2号线/机场站9号出口",
+      "must_do": "观看主广场附近的街头艺人表演，然后前往小巷旁的酒吧",
+      "hidden_tip": "使用延南小巷在高峰街区之间放慢脚步",
+      "do_not": "除非提前预订，否则请在 19:00-20:30 期间跳过主要的地带餐厅",
+      "budget": "低到中",
+      "crowd": "日落后高度很高",
+      "photo_spot": "天黑前的延南街头壁画",
+      "food_pairing": "上水附近的炸鸡+生啤酒组合",
+      "rain_option": "拱廊、室内酒吧和地下室现场俱乐部",
+      "night_option": "如果您喜欢热闹的人群，最好在 21:00 之后",
+      "one_line_route": "延南热身→街头广场→晚餐→深夜酒吧",
+      "tags": [
+        "夜生活",
+        "音乐",
+        "街道",
+        "食物"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/hongdae.jpg",
+        "alt": "弘大夜生活街"
+      }
+    },
+    {
+      "id": "euljiro",
+      "name": "乙支路",
+      "summary": "古老的印刷巷魅力与时尚酒吧和屋顶融为一体。",
+      "hook": "乙支路感觉就像你当地很酷的朋友带你参观了一个秘密楼层。",
+      "friend_note": "最好的地方往往是在老建筑的上方。在街道层面放弃之前检查楼层号码。",
+      "vibe": "复古、坚韧、创意",
+      "best_time": "17:30-22:30 日落至酒吧过渡",
+      "how_to_get": "乙支路三街站（2/3号线）4号出口",
+      "must_do": "从烤猪肉巷开始，然后是屋顶或地下酒吧",
+      "hidden_tip": "Google 地图图钉名称可能与此处的招牌不同",
+      "do_not": "不要指望到处都是抛光的内饰",
+      "budget": "中",
+      "crowd": "周五和周六晚上高",
+      "photo_spot": "世运广场附近霓虹灯闪烁的小巷角落",
+      "food_pairing": "炭烤猪肉+海波杯",
+      "rain_option": "畅游仅几步之遥的室内酒吧",
+      "night_option": "黄金时段 20:00-23:30",
+      "one_line_route": "乙支路三街 -> 猪肉胡同 -> 工艺酒吧 -> 屋顶",
+      "tags": [
+        "复古的",
+        "酒吧",
+        "当地的",
+        "夜晚"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/euljiro.jpg",
+        "alt": "乙支路夜晚的心情"
+      }
+    },
+    {
+      "id": "mangwon",
+      "name": "望远",
+      "summary": "社区市场生活、休闲的当地咖啡馆和河流通道。",
+      "hook": "望远是最容易让人感觉不匆忙的地方。",
+      "friend_note": "把这当作缓慢的半天。吃零食，散步，坐下，重复。",
+      "vibe": "当地、休闲、美食",
+      "best_time": "10:30-15:30 市场和河畔节奏",
+      "how_to_get": "6号线望远站2号出口",
+      "must_do": "望远市场小吃串烧然后汉江河畔散步",
+      "hidden_tip": "携带少量现金前往较旧的市场摊位",
+      "do_not": "同一天不要堆放太多远方的预订",
+      "budget": "低到中",
+      "crowd": "中等的",
+      "photo_spot": "望远市场入口+汉江夕阳边",
+      "food_pairing": "紫菜包饭、炸肉饼和冰沙与朋友分享",
+      "rain_option": "专注于市场过道和咖啡馆",
+      "night_option": "长话短说，然后去合井吃晚饭",
+      "one_line_route": "望远市场 -> 咖啡馆 -> 河边 -> 合井晚餐",
+      "tags": [
+        "市场",
+        "当地的",
+        "食物",
+        "河"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/areas/mangwon.jpg",
+        "alt": "望远市场气氛"
+      }
+    }
+  ],
+  "themes": [
+    {
+      "id": "cafe-day",
+      "title": "咖啡馆日",
+      "summary": "一整天的首尔咖啡馆文化充满节奏，没有压力。",
+      "hook": "没有极速通关，只有非常好的咖啡和你想要停留的街道。",
+      "friend_note": "每站选择一杯招牌饮料，而不是正餐。你会享受这一天更长的时间。",
+      "ideal_for": "独行旅行者和喜欢长时间交谈的情侣",
+      "flow": "上午在北村，下午在圣水，晚上在汉南",
+      "highlight": "一天内体验三种不同的咖啡馆氛围，无需匆忙",
+      "budget": "中",
+      "route_stops": [
+        "安国",
+        "圣水",
+        "汉南"
+      ],
+      "food_break": "第二和第三咖啡馆之间的清淡意大利面或三明治",
+      "rain_swap": "与室内书店咖啡馆交换北村步行道",
+      "creator_note": "将其拍摄为带有语音备忘录风格旁白的平静视频博客。",
+      "tags": [
+        "咖啡",
+        "慢的",
+        "设计"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/cafe-day.jpg",
+        "alt": "首尔咖啡馆日"
+      }
+    },
+    {
+      "id": "traditional",
+      "title": "传统的",
+      "summary": "宫殿、韩屋巷和茶道充满了经典的首尔质感。",
+      "hook": "人们感谢自己没有跳过这条路。",
+      "friend_note": "先从宫殿开始。一旦人群增多，就转移到小巷和茶馆。",
+      "ideal_for": "第一次来的游客想要在一条紧凑的路线中深度游览",
+      "flow": "景福宫、北村散步、仁寺洞茶和工艺品",
+      "highlight": "浓厚的文化背景，却又不会让人感觉游客太多",
+      "budget": "低到中",
+      "route_stops": [
+        "景福宫",
+        "北村",
+        "仁寺洞"
+      ],
+      "food_break": "仁寺洞附近的石锅拌饭或刀削面",
+      "rain_swap": "国家博物馆+茶馆组合",
+      "creator_note": "使用特写细节：屋顶瓦片、茶蒸汽、小巷纹理。",
+      "tags": [
+        "历史",
+        "韩屋",
+        "文化"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/traditional.jpg",
+        "alt": "首尔传统宫殿建筑"
+      }
+    },
+    {
+      "id": "night-seoul",
+      "title": "夜首尔",
+      "summary": "一条拥有天际线、美食和创意街道的夜景路线。",
+      "hook": "日落后的首尔有层次。这条路线让您感受这三者。",
+      "friend_note": "晚餐和晚点之间保留一小时的缓冲时间。交通和排队现象时有发生。",
+      "ideal_for": "团体和出境旅客",
+      "flow": "南山日落、乙支路晚餐、弘大晚间散步",
+      "highlight": "从风景到社交的平衡能量",
+      "budget": "中",
+      "route_stops": [
+        "南山",
+        "乙支路",
+        "弘大"
+      ],
+      "food_break": "乙支路韩式烧烤酒吧搬迁前",
+      "rain_swap": "室内展望台 + 乙支路酒吧爬行",
+      "creator_note": "镜头从黄金时段切换到霓虹灯。",
+      "tags": [
+        "夜晚",
+        "城景国际",
+        "街头小吃"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/night-seoul.jpg",
+        "alt": "首尔夜景天际线"
+      }
+    },
+    {
+      "id": "rainy-seoul",
+      "title": "多雨的首尔",
+      "summary": "度过一个防风雨的一天，享受室内市场、博物馆休息和舒适的咖啡馆。",
+      "hook": "雨天不会杀死首尔。它实际上可以让你拍摄出更好的心情照片。",
+      "friend_note": "在室内集群之间使用短途出租车，并确保鞋子防水。",
+      "ideal_for": "季风季节或平季天气来访的旅客",
+      "flow": "博物馆早上，室内市场午餐，下午喝咖啡",
+      "highlight": "低压力、高舒适度，不浪费一天时间",
+      "budget": "中",
+      "route_stops": [
+        "博物馆",
+        "广藏市场",
+        "钟路咖啡馆"
+      ],
+      "food_break": "雨天中午的热面汤或jeon",
+      "rain_swap": "已准备好防雨主题",
+      "creator_note": "捕捉雨伞反射和窗户雨纹理。",
+      "tags": [
+        "雨",
+        "室内的",
+        "舒适",
+        "博物馆"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/rainy-seoul.jpg",
+        "alt": "首尔的雨天"
+      }
+    },
+    {
+      "id": "morning-seoul",
+      "title": "早上首尔",
+      "summary": "适合想要安静街道和干净照片的旅行者的早间行程。",
+      "hook": "如果你早起，首尔会给你一些私密的时刻。",
+      "friend_note": "在 10:30 之前完成关键镜头，然后在人群聚集时享用早午餐。",
+      "ideal_for": "摄影师和旅行者适应时差",
+      "flow": "日出景观、市场早餐、安静的小巷步行",
+      "highlight": "人群密度低，流动高效",
+      "budget": "低到中",
+      "route_stops": [
+        "骆山",
+        "广藏",
+        "西村"
+      ],
+      "food_break": "早期的刀削面或吐司和咖啡",
+      "rain_swap": "将日出视图切换到有顶天文台",
+      "creator_note": "使用手持 POV 营造出朋友般的语气。",
+      "tags": [
+        "早晨",
+        "摄影",
+        "安静的",
+        "当地的"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/themes/morning-seoul.jpg",
+        "alt": "清晨的首尔街头"
+      }
+    }
+  ],
+  "tips": [
+    {
+      "id": "payment",
+      "title": "支付",
+      "summary": "信用卡被广泛接受，但并非每张全球卡的作用都相同。",
+      "hook": "首尔对信用卡友好，但备份仍然是明智之举。",
+      "friend_note": "我总是携带两张卡和足够一顿饭+一辆出租车的现金。",
+      "what_to_know": "Visa 和 Mastercard 通常可在大多数连锁店和大型商店使用。",
+      "why_it_matters": "小地方和较旧的售货亭可能会在没有警告的情况下拒绝外国卡。",
+      "avoid_this": "不要依赖一张卡完成整个旅程。",
+      "quick_fix": "携带一张备用卡和少量现金。",
+      "real_scene": "夜宵店仅在卡终端重置后才接受现金。",
+      "local_move": "为交通充值并保留 10,000 韩元的紧急票据。",
+      "line_to_use": "卡dwaeyo？ Hyungeum do dwaeyo？",
+      "quick_checklist": [
+        "2张卡",
+        "小额现金",
+        "水龙头工程"
+      ],
+      "tags": [
+        "钱",
+        "牌",
+        "备份"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/payment.jpg",
+        "alt": "卡支付终端"
+      }
+    },
+    {
+      "id": "transport",
+      "title": "运输",
+      "summary": "地铁+公交车是快速穿越社区的最简单方式。",
+      "hook": "一张交通卡解决80%的城市交通。",
+      "friend_note": "在晚餐高峰之前而不是期间计划您的大型跨城市搬家。",
+      "what_to_know": "买一张交通卡，然后在便利店充值。",
+      "why_it_matters": "使用一张感应卡转账更便宜、更顺畅。",
+      "avoid_this": "尽可能避免携带行李的高峰时间。",
+      "quick_fix": "主要出行时间为17:30之前或19:30之后。",
+      "real_scene": "机场行李箱+2号线高峰期=紧张的第一印象。",
+      "local_move": "长途出行请乘坐地铁，最后上坡路段请乘坐短途出租车。",
+      "line_to_use": "T-money chungjeon jom butakhaeyo。",
+      "quick_checklist": [
+        "交通卡",
+        "Naver/Kakao 地图",
+        "最后一次火车检查"
+      ],
+      "tags": [
+        "地铁",
+        "公共汽车",
+        "交通卡"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/transport.jpg",
+        "alt": "首尔地铁内部"
+      }
+    },
+    {
+      "id": "etiquette",
+      "title": "礼仪",
+      "summary": "简单的社交暗示可以让互动保持温暖和尊重。",
+      "hook": "小小的礼节几乎立刻让服务变得温暖起来。",
+      "friend_note": "你不需要完美的韩语，只需要平静的语气和空间意识。",
+      "what_to_know": "在公共交通上保持低声说话并有序排队。",
+      "why_it_matters": "微小的行为信号强烈影响服务语气。",
+      "avoid_this": "避免堵塞狭窄的小巷拍照。",
+      "quick_fix": "先退到一边，然后再开枪。",
+      "real_scene": "繁忙的咖啡馆过道被挡住拍照可以快速触发工作人员提醒。",
+      "local_move": "快速弓+gamsahamnida帮助后有很长的路要走。",
+      "line_to_use": "Jamkkanmanyo，济南加尔格约。",
+      "quick_checklist": [
+        "声音小",
+        "队列流量",
+        "靠边拍照"
+      ],
+      "tags": [
+        "礼仪",
+        "文化",
+        "街道"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/etiquette.jpg",
+        "alt": "首尔的行人过路处"
+      }
+    },
+    {
+      "id": "airport-to-city",
+      "title": "机场到市区",
+      "summary": "AREX + 短途出租车通常是第一天最顺利的组合。",
+      "hook": "第一次转学时不要想太多。保持简单且低摩擦。",
+      "friend_note": "如果您着陆时感到疲倦，请多花一点钱乘坐最后 10 分钟的出租车。",
+      "what_to_know": "机场铁路是可预测的，避免了高速公路交通变化。",
+      "why_it_matters": "您可以在第一天保护能源，而不是在物流上消耗能源。",
+      "avoid_this": "避免携带大件行李多次换乘地铁路线。",
+      "quick_fix": "乘坐 AREX 前往主要枢纽，然后乘坐出租车前往酒店。",
+      "real_scene": "这样晚上带着两个行李到达就感觉轻松多了。",
+      "local_move": "出租车前在手机上准备好韩文酒店名称。",
+      "line_to_use": "我十三罗嘎十世哟。",
+      "quick_checklist": [
+        "首先是阿雷克斯",
+        "出租车最后一站",
+        "酒店地址韩文"
+      ],
+      "tags": [
+        "飞机场",
+        "到达",
+        "后勤"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/airport-to-city.jpg",
+        "alt": "机场铁路站台"
+      }
+    },
+    {
+      "id": "sim-wifi",
+      "title": "SIM 卡和 Wi-Fi",
+      "summary": "可靠的数据使每张地图、预订和翻译变得更加容易。",
+      "hook": "在首尔旅行中，良好的交通不是可有可无的，而是核心基础设施。",
+      "friend_note": "在离开机场之前进行设置，您的第一天会变得更加轻松。",
+      "what_to_know": "如果您的手机支持，eSIM 速度最快；袖珍 Wi-Fi 最适合团体使用。",
+      "why_it_matters": "首尔经常使用地图应用程序和预订链接。",
+      "avoid_this": "不要等到你的电池电量和耐心都耗尽时才开始行动。",
+      "quick_fix": "在机场激活 eSIM 并在出发前测试地图路线。",
+      "real_scene": "中转站中的任何数据都不会迅速破坏晚餐预订。",
+      "local_move": "保存一个离线地图区域作为备份。",
+      "line_to_use": "eSIM 设置帮助 jom butakhaeyo。",
+      "quick_checklist": [
+        "数据活跃",
+        "地图应用已登录",
+        "离线地图"
+      ],
+      "tags": [
+        "埃西姆",
+        "无线上网",
+        "导航"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/sim-wifi.jpg",
+        "alt": "首尔的电话地图"
+      }
+    },
+    {
+      "id": "cafe-ordering",
+      "title": "咖啡馆点餐",
+      "summary": "许多受欢迎的咖啡馆都使用自助终端订购和快速取货流程。",
+      "hook": "如果您了解这里的模式，咖啡馆里的队伍排得很快。",
+      "friend_note": "在到达售货亭之前决定您的菜单。它让每个人都开心。",
+      "what_to_know": "自助终端上的外卖和堂食可以是单独的选项。",
+      "why_it_matters": "错误的选择可能会导致座位混乱和延误。",
+      "avoid_this": "决定时避免站在提货柜台。",
+      "quick_fix": "查看菜单板，点餐一次，然后按号码等待。",
+      "real_scene": "高峰时段圣水咖啡馆可以快速清除20+订单。",
+      "local_move": "如果不确定，请出示屏幕并礼貌地要求工作人员确认。",
+      "line_to_use": "Yeogiseo meogeulgeyo / gajigo galgeyo。",
+      "quick_checklist": [
+        "堂食与外卖",
+        "先表",
+        "号码呼叫"
+      ],
+      "tags": [
+        "咖啡店",
+        "亭",
+        "订购"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14",
+      "image": {
+        "src": "/images/tips/cafe-ordering.jpg",
+        "alt": "首尔的咖啡厅柜台"
+      }
+    }
+  ],
+  "korea101": [
+    {
+      "id": "transport-basics",
+      "title": "Subway & Bus Basics",
+      "summary": "How locals move fast in Seoul without burning energy.",
+      "hook": "One transit card can save your whole trip pace.",
+      "friend_note": "Mix subway for long moves and short taxi hops for the final 10 minutes.",
+      "comic_scene": "A traveler runs to the wrong platform, then a local points to line color + direction and everything clicks.",
+      "core_idea": "Seoul transit is easy once you track line color, terminal station, and transfer signs.",
+      "fun_fact": "Many transfer stations are like underground mini-cities with shops and long walking paths.",
+      "real_life_tip": "Avoid rush peaks around 8:00-9:00 and 18:00-19:30 for easier rides.",
+      "line_to_use": "Does this train go to Hongdae?",
+      "quick_checklist": [
+        "Transit card ready",
+        "Line color check",
+        "Last train check"
+      ],
+      "tags": [
+        "transport",
+        "subway",
+        "first-day"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "payment-money",
+      "title": "Payment & Cash Reality",
+      "summary": "Cards work almost everywhere, but backup still matters.",
+      "hook": "Korea is card-friendly, not card-perfect.",
+      "friend_note": "Carry two cards and small cash to avoid awkward dead-ends.",
+      "comic_scene": "Card works at a flagship cafe, fails at a tiny market stall two hours later.",
+      "core_idea": "Use card by default, but expect occasional terminal mismatch in smaller shops.",
+      "fun_fact": "Convenience stores often become emergency hubs for top-up, snacks, and backup cash handling.",
+      "real_life_tip": "Keep 10,000-30,000 KRW cash for markets, old kiosks, or late-night spots.",
+      "line_to_use": "Card is not working. Can I pay cash?",
+      "quick_checklist": [
+        "Two cards",
+        "Small cash",
+        "Transit top-up"
+      ],
+      "tags": [
+        "money",
+        "payment",
+        "survival"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "food-culture",
+      "title": "Restaurant Culture 101",
+      "summary": "From side dishes to table bells, the flow can feel different for newcomers.",
+      "hook": "Knowing the rhythm makes meals smoother than speaking perfect Korean.",
+      "friend_note": "If staff seem fast, that is normal service tempo, not rudeness.",
+      "comic_scene": "A visitor waits quietly while locals press the call bell and order in 20 seconds.",
+      "core_idea": "Korean dining often rewards quick decisions and direct requests.",
+      "fun_fact": "At many places, side dishes are refillable and water is self-serve.",
+      "real_life_tip": "Decide menu before sitting in busy areas to reduce queue stress.",
+      "line_to_use": "Can we get one more side dish, please?",
+      "quick_checklist": [
+        "Menu decided",
+        "Call bell check",
+        "Refill etiquette"
+      ],
+      "tags": [
+        "food",
+        "etiquette",
+        "local-flow"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "cafe-rules",
+      "title": "Cafe Rules & Kiosk Flow",
+      "summary": "Seat, order, pickup: the order sequence matters in popular cafes.",
+      "hook": "The line looks scary, but the system is usually efficient.",
+      "friend_note": "Pick one signature menu fast, then move to pickup flow.",
+      "comic_scene": "Someone freezes at the kiosk while the queue behind moves like a speedrun.",
+      "core_idea": "Korean cafes optimize speed with clear self-service zones and pickup counters.",
+      "fun_fact": "Some cafes enforce one drink per person during busy hours.",
+      "real_life_tip": "Check if it is dine-in or takeaway before payment to avoid reorder.",
+      "line_to_use": "For here, please.",
+      "quick_checklist": [
+        "Dine-in/takeout",
+        "Pickup number",
+        "Seat timing"
+      ],
+      "tags": [
+        "cafe",
+        "ordering",
+        "daily-life"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "convenience-store",
+      "title": "Convenience Store Is a Life Hub",
+      "summary": "Korean convenience stores are far more than snack shops.",
+      "hook": "When confused, start from the nearest convenience store.",
+      "friend_note": "You can solve meals, chargers, transit top-up, and quick logistics in one stop.",
+      "comic_scene": "A traveler enters for water and exits with a hot meal, umbrella, and recharged transit card.",
+      "core_idea": "24/7 convenience stores are practical infrastructure in urban Korea.",
+      "fun_fact": "Microwave + instant noodle station culture is common in many branches.",
+      "real_life_tip": "Look for machine corners: ticketing, delivery services, and print options vary by branch.",
+      "line_to_use": "Can I top up my transit card here?",
+      "quick_checklist": [
+        "Top-up",
+        "Hot food station",
+        "Emergency supplies"
+      ],
+      "tags": [
+        "convenience-store",
+        "basics",
+        "infrastructure"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "weather-seasons",
+      "title": "Seasons, Rain, and Dust",
+      "summary": "Korean weather can swing hard, so daily adaptation matters.",
+      "hook": "Same city, totally different vibe by season.",
+      "friend_note": "Layering and checking fine-dust apps matter more than many first-timers expect.",
+      "comic_scene": "Sunny morning selfie, surprise rain at lunch, and chilly night wind after dinner.",
+      "core_idea": "Plan with weather buffers, not rigid outfit assumptions.",
+      "fun_fact": "Monsoon season can turn short walks into full reroutes within one hour.",
+      "real_life_tip": "Carry a compact umbrella and light outerwear from spring to autumn.",
+      "line_to_use": "Will it rain later today?",
+      "quick_checklist": [
+        "Umbrella",
+        "Dust check",
+        "Layered outfit"
+      ],
+      "tags": [
+        "weather",
+        "season",
+        "planning"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "language-honorifics",
+      "title": "Basic Korean Speech Mode",
+      "summary": "You do not need fluency, but tone level changes social comfort.",
+      "hook": "Polite endings beat perfect grammar.",
+      "friend_note": "Start polite, then mirror the other person’s tone if they soften first.",
+      "comic_scene": "A beginner uses one polite phrase and receives unexpectedly warm help.",
+      "core_idea": "Respect markers in speech are a social signal in everyday interactions.",
+      "fun_fact": "Korean has multiple speech levels, and locals switch levels by context fast.",
+      "real_life_tip": "Use short polite phrases: hello, thank you, excuse me, please.",
+      "line_to_use": "Excuse me, can you help me?",
+      "quick_checklist": [
+        "Polite tone",
+        "Simple phrases",
+        "Friendly facial cue"
+      ],
+      "tags": [
+        "language",
+        "culture",
+        "manners"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "social-night",
+      "title": "Social & Night Culture",
+      "summary": "Dinner, drinks, and second rounds are part of social rhythm.",
+      "hook": "The night often continues longer than visitors expect.",
+      "friend_note": "You can enjoy the vibe without matching every round of alcohol.",
+      "comic_scene": "Someone thinks the night is over after dinner, then friends say, “Round 2 starts now.”",
+      "core_idea": "Group bonding often extends across multiple venues in one evening.",
+      "fun_fact": "Second round culture (2-cha) is common in both friend groups and work circles.",
+      "real_life_tip": "Set your own pace early and suggest non-alcohol options confidently.",
+      "line_to_use": "I am good with one drink, thank you.",
+      "quick_checklist": [
+        "Personal pace",
+        "Late transit plan",
+        "Hydration"
+      ],
+      "tags": [
+        "nightlife",
+        "social",
+        "culture"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "work-school-vibe",
+      "title": "Work & School Vibe",
+      "summary": "Group chats, punctuality, and context reading are key.",
+      "hook": "Fast replies can feel like teamwork, not pressure.",
+      "friend_note": "If you are late, message early with one clear sentence.",
+      "comic_scene": "A newcomer misses a group chat update and arrives at the wrong cafe.",
+      "core_idea": "Digital coordination is central to Korean work and student routines.",
+      "fun_fact": "Many plans are finalized in chat right before the event time.",
+      "real_life_tip": "Check group chat before leaving and again on arrival.",
+      "line_to_use": "I might be 10 minutes late. Sorry.",
+      "quick_checklist": [
+        "Chat checked",
+        "Location pin verified",
+        "ETA message"
+      ],
+      "tags": [
+        "work",
+        "school",
+        "communication"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    },
+    {
+      "id": "health-emergency",
+      "title": "Health, Pharmacy, and Emergency",
+      "summary": "Basic medical navigation is easier when prepared in advance.",
+      "hook": "A small prep list prevents big panic moments.",
+      "friend_note": "Save your hotel address in Korean and one emergency contact early.",
+      "comic_scene": "Late-night cold symptoms hit, and the nearest pharmacy search becomes a mini mission.",
+      "core_idea": "Know where to go: pharmacy for mild issues, clinic/hospital for escalation.",
+      "fun_fact": "Many neighborhoods have multiple pharmacies clustered near stations or hospitals.",
+      "real_life_tip": "Keep your passport copy and insurance details accessible on phone.",
+      "line_to_use": "I need medicine for a cold.",
+      "quick_checklist": [
+        "Passport copy",
+        "Insurance info",
+        "Local address in Korean"
+      ],
+      "tags": [
+        "health",
+        "emergency",
+        "safety"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-14"
+    }
+  ]
+}

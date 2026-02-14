@@ -1,0 +1,8 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="g" x1="120" y1="120" x2="1080" y2="790" gradientUnits="userSpaceOnUse"><stop stop-color="#F2DFCC"/><stop offset="1" stop-color="#E2C5A4"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="330" y="390" width="540" height="250" rx="30" fill="#7D4C2A" fill-opacity="0.28"/>
+  <path d="M430 390V315C430 251 480 200 545 200C610 200 660 251 660 315V390" stroke="#6A3F22" stroke-opacity="0.5" stroke-width="24"/>
+  <circle cx="735" cy="510" r="68" stroke="#6A3F22" stroke-opacity="0.5" stroke-width="24"/>
+  <text x="175" y="175" fill="#2C1C11" fill-opacity="0.76" font-size="74" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700">Cafe Day</text>
+</svg>
