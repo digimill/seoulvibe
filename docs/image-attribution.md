@@ -20,6 +20,8 @@ These images are sourced from Unsplash under the Unsplash License.
 - `/images/themes/night-seoul.jpg`: https://unsplash.com/photos/E0awymZfM1k
 - `/images/themes/rainy-seoul.jpg`: https://unsplash.com/photos/EuVEUMFevGk
 - `/images/themes/morning-seoul.jpg`: https://unsplash.com/photos/15zBQQdZ_84
+- `/images/themes/local-weekend-loop.jpg`: https://unsplash.com/photos/people-in-a-market-during-daytime-OxsIv3_zWXg
+- `/images/themes/seoul-after-dark-lite.jpg`: https://unsplash.com/photos/a-city-street-at-night-with-a-lot-of-traffic-FWlmnid0wVE
 
 ## Tips
 - `/images/tips/payment.jpg`: https://unsplash.com/photos/VmyqDMyRVq0
@@ -28,3 +30,7 @@ These images are sourced from Unsplash under the Unsplash License.
 - `/images/tips/airport-to-city.jpg`: https://unsplash.com/photos/8CIinzqQ56o
 - `/images/tips/sim-wifi.jpg`: https://unsplash.com/photos/o0kPG3RirHs
 - `/images/tips/cafe-ordering.jpg`: https://unsplash.com/photos/39oM9gUMuqA
+- `/images/tips/popup-radar-weekly.jpg`: https://unsplash.com/photos/a-road-lined-with-tall-buildings-cpAXFletdR8
+- `/images/tips/queue-cut-meal-timing.jpg`: https://unsplash.com/photos/a-man-cooking-food-on-a-stove-iMJBSOi01Uk
+- `/images/tips/late-night-safe-return.jpg`: https://unsplash.com/photos/a-street-with-cars-and-buildings-at-night-PpE_d8UKnMw
+- `/images/tips/one-manwon-seoul-loop.jpg`: https://unsplash.com/photos/a-woman-standing-behind-a-counter-in-a-store-CqG3wQ2dK2U

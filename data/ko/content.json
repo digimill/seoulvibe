@@ -395,10 +395,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/people-in-a-market-during-daytime-OxsIv3_zWXg",
       "image": {
-        "src": "/images/areas/mangwon.jpg",
-        "alt": "서울 주말 로컬 루프 무드"
+        "src": "/images/themes/local-weekend-loop.jpg",
+        "alt": "서울 로컬 마켓 주말 풍경"
       },
       "real_spots": [
         "망원시장",
@@ -431,10 +431,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/a-city-street-at-night-with-a-lot-of-traffic-FWlmnid0wVE",
       "image": {
-        "src": "/images/themes/night-seoul.jpg",
-        "alt": "서울 야간 애프터다크 무드"
+        "src": "/images/themes/seoul-after-dark-lite.jpg",
+        "alt": "서울 야간 도로와 네온 분위기"
       },
       "real_spots": [
         "을지로 노가리골목",
@@ -799,10 +799,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/a-road-lined-with-tall-buildings-cpAXFletdR8",
       "image": {
-        "src": "/images/areas/seongsu.jpg",
-        "alt": "성수 팝업 대기 동선"
+        "src": "/images/tips/popup-radar-weekly.jpg",
+        "alt": "서울 트렌드 상권 거리 스냅"
       }
     },
     {
@@ -831,10 +831,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/a-man-cooking-food-on-a-stove-iMJBSOi01Uk",
       "image": {
-        "src": "/images/tips/restaurant-culture.jpg",
-        "alt": "서울 식당 웨이팅 타이밍 가이드"
+        "src": "/images/tips/queue-cut-meal-timing.jpg",
+        "alt": "서울 길거리 음식 웨이팅 무드"
       }
     },
     {
@@ -863,10 +863,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/a-street-with-cars-and-buildings-at-night-PpE_d8UKnMw",
       "image": {
-        "src": "/images/themes/night-seoul.jpg",
-        "alt": "서울 심야 귀가 동선"
+        "src": "/images/tips/late-night-safe-return.jpg",
+        "alt": "서울 심야 귀가 도심 교통"
       }
     },
     {
@@ -895,10 +895,10 @@
       ],
       "status": "candidate",
       "updated_at": "2026-02-14",
-      "source": "seoulvibe internal candidate plan",
+      "source": "https://unsplash.com/photos/a-woman-standing-behind-a-counter-in-a-store-CqG3wQ2dK2U",
       "image": {
-        "src": "/images/areas/mangwon.jpg",
-        "alt": "1만원 서울 루프 무드"
+        "src": "/images/tips/one-manwon-seoul-loop.jpg",
+        "alt": "시장 중심의 가성비 서울 루트"
       }
     }
   ],
