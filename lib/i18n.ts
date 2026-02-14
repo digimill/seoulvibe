@@ -50,6 +50,7 @@ export const copy = {
       areas: "Areas",
       themes: "Themes",
       tips: "Tips",
+      spots: "Spots",
       korea101: "Korea 101"
     },
     heroTitle: "A smooth Seoul day, planned in minutes.",
@@ -76,6 +77,7 @@ export const copy = {
       areas: "지역",
       themes: "테마",
       tips: "팁",
+      spots: "감각 스팟",
       korea101: "한국 101"
     },
     heroTitle: "서울 방문객에게 필요한 정보, 여기서 한 번에.",
@@ -102,6 +104,7 @@ export const copy = {
       areas: "区域",
       themes: "主题",
       tips: "实用贴士",
+      spots: "精选地点",
       korea101: "韩国101"
     },
     heroTitle: "几分钟内规划顺畅的首尔一天。",
@@ -127,6 +130,7 @@ export const copy = {
       areas: "エリア",
       themes: "テーマ",
       tips: "コツ",
+      spots: "スポット",
       korea101: "韓国101"
     },
     heroTitle: "数分で、なめらかなソウル1日プラン。",
@@ -152,6 +156,7 @@ export const copy = {
       areas: "區域",
       themes: "主題",
       tips: "實用技巧",
+      spots: "精選景點",
       korea101: "韓國101"
     },
     heroTitle: "幾分鐘內，排好順暢的首爾一天。",
@@ -177,6 +182,7 @@ export const copy = {
       areas: "地區",
       themes: "主題",
       tips: "實用貼士",
+      spots: "精選景點",
       korea101: "韓國101"
     },
     heroTitle: "幾分鐘就規劃好順暢首爾一日。",
