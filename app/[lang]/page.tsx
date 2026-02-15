@@ -27,68 +27,68 @@ type HomeCopy = {
 function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ko") {
     return {
-      badge: "서울 긴급 가이드",
-      title: "서울에서 막혔나요?",
-      subtitleA: "문제가 생겼나요?",
-      subtitleB: "60초 안에 해결하세요.",
-      skipLine: "검색하지 말고 여기서 시작하세요.",
-      stayLabel: "머무는 곳이 여기라면:",
+      badge: "서울 생존 가이드",
+      title: "서울에서 막혔어요?",
+      subtitleA: "뭐가 꼬였나요?",
+      subtitleB: "60초 안에 정리해요.",
+      skipLine: "검색 말고 여기부터.",
+      stayLabel: "숙소가 여기라면:",
       deepGuides: "심화 가이드",
       cards: [
-        "키오스크 카드 오류 해결",
-        "지금 맞는 지하철 노선 고르기",
-        "올리브영 빠른 쇼핑 리스트",
-        "붐비는 지역 빠져나오기",
+        "키오스크 카드 오류 바로 해결",
+        "지금 맞는 지하철 노선 찾기",
+        "올리브영 30분 쇼핑 리스트",
+        "사람 많은 구역 빠져나오기",
       ],
     };
   }
   if (lang === "ja") {
     return {
-      badge: "ソウル緊急ガイド",
+      badge: "ソウル即対応ガイド",
       title: "ソウルで詰まった？",
-      subtitleA: "何か問題が起きた？",
-      subtitleB: "60秒で対処しよう。",
-      skipLine: "検索は後回し。ここから始める。",
-      stayLabel: "滞在エリア別:",
+      subtitleA: "トラブル発生？",
+      subtitleB: "60秒で立て直そう。",
+      skipLine: "検索より先に、ここを見る。",
+      stayLabel: "滞在先がここなら:",
       deepGuides: "詳細ガイド",
       cards: [
-        "キオスクのカード失敗を解決",
-        "今すぐ正しい地下鉄路線を選ぶ",
-        "オリーブヤング時短リスト",
-        "混雑エリアから離脱する",
+        "キオスク決済エラーをすぐ解決",
+        "地下鉄の正しい路線を今すぐ確認",
+        "オリーブヤング30分買い物リスト",
+        "混雑エリアから素早く離脱",
       ],
     };
   }
   if (lang === "zh-cn") {
     return {
-      badge: "首尔应急指南",
+      badge: "首尔应急指引",
       title: "在首尔卡住了？",
-      subtitleA: "出问题了？",
-      subtitleB: "60秒内先处理。",
-      skipLine: "先别搜。先从这里开始。",
+      subtitleA: "出状况了？",
+      subtitleB: "60 秒内先解决。",
+      skipLine: "先别搜，从这里开始。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
       cards: [
-        "解决自助机刷卡失败",
-        "马上选对地铁线路",
-        "Olive Young 快速购物清单",
+        "马上处理自助机刷卡失败",
+        "立刻选对地铁线路",
+        "Olive Young 30 分钟购物清单",
         "快速离开拥挤区域",
       ],
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
-      badge: "首爾緊急指南",
+      badge: "首爾即時應對指南",
       title: "在首爾卡住了？",
       subtitleA: "出狀況了？",
-      subtitleB: "先在 60 秒內處理。",
-      skipLine: "先不要搜尋。先從這裡開始。",
+      subtitleB: "60 秒內先處理。",
+      skipLine: "先別搜尋，先看這裡。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
       cards: [
-        "解決自助機刷卡失敗",
+        "立即處理自助機刷卡失敗",
         "馬上選對地鐵路線",
-        "Olive Young 快速購物清單",
+        "Olive Young 30 分鐘購物清單",
         "快速離開人潮區域",
       ],
     };

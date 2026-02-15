@@ -19,19 +19,18 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { start: "시작", fixes: "문제해결", areas: "지역", problems: "문제 검색" }
+      ? { start: "시작", fixes: "문제해결", areas: "지역" }
       : lang === "ja"
-        ? { start: "開始", fixes: "解決", areas: "エリア", problems: "問題ページ" }
+        ? { start: "開始", fixes: "解決", areas: "エリア" }
         : lang === "zh-cn"
-          ? { start: "开始", fixes: "解决", areas: "区域", problems: "问题页" }
+          ? { start: "开始", fixes: "解决", areas: "区域" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { start: "開始", fixes: "解決", areas: "地區", problems: "問題頁" }
-            : { start: "Start", fixes: "Fixes", areas: "Areas", problems: "Problems" };
+            ? { start: "開始", fixes: "解決", areas: "地區" }
+            : { start: "Start", fixes: "Fixes", areas: "Areas" };
   const navItems = [
     { href: `/${lang}`, label: labels.start },
     { href: `/${lang}/tips`, label: labels.fixes },
     { href: `/${lang}/areas`, label: labels.areas },
-    ...(lang === "en" ? [{ href: "/en/problems", label: labels.problems }] : []),
   ];
 
   useEffect(() => {
