@@ -33,7 +33,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ko") {
     return {
       badge: "서울 생존 가이드",
-      title: "서울에서 막혔어요?",
+      title: "Stuck in Seoul?",
       subtitleA: "뭐가 꼬였나요?",
       subtitleB: "60초 안에 정리해요.",
       skipLine: "검색 말고 여기부터.",
