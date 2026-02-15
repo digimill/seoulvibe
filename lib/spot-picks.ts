@@ -38,7 +38,9 @@ export function toGoogleMapSearchUrl(query: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${query} Seoul`)}`;
 }
 
-export function toPerplexitySearchUrl(query: string, lang: Lang): string {
+type PerplexityMode = "problem" | "spot";
+
+export function toPerplexitySearchUrl(query: string, lang: Lang, mode: PerplexityMode = "problem"): string {
   const languageHints: Record<Lang, string> = {
     ko: "한국어로 검색하고 한국어로 답변",
     en: "Search in English and answer in English",
@@ -48,5 +50,12 @@ export function toPerplexitySearchUrl(query: string, lang: Lang): string {
     "zh-hk": "請用繁體中文（香港）搜尋並以繁體中文（香港）回答",
   };
 
-  return `https://www.perplexity.ai/search?q=${encodeURIComponent(`${query} ${languageHints[lang]}`)}`;
+  const contextHints: Record<PerplexityMode, string> = {
+    problem:
+      "Context: short-term foreign visitor in Seoul. Give practical, immediate actions only. Format: 1) 3-line direct answer 2) why it happens (max 3 bullets) 3) what to do now (numbered) 4) backup plan (2 bullets) 5) one Korean sentence to show staff if relevant.",
+    spot:
+      "Context: visitor in Seoul choosing next stop right now. Format: give top 3 options nearby with why it works, expected queue/crowd risk, rough budget in KRW, and one map search keyword each.",
+  };
+
+  return `https://www.perplexity.ai/search?q=${encodeURIComponent(`${query}\n${contextHints[mode]}\n${languageHints[lang]}`)}`;
 }

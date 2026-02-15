@@ -406,7 +406,7 @@ export default async function Page({ params }: PageProps) {
           {suggestedQueries.map((query) => (
             <a
               key={query}
-              href={toPerplexitySearchUrl(query, locale)}
+              href={toPerplexitySearchUrl(query, locale, "problem")}
               target="_blank"
               rel="noreferrer"
               className="block rounded-xl border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm font-semibold text-zinc-100 hover:bg-zinc-800"

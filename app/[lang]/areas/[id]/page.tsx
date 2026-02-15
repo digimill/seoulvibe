@@ -444,7 +444,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
                   <a href={toGoogleMapSearchUrl(spot.map_query)} target="_blank" rel="noreferrer" className="underline">
                     {"map" in c ? c.map : locale === "ko" ? "지도" : "Map"}
                   </a>
-                  <a href={toPerplexitySearchUrl(`${spot.name} ${spot.area}`, locale)} target="_blank" rel="noreferrer" className="underline">
+                  <a href={toPerplexitySearchUrl(`${spot.name} ${spot.area}`, locale, "spot")} target="_blank" rel="noreferrer" className="underline">
                     {"search" in c ? c.search : locale === "ko" ? "질문" : "Ask"}
                   </a>
                 </div>
