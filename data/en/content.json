@@ -439,14 +439,14 @@
     },
     {
       "id": "local-weekend-loop",
-      "title": "로컬 주말 루프",
-      "summary": "관광지 체크보다 실제 서울 주말 리듬에 맞춘 코스. 망원 시장에서 가볍게 시작해 연남/합정으로 이동하고, 해 질 무렵 한강으로 마무리하는 흐름이라 체력 소모가 적고 재방문 만족도가 높아요.",
+      "title": "Local Weekend Loop",
+      "summary": "A practical weekend loop for visitors who want food, walking, and quick transit.",
       "hook": "서울 사람들처럼 주말을 보내보고 싶다면 이 루트가 가장 현실적이에요.",
       "friend_note": "한 구역에 오래 머무는 날이 오히려 기억이 오래가요. 시장-카페-산책 세 박자만 지켜도 충분합니다.",
-      "ideal_for": "재방문 여행자, 느린 템포 선호, 커플/친구 2인",
-      "flow": "망원시장 - 연남 카페 - 합정 저녁 - 한강 야간 산책",
-      "highlight": "빠른 이동보다 생활 리듬 체험에 초점을 둔 서울바이브형 코스.",
-      "budget": "낮음~중간",
+      "ideal_for": "First-time visitors with one free weekend day",
+      "flow": "Late breakfast -> neighborhood walk -> market snack -> riverside break -> easy dinner",
+      "highlight": "Low-stress route with easy backups when crowds build",
+      "budget": "Low to mid",
       "route_stops": [
         "망원",
         "연남",
@@ -457,17 +457,16 @@
       "rain_swap": "시장+카페 체류 시간을 늘리고 한강 대신 실내 바/전시로 전환.",
       "creator_note": "숏폼은 스팟 정보보다 이동 템포 전환 장면(시장 소리 -> 카페 정적 -> 강변 바람) 중심으로 잡으세요.",
       "tags": [
-        "로컬",
-        "주말",
-        "산책",
-        "푸드"
+        "weekend",
+        "local",
+        "walking"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/people-in-a-market-during-daytime-OxsIv3_zWXg",
       "image": {
         "src": "/images/themes/local-weekend-loop.jpg",
-        "alt": "서울 로컬 마켓 주말 풍경"
+        "alt": "Local weekend route in Seoul"
       },
       "real_spots": [
         "망원시장",
@@ -477,14 +476,14 @@
     },
     {
       "id": "seoul-after-dark-lite",
-      "title": "서울 애프터다크 라이트",
-      "summary": "과하게 달리지 않고도 밤의 서울 무드를 즐길 수 있는 동선. 을지로에서 시작해 한 정거장 이동만으로 분위기를 바꾸고, 심야 귀가 난이도를 낮춘 안전한 루트입니다.",
+      "title": "Seoul After Dark Lite",
+      "summary": "A light night route without club pressure: food, one bar, and safe return timing.",
       "hook": "밤 서울은 빡세게 놀아야 재밌는 게 아니라, 페이스를 조절할수록 더 좋아져요.",
       "friend_note": "1차 길어지고 2차 짧게 가는 방식이 다음 날 일정까지 지키기 좋습니다.",
-      "ideal_for": "첫 서울 야간 코스, 혼행, 다음 날 오전 일정 있는 여행자",
-      "flow": "을지로3가 저녁 - 바 1곳 - 청계천 산책 - 숙소 복귀",
-      "highlight": "야간 무드는 살리면서 체력과 귀가 리스크를 함께 관리하는 코스.",
-      "budget": "중간",
+      "ideal_for": "Visitors who want night Seoul but not all-night plans",
+      "flow": "Early dinner -> short neon walk -> one drink stop -> subway before peak late rush",
+      "highlight": "Night mood with controlled fatigue and easier transport",
+      "budget": "Mid",
       "route_stops": [
         "을지로3가",
         "청계천"
@@ -493,17 +492,16 @@
       "rain_swap": "청계천 구간 제외, 역세권 실내 바로 대체.",
       "creator_note": "야간 콘텐츠는 네온 컷보다 대기 없는 동선과 귀가 팁을 같이 넣어야 저장률이 높아요.",
       "tags": [
-        "야간",
-        "로컬",
-        "바",
-        "안전동선"
+        "night",
+        "easy",
+        "food"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/a-city-street-at-night-with-a-lot-of-traffic-FWlmnid0wVE",
       "image": {
         "src": "/images/themes/seoul-after-dark-lite.jpg",
-        "alt": "서울 야간 도로와 네온 분위기"
+        "alt": "Seoul evening streets"
       },
       "real_spots": [
         "을지로 노가리골목",
@@ -1006,19 +1004,18 @@
     },
     {
       "id": "popup-radar-weekly",
-      "title": "팝업 레이더 주간 루틴",
-      "summary": "성수/한남 팝업은 정보보다 타이밍 게임에 가까워요. 주간 단위로 오픈 시간과 웨이팅 패턴만 체크해도 실패 확률이 크게 줄어듭니다.",
+      "title": "Weekly Popup Radar Without Wasting Time",
+      "summary": "Find one good popup, skip the rest, and keep your day on schedule.",
       "hook": "팝업은 많이 아는 사람보다 먼저 움직이는 사람이 이겨요.",
       "friend_note": "한날에 3곳 욕심내면 대기만 하다 끝날 수 있어요. 핵심 1~2곳이 현실적입니다.",
-      "what_to_know": "오픈 직후 60~90분이 가장 안정적이고, 주말 오후는 대기 폭증 구간입니다.",
-      "why_it_matters": "대기시간이 길어지면 같은 지역 전체 일정이 무너집니다.",
-      "avoid_this": "위치만 보고 바로 이동하기(운영일/입장 방식 미확인).",
-      "quick_fix": "출발 전에 운영 채널 공지 2개만 확인: 운영시간, 입장 방식.",
+      "what_to_know": "Most popup lines look short online and long in person.",
+      "why_it_matters": "Queue time destroys nearby reservations and transport timing.",
+      "avoid_this": "Do not chase three popups in one afternoon.",
+      "quick_fix": "Pick one popup only. If wait exceeds 25 minutes, move on.",
       "tags": [
-        "팝업",
-        "성수",
-        "한남",
-        "운영팁"
+        "popup",
+        "queue",
+        "planning"
       ],
       "real_scene": "성수 인기 팝업은 토요일 14시 이후 현장 대기 40분+가 흔합니다.",
       "local_move": "팝업 대기 길면 반경 10분 카페로 즉시 피벗 후 재진입.",
@@ -1033,29 +1030,28 @@
         "입장 방식 확인",
         "대기 발생 시 대체 스팟 1곳 준비"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/a-road-lined-with-tall-buildings-cpAXFletdR8",
       "image": {
         "src": "/images/tips/popup-radar-weekly.jpg",
-        "alt": "서울 트렌드 상권 거리 스냅"
+        "alt": "Seoul popup store line"
       }
     },
     {
       "id": "queue-cut-meal-timing",
-      "title": "웨이팅 컷 식사 타이밍",
-      "summary": "서울 인기 상권 식당은 메뉴보다 시간대 선택이 체감 만족도를 좌우합니다. 11:20 이전 또는 13:40 이후로만 움직여도 대기 리스크가 크게 줄어요.",
+      "title": "Meal Timing That Cuts Queue Stress",
+      "summary": "Eat 30 to 60 minutes off peak and save your evening.",
       "hook": "맛집 성공률은 검색 능력보다 식사 타이밍에서 갈립니다.",
       "friend_note": "브런치/디너 피크를 30~40분만 비켜도 같은 식당을 훨씬 편하게 즐길 수 있어요.",
-      "what_to_know": "핫플은 피크 전 입장과 피크 후 분산 타임의 난이도 차이가 큽니다.",
-      "why_it_matters": "대기 30분이 생기면 뒤 일정(카페/전시/이동)이 연쇄 지연됩니다.",
-      "avoid_this": "정오~13시 메인 시간대에 무계획 방문.",
-      "quick_fix": "핵심 식당은 비피크 타임으로 고정하고, 피크 시간은 카페/쇼핑으로 배치.",
+      "what_to_know": "Peak dinner windows in hot areas can double wait time.",
+      "why_it_matters": "Long meal queues cascade into missed trains and late check-ins.",
+      "avoid_this": "Do not arrive exactly at 19:00 in viral districts.",
+      "quick_fix": "Shift dinner earlier or later. Keep one backup restaurant nearby.",
       "tags": [
-        "웨이팅",
-        "맛집",
-        "동선",
-        "시간관리"
+        "food",
+        "queue",
+        "timing"
       ],
       "real_scene": "연남/성수 인기 식당은 토요일 12시대 대기줄이 가장 길어지는 경우가 많습니다.",
       "local_move": "대기 20분 초과 시 주변 같은 장르 매장으로 즉시 전환.",
@@ -1070,29 +1066,28 @@
         "피크 타임 대체 코스 준비",
         "대기 20분 초과 시 전환 기준 세우기"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/a-man-cooking-food-on-a-stove-iMJBSOi01Uk",
       "image": {
         "src": "/images/tips/queue-cut-meal-timing.jpg",
-        "alt": "서울 길거리 음식 웨이팅 무드"
+        "alt": "Restaurant queue timing in Seoul"
       }
     },
     {
       "id": "late-night-safe-return",
-      "title": "심야 귀가 안전 동선",
-      "summary": "서울 밤 콘텐츠의 완성도는 마지막 30분 귀가 설계에서 결정됩니다. 술자리/야간 산책 후 이동 수단을 미리 정하면 피로와 불안을 크게 줄일 수 있어요.",
+      "title": "Late-Night Safe Return Basics",
+      "summary": "Plan your return before your last stop, not after.",
       "hook": "잘 노는 것보다 잘 돌아오는 게 진짜 고수 루틴이에요.",
       "friend_note": "심야엔 길 찾기보다 체력 관리가 먼저예요. 숙소까지 단순 동선이 답입니다.",
-      "what_to_know": "지하철 막차 이후에는 택시 수요가 급증해 호출 대기 변동이 큽니다.",
-      "why_it_matters": "귀가가 꼬이면 다음날 일정 전체 품질이 떨어집니다.",
-      "avoid_this": "막차 임박 시간에 낯선 환승 노선 시도하기.",
-      "quick_fix": "밤 시작 전에 귀가 플랜 A(지하철) / B(택시)만 확정.",
+      "what_to_know": "Late transfers feel harder when tired and stations are crowded.",
+      "why_it_matters": "Small route mistakes become expensive at night.",
+      "avoid_this": "Do not start last-leg planning after midnight.",
+      "quick_fix": "Check final train windows and set a hard leave time.",
       "tags": [
-        "야간",
-        "귀가",
-        "안전",
-        "교통"
+        "night",
+        "safety",
+        "transport"
       ],
       "real_scene": "홍대/강남 심야 시간대는 같은 거리도 호출 지연 편차가 큰 편입니다.",
       "local_move": "귀가 1시간 전 앱으로 예상 이동시간을 먼저 체크.",
@@ -1107,29 +1102,28 @@
         "택시 승차 위치 파악",
         "숙소 주소 한글 저장"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/a-street-with-cars-and-buildings-at-night-PpE_d8UKnMw",
       "image": {
         "src": "/images/tips/late-night-safe-return.jpg",
-        "alt": "서울 심야 귀가 도심 교통"
+        "alt": "Late-night return in Seoul"
       }
     },
     {
       "id": "one-manwon-seoul-loop",
-      "title": "1만원 서울 루프",
-      "summary": "서울을 비싸게만 즐겨야 한다는 편견을 깨는 저비용 루트. 시장 간식+산책+편의점 디저트 조합으로도 분위기와 만족도를 충분히 확보할 수 있어요.",
+      "title": "One-Manwon Seoul Loop",
+      "summary": "A low-cost mini loop for visitors with tight cash and limited time.",
       "hook": "돈보다 동선이 좋으면 서울은 훨씬 재밌어져요.",
       "friend_note": "예산이 작을수록 선택이 선명해져서 오히려 코스 완성도가 올라갑니다.",
-      "what_to_know": "저비용 루트는 이동 횟수를 줄일수록 체감 효율이 커집니다.",
-      "why_it_matters": "예산 부담이 줄면 여행 후반에도 컨디션과 의사결정이 안정적입니다.",
-      "avoid_this": "저가 맛집만 연속 방문해 대기시간을 늘리는 구성.",
-      "quick_fix": "시장 1곳+산책 1곳+카페/편의점 1곳의 3스텝으로 단순화.",
+      "what_to_know": "Cheap routes work best when transfers stay simple.",
+      "why_it_matters": "Over-optimizing costs can waste hours.",
+      "avoid_this": "Do not cross the city three times to save a small amount.",
+      "quick_fix": "Use one neighborhood cluster and keep transport legs short.",
       "tags": [
-        "가성비",
-        "로컬",
-        "시장",
-        "산책"
+        "budget",
+        "route",
+        "local"
       ],
       "real_scene": "망원/을지로는 소액 예산으로도 로컬 무드를 체험하기 좋은 구간이 많습니다.",
       "local_move": "현금 소액(5천원~1만원)을 백업으로 들고 다니면 선택지가 늘어납니다.",
@@ -1144,12 +1138,12 @@
         "이동 2회 이하로 제한",
         "시장 결제수단 확인"
       ],
-      "status": "candidate",
-      "updated_at": "2026-02-14",
+      "status": "published",
+      "updated_at": "2026-02-15",
       "source": "https://unsplash.com/photos/a-woman-standing-behind-a-counter-in-a-store-CqG3wQ2dK2U",
       "image": {
         "src": "/images/tips/one-manwon-seoul-loop.jpg",
-        "alt": "시장 중심의 가성비 서울 루트"
+        "alt": "Budget Seoul route"
       }
     }
   ],
