@@ -14,16 +14,18 @@ export async function GET() {
     const json = (await res.json()) as {
       result: string;
       time_last_update_utc?: string;
+      rates?: Record<string, number>;
       conversion_rates?: Record<string, number>;
     };
 
-    if (json.result !== "success" || !json.conversion_rates) {
+    const sourceRates = json.rates ?? json.conversion_rates;
+    if (json.result !== "success" || !sourceRates) {
       return NextResponse.json({ ok: false, error: "invalid_payload" }, { status: 502 });
     }
 
     const ratesKrwPerUnit: Record<string, number> = {};
     for (const code of CURRENCIES) {
-      const perKrw = json.conversion_rates[code];
+      const perKrw = sourceRates[code];
       if (typeof perKrw === "number" && perKrw > 0) {
         ratesKrwPerUnit[code] = Number((1 / perKrw).toFixed(6));
       }
@@ -39,4 +41,3 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: "network_error" }, { status: 502 });
   }
 }
-

@@ -168,11 +168,12 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
       const tryDirect = async () => {
         const res = await fetch("https://open.er-api.com/v6/latest/KRW");
         if (!res.ok) return false;
-        const json = (await res.json()) as { result?: string; conversion_rates?: Record<string, number> };
-        if (json.result !== "success" || !json.conversion_rates) return false;
+        const json = (await res.json()) as { result?: string; rates?: Record<string, number>; conversion_rates?: Record<string, number> };
+        const sourceRates = json.rates ?? json.conversion_rates;
+        if (json.result !== "success" || !sourceRates) return false;
         const converted: Record<Currency, number> = { ...RATES };
         for (const code of ALL_CURRENCIES) {
-          const perKrw = json.conversion_rates[code];
+          const perKrw = sourceRates[code];
           if (typeof perKrw === "number" && perKrw > 0) converted[code] = Number((1 / perKrw).toFixed(6));
         }
         applyRates(converted);
