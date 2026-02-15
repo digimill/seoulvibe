@@ -19,18 +19,18 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { fixes: "문제해결", areas: "지역", crowded: "혼잡탈출", subtitle: "서울 문제 해결 가이드", menu: "메뉴" }
+      ? { fixes: "문제해결", areas: "지역", tools: "도구", subtitle: "서울 문제 해결 가이드", menu: "메뉴" }
       : lang === "ja"
-        ? { fixes: "解決", areas: "エリア", crowded: "混雑回避", subtitle: "ソウル即対応ガイド", menu: "メニュー" }
+        ? { fixes: "解決", areas: "エリア", tools: "ツール", subtitle: "ソウル即対応ガイド", menu: "メニュー" }
         : lang === "zh-cn"
-          ? { fixes: "解决", areas: "区域", crowded: "避开拥挤", subtitle: "首尔问题速解", menu: "菜单" }
+          ? { fixes: "解决", areas: "区域", tools: "工具", subtitle: "首尔问题速解", menu: "菜单" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { fixes: "解決", areas: "地區", crowded: "避開人潮", subtitle: "首爾問題速解", menu: "選單" }
-            : { fixes: "Fixes", areas: "Areas", crowded: "Crowd Escape", subtitle: "Seoul problem solver", menu: "Menu" };
+            ? { fixes: "解決", areas: "地區", tools: "工具", subtitle: "首爾問題速解", menu: "選單" }
+            : { fixes: "Fixes", areas: "Areas", tools: "Tools", subtitle: "Seoul problem solver", menu: "Menu" };
   const navItems = [
     { href: `/${lang}/tips`, label: labels.fixes },
     { href: `/${lang}/areas`, label: labels.areas },
-    { href: `/${lang}/crowded`, label: labels.crowded },
+    { href: `/${lang}/tools`, label: labels.tools },
   ];
 
   useEffect(() => {

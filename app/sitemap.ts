@@ -6,7 +6,7 @@ import { getSiteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
-const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101", "/crowded", "/problems", "/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
+const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101", "/tools", "/crowded", "/problems", "/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();

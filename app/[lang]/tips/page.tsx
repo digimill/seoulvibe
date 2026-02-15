@@ -29,6 +29,31 @@ export default async function TipsPage({ params }: TipsPageProps) {
           : locale === "zh-tw" || locale === "zh-hk"
             ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。", qTitle: "問題列表（20）" }
             : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now.", qTitle: "Problem list (20)" };
+  const crowdCard =
+    locale === "ko"
+      ? {
+          title: "혼잡 탈출",
+          description: "사람 너무 많으면 버티지 말고 바로 빠져나오세요. 지역별 우회 동선을 바로 확인합니다.",
+        }
+      : locale === "ja"
+        ? {
+            title: "混雑から離脱",
+            description: "人が多すぎる時は粘らず離脱。エリア別の回避ルートをすぐ確認。",
+          }
+        : locale === "zh-cn"
+          ? {
+              title: "拥挤脱离",
+              description: "人太多就别硬撑，先撤离。按区域快速查看绕行路线。",
+            }
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? {
+                title: "擁擠脫離",
+                description: "人太多先離開，不要硬撐。按區域快速看避開路線。",
+              }
+            : {
+                title: "Escape crowds fast",
+                description: "If it is packed, do not force it. Check quick area-by-area exits now.",
+              };
   const sorted = [...tips].sort((a, b) => {
     const ai = PRIORITY_IDS.indexOf(a.id);
     const bi = PRIORITY_IDS.indexOf(b.id);
@@ -40,6 +65,14 @@ export default async function TipsPage({ params }: TipsPageProps) {
 
   return (
     <SectionBlock title={copy.title} description={copy.desc}>
+      <div className="mb-5">
+        <Card
+          href={`/${locale}/crowded`}
+          title={crowdCard.title}
+          description={crowdCard.description}
+        />
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {sorted.map((tip) => (
           <Card
