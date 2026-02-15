@@ -32,11 +32,11 @@ type HomeCopy = {
 function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ko") {
     return {
-      badge: "서울 문제 해결",
-      title: "서울에서 문제 생겼나요?",
-      subtitleA: "이곳에서 모두 해결.",
-      subtitleB: "60초 안에 다음 행동만 확인하세요.",
-      skipLine: "검색 말고 여기부터.",
+      badge: "서울 방문 필수",
+      title: "도움이 필요하다면?",
+      subtitleA: "필요한 것만 빠르게,",
+      subtitleB: "바로 확인하세요.",
+      skipLine: "검색 전에 여기부터.",
       stayLabel: "숙소가 여기라면:",
       deepGuides: "심화 가이드",
       deep1: "키오스크 카드 오류 상세",
@@ -59,11 +59,11 @@ function getHomeCopy(lang: Lang): HomeCopy {
   }
   if (lang === "ja") {
     return {
-      badge: "ソウル即対応ガイド",
-      title: "ソウルで困った？",
-      subtitleA: "トラブル発生？",
-      subtitleB: "60秒で立て直そう。",
-      skipLine: "検索より先に、ここを見る。",
+      badge: "ソウル旅行必須",
+      title: "ソウルで詰まった？",
+      subtitleA: "必要な情報だけ、",
+      subtitleB: "すぐ確認。",
+      skipLine: "検索前にここから。",
       stayLabel: "滞在先がここなら:",
       deepGuides: "詳細ガイド",
       deep1: "キオスク決済エラー詳細",
@@ -86,11 +86,11 @@ function getHomeCopy(lang: Lang): HomeCopy {
   }
   if (lang === "zh-cn") {
     return {
-      badge: "首尔应急指引",
-      title: "在首尔遇到麻烦了？",
-      subtitleA: "出状况了？",
-      subtitleB: "60 秒内先解决。",
-      skipLine: "先别搜，从这里开始。",
+      badge: "首尔旅行必备",
+      title: "在首尔卡住了？",
+      subtitleA: "只看需要的，",
+      subtitleB: "马上处理。",
+      skipLine: "搜索前先看这里。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
       deep1: "自助机刷卡失败详解",
@@ -113,11 +113,11 @@ function getHomeCopy(lang: Lang): HomeCopy {
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
-      badge: "首爾即時應對指南",
-      title: "在首爾遇到狀況了？",
-      subtitleA: "出狀況了？",
-      subtitleB: "60 秒內先處理。",
-      skipLine: "先別搜尋，先看這裡。",
+      badge: "首爾旅行必備",
+      title: "在首爾卡住了？",
+      subtitleA: "只看需要的，",
+      subtitleB: "馬上處理。",
+      skipLine: "搜尋前先看這裡。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
       deep1: "自助機刷卡失敗詳解",
@@ -139,10 +139,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
     };
   }
   return {
-    badge: "Seoul Emergency Guide",
+    badge: "Seoul Visit Essentials",
     title: "Stuck in Seoul?",
-    subtitleA: "Something went wrong?",
-    subtitleB: "Fix it in under 60 seconds.",
+    subtitleA: "Only what you need,",
+    subtitleB: "check it fast.",
     skipLine: "Skip Google. Start here.",
     stayLabel: "If you're staying in:",
     deepGuides: "Deep guides",
