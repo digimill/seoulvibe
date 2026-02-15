@@ -71,7 +71,7 @@ export function LanguageSwitcher({ lang, className = "", compact = false, onOpen
       className={`relative ${className}`.trim()}
     >
       <summary
-        className={`list-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-medium ${compact ? "text-zinc-900" : "bg-zinc-900 tracking-wide text-white"}`}
+        className={`list-none cursor-pointer select-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-medium ${compact ? "text-zinc-900" : "bg-zinc-900 tracking-wide text-white"}`}
       >
         {currentLabel}
       </summary>
