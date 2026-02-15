@@ -40,7 +40,6 @@ const RATES: Record<Currency, number> = {
   VND: 0.055,
 };
 
-const TOP_CURRENCIES: Currency[] = ["USD", "JPY", "CNY", "TWD", "HKD", "EUR"];
 const ALL_CURRENCIES: Currency[] = ["USD", "EUR", "JPY", "CNY", "TWD", "HKD", "GBP", "AUD", "CAD", "SGD", "THB", "VND"];
 
 const CALC_CURRENCY_KEY = "sv-calc-currency-v1";
@@ -223,11 +222,14 @@ function copy(lang: Lang) {
       fallback: "실시간 환율을 불러오지 못해 기본값을 사용 중입니다.",
       mathTitle: "빠른 계산",
       mathHint: "인원 나누기/수량 곱하기",
+      mathCurrent: "현재 금액",
       mathInput: "직접 n",
       mathMultiply: "곱하기",
       mathDivide: "나누기",
       mathMore: "빠른 계산 열기",
       mathLess: "빠른 계산 접기",
+      currencyMore: "통화 설정 열기",
+      currencyLess: "통화 설정 접기",
       refTitle: "대표 물가 참고",
       refMore: "대표 물가로 감잡기",
       refLess: "프리셋 접기",
@@ -255,11 +257,14 @@ function copy(lang: Lang) {
       fallback: "ライブ為替を取得できず、既定値を使用中です。",
       mathTitle: "クイック計算",
       mathHint: "人数割り/数量掛け算",
+      mathCurrent: "現在の金額",
       mathInput: "nを入力",
       mathMultiply: "掛ける",
       mathDivide: "割る",
       mathMore: "クイック計算を開く",
       mathLess: "クイック計算を閉じる",
+      currencyMore: "通貨設定を開く",
+      currencyLess: "通貨設定を閉じる",
       refTitle: "相場の目安",
       refMore: "相場を確認",
       refLess: "折りたたむ",
@@ -287,11 +292,14 @@ function copy(lang: Lang) {
       fallback: "实时汇率获取失败，当前使用默认值。",
       mathTitle: "快速计算",
       mathHint: "按人数平摊/按数量放大",
+      mathCurrent: "当前金额",
       mathInput: "输入 n",
       mathMultiply: "乘",
       mathDivide: "除",
       mathMore: "打开快速计算",
       mathLess: "收起快速计算",
+      currencyMore: "打开货币设置",
+      currencyLess: "收起货币设置",
       refTitle: "常见价格参考",
       refMore: "用常见价格估算",
       refLess: "收起预设",
@@ -319,11 +327,14 @@ function copy(lang: Lang) {
       fallback: "即時匯率讀取失敗，正在使用預設值。",
       mathTitle: "快速計算",
       mathHint: "按人數分攤/按數量放大",
+      mathCurrent: "目前金額",
       mathInput: "輸入 n",
       mathMultiply: "乘",
       mathDivide: "除",
       mathMore: "打開快速計算",
       mathLess: "收起快速計算",
+      currencyMore: "打開貨幣設定",
+      currencyLess: "收起貨幣設定",
       refTitle: "常見價格參考",
       refMore: "用常見價格估算",
       refLess: "收起預設",
@@ -350,11 +361,14 @@ function copy(lang: Lang) {
     fallback: "Live rate unavailable. Using fallback rate.",
     mathTitle: "Quick math",
     mathHint: "Split by people or multiply by quantity",
+    mathCurrent: "Current amount",
     mathInput: "Enter n",
     mathMultiply: "Multiply",
     mathDivide: "Divide",
     mathMore: "Open quick math",
     mathLess: "Hide quick math",
+    currencyMore: "Open currency settings",
+    currencyLess: "Hide currency settings",
     refTitle: "Reference prices",
     refMore: "Use reference prices",
     refLess: "Hide presets",
@@ -569,7 +583,21 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
             </label>
 
             <label className="rounded-xl border border-zinc-200 bg-white p-3">
-              <p className="text-xs font-semibold text-zinc-600">{c.amountForeign}</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs font-semibold text-zinc-600">{c.amountForeign}</p>
+                <select
+                  value={currency}
+                  onChange={(e) => setCurrency(e.target.value as Currency)}
+                  className="rounded-lg border border-zinc-300 bg-white px-2 py-1 text-xs font-bold text-zinc-900 outline-none focus:border-zinc-900"
+                  aria-label={c.currency}
+                >
+                  {ALL_CURRENCIES.map((code) => (
+                    <option key={code} value={code}>
+                      {code}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <input
                 type="text"
                 inputMode="decimal"
@@ -598,33 +626,6 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
         </div>
 
         <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <p className="text-xs font-semibold text-zinc-600">{c.currency}</p>
-          <div className="mt-1 flex flex-wrap gap-2">
-            {TOP_CURRENCIES.map((code) => (
-              <button
-                key={code}
-                type="button"
-                onClick={() => setCurrency(code)}
-                className={`rounded-full border px-3 py-1 text-xs font-bold ${currency === code ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 text-zinc-700 hover:border-zinc-900"}`}
-              >
-                {code}
-              </button>
-            ))}
-          </div>
-          <select
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value as Currency)}
-            className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
-          >
-            {ALL_CURRENCIES.map((code) => (
-              <option key={code} value={code}>
-                {code}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-semibold text-zinc-600">{c.mathTitle}</p>
             <button
@@ -637,6 +638,9 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
           </div>
           {showQuickMath ? (
             <>
+              <p className="mt-1 text-sm font-black text-zinc-900">
+                {c.mathCurrent}: ₩{amountKrw.toLocaleString()} = {converted.toFixed(2)} {currency}
+              </p>
               <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.mathHint}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button type="button" onClick={() => multiplyBy(2)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">×2</button>
