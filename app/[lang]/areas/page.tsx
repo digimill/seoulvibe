@@ -20,7 +20,7 @@ export default async function AreasPage({ params }: AreasPageProps) {
 
   return (
     <SectionBlock title={t.nav.areas} description={t.discover}>
-      <AreasMiniMap areas={areas} lang={locale} />
+      <AreasMiniMap lang={locale} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {areas.map((area) => (
           <Card
