@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Card } from "@/components/Card";
 import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
 import { getTips } from "@/lib/content";
 import { isLang, type Lang } from "@/lib/i18n";
+import { getProblemQuestion, problemSeoItems } from "@/lib/problem-seo";
 
 type TipsPageProps = {
   params: Promise<{ lang: string }>;
@@ -19,14 +21,14 @@ export default async function TipsPage({ params }: TipsPageProps) {
   const tips = await getTips(locale);
   const copy =
     locale === "ko"
-      ? { title: "문제 해결 가이드", desc: "뭐가 꼬이는지, 왜 꼬이는지, 지금 뭘 해야 하는지 바로 확인." }
+      ? { title: "문제 해결 가이드", desc: "뭐가 꼬이는지, 왜 꼬이는지, 지금 뭘 해야 하는지 바로 확인.", qTitle: "문제 리스트 (20)" }
       : locale === "ja"
-        ? { title: "トラブル解決ガイド", desc: "何が詰まりやすいか、なぜ起きるか、今どう動くかを即確認。" }
+        ? { title: "トラブル解決ガイド", desc: "何が詰まりやすいか、なぜ起きるか、今どう動くかを即確認。", qTitle: "問題リスト（20）" }
         : locale === "zh-cn"
-          ? { title: "问题速解指南", desc: "先看哪里会出错、为什么会出错、现在该怎么做。" }
+          ? { title: "问题速解指南", desc: "先看哪里会出错、为什么会出错、现在该怎么做。", qTitle: "问题列表（20）" }
           : locale === "zh-tw" || locale === "zh-hk"
-            ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。" }
-            : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now." };
+            ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。", qTitle: "問題列表（20）" }
+            : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now.", qTitle: "Problem list (20)" };
   const sorted = [...tips].sort((a, b) => {
     const ai = PRIORITY_IDS.indexOf(a.id);
     const bi = PRIORITY_IDS.indexOf(b.id);
@@ -51,6 +53,21 @@ export default async function TipsPage({ params }: TipsPageProps) {
             ))}
           />
         ))}
+      </div>
+
+      <div className="mt-10 rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7" id="problem-list">
+        <h3 className="text-xl font-black tracking-tight text-zinc-950">{copy.qTitle}</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {problemSeoItems.map((item) => (
+            <Link
+              key={item.slug}
+              href={`/${locale}/problems/${item.slug}`}
+              className="rounded-2xl border border-zinc-300 p-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-50"
+            >
+              {getProblemQuestion(item, locale)}
+            </Link>
+          ))}
+        </div>
       </div>
     </SectionBlock>
   );

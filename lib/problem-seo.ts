@@ -1,3 +1,5 @@
+import type { Lang } from "@/lib/i18n";
+
 export type ProblemSeoItem = {
   slug: string;
   question: string;
@@ -437,4 +439,152 @@ export const problemSeoItems: ProblemSeoItem[] = [
 
 export function getProblemSeoBySlug(slug: string): ProblemSeoItem | undefined {
   return problemSeoItems.find((item) => item.slug === slug);
+}
+
+const localizedQuestions: Record<string, Record<Exclude<Lang, "en">, string>> = {
+  "why-does-my-card-fail-at-kiosks-in-korea": {
+    ko: "한국 키오스크에서 카드가 왜 자꾸 실패하나요?",
+    ja: "韓国のキオスクでカードが失敗するのはなぜ？",
+    "zh-cn": "为什么我在韩国自助机刷卡总失败？",
+    "zh-tw": "為什麼我在韓國自助機刷卡一直失敗？",
+    "zh-hk": "點解我喺韓國自助機碌卡成日失敗？",
+  },
+  "can-foreigners-use-visa-at-korean-kiosks": {
+    ko: "외국인은 한국 키오스크에서 비자카드 쓸 수 있나요?",
+    ja: "外国人は韓国キオスクでVisaを使える？",
+    "zh-cn": "外国游客能在韩国自助机用 Visa 吗？",
+    "zh-tw": "外國旅客可以在韓國自助機用 Visa 嗎？",
+    "zh-hk": "外國人可唔可以喺韓國自助機用 Visa？",
+  },
+  "why-is-kiosk-asking-for-phone-number-in-korea": {
+    ko: "한국 키오스크에서 왜 전화번호를 입력하라고 하나요?",
+    ja: "韓国キオスクで電話番号を求められる理由は？",
+    "zh-cn": "韩国自助机为什么要我输入手机号？",
+    "zh-tw": "韓國自助機為什麼要我輸入手機號？",
+    "zh-hk": "韓國自助機點解要我入電話號碼？",
+  },
+  "how-to-pay-if-my-card-doesnt-work-in-seoul": {
+    ko: "서울에서 카드가 안 될 때 결제는 어떻게 해야 하나요?",
+    ja: "ソウルでカードが通らない時はどう払う？",
+    "zh-cn": "在首尔刷卡失败时该怎么付款？",
+    "zh-tw": "在首爾刷卡失敗時要怎麼付款？",
+    "zh-hk": "喺首爾張卡唔過數，點樣俾錢？",
+  },
+  "do-korean-cafes-accept-foreign-credit-cards": {
+    ko: "한국 카페에서 외국 신용카드 결제되나요?",
+    ja: "韓国のカフェで海外クレカは使える？",
+    "zh-cn": "韩国咖啡店能刷外国信用卡吗？",
+    "zh-tw": "韓國咖啡店可以刷外國信用卡嗎？",
+    "zh-hk": "韓國咖啡店收唔收外國信用卡？",
+  },
+  "how-much-tmoney-should-a-tourist-load": {
+    ko: "여행자는 티머니를 얼마 충전해야 하나요?",
+    ja: "旅行者はT-moneyをいくらチャージすべき？",
+    "zh-cn": "游客 T-money 该充多少？",
+    "zh-tw": "旅客 T-money 要儲多少？",
+    "zh-hk": "遊客 T-money 應該儲幾多？",
+  },
+  "which-subway-line-goes-to-hongdae-from-airport": {
+    ko: "공항에서 홍대로 갈 때 무슨 지하철 노선을 타야 하나요?",
+    ja: "空港からホンデへはどの路線？",
+    "zh-cn": "从机场去弘大该坐哪条线？",
+    "zh-tw": "從機場去弘大要搭哪條線？",
+    "zh-hk": "由機場去弘大要搭邊條線？",
+  },
+  "how-to-avoid-taking-wrong-subway-direction-in-seoul": {
+    ko: "서울 지하철 반대 방향 실수를 피하려면?",
+    ja: "ソウル地下鉄で逆方向を避けるには？",
+    "zh-cn": "在首尔怎么避免坐反方向地铁？",
+    "zh-tw": "在首爾怎麼避免搭錯方向？",
+    "zh-hk": "喺首爾點樣避免搭錯方向？",
+  },
+  "what-happens-if-i-miss-my-subway-stop-in-korea": {
+    ko: "한국 지하철에서 내릴 역을 놓치면 어떻게 되나요?",
+    ja: "韓国で降車駅を過ぎたらどうなる？",
+    "zh-cn": "在韩国地铁坐过站会怎样？",
+    "zh-tw": "在韓國地鐵坐過站會怎樣？",
+    "zh-hk": "喺韓國地鐵坐過站會點？",
+  },
+  "is-line-2-confusing-for-tourists": {
+    ko: "서울 2호선은 여행자에게 헷갈리나요?",
+    ja: "2号線は旅行者にとって分かりにくい？",
+    "zh-cn": "2号线对游客来说很容易混乱吗？",
+    "zh-tw": "2號線對旅客來說很容易搞混嗎？",
+    "zh-hk": "2號線對遊客係咪好易搞亂？",
+  },
+  "how-to-avoid-crowds-in-hongdae": {
+    ko: "홍대 인파를 피하려면 어떻게 해야 하나요?",
+    ja: "ホンデの混雑を避けるには？",
+    "zh-cn": "怎么避开弘大人潮？",
+    "zh-tw": "怎麼避開弘大人潮？",
+    "zh-hk": "點樣避開弘大人潮？",
+  },
+  "best-time-to-visit-bukchon-without-crowds": {
+    ko: "북촌을 덜 붐빌 때 가려면 언제가 좋나요?",
+    ja: "プクチョンを空いてる時間に行くならいつ？",
+    "zh-cn": "北村什么时候去人最少？",
+    "zh-tw": "北村什麼時候去比較不擠？",
+    "zh-hk": "北村幾點去會冇咁逼？",
+  },
+  "is-gangnam-crowded-at-night": {
+    ko: "강남은 밤에 많이 붐비나요?",
+    ja: "カンナムは夜に混む？",
+    "zh-cn": "江南晚上很拥挤吗？",
+    "zh-tw": "江南晚上很擠嗎？",
+    "zh-hk": "江南夜晚係咪好逼？",
+  },
+  "what-to-do-if-seoul-is-too-crowded": {
+    ko: "서울이 너무 붐빌 때 바로 뭘 해야 하나요?",
+    ja: "ソウルが混みすぎてる時はどうする？",
+    "zh-cn": "首尔太拥挤时该怎么办？",
+    "zh-tw": "首爾太擠時該怎麼辦？",
+    "zh-hk": "首爾太逼時應該點做？",
+  },
+  "best-olive-young-products-for-first-time-visitors": {
+    ko: "처음 가는 여행자가 올리브영에서 뭘 사면 좋나요?",
+    ja: "初めての旅行者向けオリーブヤングおすすめは？",
+    "zh-cn": "第一次去 Olive Young 最该买什么？",
+    "zh-tw": "第一次去 Olive Young 最推薦買什麼？",
+    "zh-hk": "第一次去 Olive Young 最應該買咩？",
+  },
+  "what-should-i-buy-at-olive-young-under-50": {
+    ko: "올리브영에서 50달러 이하로 뭐 사면 좋나요?",
+    ja: "オリーブヤングで50ドル以内なら何を買う？",
+    "zh-cn": "Olive Young 50 美元以内买什么最稳？",
+    "zh-tw": "Olive Young 50 美元內買什麼最穩？",
+    "zh-hk": "Olive Young 50 美元內買咩最穩陣？",
+  },
+  "can-tourists-get-tax-refund-at-olive-young": {
+    ko: "올리브영에서 여행자도 택스리펀드 받을 수 있나요?",
+    ja: "オリーブヤングで旅行者は免税還付できる？",
+    "zh-cn": "游客在 Olive Young 可以退税吗？",
+    "zh-tw": "旅客在 Olive Young 可以退稅嗎？",
+    "zh-hk": "遊客喺 Olive Young 可唔可以退稅？",
+  },
+  "is-olive-young-cheaper-than-duty-free": {
+    ko: "올리브영이 면세점보다 더 저렴한가요?",
+    ja: "オリーブヤングは免税店より安い？",
+    "zh-cn": "Olive Young 会比免税店便宜吗？",
+    "zh-tw": "Olive Young 會比免稅店便宜嗎？",
+    "zh-hk": "Olive Young 會唔會平過免稅店？",
+  },
+  "best-way-to-get-from-incheon-to-hongdae": {
+    ko: "인천공항에서 홍대 가는 가장 좋은 방법은?",
+    ja: "仁川空港からホンデへ行く最適ルートは？",
+    "zh-cn": "仁川机场去弘大最好的方式是什么？",
+    "zh-tw": "仁川機場去弘大最好的方式是什麼？",
+    "zh-hk": "仁川機場去弘大最好點去？",
+  },
+  "is-taxi-from-airport-expensive-in-seoul": {
+    ko: "서울 공항 택시는 많이 비싼가요?",
+    ja: "ソウルで空港タクシーは高い？",
+    "zh-cn": "首尔机场打车会很贵吗？",
+    "zh-tw": "首爾機場搭計程車會很貴嗎？",
+    "zh-hk": "首爾機場搭的士係咪好貴？",
+  },
+};
+
+export function getProblemQuestion(item: ProblemSeoItem, lang: Lang): string {
+  if (lang === "en") return item.question;
+  return localizedQuestions[item.slug]?.[lang] ?? item.question;
 }

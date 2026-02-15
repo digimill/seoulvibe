@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
-import { getProblemSeoBySlug, problemSeoItems } from "@/lib/problem-seo";
+import { getProblemQuestion, getProblemSeoBySlug, problemSeoItems } from "@/lib/problem-seo";
 import { isLang, type Lang } from "@/lib/i18n";
 
 type PageProps = {
@@ -29,10 +29,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+  if (!isLang(lang)) return {};
+  const locale = lang as Lang;
   const item = getProblemSeoBySlug(slug);
   if (!item) return {};
-  return { title: item.question, description: item.shortAnswer.join(" ") };
+  return { title: getProblemQuestion(item, locale), description: item.shortAnswer.join(" ") };
 }
 
 export default async function Page({ params }: PageProps) {
@@ -42,10 +44,11 @@ export default async function Page({ params }: PageProps) {
   const c = copy(locale);
   const item = getProblemSeoBySlug(slug);
   if (!item) notFound();
+  const question = getProblemQuestion(item, locale);
 
   return (
     <Container className="py-10 sm:py-14">
-      <h1 className="text-3xl font-black tracking-tight text-zinc-950 sm:text-5xl">{item.question}</h1>
+      <h1 className="text-3xl font-black tracking-tight text-zinc-950 sm:text-5xl">{question}</h1>
 
       <section className="mt-8 rounded-2xl border border-zinc-200 bg-white p-5">
         <h2 className="text-lg font-black tracking-tight text-zinc-950">1. {c.a}</h2>
