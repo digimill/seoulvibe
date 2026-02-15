@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAreas, getKorea101, getThemes, getTips } from "@/lib/content";
 import { LANGS, type Lang } from "@/lib/i18n";
+import { problemSeoItems } from "@/lib/problem-seo";
 import { getSiteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -57,6 +58,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/en${path}`,
       changeFrequency: "weekly" as const,
       priority: 0.8,
+    })),
+  );
+
+  urls.push({
+    url: `${siteUrl}/en/problems`,
+    changeFrequency: "weekly",
+    priority: 0.8,
+  });
+
+  urls.push(
+    ...problemSeoItems.map((item) => ({
+      url: `${siteUrl}/en/problems/${item.slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
     })),
   );
 

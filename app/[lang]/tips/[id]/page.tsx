@@ -23,10 +23,10 @@ function TriadCard({ title, children }: { title: string; children: ReactNode }) 
 
 function KioskEmergency({ locale }: { locale: Lang }) {
   const phrases = [
-    "Can I pay at the counter?",
-    "My card is not working here.",
-    "Can I skip membership and check out as guest?",
-    "Is there an English option?",
+    { english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+    { english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+    { english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+    { english: "Is there an English option?", korean: "영어 옵션 있나요?" },
   ];
 
   return (
@@ -36,20 +36,13 @@ function KioskEmergency({ locale }: { locale: Lang }) {
         <p className="mt-3 text-sm leading-6 text-zinc-300">Don&apos;t freeze. Use this order.</p>
       </section>
 
-      <section className="mt-6 grid gap-4 sm:grid-cols-3">
-        <TriadCard title="What usually goes wrong?">
-          Card insert fails. No English menu. Kiosk asks for phone number.
-        </TriadCard>
-        <TriadCard title="Why it happens?">
-          Some cards fail by insert chip. Some kiosks hide language in top-right. Phone number prompt is membership signup, not payment.
-        </TriadCard>
-        <TriadCard title="What to do immediately?">
-          <ul className="space-y-2 font-semibold">
-            <li>1. Try tap instead of insert.</li>
-            <li>2. Try another card.</li>
-            <li>3. Ask: &quot;Can I pay at the counter?&quot;</li>
-          </ul>
-        </TriadCard>
+      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">What to do immediately?</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Try tap instead of insert.</li>
+          <li>Try another card.</li>
+          <li>Ask: &quot;Can I pay at the counter?&quot;</li>
+        </ul>
       </section>
 
       <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
@@ -68,13 +61,22 @@ function KioskEmergency({ locale }: { locale: Lang }) {
         </ul>
       </section>
 
+      <section className="mt-4 grid gap-4 sm:grid-cols-2">
+        <TriadCard title="What usually goes wrong?">
+          Card insert fails. No English menu. Kiosk asks for phone number.
+        </TriadCard>
+        <TriadCard title="Why it happens?">
+          Some cards fail by insert chip. Some kiosks hide language in top-right. Phone number prompt is membership signup, not payment.
+        </TriadCard>
+      </section>
+
       <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
-        <h2 className="text-lg font-black tracking-tight text-zinc-950">Copy English phrases</h2>
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Show Korean phrases to staff</h2>
         <div className="mt-3 space-y-3">
           {phrases.map((phrase) => (
-            <div key={phrase} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 p-3">
-              <p className="text-sm font-semibold text-zinc-900">{phrase}</p>
-              <CopyPhraseButton text={phrase} />
+            <div key={phrase.english} className="rounded-xl border border-zinc-200 p-3">
+              <p className="mb-2 text-sm font-semibold text-zinc-900">{phrase.english}</p>
+              <CopyPhraseButton english={phrase.english} korean={phrase.korean} />
             </div>
           ))}
         </div>
@@ -112,9 +114,9 @@ function SubwayEmergency({ locale }: { locale: Lang }) {
         <TriadCard title="Why it happens?">They check color only. They skip final station name. Line 2 circles both ways.</TriadCard>
         <TriadCard title="What to do immediately?">
           <ul className="space-y-2 font-semibold">
-            <li>1. Check final station name.</li>
-            <li>2. Avoid Line 2 at 6-8pm.</li>
-            <li>3. Confirm direction twice.</li>
+            <li>Ignore line color. Check the last station name.</li>
+            <li>Line 2 goes both ways.</li>
+            <li>If unsure, ask before entering.</li>
           </ul>
         </TriadCard>
       </section>

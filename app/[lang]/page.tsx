@@ -16,22 +16,22 @@ type EmergencyCard = {
 function getEmergencyCards(lang: Lang): EmergencyCard[] {
   return [
     {
-      title: "Card rejected at kiosk",
+      title: "Fix card rejected at kiosk",
       href: `/${lang}/tips/kiosk-survival-flow`,
       note: "Tap. Switch card. Move to counter.",
     },
     {
-      title: "Which subway line should I take?",
+      title: "Pick the right subway line now",
       href: `/${lang}/tips/subway-map-confusion-cuts`,
       note: "Pick your base line first.",
     },
     {
-      title: "What should I buy at Olive Young?",
+      title: "Get a fast Olive Young list",
       href: `/${lang}/tips/oliveyoung-master-playbook`,
       note: "Get the $50 starter pack.",
     },
     {
-      title: "It's too crowded here",
+      title: "Escape a crowded area",
       href: `/${lang}/crowded`,
       note: "Exit fast. Reset route.",
     },
@@ -51,10 +51,11 @@ export default async function HomePage({ params }: HomePageProps) {
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-800">Seoul Emergency Guide</p>
         <h1 className="mt-3 text-4xl font-black tracking-tight text-zinc-950 sm:text-6xl">Stuck in Seoul?</h1>
         <p className="mt-4 max-w-2xl text-base font-medium leading-7 text-zinc-800 sm:text-xl">
-          Card rejected? Missed the subway? Don&apos;t know what to buy?
+          Something went wrong?
           <br />
-          Start here.
+          Fix it in under 60 seconds.
         </p>
+        <p className="mt-3 text-sm font-semibold text-zinc-700">Skip Google. Start here.</p>
       </section>
 
       <section className="mt-8 sm:mt-12">
@@ -84,7 +85,7 @@ export default async function HomePage({ params }: HomePageProps) {
           <Link href={`/${locale}/areas/bukchon`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
             Bukchon
           </Link>
-          <Link href={`/${locale}/tips/subway-map-confusion-cuts`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
+          <Link href={`/${locale}/areas/gangnam`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
             Gangnam
           </Link>
         </div>

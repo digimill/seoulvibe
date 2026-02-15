@@ -36,6 +36,14 @@ function getThreeThings(areaName: string) {
     ];
   }
 
+  if (areaName.toLowerCase() === "gangnam") {
+    return [
+      "Avoid main exits at 6-8pm. They choke fast.",
+      "Pick one destination only, then move to side blocks.",
+      "If crowded, shift one station and short-hop back.",
+    ];
+  }
+
   return [
     "Check peak crowd window before going.",
     "Pick one core stop, then one backup nearby.",
@@ -104,6 +112,17 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
           {area.one_line_route ? <li><span className="font-bold">Route:</span> {area.one_line_route}</li> : null}
         </ul>
       </section>
+
+      {area.id === "hongdae" ? (
+        <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+          <h2 className="text-lg font-black tracking-tight text-zinc-950">Situation triggers</h2>
+          <ul className="mt-3 space-y-2 text-sm font-semibold leading-6 text-zinc-900">
+            <li>Too loud? - Walk toward Yeonnam side.</li>
+            <li>Queue insane? - Move 2 streets east.</li>
+            <li>Lost in main street? - Head to side alley bars.</li>
+          </ul>
+        </section>
+      ) : null}
 
       {area.real_spots && area.real_spots.length > 0 ? (
         <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">

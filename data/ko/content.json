@@ -188,6 +188,39 @@
         "한강공원 망원지구",
         "땅땅치킨 망원점"
       ]
+    },
+    {
+      "id": "gangnam",
+      "name": "Gangnam",
+      "summary": "환승 밀집, 대형 상권, 야간 이동이 겹쳐서 초행이 가장 자주 꼬이는 구역.",
+      "hook": "강남은 화려해서 쉬워 보이지만, 동선 설계 안 하면 시간만 빠르게 사라진다.",
+      "friend_note": "강남은 메인 블록 집착하면 대기만 길어진다. 1차 목적지 하나만 찍고 나머지는 옆 블록으로 옮겨라.",
+      "vibe": "바쁨, 상업 밀집, 야간 인구 높음",
+      "best_time": "오전 10:30 이전 또는 밤 21:30 이후",
+      "how_to_get": "강남역/신논현역 혼잡 출구 피해서 한 블록 바깥에서 진입",
+      "must_do": "메인 도로보다 이면 상권 기준으로 식당/카페 선택",
+      "hidden_tip": "피크 시간엔 지하 연결통로보다 지상 횡단이 빠를 때가 많음",
+      "do_not": "19:00~20:30에 인기 매장 여러 개 연속으로 잡지 말 것",
+      "budget": "중~상",
+      "crowd": "평일 저녁/주말 밤 매우 높음",
+      "one_line_route": "강남역 외곽 진입 -> 1개 핵심 일정 -> 이면 상권 이동 -> 피크 전 이탈",
+      "tags": [
+        "transport",
+        "night",
+        "shopping",
+        "crowded"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-15",
+      "image": {
+        "src": "/images/hero-seoul.jpg",
+        "alt": "Gangnam streets in Seoul"
+      },
+      "real_spots": [
+        "Gangnam Station",
+        "Sinnonhyeon Station",
+        "Teheran-ro"
+      ]
     }
   ],
   "themes": [

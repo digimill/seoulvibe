@@ -22,8 +22,13 @@ const LANG_SHORT_LABELS: Record<Lang, string> = {
   "zh-hk": "HK",
 };
 
+const EN_ONLY_ROOTS = new Set(["kiosk-card-rejected", "how-much-tmoney", "olive-young-tourist-guide", "problems"]);
+
 function toLocalizedHref(pathname: string, query: string, nextLang: Lang): string {
   const segments = pathname.split("/").filter(Boolean);
+  if (segments[0] === "en" && EN_ONLY_ROOTS.has(segments[1] ?? "") && nextLang !== "en") {
+    return `/${nextLang}${query}`;
+  }
   if (segments.length > 0 && LANGS.includes(segments[0] as Lang)) {
     segments[0] = nextLang;
     return `/${segments.join("/")}${query}`;

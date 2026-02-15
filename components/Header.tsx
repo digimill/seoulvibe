@@ -19,9 +19,13 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const navItems = [
     { href: `/${lang}`, label: "Start" },
-    { href: `/${lang}/tips`, label: "Fixes" },
+    { href: `/${lang}/tips/kiosk-survival-flow`, label: "Kiosk" },
+    { href: `/${lang}/tips/subway-map-confusion-cuts`, label: "Subway" },
+    { href: `/${lang}/tips/oliveyoung-master-playbook`, label: "Olive" },
     { href: `/${lang}/areas`, label: "Areas" },
     { href: `/${lang}/crowded`, label: "Crowd" },
+    { href: `/${lang}/tips`, label: "All Fixes" },
+    ...(lang === "en" ? [{ href: "/en/problems", label: "Problems" }] : []),
   ];
 
   useEffect(() => {
