@@ -371,21 +371,21 @@
     {
       "id": "oliveyoung-master-playbook",
       "title": "Olive Young Master Loop",
-      "summary": "A practical playbook that compresses Olive Young shopping into enter, pick, and checkout.",
-      "hook": "Decide what to buy before entering.",
-      "friend_note": "Secure your top 3 items first, then check promotion zones at the end.",
-      "ideal_for": "K-beauty beginners, gift shoppers, short-stay visitors",
-      "flow": "3-minute layout scan -> essentials first -> promo/limited check -> checkout",
-      "highlight": "Execution-focused shopping guidance reflecting store size and time-of-day queue patterns.",
+      "summary": "Olive Young works best when treated as a planned loop, not spontaneous browsing. Store size, stock rotation, and checkout congestion change by district and time, so a fixed purchase order gives much better results.",
+      "hook": "In Olive Young, sequence matters more than speed.",
+      "friend_note": "The highest-success pattern is consistent: secure three essentials first, then review promotion displays at the end.",
+      "ideal_for": "K-beauty beginners, short-stay visitors, gift-focused shoppers",
+      "flow": "Layout scan on entry -> essentials first -> promo/limited review -> checkout timing control",
+      "highlight": "Execution-first shopping guidance that reflects real store and time-slot variance",
       "budget": "Medium",
       "route_stops": [
         "Myeongdong",
         "Hongdae",
         "Gangnam"
       ],
-      "food_break": "Add a short cafe break before or after shopping to reduce fatigue and impulse buys.",
-      "rain_swap": "On rainy days, prioritize station-adjacent flagship stores.",
-      "creator_note": "Define your top three before entry for better decisions.",
+      "food_break": "A short break before or after shopping helps reduce decision fatigue and impulse buying.",
+      "rain_swap": "On rainy days, prioritize large station-adjacent stores to reduce movement fatigue.",
+      "creator_note": "Instead of endless review comparison, pre-commit your top three must-buy items for that day.",
       "tags": [
         "beauty",
         "shopping",
@@ -790,8 +790,8 @@
     {
       "id": "kiosk-survival-flow",
       "title": "Kiosk Survival in 60 Seconds",
-      "summary": "At cafes and restaurants, kiosk ordering becomes easy once you know the button sequence.",
-      "hook": "Do not read everything. Lock the flow first.",
+      "summary": "People usually freeze at Seoul kiosks not because of language, but because they lose track of screen flow under time pressure. In busy cafes and restaurants, understanding the sequence matters more than reading every label in detail.",
+      "hook": "Treat kiosks as a sequence game, not a translation test.",
       "tags": [
         "kiosk",
         "cafe",
@@ -806,41 +806,47 @@
       },
       "blocks": [
         {
+          "kind": "text",
+          "title": "Why people get stuck",
+          "body": "Most kiosk UIs look different, but the decision order is similar. Problems start when users over-read every option and hesitate at add-on screens. Once there is a line behind you, hesitation turns into mistakes quickly. A better approach is to lock your decision frame first: one core item, minimal options, and a clear dine-in or takeout choice."
+        },
+        {
           "kind": "steps",
-          "title": "Default flow",
+          "title": "Safe field sequence",
           "items": [
-            "Choose menu",
-            "Choose options",
-            "Dine-in or takeout",
-            "Confirm payment"
+            "Pick one familiar menu item first",
+            "Keep options close to default",
+            "Confirm dine-in or takeout clearly",
+            "Re-check quantity and price on final screen"
           ]
+        },
+        {
+          "kind": "text",
+          "title": "How to operate under queue pressure",
+          "body": "At peak hours, flawless customization is less important than error-free completion. You can always place a second order after the first success. What hurts most is failing at the final stage and starting over. So in first-time stores, optimize for completion first, optimization second."
         },
         {
           "kind": "list",
-          "title": "Most common failure points",
+          "title": "Common first-timer mistakes",
           "items": [
-            "Freezing on options",
-            "Choosing wrong dine-in/takeout mode",
-            "Skipping final confirmation"
+            "Overthinking on option pages",
+            "Selecting wrong dine-in/takeout mode",
+            "Skipping final confirmation before payment"
           ]
-        },
-        {
-          "kind": "callout",
-          "title": "Field tip",
-          "body": "When the queue is long, keep options minimal and finish one simple order first."
         }
       ],
       "real_spots": [
         "Seongsu cafe streets",
         "Hongdae fast-casual stores",
         "Gangnam food courts"
-      ]
+      ],
+      "friend_note": "The most stable pattern is simple: complete one clean order first, then add extras if needed. This reduces queue pressure mistakes and avoids full restart loops."
     },
     {
       "id": "subway-map-confusion-cuts",
       "title": "Seoul Subway Confusion Cuts: 7 First-Timer Mistakes",
-      "summary": "You can avoid most subway mistakes by checking terminal direction and express/local type first.",
-      "hook": "Subway success is direction judgment, not map memorization.",
+      "summary": "Seoul subway feels confusing not because lines are impossible, but because direction errors create cascading delays. If you check terminal direction and express/local type first, most first-time mistakes disappear quickly.",
+      "hook": "Direction judgment beats map memorization.",
       "tags": [
         "subway",
         "map",
@@ -855,27 +861,33 @@
       },
       "blocks": [
         {
+          "kind": "text",
+          "title": "Why confusion happens",
+          "body": "Route maps look clean, but field movement includes hidden variables: opposite-direction platforms on the same line, express skip-stop patterns, and long transfer corridors. Many visitors board the correct line but wrong direction. The result is not a small delay. It can break your whole day sequence when transfers stack up."
+        },
+        {
           "kind": "list",
           "title": "10-second check before boarding",
           "items": [
-            "Terminal direction",
-            "Express vs local",
-            "Does it stop at your station?"
+            "Terminal direction name",
+            "Express vs local status",
+            "Whether your destination station is served",
+            "Next transfer direction if needed"
           ]
+        },
+        {
+          "kind": "text",
+          "title": "Real transfer-time strategy",
+          "body": "Do not wait to think after arrival. One station before transfer, pre-read the next line color and direction so you can move instantly after getting off. Also treat exit numbers as route decisions, not decorative labels. The right exit can save long street-level detours."
         },
         {
           "kind": "list",
-          "title": "Where visitors get confused",
+          "title": "Most confusing points for first-timers",
           "items": [
-            "Two-direction platforms on same line",
-            "Long transfer corridors",
-            "Exit numbers vs actual walking distance"
+            "Opposite-direction platforms",
+            "Underestimated transfer corridor lengths",
+            "Exit number vs real walking distance mismatch"
           ]
-        },
-        {
-          "kind": "callout",
-          "title": "Fast decision rule",
-          "body": "Reducing one transfer is usually more stable than adding 5-8 minutes of walking."
         }
       ],
       "real_spots": [
@@ -883,7 +895,8 @@
         "Express Bus Terminal",
         "Hongdae Station",
         "Jamsil Station"
-      ]
+      ],
+      "friend_note": "A 20-second check before boarding often saves 15-20 minutes of backtracking at transfer hubs."
     }
   ],
   "korea101": [
