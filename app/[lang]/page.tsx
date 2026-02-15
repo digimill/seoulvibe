@@ -38,10 +38,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
       subtitleB: "바로 확인하세요.",
       skipLine: "검색 전에 여기부터.",
       stayLabel: "숙소가 여기라면:",
-      deepGuides: "심화 가이드",
-      deep1: "키오스크 카드 오류 상세",
-      deep2: "티머니 충전 가이드",
-      deep3: "올리브영 상세 가이드",
+      deepGuides: "바로 실행",
+      deep1: "키오스크 해결 가이드",
+      deep2: "티머니 충전 계산기",
+      deep3: "올리브영 예산 빌더",
       cards: [
         "키오스크 카드 오류 바로 해결",
         "지금 맞는 지하철 노선 찾기",
@@ -65,10 +65,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
       subtitleB: "すぐ確認。",
       skipLine: "検索前にここから。",
       stayLabel: "滞在先がここなら:",
-      deepGuides: "詳細ガイド",
-      deep1: "キオスク決済エラー詳細",
-      deep2: "T-moneyチャージガイド",
-      deep3: "オリーブヤング詳細ガイド",
+      deepGuides: "今すぐ使う",
+      deep1: "キオスク対処ガイド",
+      deep2: "T-moneyチャージ計算",
+      deep3: "オリーブヤング予算ビルダー",
       cards: [
         "キオスク決済エラーをすぐ解決",
         "地下鉄の正しい路線を今すぐ確認",
@@ -92,10 +92,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
       subtitleB: "马上处理。",
       skipLine: "搜索前先看这里。",
       stayLabel: "如果你住在：",
-      deepGuides: "深度指南",
-      deep1: "自助机刷卡失败详解",
-      deep2: "T-money 充值指南",
-      deep3: "Olive Young 详细指南",
+      deepGuides: "立即使用",
+      deep1: "自助机刷卡应对指南",
+      deep2: "T-money 充值计算器",
+      deep3: "Olive Young 预算工具",
       cards: [
         "马上处理自助机刷卡失败",
         "立刻选对地铁线路",
@@ -119,10 +119,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
       subtitleB: "馬上處理。",
       skipLine: "搜尋前先看這裡。",
       stayLabel: "如果你住在：",
-      deepGuides: "深度指南",
-      deep1: "自助機刷卡失敗詳解",
-      deep2: "T-money 儲值指南",
-      deep3: "Olive Young 詳細指南",
+      deepGuides: "立即使用",
+      deep1: "自助機刷卡應對指南",
+      deep2: "T-money 儲值計算器",
+      deep3: "Olive Young 預算工具",
       cards: [
         "立即處理自助機刷卡失敗",
         "馬上選對地鐵路線",
@@ -145,10 +145,10 @@ function getHomeCopy(lang: Lang): HomeCopy {
     subtitleB: "check it fast.",
     skipLine: "Skip Google. Start here.",
     stayLabel: "If you're staying in:",
-    deepGuides: "Deep guides",
-    deep1: "Kiosk card rejected guide",
-    deep2: "How much T-money you need",
-    deep3: "Olive Young tourist guide",
+    deepGuides: "Run now",
+    deep1: "Kiosk quick fix guide",
+    deep2: "T-money load calculator",
+    deep3: "Olive Young budget builder",
     cards: [
       "Fix card rejected at kiosk",
       "Pick the right subway line now",
@@ -251,10 +251,10 @@ export default async function HomePage({ params }: HomePageProps) {
           <Link href={`/${locale}/kiosk-card-rejected`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
             {copy.deep1}
           </Link>
-          <Link href={`/${locale}/how-much-tmoney`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+          <Link href={`/${locale}/tools/tmoney-load`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
             {copy.deep2}
           </Link>
-          <Link href={`/${locale}/olive-young-tourist-guide`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+          <Link href={`/${locale}/tools/olive-budget`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
             {copy.deep3}
           </Link>
         </div>
