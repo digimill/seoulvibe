@@ -86,59 +86,12 @@ function narrate(locale: Lang, text: string): string {
   return text;
 }
 
-function getToneCopy(locale: Lang) {
-  if (locale === "ko") {
-    return {
-      open: "이 장면을 한 줄로 말하면 이래요.",
-      friend: "현장에서 느끼는 포인트는 이런 쪽이에요.",
-      core: "그래서 핵심만 뽑으면,",
-      fun: "여기서 한 번 더 재미있는 지점은,",
-      close: "이 포인트를 알고 보면 같은 장면도 훨씬 입체적으로 보여요.",
-    };
-  }
-  if (locale === "ja") {
-    return {
-      open: "このシーンをひと言でまとめると、こんな感じです。",
-      friend: "現地で体感しやすいポイントはこのあたりです。",
-      core: "なので核心だけ言うと、",
-      fun: "さらに面白いのは、",
-      close: "この視点を持つと、同じ場面でも見え方がかなり変わります。",
-    };
-  }
-  if (locale === "zh-cn") {
-    return {
-      open: "先用一句话概括这个场景：",
-      friend: "在现场最容易有感的点通常是：",
-      core: "所以如果只抓核心，",
-      fun: "再补一个有意思的点，",
-      close: "带着这个视角再看同一画面，会立体很多。",
-    };
-  }
-  if (locale === "zh-tw" || locale === "zh-hk") {
-    return {
-      open: "先用一句話概括這個場景：",
-      friend: "在現場最容易有感的點通常是：",
-      core: "所以如果只抓核心，",
-      fun: "再補一個有意思的點，",
-      close: "帶著這個視角再看同一畫面，會立體很多。",
-    };
-  }
-  return {
-    open: "If we frame this scene in one line, it goes like this.",
-    friend: "What people usually feel on-site is this.",
-    core: "So if we strip it down to the core,",
-    fun: "One more fun layer here is that",
-    close: "With this lens, the exact same scene reads much richer.",
-  };
-}
-
 export default async function Korea101Page({ params }: Korea101PageProps) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
   const t = getCopy(locale);
-  const tone = getToneCopy(locale);
   const entries = await getKorea101(locale);
   const introText =
     locale === "ko"
@@ -283,23 +236,13 @@ export default async function Korea101Page({ params }: Korea101PageProps) {
                   })()}
                   <div className="mt-5 space-y-3 text-base leading-8 text-zinc-700">
                     <p>
-                      {narrate(locale, `${tone.open} `)}
                       {narrate(locale, `${entry.comic_scene} ${entry.summary}`)}
                     </p>
                     {entry.friend_note ? (
-                      <p>
-                        {narrate(locale, `${tone.friend} `)}
-                        {narrate(locale, entry.friend_note)}
-                      </p>
+                      <p>{narrate(locale, entry.friend_note)}</p>
                     ) : null}
-                    <p>
-                      {narrate(locale, `${tone.core} `)}
-                      {narrate(locale, entry.core_idea)}
-                    </p>
-                    <p>
-                      {narrate(locale, `${tone.fun} `)}
-                      {narrate(locale, `${entry.fun_fact} ${entry.real_life_tip} ${tone.close}`)}
-                    </p>
+                    <p>{narrate(locale, entry.core_idea)}</p>
+                    <p>{narrate(locale, `${entry.fun_fact} ${entry.real_life_tip}`)}</p>
                   </div>
                 </section>
               ))}
