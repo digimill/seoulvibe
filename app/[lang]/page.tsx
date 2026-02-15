@@ -25,6 +25,8 @@ type HomeCopy = {
   deep2: string;
   deep3: string;
   cards: [string, string, string, string];
+  cardNotes: [string, string, string, string];
+  areas: [string, string, string, string];
 };
 
 function getHomeCopy(lang: Lang): HomeCopy {
@@ -46,6 +48,13 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "올리브영 30분 쇼핑 리스트",
         "사람 많은 구역 빠져나오기",
       ],
+      cardNotes: [
+        "탭 결제 -> 카드 변경 -> 카운터 이동",
+        "숙소 기준 노선부터 먼저 확인",
+        "기본 세트 먼저 담고 끝내기",
+        "빨리 빠져나와 동선 재설정",
+      ],
+      areas: ["홍대", "성수", "북촌", "강남"],
     };
   }
   if (lang === "ja") {
@@ -66,6 +75,13 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "オリーブヤング30分買い物リスト",
         "混雑エリアから素早く離脱",
       ],
+      cardNotes: [
+        "タッチ -> 別カード -> カウンター",
+        "宿基準で路線を先に決める",
+        "基本セットを先に確保",
+        "すぐ離脱して動線を再設定",
+      ],
+      areas: ["弘大", "聖水", "北村", "江南"],
     };
   }
   if (lang === "zh-cn") {
@@ -86,6 +102,13 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "Olive Young 30 分钟购物清单",
         "快速离开拥挤区域",
       ],
+      cardNotes: [
+        "先 tap，再换卡，再走柜台",
+        "先按住宿位置选线",
+        "先拿基础组合再停手",
+        "先脱离拥挤再重排路线",
+      ],
+      areas: ["弘大", "圣水", "北村", "江南"],
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
@@ -106,6 +129,13 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "Olive Young 30 分鐘購物清單",
         "快速離開人潮區域",
       ],
+      cardNotes: [
+        "先 tap，再換卡，再走櫃檯",
+        "先按住宿位置選線",
+        "先拿基本組合再停手",
+        "先離開人潮再重排行程",
+      ],
+      areas: ["弘大", "聖水", "北村", "江南"],
     };
   }
   return {
@@ -125,6 +155,13 @@ function getHomeCopy(lang: Lang): HomeCopy {
       "Get a fast Olive Young list",
       "Escape a crowded area",
     ],
+    cardNotes: [
+      "Tap. Switch card. Move to counter.",
+      "Start with your base line.",
+      "Get the basic set first.",
+      "Exit fast. Reset route.",
+    ],
+    areas: ["Hongdae", "Seongsu", "Bukchon", "Gangnam"],
   };
 }
 
@@ -134,22 +171,22 @@ function getEmergencyCards(lang: Lang): EmergencyCard[] {
     {
       title: copy.cards[0],
       href: `/${lang}/tips/kiosk-survival-flow`,
-      note: "Tap. Switch card. Move to counter.",
+      note: copy.cardNotes[0],
     },
     {
       title: copy.cards[1],
       href: `/${lang}/tips/subway-map-confusion-cuts`,
-      note: "Pick your base line first.",
+      note: copy.cardNotes[1],
     },
     {
       title: copy.cards[2],
       href: `/${lang}/tips/oliveyoung-master-playbook`,
-      note: "Get the $50 starter pack.",
+      note: copy.cardNotes[2],
     },
     {
       title: copy.cards[3],
       href: `/${lang}/crowded`,
-      note: "Exit fast. Reset route.",
+      note: copy.cardNotes[3],
     },
   ];
 }
@@ -194,16 +231,16 @@ export default async function HomePage({ params }: HomePageProps) {
         <h2 className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.stayLabel}</h2>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link href={`/${locale}/areas/hongdae`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
-            Hongdae
+            {copy.areas[0]}
           </Link>
           <Link href={`/${locale}/areas/seongsu`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
-            Seongsu
+            {copy.areas[1]}
           </Link>
           <Link href={`/${locale}/areas/bukchon`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
-            Bukchon
+            {copy.areas[2]}
           </Link>
           <Link href={`/${locale}/areas/gangnam`} className="rounded-full border border-zinc-900 px-4 py-2 text-sm font-bold text-zinc-900">
-            Gangnam
+            {copy.areas[3]}
           </Link>
         </div>
       </section>
