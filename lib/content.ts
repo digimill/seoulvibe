@@ -86,13 +86,38 @@ async function loadContent(lang: Lang): Promise<LocaleContent> {
   }
 }
 
+function mergeById<T extends { id: string }>(primary: T[], secondary: T[], base: T[]): T[] {
+  const primaryMap = new Map(primary.map((item) => [item.id, item]));
+  const secondaryMap = new Map(secondary.map((item) => [item.id, item]));
+  const baseMap = new Map(base.map((item) => [item.id, item]));
+
+  const orderedIds = Array.from(new Set([...base.map((item) => item.id), ...secondary.map((item) => item.id), ...primary.map((item) => item.id)]));
+
+  return orderedIds
+    .map((id) => primaryMap.get(id) ?? secondaryMap.get(id) ?? baseMap.get(id))
+    .filter((item): item is T => Boolean(item));
+}
+
+async function loadContentAligned(lang: Lang): Promise<LocaleContent> {
+  const [primary, english, korean] = await Promise.all([loadContent(lang), loadContent("en"), loadContent("ko")]);
+  const secondary = lang === "en" ? korean : english;
+
+  return {
+    hero: primary.hero ?? secondary.hero ?? korean.hero ?? FALLBACK_IMAGE,
+    areas: mergeById(primary.areas, secondary.areas, korean.areas),
+    themes: mergeById(primary.themes, secondary.themes, korean.themes),
+    tips: mergeById(primary.tips, secondary.tips, korean.tips),
+    korea101: mergeById(primary.korea101, secondary.korea101, korean.korea101),
+  };
+}
+
 export async function getHeroImage(lang: Lang): Promise<ContentImage> {
-  const content = await loadContent(lang);
+  const content = await loadContentAligned(lang);
   return content.hero ?? FALLBACK_IMAGE;
 }
 
 export async function getAreas(lang: Lang): Promise<Area[]> {
-  const content = await loadContent(lang);
+  const content = await loadContentAligned(lang);
   return onlyPublished(content.areas).map((area) => ({
     ...area,
     image: area.image ?? FALLBACK_IMAGE,
@@ -100,7 +125,7 @@ export async function getAreas(lang: Lang): Promise<Area[]> {
 }
 
 export async function getThemes(lang: Lang): Promise<Theme[]> {
-  const content = await loadContent(lang);
+  const content = await loadContentAligned(lang);
   return onlyPublished(content.themes).map((theme) => ({
     ...theme,
     image: theme.image ?? FALLBACK_IMAGE,
@@ -108,7 +133,7 @@ export async function getThemes(lang: Lang): Promise<Theme[]> {
 }
 
 export async function getTips(lang: Lang): Promise<Tip[]> {
-  const content = await loadContent(lang);
+  const content = await loadContentAligned(lang);
   return onlyPublished(content.tips).map((tip) => ({
     ...tip,
     image: tip.image ?? FALLBACK_IMAGE,
@@ -116,7 +141,7 @@ export async function getTips(lang: Lang): Promise<Tip[]> {
 }
 
 export async function getKorea101(lang: Lang): Promise<Korea101[]> {
-  const content = await loadContent(lang);
+  const content = await loadContentAligned(lang);
   return onlyPublished(content.korea101).map((item) => ({
     ...item,
     image: item.image ?? FALLBACK_IMAGE,

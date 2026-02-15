@@ -46,7 +46,7 @@ export function Header({ lang }: HeaderProps) {
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
-            <LanguageSwitcher lang={lang} compact />
+            <LanguageSwitcher lang={lang} compact onOpen={closeMobileMenu} />
             <details ref={mobileMenuRef} className="relative">
               <summary className="list-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-medium text-zinc-900">
                 Menu
