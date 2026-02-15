@@ -1,50 +1,27 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import picksData from "@/data/picks.json";
+import rulesData from "@/data/quick_picks_rules.json";
 import type { Lang } from "@/lib/i18n";
 
 type Area = "Hongdae" | "Seongsu" | "Bukchon" | "Gangnam" | "Euljiro";
 type Mood = "Eat" | "Coffee" | "Walk" | "Quiet" | "Night" | "Local" | "Unique";
 type WithType = "Solo" | "Couple" | "Friends" | "Family";
 
-type RawEntry = {
-  area: { id: string; ko?: string; en?: string };
-  mood: { id: string; ko?: string; en?: string };
-  with: { id: string; ko?: string; en?: string };
-  anchor?: { label_ko?: string; label_en?: string; map_query_ko?: string; map_query_en?: string };
-  title_ko?: string;
-  title_en?: string;
-  why_now_ko?: string;
-  do_ko?: string;
-  risk_ko?: string;
-  plan_b_ko?: string;
-  map_query_ko?: string;
-  map_query_en?: string;
-  tags?: string[];
+type Rule = {
+  title_ko: string;
+  title_en: string;
+  queries_ko: string[];
+  queries_en: string[];
+  do_ko: string;
+  do_en: string;
+  risk_ko: string;
+  risk_en: string;
+  plan_b_ko: string;
+  plan_b_en: string;
 };
 
-type DatasetObject = {
-  entries?: RawEntry[];
-};
-
-type NormalizedPick = {
-  id: string;
-  area: Area;
-  mood: Mood;
-  withType: WithType;
-  titleKo: string;
-  titleEn: string;
-  whyNowKo: string;
-  doKo: string;
-  riskKo: string;
-  planBKo: string;
-  mapQueryKo: string;
-  mapQueryEn: string;
-  anchorKo: string;
-  anchorEn: string;
-  tags: string[];
-};
+type RuleMap = Record<Area, Record<Mood, Rule>>;
 
 type OutputCard = {
   id: string;
@@ -61,143 +38,22 @@ const AREAS: Area[] = ["Hongdae", "Seongsu", "Bukchon", "Gangnam", "Euljiro"];
 const MOODS: Mood[] = ["Eat", "Coffee", "Walk", "Quiet", "Night", "Local", "Unique"];
 const WITH_TYPES: WithType[] = ["Solo", "Couple", "Friends", "Family"];
 
-function isArea(v: string): v is Area {
-  return AREAS.includes(v as Area);
-}
-function isMood(v: string): v is Mood {
-  return MOODS.includes(v as Mood);
-}
-function isWith(v: string): v is WithType {
-  return WITH_TYPES.includes(v as WithType);
-}
+const RULES = rulesData as RuleMap;
 
-function normalizeEntries(raw: unknown): NormalizedPick[] {
-  const entries = Array.isArray(raw)
-    ? (raw as RawEntry[])
-    : Array.isArray((raw as DatasetObject)?.entries)
-      ? ((raw as DatasetObject).entries as RawEntry[])
-      : [];
-
-  return entries
-    .map((item, index) => {
-      const area = item.area?.id;
-      const mood = item.mood?.id;
-      const withType = item.with?.id;
-      if (!area || !mood || !withType || !isArea(area) || !isMood(mood) || !isWith(withType)) return null;
-
-      const anchorKo = item.anchor?.label_ko ?? item.anchor?.map_query_ko ?? item.map_query_ko ?? "";
-      const anchorEn = item.anchor?.label_en ?? item.anchor?.map_query_en ?? item.map_query_en ?? anchorKo;
-      const mapQueryKo = item.map_query_ko ?? item.anchor?.map_query_ko ?? anchorKo;
-      const mapQueryEn = item.map_query_en ?? item.anchor?.map_query_en ?? anchorEn;
-
-      if (!mapQueryKo || !anchorKo) return null;
-
-      return {
-        id: `entry-${index}`,
-        area,
-        mood,
-        withType,
-        titleKo: item.title_ko ?? `${anchorKo} 픽`,
-        titleEn: item.title_en ?? `${anchorEn} pick`,
-        whyNowKo: item.why_now_ko ?? "지금 이동하면 대기 리스크를 줄일 수 있어요.",
-        doKo: item.do_ko ?? "지금 바로 이동해서 입장 가능한 곳부터 선택하세요.",
-        riskKo: item.risk_ko ?? "대기 줄이 길어질 수 있어요.",
-        planBKo: item.plan_b_ko ?? "한 블록 옆으로 이동해 재선택하세요.",
-        mapQueryKo,
-        mapQueryEn,
-        anchorKo,
-        anchorEn,
-        tags: item.tags ?? [],
-      } satisfies NormalizedPick;
-    })
-    .filter((x): x is NormalizedPick => x !== null);
-}
-
-const PICKS = normalizeEntries(picksData);
-
-const FALLBACK: NormalizedPick[] = [
-  {
-    id: "fallback-1",
-    area: "Hongdae",
-    mood: "Eat",
-    withType: "Solo",
-    titleKo: "연남동 좌석 우선 식사",
-    titleEn: "Seat-first meal in Yeonnam",
-    whyNowKo: "혼잡 시간대엔 좌석 우선이 후회가 적어요.",
-    doKo: "메인 거리 말고 골목 2번째 매장부터 보세요.",
-    riskKo: "유명 매장은 대기가 급증해요.",
-    planBKo: "대기 10분 넘으면 바로 옆 골목으로 이동.",
-    mapQueryKo: "연남동 식당",
-    mapQueryEn: "Yeonnam restaurant",
-    anchorKo: "연남동",
-    anchorEn: "Yeonnam",
-    tags: ["fallback"],
-  },
-  {
-    id: "fallback-2",
-    area: "Seongsu",
-    mood: "Coffee",
-    withType: "Couple",
-    titleKo: "성수 조용한 커피 리셋",
-    titleEn: "Seongsu quiet coffee reset",
-    whyNowKo: "짧게 쉬고 동선을 다시 잡기 좋아요.",
-    doKo: "좌석 있는 카페 먼저 들어가 20분만 쉬세요.",
-    riskKo: "시그니처 메뉴 줄이 길 수 있어요.",
-    planBKo: "브랜드 대신 소형 로스터리로 전환.",
-    mapQueryKo: "성수 조용한 카페",
-    mapQueryEn: "Seongsu quiet cafe",
-    anchorKo: "성수",
-    anchorEn: "Seongsu",
-    tags: ["fallback"],
-  },
-  {
-    id: "fallback-3",
-    area: "Euljiro",
-    mood: "Night",
-    withType: "Friends",
-    titleKo: "을지로 빠른 야간 선택",
-    titleEn: "Euljiro quick night pick",
-    whyNowKo: "대기 없는 1차 선택이 체감 만족도가 높아요.",
-    doKo: "즉시 입장 가능한 곳 한 곳만 고르세요.",
-    riskKo: "핫플 줄에 시간을 다 쓸 수 있어요.",
-    planBKo: "10분 넘기면 다음 골목으로 이동.",
-    mapQueryKo: "을지로 노가리골목",
-    mapQueryEn: "Euljiro nogari alley",
-    anchorKo: "을지로",
-    anchorEn: "Euljiro",
-    tags: ["fallback"],
-  },
+const WHY_POOL_KO = [
+  "지금 이동하면 대기 리스크를 줄일 수 있어요.",
+  "지금 시간대에 실패 확률이 낮은 선택입니다.",
+  "동선이 단순해서 체감 효율이 좋아요.",
+  "지금 고르면 일정 복구가 쉬워요.",
+  "후회가 적은 안전한 선택입니다.",
 ];
-
-function hashString(value: string) {
-  let hash = 2166136261;
-  for (let i = 0; i < value.length; i += 1) {
-    hash ^= value.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
-  }
-  return Math.abs(hash >>> 0);
-}
-
-function getDailySeed() {
-  const today = new Date().toISOString().slice(0, 10);
-  const key = `sv-quick-picks-seed-${today}`;
-  const existing = localStorage.getItem(key);
-  if (existing) return `${today}:${existing}`;
-  const created = String(Math.floor(Math.random() * 1_000_000_000));
-  localStorage.setItem(key, created);
-  return `${today}:${created}`;
-}
-
-function emitEvent(name: string, params?: Record<string, unknown>) {
-  if (typeof window === "undefined") return;
-  const w = window as Window & { gtag?: (...args: unknown[]) => void };
-  if (!w.gtag) return;
-  w.gtag("event", name, params ?? {});
-}
-
-function optionButton(active: boolean) {
-  return `rounded-2xl border px-4 py-4 text-left text-sm font-black transition ${active ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-900 hover:border-zinc-900"}`;
-}
+const WHY_POOL_EN = [
+  "This lowers queue risk right now.",
+  "This is a low-regret move at this hour.",
+  "Simple route, lower chance of failure.",
+  "Good pick to recover schedule fast.",
+  "Safe option with practical upside now.",
+];
 
 function ui(lang: Lang) {
   if (lang === "ko") {
@@ -230,8 +86,14 @@ function ui(lang: Lang) {
         Solo: "혼자",
         Couple: "커플",
         Friends: "친구",
-        Family: "가족",
+        Family: "가족"
       } as Record<string, string>,
+      withAddon: {
+        Solo: "혼자 이동 기준으로 동선 낭비를 줄이세요.",
+        Couple: "취향이 갈리면 좌석 확보를 먼저 하세요.",
+        Friends: "인원이 많으면 줄 없는 곳을 우선하세요.",
+        Family: "계단/대기 리스크 낮은 동선을 우선하세요."
+      } as Record<WithType, string>
     };
   }
 
@@ -249,51 +111,57 @@ function ui(lang: Lang) {
     planB: "Plan B",
     maps: "Open in Maps",
     labels: Object.fromEntries([...AREAS, ...MOODS, ...WITH_TYPES].map((x) => [x, x])) as Record<string, string>,
+    withAddon: {
+      Solo: "Optimize for solo movement and speed.",
+      Couple: "If tastes split, lock seats first.",
+      Friends: "For groups, avoid high-queue spots.",
+      Family: "Prioritize low-wait, low-stairs options."
+    } as Record<WithType, string>
   };
 }
 
-function selectCandidates(area: Area, mood: Mood, withType: WithType) {
-  const level1 = PICKS.filter((x) => x.area === area && x.mood === mood && x.withType === withType);
-  const level2 = PICKS.filter((x) => x.area === area && x.mood === mood);
-  const level3 = PICKS.filter((x) => x.area === area);
-
-  const merged: NormalizedPick[] = [];
-  const pushUnique = (arr: NormalizedPick[]) => {
-    for (const item of arr) {
-      if (!merged.find((x) => x.id === item.id)) merged.push(item);
-    }
-  };
-
-  pushUnique(level1);
-  if (merged.length < 2) pushUnique(level2);
-  if (merged.length < 2) pushUnique(level3);
-  if (merged.length < 2) pushUnique(FALLBACK);
-
-  return merged;
+function hashString(value: string) {
+  let hash = 2166136261;
+  for (let i = 0; i < value.length; i += 1) {
+    hash ^= value.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return Math.abs(hash >>> 0);
 }
 
-function chooseDiverse(seed: string, candidates: NormalizedPick[], count: number) {
-  const sorted = [...candidates].sort((a, b) => hashString(`${seed}:${a.id}`) - hashString(`${seed}:${b.id}`));
-  const picked: NormalizedPick[] = [];
-  const seenAnchor = new Set<string>();
+function getDailySeed() {
+  const today = new Date().toISOString().slice(0, 10);
+  const key = `sv-quick-picks-seed-${today}`;
+  const existing = localStorage.getItem(key);
+  if (existing) return `${today}:${existing}`;
+  const created = String(Math.floor(Math.random() * 1_000_000_000));
+  localStorage.setItem(key, created);
+  return `${today}:${created}`;
+}
 
-  for (const item of sorted) {
-    const key = item.anchorKo;
-    if (!seenAnchor.has(key)) {
-      picked.push(item);
-      seenAnchor.add(key);
-    }
-    if (picked.length === count) break;
-  }
+function emitEvent(name: string, params?: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  const w = window as Window & { gtag?: (...args: unknown[]) => void };
+  if (!w.gtag) return;
+  w.gtag("event", name, params ?? {});
+}
 
-  if (picked.length < 2) {
-    for (const item of sorted) {
-      if (!picked.find((x) => x.id === item.id)) picked.push(item);
-      if (picked.length >= 2) break;
-    }
-  }
+function optionButton(active: boolean) {
+  return `rounded-2xl border px-4 py-4 text-left text-sm font-black transition ${active ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-900 hover:border-zinc-900"}`;
+}
 
-  return picked.slice(0, count);
+function pickWhy(seed: string, lang: Lang, idx: number) {
+  const pool = lang === "ko" ? WHY_POOL_KO : WHY_POOL_EN;
+  return pool[hashString(`${seed}:why:${idx}`) % pool.length];
+}
+
+function selectQueries(rule: Rule, lang: Lang, seed: string) {
+  const queries = lang === "ko" ? rule.queries_ko : rule.queries_en;
+  const ranked = [...queries].sort((a, b) => hashString(`${seed}:${a}`) - hashString(`${seed}:${b}`));
+  const unique = Array.from(new Set(ranked));
+  if (unique.length >= 3) return unique.slice(0, 3);
+  if (unique.length === 2) return unique;
+  return [unique[0] ?? (lang === "ko" ? "근처 추천" : "nearby pick"), unique[0] ?? (lang === "ko" ? "근처 추천" : "nearby pick")];
 }
 
 export function QuickPicksTool({ lang }: { lang: Lang }) {
@@ -312,29 +180,28 @@ export function QuickPicksTool({ lang }: { lang: Lang }) {
   const results = useMemo<OutputCard[]>(() => {
     if (!area || !mood || !withType || !seed) return [];
 
-    const candidates = selectCandidates(area, mood, withType);
-    const selected = chooseDiverse(`${seed}:${area}:${mood}:${withType}`, candidates, 3);
+    const rule = RULES[area]?.[mood];
+    if (!rule) return [];
 
-    return selected.map((item) => {
-      const title = lang === "ko" ? item.titleKo : item.titleEn;
-      const whyNow = lang === "ko" ? item.whyNowKo : item.whyNowKo;
-      const doThis = lang === "ko" ? item.doKo : item.doKo;
-      const risk = lang === "ko" ? item.riskKo : item.riskKo;
-      const planB = lang === "ko" ? item.planBKo : item.planBKo;
-      const mapQuery = lang === "ko" ? item.mapQueryKo : item.mapQueryEn;
+    const localSeed = `${seed}:${area}:${mood}:${withType}`;
+    const queries = selectQueries(rule, lang, localSeed);
 
-      return {
-        id: item.id,
-        title,
-        whyNow,
-        doThis,
-        watchOut: risk,
-        planB,
-        mapQuery,
-        mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`,
-      };
-    });
-  }, [area, mood, withType, seed, lang]);
+    const baseTitle = lang === "ko" ? rule.title_ko : rule.title_en;
+    const baseDo = lang === "ko" ? rule.do_ko : rule.do_en;
+    const baseRisk = lang === "ko" ? rule.risk_ko : rule.risk_en;
+    const basePlanB = lang === "ko" ? rule.plan_b_ko : rule.plan_b_en;
+
+    return queries.map((query, idx) => ({
+      id: `${area}-${mood}-${withType}-${idx}`,
+      title: `${baseTitle} · ${query}`,
+      whyNow: pickWhy(localSeed, lang, idx),
+      doThis: `${baseDo} ${t.withAddon[withType]}`,
+      watchOut: baseRisk,
+      planB: basePlanB,
+      mapQuery: query,
+      mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`,
+    }));
+  }, [area, mood, withType, seed, lang, t.withAddon]);
 
   useEffect(() => {
     if (step === 4 && results.length > 0) {
@@ -353,7 +220,15 @@ export function QuickPicksTool({ lang }: { lang: Lang }) {
             <p className="mb-3 text-sm font-black text-zinc-900">{t.step1}</p>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {AREAS.map((item) => (
-                <button key={item} type="button" className={optionButton(area === item)} onClick={() => { setArea(item); setStep(2); }}>
+                <button
+                  key={item}
+                  type="button"
+                  className={optionButton(area === item)}
+                  onClick={() => {
+                    setArea(item);
+                    setStep(2);
+                  }}
+                >
                   {t.labels[item]}
                 </button>
               ))}
@@ -366,7 +241,15 @@ export function QuickPicksTool({ lang }: { lang: Lang }) {
             <p className="mb-3 text-sm font-black text-zinc-900">{t.step2}</p>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {MOODS.map((item) => (
-                <button key={item} type="button" className={optionButton(mood === item)} onClick={() => { setMood(item); setStep(3); }}>
+                <button
+                  key={item}
+                  type="button"
+                  className={optionButton(mood === item)}
+                  onClick={() => {
+                    setMood(item);
+                    setStep(3);
+                  }}
+                >
                   {t.labels[item]}
                 </button>
               ))}
@@ -379,7 +262,12 @@ export function QuickPicksTool({ lang }: { lang: Lang }) {
             <p className="mb-3 text-sm font-black text-zinc-900">{t.step3}</p>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               {WITH_TYPES.map((item) => (
-                <button key={item} type="button" className={optionButton(withType === item)} onClick={() => setWithType(item)}>
+                <button
+                  key={item}
+                  type="button"
+                  className={optionButton(withType === item)}
+                  onClick={() => setWithType(item)}
+                >
                   {t.labels[item]}
                 </button>
               ))}
