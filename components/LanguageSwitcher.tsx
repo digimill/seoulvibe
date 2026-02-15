@@ -10,6 +10,7 @@ type LanguageSwitcherProps = {
   className?: string;
   compact?: boolean;
   onOpen?: () => void;
+  closeSignal?: number;
 };
 
 const LANG_SHORT_LABELS: Record<Lang, string> = {
@@ -33,7 +34,7 @@ function toLocalizedHref(pathname: string, query: string, nextLang: Lang): strin
   return `/${nextLang}${pathname}${query}`;
 }
 
-export function LanguageSwitcher({ lang, className = "", compact = false, onOpen }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ lang, className = "", compact = false, onOpen, closeSignal = 0 }: LanguageSwitcherProps) {
   const pathname = usePathname() ?? `/${lang}`;
   const searchParams = useSearchParams();
   const detailsRef = useRef<HTMLDetailsElement>(null);
@@ -46,6 +47,12 @@ export function LanguageSwitcher({ lang, className = "", compact = false, onOpen
       detailsRef.current.open = false;
     }
   }, [pathname, querySuffix]);
+
+  useEffect(() => {
+    if (detailsRef.current) {
+      detailsRef.current.open = false;
+    }
+  }, [closeSignal]);
 
   const closeMenu = () => {
     if (detailsRef.current) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type Lang } from "@/lib/i18n";
@@ -15,6 +15,7 @@ type HeaderProps = {
 export function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+  const [languageCloseSignal, setLanguageCloseSignal] = useState(0);
   const t = copy[lang];
   const navItems = [
     { href: `/${lang}/areas`, label: t.nav.areas },
@@ -47,8 +48,16 @@ export function Header({ lang }: HeaderProps) {
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
-            <LanguageSwitcher lang={lang} compact onOpen={closeMobileMenu} />
-            <details ref={mobileMenuRef} className="relative">
+            <LanguageSwitcher lang={lang} compact onOpen={closeMobileMenu} closeSignal={languageCloseSignal} />
+            <details
+              ref={mobileMenuRef}
+              onToggle={(event) => {
+                if ((event.currentTarget as HTMLDetailsElement).open) {
+                  setLanguageCloseSignal((prev) => prev + 1);
+                }
+              }}
+              className="relative"
+            >
               <summary className="list-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-medium text-zinc-900">
                 Menu
               </summary>
