@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { type Lang } from "@/lib/i18n";
 import { copy } from "@/lib/i18n";
 import { Container } from "@/components/Container";
@@ -9,6 +13,8 @@ type HeaderProps = {
 };
 
 export function Header({ lang }: HeaderProps) {
+  const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const t = copy[lang];
   const navItems = [
     { href: `/${lang}/areas`, label: t.nav.areas },
@@ -17,6 +23,18 @@ export function Header({ lang }: HeaderProps) {
     { href: `/${lang}/spots`, label: t.nav.spots },
     { href: `/${lang}/korea-101`, label: t.nav.korea101 },
   ];
+
+  useEffect(() => {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  }, [pathname]);
+
+  const closeMobileMenu = () => {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/75 backdrop-blur-xl">
@@ -29,7 +47,7 @@ export function Header({ lang }: HeaderProps) {
 
           <div className="flex items-center gap-2 md:hidden">
             <LanguageSwitcher lang={lang} compact />
-            <details className="relative">
+            <details ref={mobileMenuRef} className="relative">
               <summary className="list-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-medium text-zinc-900">
                 Menu
               </summary>
@@ -39,6 +57,7 @@ export function Header({ lang }: HeaderProps) {
                     <Link
                       key={item.href}
                       href={item.href}
+                      onClick={closeMobileMenu}
                       className="rounded-lg px-3 py-2 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
                     >
                       {item.label}
