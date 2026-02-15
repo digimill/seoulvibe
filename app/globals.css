@@ -48,7 +48,7 @@
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(16px, -10px, 0) scale(1.05);
+    transform: translate3d(34px, -26px, 0) scale(1.13);
   }
 }
 
@@ -58,7 +58,7 @@
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(-18px, 12px, 0) scale(0.97);
+    transform: translate3d(-30px, 24px, 0) scale(0.88);
   }
 }
 
@@ -68,6 +68,56 @@
   }
   100% {
     transform: translateX(-42%);
+  }
+}
+
+@keyframes grid-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-24px, -18px, 0);
+  }
+}
+
+@keyframes beam-sweep {
+  0% {
+    transform: translate3d(-15%, 0, 0) rotate(8deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.35;
+  }
+  55% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(210%, 0, 0) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-headline {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.985);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes reveal-copy {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -84,14 +134,15 @@
       linear-gradient(90deg, rgba(30, 30, 30, 0.05) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 78%);
+    animation: grid-shift 14s linear infinite;
   }
 
   .hero-orb-a {
-    animation: drift-a 11s ease-in-out infinite;
+    animation: drift-a 7.5s ease-in-out infinite;
   }
 
   .hero-orb-b {
-    animation: drift-b 13s ease-in-out infinite;
+    animation: drift-b 8.5s ease-in-out infinite;
   }
 
   .hero-ticker-wrap {
@@ -100,14 +151,38 @@
 
   .hero-ticker {
     width: max-content;
-    animation: ticker-x 16s linear infinite;
+    animation: ticker-x 10s linear infinite;
+  }
+
+  .hero-beam {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+    filter: blur(4px);
+    animation: beam-sweep 6.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .hero-headline {
+    animation: reveal-headline 620ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .hero-copy {
+    animation: reveal-copy 700ms ease-out 80ms both;
+  }
+
+  .hero-cta {
+    animation: reveal-copy 780ms ease-out 150ms both;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-orb-a,
   .hero-orb-b,
-  .hero-ticker {
+  .hero-ticker,
+  .hero-grid-lines,
+  .hero-beam,
+  .hero-headline,
+  .hero-copy,
+  .hero-cta {
     animation: none;
   }
 }

@@ -65,6 +65,7 @@ export default async function HomePage({ params }: HomePageProps) {
         <Container>
           <div className="hero-shell relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/80 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:p-12">
             <div className="hero-grid-lines absolute inset-0" />
+            <div className="hero-beam absolute -left-1/3 top-0 h-full w-1/2" />
             <div className="hero-orb hero-orb-a absolute -left-16 -top-14 h-48 w-48 rounded-full bg-zinc-300/40 blur-3xl sm:h-64 sm:w-64" />
             <div className="hero-orb hero-orb-b absolute -bottom-24 right-0 h-56 w-56 rounded-full bg-zinc-200/50 blur-3xl sm:h-72 sm:w-72" />
             <div className="hero-ticker-wrap absolute inset-x-4 top-4 overflow-hidden rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 sm:inset-x-6">
@@ -75,13 +76,13 @@ export default async function HomePage({ params }: HomePageProps) {
 
             <div className="relative pt-12 sm:pt-14">
               <p className="text-sm font-medium tracking-[0.12em] text-zinc-500">Seoul Vibe</p>
-              <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-6xl">{t.tagline}</h1>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
+              <h1 className="hero-headline mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-6xl">{t.tagline}</h1>
+              <p className="hero-copy mt-5 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
                 {locale === "ko"
                   ? "서울 방문객이 궁금해하는 핵심 정보만 깔끔하게 모았어요."
                   : "A clean guide to the most useful Seoul info for visitors."}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3 text-sm">
+              <div className="hero-cta mt-8 flex flex-wrap gap-3 text-sm">
                 <Link className="rounded-full bg-zinc-900 px-5 py-2.5 font-medium text-white" href={`/${locale}/areas`}>
                   {t.nav.areas}
                 </Link>
