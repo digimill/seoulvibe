@@ -6,8 +6,7 @@ import { getSiteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
-const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101", "/crowded"] as const;
-const EN_SEO_PATHS = ["/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
+const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101", "/crowded", "/problems", "/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
@@ -53,27 +52,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
-  urls.push(
-    ...EN_SEO_PATHS.map((path) => ({
-      url: `${siteUrl}/en${path}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-  );
-
-  urls.push({
-    url: `${siteUrl}/en/problems`,
-    changeFrequency: "weekly",
-    priority: 0.8,
-  });
-
-  urls.push(
-    ...problemSeoItems.map((item) => ({
-      url: `${siteUrl}/en/problems/${item.slug}`,
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
-    })),
-  );
+  for (const lang of LANGS) {
+    urls.push(
+      ...problemSeoItems.map((item) => ({
+        url: `${siteUrl}/${lang}/problems/${item.slug}`,
+        changeFrequency: "weekly" as const,
+        priority: 0.75,
+      })),
+    );
+  }
 
   return urls;
 }

@@ -17,6 +17,16 @@ export default async function TipsPage({ params }: TipsPageProps) {
 
   const locale = lang as Lang;
   const tips = await getTips(locale);
+  const copy =
+    locale === "ko"
+      ? { title: "문제 해결 가이드", desc: "뭐가 꼬이는지, 왜 꼬이는지, 지금 뭘 해야 하는지 바로 확인." }
+      : locale === "ja"
+        ? { title: "トラブル解決ガイド", desc: "何が詰まりやすいか、なぜ起きるか、今どう動くかを即確認。" }
+        : locale === "zh-cn"
+          ? { title: "问题速解指南", desc: "先看哪里会出错、为什么会出错、现在该怎么做。" }
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。" }
+            : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now." };
   const sorted = [...tips].sort((a, b) => {
     const ai = PRIORITY_IDS.indexOf(a.id);
     const bi = PRIORITY_IDS.indexOf(b.id);
@@ -27,7 +37,7 @@ export default async function TipsPage({ params }: TipsPageProps) {
   });
 
   return (
-    <SectionBlock title="Solve problems fast" description="What usually goes wrong, why it happens, and what to do now.">
+    <SectionBlock title={copy.title} description={copy.desc}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {sorted.map((tip) => (
           <Card

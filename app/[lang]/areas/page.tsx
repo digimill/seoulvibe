@@ -16,9 +16,19 @@ export default async function AreasPage({ params }: AreasPageProps) {
 
   const locale = lang as Lang;
   const areas = await getAreas(locale);
+  const copy =
+    locale === "ko"
+      ? { title: "숙소 기준 지역 선택", desc: "어디서 자는지 먼저 정하세요. 교통 실수는 여기서 줄일 수 있어요." }
+      : locale === "ja"
+        ? { title: "滞在エリアを先に決める", desc: "まず宿の場所を基準に。移動ミスを一番減らせます。" }
+        : locale === "zh-cn"
+          ? { title: "先定住宿片区", desc: "先按住哪里来选区域，交通失误会少很多。" }
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? { title: "先選住宿區域", desc: "先以住哪裡為基準，交通失誤會少很多。" }
+            : { title: "Pick your base area", desc: "Choose where you sleep first. Most transport mistakes start here." };
 
   return (
-    <SectionBlock title="Pick your base area" description="Choose where you sleep first. Most transport mistakes start here.">
+    <SectionBlock title={copy.title} description={copy.desc}>
       <AreasMiniMap lang={locale} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {areas.map((area) => (

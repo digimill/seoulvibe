@@ -21,6 +21,9 @@ type HomeCopy = {
   skipLine: string;
   stayLabel: string;
   deepGuides: string;
+  deep1: string;
+  deep2: string;
+  deep3: string;
   cards: [string, string, string, string];
 };
 
@@ -34,6 +37,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       skipLine: "검색 말고 여기부터.",
       stayLabel: "숙소가 여기라면:",
       deepGuides: "심화 가이드",
+      deep1: "키오스크 카드 오류 상세",
+      deep2: "티머니 충전 가이드",
+      deep3: "올리브영 상세 가이드",
       cards: [
         "키오스크 카드 오류 바로 해결",
         "지금 맞는 지하철 노선 찾기",
@@ -51,6 +57,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       skipLine: "検索より先に、ここを見る。",
       stayLabel: "滞在先がここなら:",
       deepGuides: "詳細ガイド",
+      deep1: "キオスク決済エラー詳細",
+      deep2: "T-moneyチャージガイド",
+      deep3: "オリーブヤング詳細ガイド",
       cards: [
         "キオスク決済エラーをすぐ解決",
         "地下鉄の正しい路線を今すぐ確認",
@@ -68,6 +77,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       skipLine: "先别搜，从这里开始。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
+      deep1: "自助机刷卡失败详解",
+      deep2: "T-money 充值指南",
+      deep3: "Olive Young 详细指南",
       cards: [
         "马上处理自助机刷卡失败",
         "立刻选对地铁线路",
@@ -85,6 +97,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       skipLine: "先別搜尋，先看這裡。",
       stayLabel: "如果你住在：",
       deepGuides: "深度指南",
+      deep1: "自助機刷卡失敗詳解",
+      deep2: "T-money 儲值指南",
+      deep3: "Olive Young 詳細指南",
       cards: [
         "立即處理自助機刷卡失敗",
         "馬上選對地鐵路線",
@@ -101,6 +116,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
     skipLine: "Skip Google. Start here.",
     stayLabel: "If you're staying in:",
     deepGuides: "Deep guides",
+    deep1: "Kiosk card rejected guide",
+    deep2: "How much T-money you need",
+    deep3: "Olive Young tourist guide",
     cards: [
       "Fix card rejected at kiosk",
       "Pick the right subway line now",
@@ -190,22 +208,20 @@ export default async function HomePage({ params }: HomePageProps) {
         </div>
       </section>
 
-      {locale === "en" ? (
-        <section className="mt-10 rounded-3xl border border-zinc-200 bg-white p-6 sm:mt-12 sm:p-8">
-          <h2 className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.deepGuides}</h2>
-          <div className="mt-4 grid gap-3 sm:grid-cols-3">
-            <Link href="/en/kiosk-card-rejected" className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
-              Kiosk card rejected guide
-            </Link>
-            <Link href="/en/how-much-tmoney" className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
-              How much T-money you need
-            </Link>
-            <Link href="/en/olive-young-tourist-guide" className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
-              Olive Young tourist guide
-            </Link>
-          </div>
-        </section>
-      ) : null}
+      <section className="mt-10 rounded-3xl border border-zinc-200 bg-white p-6 sm:mt-12 sm:p-8">
+        <h2 className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.deepGuides}</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <Link href={`/${locale}/kiosk-card-rejected`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+            {copy.deep1}
+          </Link>
+          <Link href={`/${locale}/how-much-tmoney`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+            {copy.deep2}
+          </Link>
+          <Link href={`/${locale}/olive-young-tourist-guide`} className="rounded-2xl border border-zinc-300 p-4 text-sm font-semibold text-zinc-900 hover:bg-zinc-50">
+            {copy.deep3}
+          </Link>
+        </div>
+      </section>
     </Container>
   );
 }
