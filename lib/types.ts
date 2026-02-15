@@ -22,6 +22,13 @@ export type LineToUseDetail = {
   meaning: string;
 };
 
+export type TipBlock = {
+  kind: "text" | "list" | "steps" | "callout";
+  title: string;
+  body?: string;
+  items?: string[];
+};
+
 export type Area = ContentMeta & {
   id: string;
   name: string;
@@ -61,15 +68,16 @@ export type Tip = ContentMeta & {
   id: string;
   title: string;
   summary: string;
-  what_to_know: string;
-  why_it_matters: string;
-  avoid_this: string;
-  quick_fix: string;
+  what_to_know?: string;
+  why_it_matters?: string;
+  avoid_this?: string;
+  quick_fix?: string;
   tags: string[];
   real_scene?: string;
   local_move?: string;
   line_to_use?: string | LineToUseDetail;
   quick_checklist?: string[];
+  blocks?: TipBlock[];
 };
 
 export type Korea101 = ContentMeta & {

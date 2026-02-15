@@ -371,21 +371,21 @@
     {
       "id": "oliveyoung-master-playbook",
       "title": "Olive Young Master Loop",
-      "summary": "A practical playbook that compresses Olive Young shopping into three steps: enter, pick, and check out. Adjusting by store size and time slot can cut both browsing fatigue and unnecessary purchases.",
-      "hook": "Plan before entering, not while wandering the aisles.",
-      "friend_note": "Lock your top three essentials first, then review promotion zones at the end.",
+      "summary": "A practical playbook that compresses Olive Young shopping into enter, pick, and checkout.",
+      "hook": "Decide what to buy before entering.",
+      "friend_note": "Secure your top 3 items first, then check promotion zones at the end.",
       "ideal_for": "K-beauty beginners, gift shoppers, short-stay visitors",
-      "flow": "3-minute layout scan - essentials first - promo/limited check - checkout",
-      "highlight": "Execution-focused guidance reflecting real variables: flagship vs small stores and evening checkout congestion.",
+      "flow": "3-minute layout scan -> essentials first -> promo/limited check -> checkout",
+      "highlight": "Execution-focused shopping guidance reflecting store size and time-of-day queue patterns.",
       "budget": "Medium",
       "route_stops": [
         "Myeongdong",
         "Hongdae",
         "Gangnam"
       ],
-      "food_break": "Pair shopping with a short cafe or meal break to reduce fatigue and impulse buying.",
-      "rain_swap": "On rainy days, stick to station-adjacent flagship stores for smoother movement.",
-      "creator_note": "Define your top three items before entry for higher decision quality.",
+      "food_break": "Add a short cafe break before or after shopping to reduce fatigue and impulse buys.",
+      "rain_swap": "On rainy days, prioritize station-adjacent flagship stores.",
+      "creator_note": "Define your top three before entry for better decisions.",
       "tags": [
         "beauty",
         "shopping",
@@ -396,7 +396,7 @@
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/themes/cafe-day.jpg",
-        "alt": "Seoul drugstore shopping loop"
+        "alt": "Olive Young Master Loop"
       },
       "real_spots": [
         "Olive Young Myeongdong Town",
@@ -789,27 +789,9 @@
     },
     {
       "id": "kiosk-survival-flow",
-      "title": "Kiosk Survival Flow: Order Without Getting Stuck",
-      "summary": "Kiosk speed comes from understanding option order, not reading every button.",
-      "hook": "Even with limited language, the sequence solves most orders.",
-      "friend_note": "When there is a queue behind you, minimizing options is safest.",
-      "what_to_know": "Typical flow is menu -> options -> dine-in/takeout -> payment.",
-      "why_it_matters": "If you freeze on options, orders can fail or be paid incorrectly.",
-      "avoid_this": "Do not take a table before confirming order completion.",
-      "quick_fix": "Complete one simple order first, then add extras.",
-      "real_scene": "At peak-hour stores, one hesitation under queue pressure often leads to mistakes.",
-      "local_move": "If unsure, show the final payment screen to staff before paying.",
-      "line_to_use": {
-        "ko": "매장에서 먹을게요. 결제 화면 한 번만 확인해주실 수 있을까요?",
-        "pronunciation_en": "Maejangeseo meogeulgeyo. Gyeolje hwa-myeon han beonman hwaginhaejusil su isseulkkayo?",
-        "pronunciation_local": "Maejangeseo meogeulgeyo. Gyeolje hwa-myeon han beonman hwaginhaejusil su isseulkkayo?",
-        "meaning": "Use this to say dine-in and politely ask staff to verify the payment screen."
-      },
-      "quick_checklist": [
-        "Dine-in or takeout first",
-        "Keep options minimal",
-        "Final screen check"
-      ],
+      "title": "Kiosk Survival in 60 Seconds",
+      "summary": "At cafes and restaurants, kiosk ordering becomes easy once you know the button sequence.",
+      "hook": "Do not read everything. Lock the flow first.",
       "tags": [
         "kiosk",
         "cafe",
@@ -820,38 +802,45 @@
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/tips/cafe-ordering.jpg",
-        "alt": "Cafe kiosk ordering scene"
+        "alt": "Kiosk Survival in 60 Seconds"
       },
+      "blocks": [
+        {
+          "kind": "steps",
+          "title": "Default flow",
+          "items": [
+            "Choose menu",
+            "Choose options",
+            "Dine-in or takeout",
+            "Confirm payment"
+          ]
+        },
+        {
+          "kind": "list",
+          "title": "Most common failure points",
+          "items": [
+            "Freezing on options",
+            "Choosing wrong dine-in/takeout mode",
+            "Skipping final confirmation"
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Field tip",
+          "body": "When the queue is long, keep options minimal and finish one simple order first."
+        }
+      ],
       "real_spots": [
-        "Seongsu cafe street",
-        "Hongdae fast casual stores",
+        "Seongsu cafe streets",
+        "Hongdae fast-casual stores",
         "Gangnam food courts"
       ]
     },
     {
       "id": "subway-map-confusion-cuts",
-      "title": "Seoul Subway Map: 7 Confusing Points for First-Timers",
-      "summary": "You avoid most mistakes by checking terminal direction and express/local type before boarding.",
+      "title": "Seoul Subway Confusion Cuts: 7 First-Timer Mistakes",
+      "summary": "You can avoid most subway mistakes by checking terminal direction and express/local type first.",
       "hook": "Subway success is direction judgment, not map memorization.",
-      "friend_note": "A 30-second check at transfer hubs can save a 20-minute detour.",
-      "what_to_know": "Focus on terminal direction, express skip-stops, exit distance, and transfer corridor length.",
-      "why_it_matters": "Tourist routes involve frequent transfers, so one wrong platform can delay your full plan.",
-      "avoid_this": "Do not board by line number only without checking terminal direction.",
-      "quick_fix": "Before boarding, confirm terminal name and express/local status together.",
-      "real_scene": "At Line 2, Line 9, and AREX transfer zones, platform-direction mistakes are very common.",
-      "local_move": "One station before transfer, pre-check platform signs and transfer exit side.",
-      "line_to_use": {
-        "ko": "이 열차 급행인가요? OO역 정차하나요?",
-        "pronunciation_en": "I yeolcha geuphaeng-ingayo? OO-yeok jeongchahanayo?",
-        "pronunciation_local": "I yeolcha geuphaeng-ingayo? OO-yeok jeongchahanayo?",
-        "meaning": "Use this to ask whether the train is express and whether it stops at your station."
-      },
-      "quick_checklist": [
-        "Terminal direction",
-        "Express vs local",
-        "Exit number",
-        "Last train time"
-      ],
       "tags": [
         "subway",
         "map",
@@ -862,8 +851,33 @@
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/tips/transport.jpg",
-        "alt": "Seoul subway wayfinding"
+        "alt": "Seoul Subway Confusion Cuts: 7 First-Timer Mistakes"
       },
+      "blocks": [
+        {
+          "kind": "list",
+          "title": "10-second check before boarding",
+          "items": [
+            "Terminal direction",
+            "Express vs local",
+            "Does it stop at your station?"
+          ]
+        },
+        {
+          "kind": "list",
+          "title": "Where visitors get confused",
+          "items": [
+            "Two-direction platforms on same line",
+            "Long transfer corridors",
+            "Exit numbers vs actual walking distance"
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Fast decision rule",
+          "body": "Reducing one transfer is usually more stable than adding 5-8 minutes of walking."
+        }
+      ],
       "real_spots": [
         "Seoul Station",
         "Express Bus Terminal",

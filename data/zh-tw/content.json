@@ -317,6 +317,42 @@
         "src": "/images/themes/morning-seoul.jpg",
         "alt": "清晨的首爾街頭"
       }
+    },
+    {
+      "id": "oliveyoung-master-playbook",
+      "title": "Olive Young 完整攻略路線",
+      "summary": "把 Olive Young 購物壓縮為進店、挑選、結帳三步的實戰攻略。",
+      "hook": "進店前先定清單，效率會高很多。",
+      "friend_note": "先拿必買3件，再看促銷區，最不容易失控。",
+      "ideal_for": "K-beauty 新手、伴手禮採買、短住旅客",
+      "flow": "3分鐘看動線 -> 先拿必買 -> 看促銷/限定 -> 結帳",
+      "highlight": "結合門店規模與時段排隊差異的執行型指南。",
+      "budget": "中等",
+      "route_stops": [
+        "明洞",
+        "弘大",
+        "江南"
+      ],
+      "food_break": "購物前後安排短暫咖啡休息，可降低疲勞與衝動消費。",
+      "rain_swap": "下雨天優先地鐵站附近的大型門店。",
+      "creator_note": "比起一直看評測，先定好當天必買3件更有效。",
+      "tags": [
+        "美妝",
+        "購物",
+        "藥妝店",
+        "攻略"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-15",
+      "image": {
+        "src": "/images/themes/cafe-day.jpg",
+        "alt": "Olive Young 完整攻略路線"
+      },
+      "real_spots": [
+        "Olive Young 明洞Town",
+        "Olive Young 弘大中央店",
+        "Olive Young 江南Town"
+      ]
     }
   ],
   "tips": [
@@ -669,6 +705,104 @@
         "src": "/images/themes/morning-seoul.jpg",
         "alt": "首爾清晨街景與移動動線"
       }
+    },
+    {
+      "id": "kiosk-survival-flow",
+      "title": "點餐機60秒上手",
+      "summary": "在咖啡店與餐廳使用點餐機時，先掌握操作順序最有效。",
+      "hook": "先把流程跑通，再看細節。",
+      "tags": [
+        "點餐機",
+        "咖啡店",
+        "餐廳",
+        "點餐"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-15",
+      "image": {
+        "src": "/images/tips/cafe-ordering.jpg",
+        "alt": "點餐機60秒上手"
+      },
+      "blocks": [
+        {
+          "kind": "steps",
+          "title": "基本流程",
+          "items": [
+            "選主餐",
+            "選選項",
+            "內用/外帶",
+            "確認付款"
+          ]
+        },
+        {
+          "kind": "list",
+          "title": "最常卡住的地方",
+          "items": [
+            "停在選項頁",
+            "內用/外帶選錯",
+            "略過最終確認"
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "現場建議",
+          "body": "排隊長時先完成最簡單的一單，再加點。"
+        }
+      ],
+      "real_spots": [
+        "聖水咖啡街",
+        "弘大速食門店",
+        "江南美食街"
+      ]
+    },
+    {
+      "id": "subway-map-confusion-cuts",
+      "title": "首爾地鐵易混重點：新手常錯7件事",
+      "summary": "比起背路線圖，先確認終點方向與急行/普通更能避免走錯。",
+      "hook": "地鐵關鍵不是記圖，而是方向判斷。",
+      "tags": [
+        "地鐵",
+        "路線圖",
+        "轉乘",
+        "交通"
+      ],
+      "status": "published",
+      "updated_at": "2026-02-15",
+      "image": {
+        "src": "/images/tips/transport.jpg",
+        "alt": "首爾地鐵易混重點：新手常錯7件事"
+      },
+      "blocks": [
+        {
+          "kind": "list",
+          "title": "上車前10秒檢查",
+          "items": [
+            "終點方向",
+            "急行/普通",
+            "是否停靠你的站"
+          ]
+        },
+        {
+          "kind": "list",
+          "title": "最容易混淆",
+          "items": [
+            "同線反向月台",
+            "超長轉乘通道",
+            "出口編號與實際步行距離"
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "快速判斷規則",
+          "body": "通常減少一次轉乘，比多走5-8分鐘更穩定。"
+        }
+      ],
+      "real_spots": [
+        "首爾站",
+        "高速巴士客運站",
+        "弘大入口站",
+        "蠶室站"
+      ]
     }
   ],
   "korea101": [
