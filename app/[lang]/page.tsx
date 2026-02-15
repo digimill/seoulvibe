@@ -1,12 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
 import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
-import { getAreas, getHeroImage, getKorea101, getThemes, getTips } from "@/lib/content";
+import { getAreas, getKorea101, getThemes, getTips } from "@/lib/content";
 import { getCopy, isLang, type Lang } from "@/lib/i18n";
 import { getSpotPicks, pickRandomSpots, toGoogleMapSearchUrl, toPerplexitySearchUrl } from "@/lib/spot-picks";
 import { getSiteUrl } from "@/lib/site";
@@ -34,12 +33,11 @@ export default async function HomePage({ params }: HomePageProps) {
     locale === "ko"
       ? { area: "대략적 위치", spot: "스팟", note: "설명", price: "가격대(비용)", closed: "휴무일", map: "지도", pplx: "검색", more: "전체 보기" }
       : { area: "Area", spot: "Spot", note: "Description", price: "Price", closed: "Closed days", map: "Map", pplx: "Search", more: "View all" };
-  const [areas, themes, tips, korea101, heroImage] = await Promise.all([
+  const [areas, themes, tips, korea101] = await Promise.all([
     getAreas(locale),
     getThemes(locale),
     getTips(locale),
     getKorea101(locale),
-    getHeroImage(locale),
   ]);
   const spotPool = getSpotPicks(locale);
   const featuredSpots = pickRandomSpots(spotPool, 6);
@@ -65,22 +63,19 @@ export default async function HomePage({ params }: HomePageProps) {
       </Script>
       <section className="pt-14 pb-12 sm:pt-20 sm:pb-16">
         <Container>
-          <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white/70 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:p-12">
-            {heroImage ? (
-              <Image
-                src={heroImage.src}
-                alt={heroImage.alt}
-                fill
-                priority
-                quality={90}
-                sizes="(max-width: 1024px) 100vw, 1200px"
-                className="object-cover"
-              />
-            ) : null}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/88 via-white/78 to-white/56" />
-            <div className="relative">
-              <p className="text-sm font-medium tracking-wide text-zinc-500">Seoul Vibe</p>
-              <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">{t.tagline}</h1>
+          <div className="hero-shell relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/80 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:p-12">
+            <div className="hero-grid-lines absolute inset-0" />
+            <div className="hero-orb hero-orb-a absolute -left-16 -top-14 h-48 w-48 rounded-full bg-zinc-300/40 blur-3xl sm:h-64 sm:w-64" />
+            <div className="hero-orb hero-orb-b absolute -bottom-24 right-0 h-56 w-56 rounded-full bg-zinc-200/50 blur-3xl sm:h-72 sm:w-72" />
+            <div className="hero-ticker-wrap absolute inset-x-4 top-4 overflow-hidden rounded-full border border-zinc-200/70 bg-white/70 px-4 py-2 sm:inset-x-6">
+              <div className="hero-ticker text-[10px] font-semibold tracking-[0.28em] text-zinc-500 sm:text-xs">
+                SEOUL VIBE SEOUL VIBE SEOUL VIBE SEOUL VIBE SEOUL VIBE SEOUL VIBE
+              </div>
+            </div>
+
+            <div className="relative pt-12 sm:pt-14">
+              <p className="text-sm font-medium tracking-[0.12em] text-zinc-500">Seoul Vibe</p>
+              <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-zinc-900 sm:text-6xl">{t.tagline}</h1>
               <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600 sm:text-lg">
                 {locale === "ko"
                   ? "서울 방문객이 궁금해하는 핵심 정보만 깔끔하게 모았어요."

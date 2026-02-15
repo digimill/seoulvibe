@@ -40,9 +40,11 @@ export function Header({ lang }: HeaderProps) {
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/75 backdrop-blur-xl">
       <Container className="py-2">
         <div className="flex min-h-16 items-center justify-between gap-3">
-          <Link href={`/${lang}`} className="shrink-0 leading-tight">
+          <Link href={`/${lang}`} className="min-w-0 leading-tight md:shrink-0">
             <span className="block text-sm font-semibold tracking-tight">{t.appName}</span>
-            <span className="hidden text-[11px] text-zinc-500 sm:block">{t.tagline}</span>
+            <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] text-zinc-500 sm:max-w-none sm:text-[11px]">
+              {t.tagline}
+            </span>
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
