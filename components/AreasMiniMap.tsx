@@ -21,8 +21,8 @@ function getPoints(lang: Lang): Point[] {
     { id: "hongdae", name: isKo ? "홍대" : "Hongdae", left: "9.5%", top: "34.0%", width: "23%", height: "16%" },
     { id: "mangwon", name: isKo ? "망원" : "Mangwon", left: "9.5%", top: "58.0%", width: "24%", height: "17%" },
     { id: "bukchon", name: isKo ? "북촌" : "Bukchon", left: "29.5%", top: "13.0%", width: "24%", height: "15%" },
-    { id: "euljiro", name: isKo ? "을지로" : "Euljiro", left: "39.5%", top: "24.0%", width: "21%", height: "16%" },
-    { id: "seongsu", name: isKo ? "성수" : "Seongsu", left: "60.5%", top: "21.0%", width: "23%", height: "14%" },
+    { id: "euljiro", name: isKo ? "을지로" : "Euljiro", left: "40.8%", top: "28.5%", width: "15.6%", height: "12.7%" },
+    { id: "seongsu", name: isKo ? "성수" : "Seongsu", left: "62.3%", top: "24.8%", width: "20.5%", height: "12.7%" },
     { id: "gangnam", name: isKo ? "강남" : "Gangnam", left: "59.5%", top: "72.0%", width: "26%", height: "17%" },
   ];
 }
