@@ -57,7 +57,7 @@ function currencyFromNavigator(): Currency | null {
   if (locale.startsWith("ja")) return "JPY";
   if (locale.startsWith("zh-cn")) return "CNY";
   if (locale.startsWith("zh-tw")) return "TWD";
-  if (locale.startsWith("zh-hk")) return "HKD";
+  if (locale.startsWith("zh-hk") || locale.startsWith("zh-mo") || locale.startsWith("yue")) return "HKD";
   if (locale.startsWith("en-gb")) return "GBP";
   if (locale.startsWith("en-au")) return "AUD";
   if (locale.startsWith("en-ca")) return "CAD";
@@ -536,7 +536,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
   const [skin, setSkin] = useState<SkinType>("combination");
   const [giftStyle, setGiftStyle] = useState<GiftStyle>("practical");
   const [rates, setRates] = useState<Record<Currency, number>>(DEFAULT_RATES);
-  const [rushMode, setRushMode] = useState(true);
+  const [rushMode, setRushMode] = useState(false);
   const [copied, setCopied] = useState(false);
   const [selectedOptionByKey, setSelectedOptionByKey] = useState<Record<string, number>>({});
   const [checkedByKey, setCheckedByKey] = useState<Record<string, boolean>>({});
@@ -588,7 +588,32 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
   const displayRate = rates[displayCurrency] ?? DEFAULT_RATES[displayCurrency];
   const budgetInDisplayCurrency = displayRate > 0 ? budgetKrw / displayRate : 0;
 
-  const picks = useMemo(() => buildList(lang, budgetTier, purpose, skin, giftStyle, rushMode), [lang, budgetTier, purpose, skin, giftStyle, rushMode]);
+  const picks = useMemo(() => {
+    const base = buildList(lang, budgetTier, purpose, skin, giftStyle, rushMode);
+    if (rushMode) return base;
+
+    const topUps: PickItem[] = [
+      { name: lang === "ko" ? "토너 패드" : "Toner pads", priceKrw: 15000, alt: lang === "ko" ? "코튼 패드" : "Cotton pads" },
+      { name: lang === "ko" ? "스팟 패치" : "Spot patch", priceKrw: 7000, alt: lang === "ko" ? "트러블 패드" : "Trouble pad" },
+      { name: lang === "ko" ? "미니 세럼" : "Mini serum", priceKrw: 13000, alt: lang === "ko" ? "앰플 미니" : "Mini ampoule" },
+      { name: lang === "ko" ? "핸드크림" : "Hand cream", priceKrw: 9000, alt: lang === "ko" ? "립케어" : "Lip care" },
+      { name: lang === "ko" ? "보습 바디로션" : "Body lotion", priceKrw: 17000, alt: lang === "ko" ? "바디워시" : "Body wash" },
+      { name: lang === "ko" ? "마스크팩 번들" : "Mask bundle", priceKrw: 12000, alt: lang === "ko" ? "마스크팩 5매" : "Sheet mask x5" },
+      { name: lang === "ko" ? "선케어 보조" : "Extra sun care", priceKrw: 18000, alt: lang === "ko" ? "선스틱" : "Sun stick" },
+    ];
+
+    const target = Math.max(0, budgetKrw - 10000);
+    let total = base.reduce((sum, item) => sum + item.priceKrw, 0);
+    const out = [...base];
+    let i = 0;
+
+    while (total < target && i < topUps.length) {
+      out.push(topUps[i]);
+      total += topUps[i].priceKrw;
+      i += 1;
+    }
+    return out;
+  }, [lang, budgetTier, purpose, skin, giftStyle, rushMode, budgetKrw]);
 
   const baseItems = useMemo<BaseItem[]>(() => {
     return picks.map((item, idx) => {

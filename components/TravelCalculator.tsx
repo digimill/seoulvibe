@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { track } from "@vercel/analytics";
 import type { Lang } from "@/lib/i18n";
 
 type Currency = "USD" | "EUR" | "JPY" | "CNY" | "TWD" | "HKD" | "GBP" | "AUD" | "CAD" | "SGD" | "THB" | "VND";
@@ -51,7 +52,7 @@ function currencyFromNavigator(): Currency | null {
   if (locale.startsWith("ja")) return "JPY";
   if (locale.startsWith("zh-cn")) return "CNY";
   if (locale.startsWith("zh-tw")) return "TWD";
-  if (locale.startsWith("zh-hk")) return "HKD";
+  if (locale.startsWith("zh-hk") || locale.startsWith("zh-mo") || locale.startsWith("yue")) return "HKD";
   if (locale.startsWith("en-gb")) return "GBP";
   if (locale.startsWith("en-au")) return "AUD";
   if (locale.startsWith("en-ca")) return "CAD";
@@ -427,6 +428,10 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
   const totalInSelectedCurrency = currentRate > 0 ? totalKrw / currentRate : 0;
 
   useEffect(() => {
+    track("travel_calculator_open", { lang });
+  }, [lang]);
+
+  useEffect(() => {
     const rawCurrency = localStorage.getItem(CALC_CURRENCY_KEY) as Currency | null;
     if (rawCurrency && RATES[rawCurrency]) {
       setCurrency(rawCurrency);
@@ -504,6 +509,7 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
 
   useEffect(() => {
     localStorage.setItem(CALC_CURRENCY_KEY, currency);
+    track("travel_calculator_currency_change", { currency });
   }, [currency]);
 
   useEffect(() => {
@@ -521,6 +527,11 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
     setAmountKrw(safe);
     setAmountInput(safe > 0 ? safe.toLocaleString() : "");
     setForeignInput(formatForeignInput(currentRate > 0 ? safe / currentRate : 0));
+  }
+
+  function applyPreset(presetId: string, amount: number) {
+    applyAmount(amount);
+    track("travel_calculator_preset_apply", { preset_id: presetId, amount_krw: amount });
   }
 
   function handleAmountInputChange(next: string) {
@@ -559,6 +570,7 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
     };
     setLogItems((prev) => [nextItem, ...prev]);
     setMemoInput("");
+    track("travel_calculator_save", { currency, amount_krw: Math.round(amountKrw) });
   }
 
   function updateNote(id: string, nextNote: string) {
@@ -652,7 +664,13 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
             <p className="text-xs font-semibold text-zinc-600">{c.mathTitle}</p>
             <button
               type="button"
-              onClick={() => setShowQuickMath((prev) => !prev)}
+              onClick={() =>
+                setShowQuickMath((prev) => {
+                  const next = !prev;
+                  track("travel_calculator_quick_math_toggle", { open: next });
+                  return next;
+                })
+              }
               className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
             >
               {showQuickMath ? c.mathLess : c.mathMore}
@@ -706,7 +724,13 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
             <p className="text-xs font-semibold text-zinc-600">{c.refTitle}</p>
             <button
               type="button"
-              onClick={() => setShowAllPresets((prev) => !prev)}
+              onClick={() =>
+                setShowAllPresets((prev) => {
+                  const next = !prev;
+                  track("travel_calculator_presets_toggle", { open: next });
+                  return next;
+                })
+              }
               className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
             >
               {showAllPresets ? c.refLess : c.refMore}
@@ -718,7 +742,7 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
                 <button
                   key={preset.id}
                   type="button"
-                  onClick={() => applyAmount(preset.amountKrw)}
+                  onClick={() => applyPreset(preset.id, preset.amountKrw)}
                   className="flex items-center justify-between rounded-xl border border-zinc-300 bg-white px-3 py-2 text-left hover:border-zinc-900"
                 >
                   <span className="text-sm font-semibold text-zinc-800">{preset.label}</span>
@@ -771,7 +795,10 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
           </div>
           <button
             type="button"
-            onClick={() => setLogItems([])}
+            onClick={() => {
+              track("travel_calculator_log_clear", { count: logItems.length });
+              setLogItems([]);
+            }}
             className="rounded-lg border border-zinc-300 px-2.5 py-1.5 text-xs font-bold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900"
           >
             {c.clearAll}

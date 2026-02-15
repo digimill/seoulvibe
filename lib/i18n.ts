@@ -45,7 +45,7 @@ export const detectPreferredLanguage = (acceptLanguage: string | null): Lang => 
 export const copy = {
   en: {
     appName: "Seoul Vibe",
-    tagline: "Emergency fixes for short-term Seoul visitors.",
+    tagline: "Essentials for visiting Seoul",
     nav: {
       areas: "Areas",
       themes: "Themes",
@@ -68,11 +68,11 @@ export const copy = {
     areaDetails: "Area Notes",
     themeDetails: "Theme Guide",
     tipDetails: "Quick Guide",
-    footer: "Fix the problem. Keep moving."
+    footer: "Seoul Vibe"
   },
   ko: {
     appName: "Seoul Vibe",
-    tagline: "거의 서울에 관한 모든 것.",
+    tagline: "서울 방문의 필수품",
     nav: {
       areas: "지역",
       themes: "테마",
@@ -95,11 +95,11 @@ export const copy = {
     areaDetails: "지역 가이드",
     themeDetails: "테마 가이드",
     tipDetails: "실전 가이드",
-    footer: "가볍게, 자연스럽게, 서울답게."
+    footer: "Seoul Vibe"
   },
   "zh-cn": {
     appName: "Seoul Vibe",
-    tagline: "关于首尔，几乎所有你会好奇的内容。",
+    tagline: "首尔旅行必需品",
     nav: {
       areas: "区域",
       themes: "主题",
@@ -121,11 +121,11 @@ export const copy = {
     areaDetails: "区域笔记",
     themeDetails: "主题指南",
     tipDetails: "快速指南",
-    footer: "轻松出发，保持好奇。"
+    footer: "Seoul Vibe"
   },
   ja: {
     appName: "Seoul Vibe",
-    tagline: "ソウルのことを、ほぼまるごと。",
+    tagline: "ソウル旅行の必需品",
     nav: {
       areas: "エリア",
       themes: "テーマ",
@@ -147,11 +147,11 @@ export const copy = {
     areaDetails: "エリアメモ",
     themeDetails: "テーマガイド",
     tipDetails: "クイックガイド",
-    footer: "気軽に、好奇心のままに。"
+    footer: "Seoul Vibe"
   },
   "zh-tw": {
     appName: "Seoul Vibe",
-    tagline: "關於首爾，幾乎所有你會好奇的內容。",
+    tagline: "首爾旅行必需品",
     nav: {
       areas: "區域",
       themes: "主題",
@@ -173,11 +173,11 @@ export const copy = {
     areaDetails: "區域筆記",
     themeDetails: "主題指南",
     tipDetails: "快速指南",
-    footer: "輕鬆出發，保持好奇。"
+    footer: "Seoul Vibe"
   },
   "zh-hk": {
     appName: "Seoul Vibe",
-    tagline: "關於首爾，幾乎所有你會好奇嘅內容。",
+    tagline: "首爾旅行必需品",
     nav: {
       areas: "地區",
       themes: "主題",
@@ -199,7 +199,7 @@ export const copy = {
     areaDetails: "地區筆記",
     themeDetails: "主題指南",
     tipDetails: "快速指南",
-    footer: "輕鬆出發，保持好奇。"
+    footer: "Seoul Vibe"
   }
 } as const;
 

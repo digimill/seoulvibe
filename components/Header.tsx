@@ -50,7 +50,7 @@ export function Header({ lang }: HeaderProps) {
       <Container className="py-2">
         <div className="flex min-h-16 items-center justify-between gap-3">
           <Link href={`/${lang}`} className="min-w-0 leading-tight md:shrink-0">
-            <span className="block text-sm font-black tracking-tight">{t.appName}</span>
+            <span className="block text-sm font-bold tracking-normal">{t.appName}</span>
             <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] font-semibold text-zinc-500 sm:max-w-none sm:text-[11px]">
               {labels.subtitle}
             </span>

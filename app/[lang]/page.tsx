@@ -32,10 +32,10 @@ type HomeCopy = {
 function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ko") {
     return {
-      badge: "서울 생존 가이드",
+      badge: "서울 문제 해결",
       title: "서울에서 문제 생겼나요?",
-      subtitleA: "서울에서 어려운 일 있다면,",
-      subtitleB: "60초 안에 정리해요.",
+      subtitleA: "이곳에서 모두 해결.",
+      subtitleB: "60초 안에 다음 행동만 확인하세요.",
       skipLine: "검색 말고 여기부터.",
       stayLabel: "숙소가 여기라면:",
       deepGuides: "심화 가이드",
