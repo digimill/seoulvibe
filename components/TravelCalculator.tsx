@@ -389,7 +389,6 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
   const [showAllPresets, setShowAllPresets] = useState(false);
   const [showQuickMath, setShowQuickMath] = useState(false);
   const [mathN, setMathN] = useState("4");
-  const [isCalcInputFocused, setIsCalcInputFocused] = useState(false);
   const [activeInput, setActiveInput] = useState<"krw" | "foreign" | null>(null);
 
   const currentRate = rates[currency] ?? RATES[currency];
@@ -534,20 +533,13 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
     setMemoInput((prev) => (prev.trim() ? `${prev} · ${note}` : note));
   }
 
-  function handleCalcInputFocus() {
-    setIsCalcInputFocused(true);
-  }
-
   function handleCalcInputBlur(field: "krw" | "foreign") {
-    window.setTimeout(() => {
-      setIsCalcInputFocused(false);
-      setActiveInput(null);
-      if (field === "foreign") {
-        setForeignInput(formatForeignInput(converted));
-      } else {
-        setAmountInput((prev) => formatKrwInput(prev));
-      }
-    }, 120);
+    setActiveInput(null);
+    if (field === "foreign") {
+      setForeignInput(formatForeignInput(converted));
+    } else {
+      setAmountInput((prev) => formatKrwInput(prev));
+    }
   }
 
   return (
@@ -570,7 +562,6 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
                 onChange={(e) => handleAmountInputChange(e.target.value)}
                 onFocus={() => {
                   setActiveInput("krw");
-                  handleCalcInputFocus();
                 }}
                 onBlur={() => handleCalcInputBlur("krw")}
                 className="mt-1 w-full bg-transparent text-xl font-black text-zinc-900 outline-none"
@@ -588,7 +579,6 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
                 onChange={(e) => handleForeignInputChange(e.target.value)}
                 onFocus={() => {
                   setActiveInput("foreign");
-                  handleCalcInputFocus();
                 }}
                 onBlur={() => handleCalcInputBlur("foreign")}
                 className="mt-1 w-full bg-transparent text-xl font-black text-zinc-900 outline-none"
@@ -746,38 +736,6 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
           </button>
         </div>
       </section>
-
-      {isCalcInputFocused ? (
-        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-200 bg-white/95 p-3 pb-[calc(env(safe-area-inset-bottom)+10px)] backdrop-blur sm:hidden">
-          <div className="mx-auto flex max-w-3xl items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setShowQuickMath((prev) => !prev)}
-              className={`min-h-11 flex-1 rounded-xl border px-3 py-2.5 text-sm font-bold ${showQuickMath ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-800"}`}
-            >
-              {c.mathTitle}
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowAllPresets((prev) => !prev)}
-              className={`min-h-11 flex-1 rounded-xl border px-3 py-2.5 text-sm font-bold ${showAllPresets ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-800"}`}
-            >
-              {c.refTitle}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                const active = document.activeElement as HTMLElement | null;
-                active?.blur();
-                setIsCalcInputFocused(false);
-              }}
-              className="min-h-11 rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-sm font-bold text-zinc-800"
-            >
-              Done
-            </button>
-          </div>
-        </div>
-      ) : null}
 
       <section className="rounded-2xl border border-zinc-200 bg-white p-4">
         <div className="flex items-center justify-between gap-2">
