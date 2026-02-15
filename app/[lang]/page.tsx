@@ -73,7 +73,7 @@ export default async function HomePage({ params }: HomePageProps) {
           </Link>
         </Container>
       </section>
-      <section className="pt-14 pb-12 sm:pt-20 sm:pb-16">
+      <section className="pt-8 pb-12 sm:pt-12 sm:pb-16">
         <Container>
           <div className="hero-shell relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/80 p-8 shadow-[0_20px_80px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:p-12">
             <div className="hero-grid-lines absolute inset-0" />
