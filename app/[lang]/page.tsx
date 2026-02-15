@@ -95,9 +95,6 @@ export default async function HomePage({ params }: HomePageProps) {
                 <Link className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 font-medium" href={`/${locale}/spots`}>
                   {t.nav.spots}
                 </Link>
-                <Link className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 font-medium" href={`/${locale}/korea-101`}>
-                  {t.nav.korea101}
-                </Link>
               </div>
             </div>
           </div>
@@ -108,20 +105,23 @@ export default async function HomePage({ params }: HomePageProps) {
         <Container>
           <Link
             href={`/${locale}/korea-101`}
-            className="group block rounded-3xl border border-zinc-200 bg-gradient-to-br from-white via-zinc-50/80 to-zinc-100/80 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)] sm:p-8"
+            className="group relative block overflow-hidden rounded-3xl border border-zinc-300 bg-zinc-900 p-6 text-zinc-100 shadow-[0_16px_50px_rgba(0,0,0,0.2)] transition duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:shadow-[0_22px_60px_rgba(0,0,0,0.28)] sm:p-8"
           >
-            <div className="mb-5 flex items-end justify-between gap-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">{t.nav.korea101}</p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">{t.featuredKorea101}</h2>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,0.16),transparent_40%),radial-gradient(circle_at_85%_80%,rgba(255,255,255,0.12),transparent_45%)]" />
+            <div className="relative flex flex-wrap items-start justify-between gap-5">
+              <div className="max-w-3xl">
+                <p className="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-100/90">
+                  {locale === "ko" ? "초심자 온보딩" : "First-time Onboarding"}
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{t.featuredKorea101}</h2>
+                <p className="mt-3 max-w-3xl overflow-hidden text-sm leading-7 text-zinc-100/85 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] sm:text-base">
+                  {korea101[0]?.summary ?? korea101Preview}
+                </p>
               </div>
-              <span className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition group-hover:border-zinc-900 group-hover:bg-zinc-900 group-hover:text-white">
+              <span className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-sm font-medium text-zinc-100 transition group-hover:bg-white group-hover:text-zinc-900">
                 {korea101Cta}
               </span>
             </div>
-            <p className="max-w-3xl overflow-hidden text-base leading-7 text-zinc-700 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
-              {korea101[0]?.summary ?? korea101Preview}
-            </p>
           </Link>
         </Container>
       </section>

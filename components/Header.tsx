@@ -21,7 +21,6 @@ export function Header({ lang }: HeaderProps) {
     { href: `/${lang}/themes`, label: t.nav.themes },
     { href: `/${lang}/tips`, label: t.nav.tips },
     { href: `/${lang}/spots`, label: t.nav.spots },
-    { href: `/${lang}/korea-101`, label: t.nav.korea101 },
   ];
 
   useEffect(() => {
