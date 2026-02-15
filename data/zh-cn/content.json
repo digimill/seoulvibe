@@ -166,35 +166,35 @@
     },
     {
       "id": "gangnam",
-      "name": "Gangnam",
-      "summary": "High-transfer zone where shopping and night traffic collide. Easy to get stuck if you move without a plan.",
-      "hook": "Gangnam looks easy on maps. In real life, crowds and transfers eat your time fast.",
-      "friend_note": "Do one priority stop first. Then shift to side blocks. Main strips are queue traps.",
-      "vibe": "fast, dense, commercial",
-      "best_time": "before 10:30 or after 21:30",
-      "how_to_get": "Enter from one block outside major exits when possible",
-      "must_do": "Pick food and cafes from side streets, not only main boulevard",
-      "hidden_tip": "At peak time, street-level crossing can be faster than underground connectors",
-      "do_not": "Do not stack multiple viral spots between 19:00 and 20:30",
-      "budget": "mid to high",
-      "crowd": "very high on weekday evenings and weekend nights",
-      "one_line_route": "outer entry -> one core stop -> side-street move -> exit before peak",
+      "name": "江南",
+      "summary": "换乘密集、商圈集中，没计划就很容易卡住节奏。",
+      "hook": "地图上看很简单，现场却常被人流和换乘拖慢。",
+      "friend_note": "先完成一个核心目的地，再转去侧街。主街最容易变成长队。",
+      "vibe": "节奏快, 密度高, 商业区",
+      "best_time": "10:30 前或 21:30 后",
+      "how_to_get": "尽量从主出口外一条街进入",
+      "must_do": "吃饭和咖啡优先选侧街，不要只盯主干道",
+      "hidden_tip": "高峰期地面过街有时比地下连通道更快",
+      "do_not": "19:00-20:30 不要连续串多个网红点",
+      "budget": "中-高",
+      "crowd": "工作日晚间和周末夜间非常拥挤",
+      "one_line_route": "外围进入 -> 完成一个核心点 -> 转入侧街 -> 高峰前离开",
       "tags": [
-        "transport",
-        "night",
-        "shopping",
-        "crowded"
+        "交通",
+        "夜间",
+        "购物",
+        "拥挤"
       ],
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/hero-seoul.jpg",
-        "alt": "Gangnam streets in Seoul"
+        "alt": "首尔江南街景"
       },
       "real_spots": [
-        "Gangnam Station",
-        "Sinnonhyeon Station",
-        "Teheran-ro"
+        "江南站",
+        "新论岘站",
+        "德黑兰路"
       ]
     }
   ],

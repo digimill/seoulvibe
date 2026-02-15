@@ -166,35 +166,35 @@
     },
     {
       "id": "gangnam",
-      "name": "Gangnam",
-      "summary": "High-transfer zone where shopping and night traffic collide. Easy to get stuck if you move without a plan.",
-      "hook": "Gangnam looks easy on maps. In real life, crowds and transfers eat your time fast.",
-      "friend_note": "Do one priority stop first. Then shift to side blocks. Main strips are queue traps.",
-      "vibe": "fast, dense, commercial",
-      "best_time": "before 10:30 or after 21:30",
-      "how_to_get": "Enter from one block outside major exits when possible",
-      "must_do": "Pick food and cafes from side streets, not only main boulevard",
-      "hidden_tip": "At peak time, street-level crossing can be faster than underground connectors",
-      "do_not": "Do not stack multiple viral spots between 19:00 and 20:30",
-      "budget": "mid to high",
-      "crowd": "very high on weekday evenings and weekend nights",
-      "one_line_route": "outer entry -> one core stop -> side-street move -> exit before peak",
+      "name": "江南",
+      "summary": "乗り換えと商業エリアが重なり、無計画だと時間を失いやすいエリア。",
+      "hook": "地図では簡単に見えても、実際は混雑と移動で時間が削られます。",
+      "friend_note": "まず優先スポットを1つだけ処理。次はメイン通りではなく横道へ。",
+      "vibe": "速い, 密集, 商業中心",
+      "best_time": "10:30前 または 21:30以降",
+      "how_to_get": "主要出口を避けて1ブロック外側から入る",
+      "must_do": "食事とカフェは大通りより横道基準で選ぶ",
+      "hidden_tip": "ピーク時は地下連絡通路より地上横断の方が速いことがある",
+      "do_not": "19:00-20:30に人気スポットを連続で詰め込まない",
+      "budget": "中-高",
+      "crowd": "平日夜と週末夜は非常に混雑",
+      "one_line_route": "外周から入る -> 目的1件処理 -> 横道へ移動 -> ピーク前に離脱",
       "tags": [
-        "transport",
-        "night",
-        "shopping",
-        "crowded"
+        "交通",
+        "夜",
+        "買い物",
+        "混雑"
       ],
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/hero-seoul.jpg",
-        "alt": "Gangnam streets in Seoul"
+        "alt": "ソウル江南の街並み"
       },
       "real_spots": [
-        "Gangnam Station",
-        "Sinnonhyeon Station",
-        "Teheran-ro"
+        "江南駅",
+        "新論峴駅",
+        "テヘラン路"
       ]
     }
   ],

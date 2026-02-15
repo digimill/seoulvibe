@@ -191,7 +191,7 @@
     },
     {
       "id": "gangnam",
-      "name": "Gangnam",
+      "name": "강남",
       "summary": "환승 밀집, 대형 상권, 야간 이동이 겹쳐서 초행이 가장 자주 꼬이는 구역.",
       "hook": "강남은 화려해서 쉬워 보이지만, 동선 설계 안 하면 시간만 빠르게 사라진다.",
       "friend_note": "강남은 메인 블록 집착하면 대기만 길어진다. 1차 목적지 하나만 찍고 나머지는 옆 블록으로 옮겨라.",
@@ -205,21 +205,21 @@
       "crowd": "평일 저녁/주말 밤 매우 높음",
       "one_line_route": "강남역 외곽 진입 -> 1개 핵심 일정 -> 이면 상권 이동 -> 피크 전 이탈",
       "tags": [
-        "transport",
-        "night",
-        "shopping",
-        "crowded"
+        "교통",
+        "야간",
+        "쇼핑",
+        "혼잡"
       ],
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
         "src": "/images/hero-seoul.jpg",
-        "alt": "Gangnam streets in Seoul"
+        "alt": "서울 강남 거리"
       },
       "real_spots": [
-        "Gangnam Station",
-        "Sinnonhyeon Station",
-        "Teheran-ro"
+        "강남역",
+        "신논현역",
+        "테헤란로"
       ]
     }
   ],

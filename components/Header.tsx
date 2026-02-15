@@ -19,14 +19,14 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { start: "시작", fixes: "문제해결", areas: "지역" }
+      ? { start: "시작", fixes: "문제해결", areas: "지역", subtitle: "서울 문제 해결 가이드", menu: "메뉴" }
       : lang === "ja"
-        ? { start: "開始", fixes: "解決", areas: "エリア" }
+        ? { start: "開始", fixes: "解決", areas: "エリア", subtitle: "ソウル即対応ガイド", menu: "メニュー" }
         : lang === "zh-cn"
-          ? { start: "开始", fixes: "解决", areas: "区域" }
+          ? { start: "开始", fixes: "解决", areas: "区域", subtitle: "首尔问题速解", menu: "菜单" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { start: "開始", fixes: "解決", areas: "地區" }
-            : { start: "Start", fixes: "Fixes", areas: "Areas" };
+            ? { start: "開始", fixes: "解決", areas: "地區", subtitle: "首爾問題速解", menu: "選單" }
+            : { start: "Start", fixes: "Fixes", areas: "Areas", subtitle: "Seoul problem solver", menu: "Menu" };
   const navItems = [
     { href: `/${lang}`, label: labels.start },
     { href: `/${lang}/tips`, label: labels.fixes },
@@ -52,7 +52,7 @@ export function Header({ lang }: HeaderProps) {
           <Link href={`/${lang}`} className="min-w-0 leading-tight md:shrink-0">
             <span className="block text-sm font-black tracking-tight">{t.appName}</span>
             <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] font-semibold text-zinc-500 sm:max-w-none sm:text-[11px]">
-              Seoul problem solver
+              {labels.subtitle}
             </span>
           </Link>
 
@@ -68,7 +68,7 @@ export function Header({ lang }: HeaderProps) {
               className="relative"
             >
               <summary className="list-none rounded-full border border-zinc-900 px-3 py-1 text-xs font-bold text-zinc-900">
-                Menu
+                {labels.menu}
               </summary>
               <div className="absolute right-0 z-50 mt-2 w-[min(90vw,18rem)] rounded-xl border border-zinc-200 bg-white p-2 shadow-lg">
                 <nav className="flex flex-col gap-1 text-sm text-zinc-700">

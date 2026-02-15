@@ -132,12 +132,41 @@ function KioskEmergency({ locale }: { locale: Lang }) {
                 wrongBody: "Card insert fails. No English menu. Kiosk asks for phone number.",
                 whyBody: "Some cards fail by insert chip. Some kiosks hide language in top-right. Phone prompt is often membership signup.",
               };
-  const phrases = [
-    { english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
-    { english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
-    { english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
-    { english: "Is there an English option?", korean: "영어 옵션 있나요?" },
-  ];
+  const phrases =
+    locale === "ko"
+      ? [
+          { label: "카운터 결제 가능 여부", english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+          { label: "카드 오류 전달", english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+          { label: "비회원 결제 요청", english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+          { label: "영어 옵션 확인", english: "Is there an English option?", korean: "영어 옵션 있나요?" },
+        ]
+      : locale === "ja"
+        ? [
+            { label: "カウンター決済を確認", english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+            { label: "カードエラーを伝える", english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+            { label: "ゲスト会計を依頼", english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+            { label: "英語表示を確認", english: "Is there an English option?", korean: "영어 옵션 있나요?" },
+          ]
+        : locale === "zh-cn"
+          ? [
+              { label: "确认柜台付款", english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+              { label: "说明刷卡失败", english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+              { label: "申请游客结算", english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+              { label: "确认英文选项", english: "Is there an English option?", korean: "영어 옵션 있나요?" },
+            ]
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? [
+                { label: "確認櫃檯付款", english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+                { label: "說明刷卡失敗", english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+                { label: "申請訪客結帳", english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+                { label: "確認英文選項", english: "Is there an English option?", korean: "영어 옵션 있나요?" },
+              ]
+            : [
+                { label: "Can I pay at the counter?", english: "Can I pay at the counter?", korean: "카운터에서 결제할 수 있을까요?" },
+                { label: "My card is not working here.", english: "My card is not working here.", korean: "여기서 제 카드가 안 돼요." },
+                { label: "Can I skip membership and check out as guest?", english: "Can I skip membership and check out as guest?", korean: "회원가입 없이 비회원으로 결제할게요." },
+                { label: "Is there an English option?", english: "Is there an English option?", korean: "영어 옵션 있나요?" },
+              ];
 
   return (
     <>
@@ -184,9 +213,9 @@ function KioskEmergency({ locale }: { locale: Lang }) {
         <h2 className="text-lg font-black tracking-tight text-zinc-950">{c.show}</h2>
         <div className="mt-3 space-y-3">
           {phrases.map((phrase) => (
-            <div key={phrase.english} className="rounded-xl border border-zinc-200 p-3">
-              <p className="mb-2 text-sm font-semibold text-zinc-900">{phrase.english}</p>
-              <CopyPhraseButton english={phrase.english} korean={phrase.korean} />
+            <div key={phrase.label} className="rounded-xl border border-zinc-200 p-3">
+              <p className="mb-2 text-sm font-semibold text-zinc-900">{phrase.label}</p>
+              <CopyPhraseButton english={phrase.english} korean={phrase.korean} locale={locale} />
             </div>
           ))}
         </div>
@@ -202,7 +231,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
 function SubwayEmergency({ locale }: { locale: Lang }) {
   const c =
     locale === "ko"
-      ? { title: "어떤 지하철 노선을 타야 할까?", lead: "현재 위치보다 숙소 기준으로 먼저 잡으세요.", stay: "숙소가 여기라면:", wrong: "자주 생기는 실수", why: "왜 헷갈리나", now: "지금 바로 할 일", missed: "역을 놓쳤다면?", more: "교통/잔액 문제라면", moreLink: "티머니 가이드 보기", wrongBody: "방향 반대로 타서 20~40분 손해가 자주 납니다.", whyBody: "색만 보고 판단하고, 종착역 확인을 건너뜁니다.", n1: "노선 색보다 종착역 이름 확인", n2: "Line 2는 양방향 순환", n3: "헷갈리면 개찰구 들어가기 전에 질문", m1: "다음 역에서 내리기", m2: "반대 방향 열차로 갈아타기", m3: "환승 시간 안이면 추가 요금 거의 없음" }
+      ? { title: "어떤 지하철 노선을 타야 할까?", lead: "현재 위치보다 숙소 기준으로 먼저 잡으세요.", stay: "숙소가 여기라면:", wrong: "자주 생기는 실수", why: "왜 헷갈리나", now: "지금 바로 할 일", missed: "역을 놓쳤다면?", more: "교통/잔액 문제라면", moreLink: "티머니 가이드 보기", wrongBody: "방향 반대로 타서 20~40분 손해가 자주 납니다.", whyBody: "색만 보고 판단하고, 종착역 확인을 건너뜁니다.", n1: "노선 색보다 종착역 이름 확인", n2: "2호선은 양방향 순환", n3: "헷갈리면 개찰구 들어가기 전에 질문", m1: "다음 역에서 내리기", m2: "반대 방향 열차로 갈아타기", m3: "환승 시간 안이면 추가 요금 거의 없음" }
       : locale === "ja"
         ? { title: "どの地下鉄路線に乗る？", lead: "今いる場所より宿の位置を基準に。", stay: "滞在先がここなら:", wrong: "よくあるミス", why: "なぜ迷うか", now: "今すぐやること", missed: "降りる駅を過ぎたら？", more: "残高・移動で詰まったら", moreLink: "T-moneyガイド", wrongBody: "方向違いに乗って20-40分失うケースが多い。", whyBody: "色だけ見て終点確認を飛ばすため。", n1: "路線色より終点名を確認", n2: "2号線は両方向に回る", n3: "迷ったら改札前で聞く", m1: "次の駅で降りる", m2: "反対方向へ乗り換え", m3: "乗換時間内なら追加料金は通常なし" }
         : locale === "zh-cn"
@@ -210,6 +239,16 @@ function SubwayEmergency({ locale }: { locale: Lang }) {
           : locale === "zh-tw" || locale === "zh-hk"
             ? { title: "現在該搭哪條地鐵？", lead: "先以住宿位置選線，不要只看當前站。", stay: "如果你住在：", wrong: "常見失誤", why: "為什麼會搞混", now: "現在先做", missed: "坐過站了？", more: "餘額/交通卡住時", moreLink: "看 T-money 指南", wrongBody: "搭錯方向，常常直接多花 20-40 分鐘。", whyBody: "只看線路顏色，不看終點站名。", n1: "先看終點站名，不先看顏色", n2: "2號線是雙向環線", n3: "不確定就先問再進站", m1: "下一站下車", m2: "改搭反方向列車", m3: "在轉乘時間內通常不加價" }
             : { title: "Which subway line should I take?", lead: "Start from where you sleep, not where you are.", stay: "If you are staying in:", wrong: "What usually goes wrong?", why: "Why it happens?", now: "What to do immediately?", missed: "Missed stop?", more: "Card or balance issue?", moreLink: "Check T-money planning", wrongBody: "People board the wrong direction and lose 20 to 40 minutes.", whyBody: "They check color only. They skip final station name.", n1: "Ignore line color. Check the last station name.", n2: "Line 2 goes both ways.", n3: "If unsure, ask before entering.", m1: "Get off next station.", m2: "Take opposite train.", m3: "No extra charge within transfer window." };
+  const stayLines =
+    locale === "ko"
+      ? ["홍대 -> 2호선", "강남 -> 2호선", "북촌 -> 3호선", "공항 -> AREX"]
+      : locale === "ja"
+        ? ["弘大 -> 2号線", "江南 -> 2号線", "北村 -> 3号線", "空港 -> AREX"]
+        : locale === "zh-cn"
+          ? ["弘大 -> 2号线", "江南 -> 2号线", "北村 -> 3号线", "机场 -> AREX"]
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? ["弘大 -> 2號線", "江南 -> 2號線", "北村 -> 3號線", "機場 -> AREX"]
+            : ["Hongdae -> Line 2", "Gangnam -> Line 2", "Bukchon -> Line 3", "Airport -> AREX"];
   return (
     <>
       <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
@@ -220,10 +259,9 @@ function SubwayEmergency({ locale }: { locale: Lang }) {
       <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
         <h2 className="text-lg font-black tracking-tight text-zinc-950">{c.stay}</h2>
         <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
-          <li>Hongdae - Line 2</li>
-          <li>Gangnam - Line 2</li>
-          <li>Bukchon - Line 3</li>
-          <li>Airport - AREX</li>
+          {stayLines.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
         </ul>
       </section>
 
@@ -266,6 +304,56 @@ function OliveYoungEmergency({ locale }: { locale: Lang }) {
           : locale === "zh-tw" || locale === "zh-hk"
             ? { title: "如果你在 Olive Young 只有 30 分鐘", lead: "先拿基本組合，不要陷入選品地獄。", wrong: "常見問題", why: "為什麼會發生", now: "現在先做", before: "付款前確認", more: "詳細版", moreLink: "查看 Olive Young 指南", wrongBody: "花一小時卻只買了隨機網紅品。", whyBody: "新品太多、試用太多、社群清單太雜。", nowBody: "先拿基本組合，然後立刻收手。" }
             : { title: "If you only have 30 minutes at Olive Young", lead: "Skip the rabbit hole. Buy what works.", wrong: "What usually goes wrong?", why: "Why it happens?", now: "What to do immediately?", before: "Before you pay", more: "Full breakdown:", moreLink: "Olive Young tourist guide", wrongBody: "People spend an hour and leave with random hype items they never use.", whyBody: "Too many launches. Too many testers. Social media lists can derail quick decisions.", nowBody: "Buy the basic set first. Then stop." };
+  const packTitle =
+    locale === "ko"
+      ? "5만원대 스타터 팩"
+      : locale === "ja"
+        ? "50ドル前後スターターパック"
+        : locale === "zh-cn"
+          ? "50 美元入门清单"
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? "50 美元入門清單"
+            : "$50 starter pack";
+  const packItems =
+    locale === "ko"
+      ? ["클렌저", "토너", "시트마스크 번들", "립 틴트"]
+      : locale === "ja"
+        ? ["クレンザー", "トナー", "シートマスクセット", "リップティント"]
+        : locale === "zh-cn"
+          ? ["洁面", "化妆水", "面膜组合", "唇釉"]
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? ["潔面", "化妝水", "面膜組合", "唇釉"]
+            : ["Cleanser", "Toner", "Sheet mask bundle", "Lip tint"];
+  const skipTitle =
+    locale === "ko"
+      ? "건너뛸 것"
+      : locale === "ja"
+        ? "避けるもの"
+        : locale === "zh-cn"
+          ? "先跳过"
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? "先跳過"
+            : "Skip";
+  const skipItems =
+    locale === "ko"
+      ? ["10단계 루틴", "무작위 유행템", "영문 표기 없는 제품"]
+      : locale === "ja"
+        ? ["10ステップのフルルーティン", "流行だけの衝動買い", "英語ラベルがない商品"]
+        : locale === "zh-cn"
+          ? ["10 步全套护理", "随机网红品", "没有英文标识的产品"]
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? ["10 步驟完整護膚", "隨機網紅品", "沒有英文標示的產品"]
+            : ["10-step routines", "Random trending items", "Products without English label"];
+  const beforeItems =
+    locale === "ko"
+      ? ["택스리펀 가능", "여권 필요", "주요 카드 결제 가능"]
+      : locale === "ja"
+        ? ["免税対応あり", "パスポート必須", "主要カード利用可"]
+        : locale === "zh-cn"
+          ? ["可办退税", "需要护照", "支持主流信用卡"]
+          : locale === "zh-tw" || locale === "zh-hk"
+            ? ["可辦退稅", "需要護照", "支援主要信用卡"]
+            : ["Tax refund possible", "Passport required", "Major cards accepted"];
   return (
     <>
       <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
@@ -282,30 +370,29 @@ function OliveYoungEmergency({ locale }: { locale: Lang }) {
       </section>
 
       <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
-        <h2 className="text-lg font-black tracking-tight text-zinc-950">$50 starter pack</h2>
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">{packTitle}</h2>
         <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
-          <li>Cleanser</li>
-          <li>Toner</li>
-          <li>Sheet mask bundle</li>
-          <li>Lip tint</li>
+          {packItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
-        <h2 className="text-lg font-black tracking-tight text-zinc-950">Skip</h2>
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">{skipTitle}</h2>
         <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
-          <li>10-step routines</li>
-          <li>Random trending items</li>
-          <li>Products without English label</li>
+          {skipItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
         <h2 className="text-lg font-black tracking-tight text-zinc-950">{c.before}</h2>
         <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
-          <li>Tax refund possible</li>
-          <li>Passport required</li>
-          <li>Major cards accepted</li>
+          {beforeItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </section>
 
