@@ -16,6 +16,7 @@ type ExpenseItem = {
 type ExpenseTrackerProps = {
   lang: Lang;
 };
+type ViewMode = "today" | "all";
 
 type Currency = "USD" | "EUR" | "JPY" | "CNY" | "TWD" | "HKD" | "GBP" | "AUD" | "CAD" | "SGD" | "THB" | "VND";
 
@@ -51,6 +52,10 @@ function getCopy(lang: Lang) {
       naturalHint: "예) 택시 12000원 / coffee $4.5 / 점심 15000",
       naturalAdd: "문장으로 추가",
       parseFail: "금액을 찾지 못했습니다. 숫자를 포함해 입력해 주세요.",
+      viewToday: "오늘",
+      viewAll: "전체",
+      allTotal: "전체 합계",
+      exportCsv: "CSV 내보내기",
       categories: {
         transport: "교통",
         food: "식비",
@@ -83,6 +88,10 @@ function getCopy(lang: Lang) {
       naturalHint: "例) タクシー 12000ウォン / coffee $4.5 / ランチ 15000",
       naturalAdd: "文章で追加",
       parseFail: "金額を読み取れませんでした。数字を含めてください。",
+      viewToday: "今日",
+      viewAll: "全体",
+      allTotal: "全体合計",
+      exportCsv: "CSV出力",
       categories: {
         transport: "交通",
         food: "食費",
@@ -115,6 +124,10 @@ function getCopy(lang: Lang) {
       naturalHint: "例) 出租车 12000韩元 / coffee $4.5 / 午饭 15000",
       naturalAdd: "按句子添加",
       parseFail: "未识别到金额，请输入数字。",
+      viewToday: "今日",
+      viewAll: "全部",
+      allTotal: "总计",
+      exportCsv: "导出CSV",
       categories: {
         transport: "交通",
         food: "餐饮",
@@ -147,6 +160,10 @@ function getCopy(lang: Lang) {
       naturalHint: "例) 計程車 12000韓元 / coffee $4.5 / 午餐 15000",
       naturalAdd: "用句子新增",
       parseFail: "無法辨識金額，請輸入數字。",
+      viewToday: "今日",
+      viewAll: "全部",
+      allTotal: "總計",
+      exportCsv: "匯出CSV",
       categories: {
         transport: "交通",
         food: "餐飲",
@@ -178,6 +195,10 @@ function getCopy(lang: Lang) {
     naturalHint: "Ex) taxi 12000 krw / coffee $4.5 / lunch 15000",
     naturalAdd: "Add from sentence",
     parseFail: "Could not detect amount. Please include a number.",
+    viewToday: "Today",
+    viewAll: "All",
+    allTotal: "All-time total",
+    exportCsv: "Export CSV",
     categories: {
       transport: "Transport",
       food: "Food",
@@ -267,7 +288,10 @@ function getPricePresets(lang: Lang): PricePreset[] {
 }
 
 function todayKey(date = new Date()) {
-  return date.toISOString().slice(0, 10);
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
 }
 
 export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
