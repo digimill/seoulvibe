@@ -176,7 +176,7 @@ export function SpotsExplorer({
         </div>
       ) : null}
 
-      <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+      <div className="mt-4 overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
         {filteredAndSorted.length === 0 ? (
           <div className="p-8 text-sm text-zinc-600">
             <p>{ui.noResult}</p>
