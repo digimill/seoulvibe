@@ -3,6 +3,7 @@ import { getAreas, getKorea101, getThemes, getTips } from "@/lib/content";
 import { LANGS, type Lang } from "@/lib/i18n";
 import { problemSeoItems } from "@/lib/problem-seo";
 import { getSiteUrl } from "@/lib/site";
+import { TOOL_IDS } from "@/lib/tools";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: topPath === "" ? 1 : 0.8,
       });
     }
+
+    urls.push(
+      ...TOOL_IDS.map((tool) => ({
+        url: `${siteUrl}/${lang}/tools/${tool}`,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      })),
+    );
 
     const [areas, themes, tips, korea101] = await Promise.all([
       getAreas(lang as Lang),

@@ -6,6 +6,7 @@ import type { Lang } from "@/lib/i18n";
 type Budget = 30 | 50 | 100;
 type Purpose = "self" | "gift";
 type SkinType = "oily" | "dry" | "sensitive" | "combination";
+type GiftStyle = "practical" | "cute" | "trendy";
 
 type PickItem = { name: string; priceKrw: number };
 
@@ -17,8 +18,13 @@ function copy(lang: Lang) {
       budget: "예산 (USD)",
       purpose: "목적",
       skin: "피부 타입",
+      skinHelp: "셀프 선택 시에만 반영됩니다.",
+      giftStyle: "선물 성향",
       self: "셀프",
       gift: "선물",
+      practical: "실용형",
+      cute: "가벼운 소품형",
+      trendy: "트렌드형",
       oily: "지성",
       dry: "건성",
       sensitive: "민감성",
@@ -38,8 +44,13 @@ function copy(lang: Lang) {
       budget: "予算 (USD)",
       purpose: "目的",
       skin: "肌タイプ",
+      skinHelp: "自分用を選んだときのみ反映。",
+      giftStyle: "ギフトタイプ",
       self: "自分用",
       gift: "ギフト",
+      practical: "実用",
+      cute: "軽い小物",
+      trendy: "トレンド",
       oily: "脂性肌",
       dry: "乾燥肌",
       sensitive: "敏感肌",
@@ -59,8 +70,13 @@ function copy(lang: Lang) {
       budget: "预算 (USD)",
       purpose: "目的",
       skin: "肤质",
+      skinHelp: "仅在选择自用时生效。",
+      giftStyle: "送礼风格",
       self: "自用",
       gift: "送礼",
+      practical: "实用型",
+      cute: "轻巧小物",
+      trendy: "潮流型",
       oily: "油性",
       dry: "干性",
       sensitive: "敏感",
@@ -80,8 +96,13 @@ function copy(lang: Lang) {
       budget: "預算 (USD)",
       purpose: "目的",
       skin: "膚質",
+      skinHelp: "僅在選擇自用時生效。",
+      giftStyle: "送禮風格",
       self: "自用",
       gift: "送禮",
+      practical: "實用型",
+      cute: "輕巧小物",
+      trendy: "潮流型",
       oily: "油性",
       dry: "乾性",
       sensitive: "敏感",
@@ -100,8 +121,13 @@ function copy(lang: Lang) {
     budget: "Budget (USD)",
     purpose: "Purpose",
     skin: "Skin type",
+    skinHelp: "Applied only when purpose is Self.",
+    giftStyle: "Gift style",
     self: "Self",
     gift: "Gift",
+    practical: "Practical",
+    cute: "Cute mini set",
+    trendy: "Trendy picks",
     oily: "Oily",
     dry: "Dry",
     sensitive: "Sensitive",
@@ -159,7 +185,7 @@ function skinItem(lang: Lang, skin: SkinType): PickItem {
   return { name: label, priceKrw: 18000 };
 }
 
-function buildList(lang: Lang, budgetUsd: Budget, purpose: Purpose, skin: SkinType): PickItem[] {
+function buildList(lang: Lang, budgetUsd: Budget, purpose: Purpose, skin: SkinType, giftStyle: GiftStyle): PickItem[] {
   const baseSelf: Record<Budget, PickItem[]> = {
     30: [
       { name: lang === "ko" ? "클렌저" : "Cleanser", priceKrw: 12000 },
@@ -181,28 +207,66 @@ function buildList(lang: Lang, budgetUsd: Budget, purpose: Purpose, skin: SkinTy
     ],
   };
 
-  const baseGift: Record<Budget, PickItem[]> = {
-    30: [
-      { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
-      { name: lang === "ko" ? "마스크팩 선물팩" : "Mask gift pack", priceKrw: 13000 },
-      { name: lang === "ko" ? "립밤" : "Lip balm", priceKrw: 8000 },
-    ],
-    50: [
-      { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
-      { name: lang === "ko" ? "마스크팩 선물팩" : "Mask gift pack", priceKrw: 18000 },
-      { name: lang === "ko" ? "립틴트" : "Lip tint", priceKrw: 12000 },
-      { name: lang === "ko" ? "미니 향수" : "Mini fragrance", priceKrw: 17000 },
-    ],
-    100: [
-      { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
-      { name: lang === "ko" ? "마스크팩 대용량" : "Large mask bundle", priceKrw: 28000 },
-      { name: lang === "ko" ? "립틴트" : "Lip tint", priceKrw: 12000 },
-      { name: lang === "ko" ? "미니 향수" : "Mini fragrance", priceKrw: 17000 },
-      { name: lang === "ko" ? "바디케어 세트" : "Body care set", priceKrw: 23000 },
-    ],
+  const giftSets: Record<GiftStyle, Record<Budget, PickItem[]>> = {
+    practical: {
+      30: [
+        { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
+        { name: lang === "ko" ? "마스크팩 선물팩" : "Mask gift pack", priceKrw: 13000 },
+        { name: lang === "ko" ? "립밤" : "Lip balm", priceKrw: 8000 },
+      ],
+      50: [
+        { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
+        { name: lang === "ko" ? "마스크팩 선물팩" : "Mask gift pack", priceKrw: 18000 },
+        { name: lang === "ko" ? "보습 립케어" : "Lip care set", priceKrw: 12000 },
+        { name: lang === "ko" ? "바디로션 미니" : "Mini body lotion", priceKrw: 17000 },
+      ],
+      100: [
+        { name: lang === "ko" ? "핸드크림 세트" : "Hand cream set", priceKrw: 15000 },
+        { name: lang === "ko" ? "마스크팩 대용량" : "Large mask bundle", priceKrw: 28000 },
+        { name: lang === "ko" ? "바디케어 세트" : "Body care set", priceKrw: 23000 },
+        { name: lang === "ko" ? "풋케어 세트" : "Foot care set", priceKrw: 16000 },
+        { name: lang === "ko" ? "립밤 2개" : "Lip balm duo", priceKrw: 14000 },
+      ],
+    },
+    cute: {
+      30: [
+        { name: lang === "ko" ? "미니 핸드크림" : "Mini hand cream", priceKrw: 9000 },
+        { name: lang === "ko" ? "틴트 미니" : "Mini lip tint", priceKrw: 11000 },
+        { name: lang === "ko" ? "캐릭터 시트팩" : "Character sheet pack", priceKrw: 10000 },
+      ],
+      50: [
+        { name: lang === "ko" ? "미니 향수" : "Mini fragrance", priceKrw: 17000 },
+        { name: lang === "ko" ? "틴트 2개" : "Lip tint x2", priceKrw: 22000 },
+        { name: lang === "ko" ? "포켓 핸드크림" : "Pocket hand cream", priceKrw: 10000 },
+      ],
+      100: [
+        { name: lang === "ko" ? "미니 향수 세트" : "Mini fragrance set", priceKrw: 34000 },
+        { name: lang === "ko" ? "쿠션 리필 포함" : "Cushion + refill", priceKrw: 32000 },
+        { name: lang === "ko" ? "틴트 2개" : "Lip tint x2", priceKrw: 22000 },
+        { name: lang === "ko" ? "마스크팩 세트" : "Mask pack set", priceKrw: 12000 },
+      ],
+    },
+    trendy: {
+      30: [
+        { name: lang === "ko" ? "트렌딩 마스크팩" : "Trending sheet mask", priceKrw: 12000 },
+        { name: lang === "ko" ? "신상 립틴트" : "New lip tint", priceKrw: 12000 },
+        { name: lang === "ko" ? "클린 포뮬라 미니" : "Clean formula mini", priceKrw: 9000 },
+      ],
+      50: [
+        { name: lang === "ko" ? "신상 쿠션 미니" : "New cushion mini", priceKrw: 21000 },
+        { name: lang === "ko" ? "트렌딩 세럼" : "Trending serum", priceKrw: 19000 },
+        { name: lang === "ko" ? "립틴트" : "Lip tint", priceKrw: 12000 },
+      ],
+      100: [
+        { name: lang === "ko" ? "트렌딩 세럼" : "Trending serum", priceKrw: 19000 },
+        { name: lang === "ko" ? "신상 쿠션 + 리필" : "New cushion + refill", priceKrw: 32000 },
+        { name: lang === "ko" ? "선크림 듀오" : "Sunscreen duo", priceKrw: 28000 },
+        { name: lang === "ko" ? "립틴트 2개" : "Lip tint x2", priceKrw: 22000 },
+      ],
+    },
   };
 
-  const core = purpose === "self" ? baseSelf[budgetUsd] : baseGift[budgetUsd];
+  const core = purpose === "self" ? baseSelf[budgetUsd] : giftSets[giftStyle][budgetUsd];
   return purpose === "self" ? [...core, skinItem(lang, skin)] : core;
 }
 
@@ -211,6 +275,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
   const [budgetUsd, setBudgetUsd] = useState<Budget>(50);
   const [purpose, setPurpose] = useState<Purpose>("self");
   const [skin, setSkin] = useState<SkinType>("combination");
+  const [giftStyle, setGiftStyle] = useState<GiftStyle>("practical");
   const [usdRate, setUsdRate] = useState(1400);
 
   useEffect(() => {
@@ -232,7 +297,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
     };
   }, []);
 
-  const picks = useMemo(() => buildList(lang, budgetUsd, purpose, skin), [lang, budgetUsd, purpose, skin]);
+  const picks = useMemo(() => buildList(lang, budgetUsd, purpose, skin, giftStyle), [lang, budgetUsd, purpose, skin, giftStyle]);
   const totalKrw = useMemo(() => picks.reduce((sum, item) => sum + item.priceKrw, 0), [picks]);
   const budgetKrw = Math.round(budgetUsd * usdRate);
   const taxRefund = totalKrw >= 30000;
@@ -271,19 +336,35 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
           </select>
         </label>
 
-        <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <p className="text-xs font-semibold text-zinc-600">{c.skin}</p>
-          <select
-            value={skin}
-            onChange={(e) => setSkin(e.target.value as SkinType)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
-          >
-            <option value="oily">{c.oily}</option>
-            <option value="dry">{c.dry}</option>
-            <option value="sensitive">{c.sensitive}</option>
-            <option value="combination">{c.combination}</option>
-          </select>
-        </label>
+        {purpose === "self" ? (
+          <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+            <p className="text-xs font-semibold text-zinc-600">{c.skin}</p>
+            <select
+              value={skin}
+              onChange={(e) => setSkin(e.target.value as SkinType)}
+              className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
+            >
+              <option value="oily">{c.oily}</option>
+              <option value="dry">{c.dry}</option>
+              <option value="sensitive">{c.sensitive}</option>
+              <option value="combination">{c.combination}</option>
+            </select>
+            <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.skinHelp}</p>
+          </label>
+        ) : (
+          <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+            <p className="text-xs font-semibold text-zinc-600">{c.giftStyle}</p>
+            <select
+              value={giftStyle}
+              onChange={(e) => setGiftStyle(e.target.value as GiftStyle)}
+              className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
+            >
+              <option value="practical">{c.practical}</option>
+              <option value="cute">{c.cute}</option>
+              <option value="trendy">{c.trendy}</option>
+            </select>
+          </label>
+        )}
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
