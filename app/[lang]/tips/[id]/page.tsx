@@ -409,7 +409,10 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
 
   const locale = lang as Lang;
   const t = getCopy(locale);
-  const tip = (await getTips(locale)).find((item) => item.id === id);
+  const isKiosk = id === "kiosk-survival-flow";
+  const isSubway = id === "subway-map-confusion-cuts";
+  const isOliveYoung = id === "oliveyoung-master-playbook";
+  const tip = isKiosk || isSubway || isOliveYoung ? null : (await getTips(locale)).find((item) => item.id === id);
   const common =
     locale === "ko"
       ? { wrong: "자주 꼬이는 지점", why: "왜 생기나", now: "지금 바로 할 일", nearby: "근처에서 바로 갈 곳", fallbackWhy: "로컬 맥락 없이 정보만 복사하면 일정이 쉽게 꼬입니다.", fallbackNow: "멈추고, 순서를 다시 잡고, 다음 한 단계만 실행하세요." }
@@ -421,11 +424,7 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
             ? { wrong: "常見卡點", why: "為什麼會發生", now: "現在先做", nearby: "附近可用地點", fallbackWhy: "離開在地脈絡照抄建議，最容易出錯。", fallbackNow: "先停一下，重排順序，只做下一步。"}
             : { wrong: "What usually goes wrong?", why: "Why it happens?", now: "What to do immediately?", nearby: "Useful nearby places", fallbackWhy: "Visitors copy random advice without local context.", fallbackNow: "Slow down, reset, and use the shortest next action." };
 
-  if (!tip) notFound();
-
-  const isKiosk = id === "kiosk-survival-flow";
-  const isSubway = id === "subway-map-confusion-cuts";
-  const isOliveYoung = id === "oliveyoung-master-playbook";
+  if (!tip && !isKiosk && !isSubway && !isOliveYoung) notFound();
 
   return (
     <Container className="py-10 sm:py-14">
@@ -438,7 +437,7 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
         {isSubway ? <SubwayEmergency locale={locale} /> : null}
         {isOliveYoung ? <OliveYoungEmergency locale={locale} /> : null}
 
-        {!isKiosk && !isSubway && !isOliveYoung ? (
+        {!isKiosk && !isSubway && !isOliveYoung && tip ? (
           <>
             <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
               <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{tip.title}</h1>
