@@ -86,6 +86,36 @@ function getLineLabels(locale: Lang) {
   };
 }
 
+function splitLineSegments(text: string): string[] {
+  const normalized = text.trim();
+  if (!normalized) return [];
+
+  if (normalized.includes("/")) {
+    return normalized
+      .split("/")
+      .map((part) => part.trim())
+      .filter(Boolean);
+  }
+
+  const sentenceSplit = normalized
+    .split(/(?<=[?.!])\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return sentenceSplit.length > 0 ? sentenceSplit : [normalized];
+}
+
+function toLinePairs(ko: string, pronunciation: string): Array<{ ko: string; pronunciation: string }> {
+  const koParts = splitLineSegments(ko);
+  const pronunciationParts = splitLineSegments(pronunciation);
+
+  if (koParts.length > 1 && pronunciationParts.length === koParts.length) {
+    return koParts.map((part, index) => ({ ko: part, pronunciation: pronunciationParts[index] }));
+  }
+
+  return koParts.map((part) => ({ ko: part, pronunciation }));
+}
+
 export default async function TipDetailPage({ params }: TipDetailPageProps) {
   const { lang, id } = await params;
   if (!isLang(lang)) notFound();
@@ -157,35 +187,63 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
           ) : null}
           {tip.line_to_use ? (
             <div>
-              <dt className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                <span>{lineLabels.title}</span>
-                <SpeakButton
-                  text={isLineDetail(tip.line_to_use) ? tip.line_to_use.ko : tip.line_to_use}
-                  lang="ko-KR"
-                  idleLabel={lineLabels.listen}
-                  speakingLabel={lineLabels.stop}
-                />
-              </dt>
-              {isLineDetail(tip.line_to_use) ? (
-                <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
-                  <p>
-                    <span className="font-medium">{lineLabels.localPronunciation}:</span>{" "}
-                    {tip.line_to_use.pronunciation_local}
-                  </p>
-                  <p>
-                    <span className="font-medium">{lineLabels.meaning}:</span> {tip.line_to_use.meaning}
-                  </p>
-                </dd>
-              ) : (
-                <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
-                  <p>
-                    <span className="font-medium">{lineLabels.localPronunciation}:</span> {tip.line_to_use}
-                  </p>
-                  <p>
-                    <span className="font-medium">{lineLabels.meaning}:</span> {lineLabels.meaningMissing}
-                  </p>
-                </dd>
-              )}
+              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{lineLabels.title}</dt>
+              {(() => {
+                if (isLineDetail(tip.line_to_use)) {
+                  const lineDetail = tip.line_to_use;
+                  const linePairs = toLinePairs(lineDetail.ko, lineDetail.pronunciation_local);
+                  const isMultiple = linePairs.length > 1;
+
+                  return (
+                    <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
+                      {linePairs.map((line, index) => (
+                        <p key={`${line.ko}-${index}`} className="flex items-center justify-between gap-3">
+                          <span>
+                            <span className="font-medium">
+                              {lineLabels.localPronunciation}
+                              {isMultiple ? ` ${index + 1}` : ""}:
+                            </span>{" "}
+                            {line.pronunciation}
+                          </span>
+                          <SpeakButton
+                            text={line.ko}
+                            lang="ko-KR"
+                            idleLabel={lineLabels.listen}
+                            speakingLabel={lineLabels.stop}
+                          />
+                        </p>
+                      ))}
+                      <p>
+                        <span className="font-medium">{lineLabels.meaning}:</span> {lineDetail.meaning}
+                      </p>
+                    </dd>
+                  );
+                }
+
+                const singleLine = tip.line_to_use;
+                const lines = splitLineSegments(singleLine);
+                const isMultiple = lines.length > 1;
+
+                return (
+                  <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
+                    {lines.map((line, index) => (
+                      <p key={`${line}-${index}`} className="flex items-center justify-between gap-3">
+                        <span>
+                          <span className="font-medium">
+                            {lineLabels.localPronunciation}
+                            {isMultiple ? ` ${index + 1}` : ""}:
+                          </span>{" "}
+                          {line}
+                        </span>
+                        <SpeakButton text={line} lang="ko-KR" idleLabel={lineLabels.listen} speakingLabel={lineLabels.stop} />
+                      </p>
+                    ))}
+                    <p>
+                      <span className="font-medium">{lineLabels.meaning}:</span> {lineLabels.meaningMissing}
+                    </p>
+                  </dd>
+                );
+              })()}
             </div>
           ) : null}
           {tip.quick_checklist && tip.quick_checklist.length > 0 ? (
