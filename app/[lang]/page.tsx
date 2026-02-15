@@ -106,23 +106,23 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <section className="pb-8 sm:pb-10">
         <Container>
-          <div className="rounded-3xl border border-orange-200/80 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] sm:p-8">
+          <Link
+            href={`/${locale}/korea-101`}
+            className="group block rounded-3xl border border-zinc-200 bg-gradient-to-br from-white via-zinc-50/80 to-zinc-100/80 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)] sm:p-8"
+          >
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-orange-700/80">{t.nav.korea101}</p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">{t.featuredKorea101}</h2>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">{t.nav.korea101}</p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 sm:text-3xl">{t.featuredKorea101}</h2>
               </div>
-              <Link
-                href={`/${locale}/korea-101`}
-                className="rounded-full border border-orange-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800"
-              >
+              <span className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition group-hover:border-zinc-900 group-hover:bg-zinc-900 group-hover:text-white">
                 {korea101Cta}
-              </Link>
+              </span>
             </div>
-            <p className="max-w-3xl text-base leading-8 text-zinc-700">
-              {korea101[0]?.summary} {korea101[0]?.friend_note} {korea101Preview}
+            <p className="max-w-3xl overflow-hidden text-base leading-7 text-zinc-700 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
+              {korea101[0]?.summary ?? korea101Preview}
             </p>
-          </div>
+          </Link>
         </Container>
       </section>
 
