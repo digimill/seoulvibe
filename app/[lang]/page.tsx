@@ -33,7 +33,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ko") {
     return {
       badge: "서울 생존 가이드",
-      title: "Stuck in Seoul?",
+      title: "서울에서 일정 꼬였나요?",
       subtitleA: "뭐가 꼬였나요?",
       subtitleB: "60초 안에 정리해요.",
       skipLine: "검색 말고 여기부터.",
@@ -60,7 +60,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "ja") {
     return {
       badge: "ソウル即対応ガイド",
-      title: "ソウルで詰まった？",
+      title: "ソウルで困った？",
       subtitleA: "トラブル発生？",
       subtitleB: "60秒で立て直そう。",
       skipLine: "検索より先に、ここを見る。",
@@ -87,7 +87,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "zh-cn") {
     return {
       badge: "首尔应急指引",
-      title: "在首尔卡住了？",
+      title: "在首尔遇到麻烦了？",
       subtitleA: "出状况了？",
       subtitleB: "60 秒内先解决。",
       skipLine: "先别搜，从这里开始。",
@@ -114,7 +114,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
       badge: "首爾即時應對指南",
-      title: "在首爾卡住了？",
+      title: "在首爾遇到狀況了？",
       subtitleA: "出狀況了？",
       subtitleB: "60 秒內先處理。",
       skipLine: "先別搜尋，先看這裡。",
