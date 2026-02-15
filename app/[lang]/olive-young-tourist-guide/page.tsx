@@ -98,7 +98,7 @@ export default async function Page({ params }: PageProps) {
       </section>
 
       <section className="mt-6 text-sm font-semibold text-zinc-700">
-        <Link href={`/${locale}/tips/oliveyoung-master-playbook`} className="underline">{c.link}</Link>
+        <Link href={`/${locale}/tools/olive-budget`} className="underline">{c.link}</Link>
       </section>
     </Container>
   );
