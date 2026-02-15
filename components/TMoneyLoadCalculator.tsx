@@ -3,15 +3,25 @@
 import { useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
-type AreaId = "hongdae" | "seongsu" | "bukchon" | "gangnam" | "euljiro" | "other";
+type AreaId =
+  | "hongdaeMapo"
+  | "seongsuEast"
+  | "jongnoCentral"
+  | "gangnamSouth"
+  | "yongsanYeouido"
+  | "airportSide"
+  | "outsideSeoul"
+  | "other";
 
 const AREA_COST: Record<AreaId, number> = {
-  hongdae: 5000,
-  seongsu: 5200,
-  bukchon: 4800,
-  gangnam: 5600,
-  euljiro: 5000,
-  other: 5200,
+  hongdaeMapo: 5000,
+  seongsuEast: 5300,
+  jongnoCentral: 5200,
+  gangnamSouth: 5800,
+  yongsanYeouido: 5600,
+  airportSide: 6500,
+  outsideSeoul: 8200,
+  other: 6200,
 };
 
 function copy(lang: Lang) {
@@ -27,13 +37,18 @@ function copy(lang: Lang) {
       extra: "추가 여유 금액",
       tip: "여유 금액은 길 찾기 실수/우회 이동 대비입니다.",
       areas: {
-        hongdae: "홍대",
-        seongsu: "성수",
-        bukchon: "북촌",
-        gangnam: "강남",
-        euljiro: "을지로",
-        other: "기타",
+        hongdaeMapo: "홍대/합정/연남 (서북권)",
+        seongsuEast: "성수/건대 (동북권)",
+        jongnoCentral: "종로/을지로/명동 (중심권)",
+        gangnamSouth: "강남/잠실 (남동권)",
+        yongsanYeouido: "용산/여의도 (서남권)",
+        airportSide: "공항 인근 (인천공항/김포공항 근처)",
+        outsideSeoul: "서울 외 숙소 (인천/경기 등)",
+        other: "기타/모르겠음",
       },
+      breakdown: "기준",
+      airportLabel: "공항",
+      bufferLabel: "여유",
     };
   }
   if (lang === "ja") {
@@ -48,13 +63,18 @@ function copy(lang: Lang) {
       extra: "予備金",
       tip: "予備金は乗り間違い・迂回に備える金額です。",
       areas: {
-        hongdae: "ホンデ",
-        seongsu: "ソンス",
-        bukchon: "プクチョン",
-        gangnam: "カンナム",
-        euljiro: "ウルチロ",
+        hongdaeMapo: "ホンデ/マポ（西北）",
+        seongsuEast: "ソンス/東側（東北）",
+        jongnoCentral: "チョンノ/明洞（中心）",
+        gangnamSouth: "カンナム/チャムシル（南東）",
+        yongsanYeouido: "ヨンサン/ヨイド（西南）",
+        airportSide: "空港周辺",
+        outsideSeoul: "ソウル外（仁川・京畿）",
         other: "その他",
       },
+      breakdown: "内訳",
+      airportLabel: "空港",
+      bufferLabel: "予備",
     };
   }
   if (lang === "zh-cn") {
@@ -69,13 +89,18 @@ function copy(lang: Lang) {
       extra: "额外余量",
       tip: "余量用于坐反方向、临时绕路。",
       areas: {
-        hongdae: "弘大",
-        seongsu: "圣水",
-        bukchon: "北村",
-        gangnam: "江南",
-        euljiro: "乙支路",
+        hongdaeMapo: "弘大/麻浦（西北）",
+        seongsuEast: "圣水/东部（东北）",
+        jongnoCentral: "钟路/明洞（中心）",
+        gangnamSouth: "江南/蚕室（东南）",
+        yongsanYeouido: "龙山/汝矣岛（西南）",
+        airportSide: "机场附近",
+        outsideSeoul: "首尔外（仁川/京畿）",
         other: "其他",
       },
+      breakdown: "构成",
+      airportLabel: "机场",
+      bufferLabel: "余量",
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
@@ -90,13 +115,18 @@ function copy(lang: Lang) {
       extra: "額外預留",
       tip: "預留金額用於坐錯方向與臨時繞路。",
       areas: {
-        hongdae: "弘大",
-        seongsu: "聖水",
-        bukchon: "北村",
-        gangnam: "江南",
-        euljiro: "乙支路",
+        hongdaeMapo: "弘大/麻浦（西北）",
+        seongsuEast: "聖水/東區（東北）",
+        jongnoCentral: "鐘路/明洞（中心）",
+        gangnamSouth: "江南/蠶室（東南）",
+        yongsanYeouido: "龍山/汝矣島（西南）",
+        airportSide: "機場附近",
+        outsideSeoul: "首爾外（仁川/京畿）",
         other: "其他",
       },
+      breakdown: "組成",
+      airportLabel: "機場",
+      bufferLabel: "預留",
     };
   }
   return {
@@ -110,20 +140,25 @@ function copy(lang: Lang) {
     extra: "Extra buffer",
     tip: "Buffer covers wrong transfers and detours.",
     areas: {
-      hongdae: "Hongdae",
-      seongsu: "Seongsu",
-      bukchon: "Bukchon",
-      gangnam: "Gangnam",
-      euljiro: "Euljiro",
-      other: "Other",
+      hongdaeMapo: "Hongdae/Mapo (Northwest)",
+      seongsuEast: "Seongsu/East (Northeast)",
+      jongnoCentral: "Jongno/Myeongdong (Central)",
+      gangnamSouth: "Gangnam/Jamsil (Southeast)",
+      yongsanYeouido: "Yongsan/Yeouido (Southwest)",
+      airportSide: "Near Airport",
+      outsideSeoul: "Outside Seoul (Incheon/Gyeonggi)",
+      other: "Other / Not sure",
     },
+    breakdown: "Breakdown",
+    airportLabel: "Airport",
+    bufferLabel: "Buffer",
   };
 }
 
 export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
   const c = copy(lang);
   const [days, setDays] = useState(4);
-  const [area, setArea] = useState<AreaId>("hongdae");
+  const [area, setArea] = useState<AreaId>("hongdaeMapo");
   const [airportRoundTrip, setAirportRoundTrip] = useState(true);
 
   const { baseTotal, perDay, airportCost, buffer, recommended } = useMemo(() => {
@@ -132,7 +167,9 @@ export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
     const transportTotal = daily * safeDays;
     const airport = airportRoundTrip ? 10000 : 0;
     const base = transportTotal + airport;
-    const extra = Math.max(5000, Math.round((base * 0.2) / 1000) * 1000);
+    const bufferRate = area === "outsideSeoul" || area === "other" ? 0.3 : 0.2;
+    const minimumBuffer = area === "outsideSeoul" ? 8000 : 5000;
+    const extra = Math.max(minimumBuffer, Math.round((base * bufferRate) / 1000) * 1000);
     return {
       baseTotal: base,
       perDay: daily,
@@ -166,11 +203,13 @@ export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
             onChange={(e) => setArea(e.target.value as AreaId)}
             className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
           >
-            <option value="hongdae">{c.areas.hongdae}</option>
-            <option value="seongsu">{c.areas.seongsu}</option>
-            <option value="bukchon">{c.areas.bukchon}</option>
-            <option value="gangnam">{c.areas.gangnam}</option>
-            <option value="euljiro">{c.areas.euljiro}</option>
+            <option value="hongdaeMapo">{c.areas.hongdaeMapo}</option>
+            <option value="seongsuEast">{c.areas.seongsuEast}</option>
+            <option value="jongnoCentral">{c.areas.jongnoCentral}</option>
+            <option value="gangnamSouth">{c.areas.gangnamSouth}</option>
+            <option value="yongsanYeouido">{c.areas.yongsanYeouido}</option>
+            <option value="airportSide">{c.areas.airportSide}</option>
+            <option value="outsideSeoul">{c.areas.outsideSeoul}</option>
             <option value="other">{c.areas.other}</option>
           </select>
         </label>
@@ -202,7 +241,7 @@ export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
       </div>
 
       <p className="mt-3 text-xs font-semibold text-zinc-600">
-        Base ₩{baseTotal.toLocaleString()} + Airport ₩{airportCost.toLocaleString()} + Buffer ₩{buffer.toLocaleString()}
+        {c.breakdown} ₩{baseTotal.toLocaleString()} + {c.airportLabel} ₩{airportCost.toLocaleString()} + {c.bufferLabel} ₩{buffer.toLocaleString()}
       </p>
       <p className="mt-1 text-xs text-zinc-500">{c.tip}</p>
     </section>

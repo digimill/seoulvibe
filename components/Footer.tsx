@@ -11,7 +11,7 @@ export function Footer({ lang }: FooterProps) {
 
   return (
     <footer className="border-t border-black/5 py-10">
-      <Container className="flex items-center justify-between gap-3 text-sm text-zinc-500">
+      <Container className="flex flex-col items-start justify-between gap-1 text-sm text-zinc-500 sm:flex-row sm:items-center sm:gap-3">
         <p>{t.tagline}</p>
         <p>{t.footer}</p>
       </Container>
