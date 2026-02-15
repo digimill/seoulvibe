@@ -45,7 +45,7 @@ export const detectPreferredLanguage = (acceptLanguage: string | null): Lang => 
 export const copy = {
   en: {
     appName: "Seoul Vibe",
-    tagline: "Almost everything about Seoul.",
+    tagline: "Emergency fixes for short-term Seoul visitors.",
     nav: {
       areas: "Areas",
       themes: "Themes",
@@ -68,7 +68,7 @@ export const copy = {
     areaDetails: "Area Notes",
     themeDetails: "Theme Guide",
     tipDetails: "Quick Guide",
-    footer: "Stay easy. Stay curious."
+    footer: "Fix the problem. Keep moving."
   },
   ko: {
     appName: "Seoul Vibe",

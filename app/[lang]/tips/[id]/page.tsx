@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
-import { SpeakButton } from "@/components/SpeakButton";
+import { CopyPhraseButton } from "@/components/CopyPhraseButton";
 import { TagBadge } from "@/components/TagBadge";
 import { getTips } from "@/lib/content";
-import type { LineToUseDetail } from "@/lib/types";
 import { getCopy, isLang, type Lang } from "@/lib/i18n";
 import { toSpotLink } from "@/lib/maps";
 
@@ -14,106 +12,182 @@ type TipDetailPageProps = {
   params: Promise<{ lang: string; id: string }>;
 };
 
-function isLineDetail(value: unknown): value is LineToUseDetail {
-  if (!value || typeof value !== "object") return false;
-  const v = value as Record<string, unknown>;
+function TriadCard({ title, children }: { title: string; children: ReactNode }) {
   return (
-    typeof v.ko === "string" &&
-    typeof v.pronunciation_en === "string" &&
-    typeof v.pronunciation_local === "string" &&
-    typeof v.meaning === "string"
+    <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">{title}</h2>
+      <div className="mt-3 text-sm leading-6 text-zinc-800">{children}</div>
+    </section>
   );
 }
 
-function getLineLabels(locale: Lang) {
-  if (locale === "ko") {
-    return {
-      title: "Line to use",
-      localPronunciation: "해당언어 발음",
-      meaning: "해당언어 뜻",
-      meaningMissing: "의미 정보 준비 중",
-      listen: "한국어 듣기",
-      stop: "정지",
-    };
-  }
-  if (locale === "ja") {
-    return {
-      title: "Line to use",
-      localPronunciation: "この言語の発音",
-      meaning: "この言語での意味",
-      meaningMissing: "意味情報を準備中",
-      listen: "韓国語を再生",
-      stop: "停止",
-    };
-  }
-  if (locale === "zh-cn") {
-    return {
-      title: "Line to use",
-      localPronunciation: "本语言发音",
-      meaning: "本语言含义",
-      meaningMissing: "含义信息准备中",
-      listen: "播放韩语",
-      stop: "停止",
-    };
-  }
-  if (locale === "zh-tw") {
-    return {
-      title: "Line to use",
-      localPronunciation: "此語言發音",
-      meaning: "此語言意思",
-      meaningMissing: "意思資訊準備中",
-      listen: "播放韓文",
-      stop: "停止",
-    };
-  }
-  if (locale === "zh-hk") {
-    return {
-      title: "Line to use",
-      localPronunciation: "此語言讀音",
-      meaning: "此語言意思",
-      meaningMissing: "意思資訊準備中",
-      listen: "播放韓文",
-      stop: "停止",
-    };
-  }
-  return {
-    title: "Line to use",
-    localPronunciation: "Local pronunciation",
-    meaning: "Local meaning",
-    meaningMissing: "Meaning info coming soon",
-    listen: "Play Korean",
-    stop: "Stop",
-  };
+function KioskEmergency({ locale }: { locale: Lang }) {
+  const phrases = [
+    "Can I pay at the counter?",
+    "My card is not working here.",
+    "Can I skip membership and check out as guest?",
+    "Is there an English option?",
+  ];
+
+  return (
+    <>
+      <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Card rejected at kiosk</h1>
+        <p className="mt-3 text-sm leading-6 text-zinc-300">Don&apos;t freeze. Use this order.</p>
+      </section>
+
+      <section className="mt-6 grid gap-4 sm:grid-cols-3">
+        <TriadCard title="What usually goes wrong?">
+          Card insert fails. No English menu. Kiosk asks for phone number.
+        </TriadCard>
+        <TriadCard title="Why it happens?">
+          Some cards fail by insert chip. Some kiosks hide language in top-right. Phone number prompt is membership signup, not payment.
+        </TriadCard>
+        <TriadCard title="What to do immediately?">
+          <ul className="space-y-2 font-semibold">
+            <li>1. Try tap instead of insert.</li>
+            <li>2. Try another card.</li>
+            <li>3. Ask: &quot;Can I pay at the counter?&quot;</li>
+          </ul>
+        </TriadCard>
+      </section>
+
+      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">No English option?</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Look top-right for language.</li>
+          <li>If none, use counter.</li>
+        </ul>
+      </section>
+
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Asking phone number?</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Skip membership.</li>
+          <li>Choose guest checkout.</li>
+        </ul>
+      </section>
+
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Copy English phrases</h2>
+        <div className="mt-3 space-y-3">
+          {phrases.map((phrase) => (
+            <div key={phrase} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 p-3">
+              <p className="text-sm font-semibold text-zinc-900">{phrase}</p>
+              <CopyPhraseButton text={phrase} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {locale === "en" ? (
+        <section className="mt-6 text-sm font-semibold text-zinc-700">
+          Need full detail? <Link href="/en/kiosk-card-rejected" className="underline">Read the complete kiosk guide</Link>.
+        </section>
+      ) : null}
+    </>
+  );
 }
 
-function splitLineSegments(text: string): string[] {
-  const normalized = text.trim();
-  if (!normalized) return [];
+function SubwayEmergency({ locale }: { locale: Lang }) {
+  return (
+    <>
+      <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Which subway line should I take?</h1>
+        <p className="mt-3 text-sm leading-6 text-zinc-300">Start from where you sleep, not where you are.</p>
+      </section>
 
-  if (normalized.includes("/")) {
-    return normalized
-      .split("/")
-      .map((part) => part.trim())
-      .filter(Boolean);
-  }
+      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">If you are staying in:</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Hongdae - Line 2</li>
+          <li>Gangnam - Line 2</li>
+          <li>Bukchon - Line 3</li>
+          <li>Airport - AREX</li>
+        </ul>
+      </section>
 
-  const sentenceSplit = normalized
-    .split(/(?<=[?.!])\s+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
+      <section className="mt-4 grid gap-4 sm:grid-cols-3">
+        <TriadCard title="What usually goes wrong?">People board the wrong direction and lose 20 to 40 minutes.</TriadCard>
+        <TriadCard title="Why it happens?">They check color only. They skip final station name. Line 2 circles both ways.</TriadCard>
+        <TriadCard title="What to do immediately?">
+          <ul className="space-y-2 font-semibold">
+            <li>1. Check final station name.</li>
+            <li>2. Avoid Line 2 at 6-8pm.</li>
+            <li>3. Confirm direction twice.</li>
+          </ul>
+        </TriadCard>
+      </section>
 
-  return sentenceSplit.length > 0 ? sentenceSplit : [normalized];
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Missed stop?</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Get off next station.</li>
+          <li>Take opposite train.</li>
+          <li>No extra charge within transfer window.</li>
+        </ul>
+      </section>
+
+      {locale === "en" ? (
+        <section className="mt-6 text-sm font-semibold text-zinc-700">
+          Card or balance issue? <Link href="/en/how-much-tmoney" className="underline">Check T-money planning</Link>.
+        </section>
+      ) : null}
+    </>
+  );
 }
 
-function toLinePairs(ko: string, pronunciation: string): Array<{ ko: string; pronunciation: string }> {
-  const koParts = splitLineSegments(ko);
-  const pronunciationParts = splitLineSegments(pronunciation);
+function OliveYoungEmergency({ locale }: { locale: Lang }) {
+  return (
+    <>
+      <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">If you only have 30 minutes at Olive Young</h1>
+        <p className="mt-3 text-sm leading-6 text-zinc-300">Skip the rabbit hole. Buy what works.</p>
+      </section>
 
-  if (koParts.length > 1 && pronunciationParts.length === koParts.length) {
-    return koParts.map((part, index) => ({ ko: part, pronunciation: pronunciationParts[index] }));
-  }
+      <section className="mt-6 grid gap-4 sm:grid-cols-3">
+        <TriadCard title="What usually goes wrong?">People spend an hour and leave with random hype items they never use.</TriadCard>
+        <TriadCard title="Why it happens?">Too many launches. Too many testers. Social media lists are not skin-safe for everyone.</TriadCard>
+        <TriadCard title="What to do immediately?">
+          Buy the basic set first. Then stop.
+        </TriadCard>
+      </section>
 
-  return koParts.map((part) => ({ ko: part, pronunciation }));
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">$50 starter pack</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Cleanser</li>
+          <li>Toner</li>
+          <li>Sheet mask bundle</li>
+          <li>Lip tint</li>
+        </ul>
+      </section>
+
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Skip</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>10-step routines</li>
+          <li>Random trending items</li>
+          <li>Products without English label</li>
+        </ul>
+      </section>
+
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Before you pay</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-800">
+          <li>Tax refund possible</li>
+          <li>Passport required</li>
+          <li>Major cards accepted</li>
+        </ul>
+      </section>
+
+      {locale === "en" ? (
+        <section className="mt-6 text-sm font-semibold text-zinc-700">
+          Full breakdown: <Link href="/en/olive-young-tourist-guide" className="underline">Olive Young tourist guide</Link>.
+        </section>
+      ) : null}
+    </>
+  );
 }
 
 export default async function TipDetailPage({ params }: TipDetailPageProps) {
@@ -122,67 +196,47 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
 
   const locale = lang as Lang;
   const t = getCopy(locale);
-  const lineLabels = getLineLabels(locale);
   const tip = (await getTips(locale)).find((item) => item.id === id);
 
   if (!tip) notFound();
 
+  const isKiosk = id === "kiosk-survival-flow";
+  const isSubway = id === "subway-map-confusion-cuts";
+  const isOliveYoung = id === "oliveyoung-master-playbook";
+
   return (
-    <Container className="py-12 sm:py-16">
-      <Link href={`/${locale}/tips`} className="text-sm text-zinc-500">
+    <Container className="py-10 sm:py-14">
+      <Link href={`/${locale}/tips`} className="text-sm font-semibold text-zinc-600">
         {t.back}
       </Link>
-      <div className="mt-4 rounded-3xl border border-black/5 bg-white/90 p-7 shadow-[0_15px_50px_rgba(0,0,0,0.05)] sm:p-10">
-        {tip.image ? (
-          <div className="relative mb-6 overflow-hidden rounded-2xl" style={{ aspectRatio: "16 / 9" }}>
-            <Image
-              src={tip.image.src}
-              alt={tip.image.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 80vw"
-              className="object-cover"
-            />
-          </div>
-        ) : null}
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{tip.title}</h1>
-        <div className="mt-3 max-w-3xl space-y-2 text-base leading-7 text-zinc-700">
-          <p>{tip.summary}</p>
-          {tip.hook ? <p>{tip.hook}</p> : null}
-          {tip.friend_note ? <p>{tip.friend_note}</p> : null}
-        </div>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {tip.tags.map((tag) => (
-            <TagBadge key={tag}>{tag}</TagBadge>
-          ))}
-        </div>
 
-        {tip.blocks && tip.blocks.length > 0 ? (
-          <div className="mt-8 space-y-4">
-            {tip.blocks.map((block, index) => (
-              <section key={`${block.title}-${index}`} className="rounded-2xl border border-zinc-200 bg-zinc-50/70 p-4">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-600">{block.title}</h2>
-                {block.body ? <p className="mt-2 text-sm leading-6 text-zinc-800">{block.body}</p> : null}
-                {block.items && block.items.length > 0 ? (
-                  block.kind === "steps" ? (
-                    <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm leading-6 text-zinc-800">
-                      {block.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <ul className="mt-2 space-y-1 text-sm leading-6 text-zinc-800">
-                      {block.items.map((item) => (
-                        <li key={item}>- {item}</li>
-                      ))}
-                    </ul>
-                  )
-                ) : null}
-              </section>
-            ))}
+      <div className="mt-4">
+        {isKiosk ? <KioskEmergency locale={locale} /> : null}
+        {isSubway ? <SubwayEmergency locale={locale} /> : null}
+        {isOliveYoung ? <OliveYoungEmergency locale={locale} /> : null}
+
+        {!isKiosk && !isSubway && !isOliveYoung ? (
+          <>
+            <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+              <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{tip.title}</h1>
+              <p className="mt-3 text-sm leading-6 text-zinc-300">{tip.summary}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {tip.tags.map((tag) => (
+                  <TagBadge key={tag}>{tag}</TagBadge>
+                ))}
+              </div>
+            </section>
+
+            <section className="mt-6 grid gap-4 sm:grid-cols-3">
+              <TriadCard title="What usually goes wrong?">{tip.what_to_know ?? tip.real_scene ?? tip.summary}</TriadCard>
+              <TriadCard title="Why it happens?">{tip.why_it_matters ?? tip.local_move ?? "Visitors copy random advice without local context."}</TriadCard>
+              <TriadCard title="What to do immediately?">{tip.quick_fix ?? tip.avoid_this ?? "Slow down, reset, and use the shortest next action."}</TriadCard>
+            </section>
+
             {tip.real_spots && tip.real_spots.length > 0 ? (
-              <section className="rounded-2xl border border-zinc-200 bg-white p-4">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-zinc-600">Where to try</h2>
-                <p className="mt-2 text-sm leading-6 text-zinc-800">
+              <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+                <h2 className="text-lg font-black tracking-tight text-zinc-950">Useful nearby places</h2>
+                <p className="mt-3 text-sm leading-6 text-zinc-800">
                   {tip.real_spots
                     .map((spot) => {
                       const link = toSpotLink(spot);
@@ -202,137 +256,8 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
                 </p>
               </section>
             ) : null}
-          </div>
-        ) : (
-          <dl className="mt-8 grid gap-5 sm:grid-cols-2">
-            {tip.what_to_know ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">What to know</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.what_to_know}</dd>
-              </div>
-            ) : null}
-            {tip.why_it_matters ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Why it matters</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.why_it_matters}</dd>
-              </div>
-            ) : null}
-            {tip.avoid_this ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Avoid this</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.avoid_this}</dd>
-              </div>
-            ) : null}
-            {tip.quick_fix ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Quick fix</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.quick_fix}</dd>
-              </div>
-            ) : null}
-            {tip.real_scene ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Real scene</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.real_scene}</dd>
-              </div>
-            ) : null}
-            {tip.local_move ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Local move</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.local_move}</dd>
-              </div>
-            ) : null}
-            {tip.line_to_use ? (
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">{lineLabels.title}</dt>
-                {(() => {
-                  if (isLineDetail(tip.line_to_use)) {
-                    const lineDetail = tip.line_to_use;
-                    const linePairs = toLinePairs(lineDetail.ko, lineDetail.pronunciation_local);
-                    const isMultiple = linePairs.length > 1;
-
-                    return (
-                      <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
-                        {linePairs.map((line, index) => (
-                          <p key={`${line.ko}-${index}`} className="flex items-center justify-between gap-3">
-                            <span>
-                              <span className="font-medium">
-                                {lineLabels.localPronunciation}
-                                {isMultiple ? ` ${index + 1}` : ""}:
-                              </span>{" "}
-                              {line.pronunciation}
-                            </span>
-                            <SpeakButton
-                              text={line.ko}
-                              lang="ko-KR"
-                              idleLabel={lineLabels.listen}
-                              speakingLabel={lineLabels.stop}
-                            />
-                          </p>
-                        ))}
-                        <p>
-                          <span className="font-medium">{lineLabels.meaning}:</span> {lineDetail.meaning}
-                        </p>
-                      </dd>
-                    );
-                  }
-
-                  const singleLine = tip.line_to_use;
-                  const lines = splitLineSegments(singleLine);
-                  const isMultiple = lines.length > 1;
-
-                  return (
-                    <dd className="mt-1 space-y-1 text-sm leading-6 text-zinc-800">
-                      {lines.map((line, index) => (
-                        <p key={`${line}-${index}`} className="flex items-center justify-between gap-3">
-                          <span>
-                            <span className="font-medium">
-                              {lineLabels.localPronunciation}
-                              {isMultiple ? ` ${index + 1}` : ""}:
-                            </span>{" "}
-                            {line}
-                          </span>
-                          <SpeakButton text={line} lang="ko-KR" idleLabel={lineLabels.listen} speakingLabel={lineLabels.stop} />
-                        </p>
-                      ))}
-                      <p>
-                        <span className="font-medium">{lineLabels.meaning}:</span> {lineLabels.meaningMissing}
-                      </p>
-                    </dd>
-                  );
-                })()}
-              </div>
-            ) : null}
-            {tip.quick_checklist && tip.quick_checklist.length > 0 ? (
-              <div className="sm:col-span-2">
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Quick checklist</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">{tip.quick_checklist.join(" / ")}</dd>
-              </div>
-            ) : null}
-            {tip.real_spots && tip.real_spots.length > 0 ? (
-              <div className="sm:col-span-2">
-                <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Where to try</dt>
-                <dd className="mt-1 text-sm leading-6 text-zinc-800">
-                  {tip.real_spots
-                    .map((spot) => {
-                      const link = toSpotLink(spot);
-                      return (
-                        <a
-                          key={link.name}
-                          href={link.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-700"
-                        >
-                          {link.name}
-                        </a>
-                      );
-                    })
-                    .reduce<ReactNode[]>((acc, node, index) => (index === 0 ? [node] : [...acc, " / ", node]), [])}
-                </dd>
-              </div>
-            ) : null}
-          </dl>
-        )}
+          </>
+        ) : null}
       </div>
     </Container>
   );

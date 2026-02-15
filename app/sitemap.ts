@@ -5,7 +5,8 @@ import { getSiteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
-const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101"] as const;
+const TOP_LEVEL_PATHS = ["", "/areas", "/themes", "/tips", "/korea-101", "/crowded"] as const;
+const EN_SEO_PATHS = ["/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
@@ -51,6 +52,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
+  urls.push(
+    ...EN_SEO_PATHS.map((path) => ({
+      url: `${siteUrl}/en${path}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+  );
+
   return urls;
 }
-

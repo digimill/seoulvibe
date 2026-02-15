@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
@@ -12,6 +11,38 @@ type AreaDetailPageProps = {
   params: Promise<{ lang: string; id: string }>;
 };
 
+function getThreeThings(areaName: string) {
+  if (areaName.toLowerCase() === "hongdae") {
+    return [
+      "Go before 6pm or after 10pm. Peak time is gridlock.",
+      "Eat in side streets, not the main strip.",
+      "Use Hongik Univ. Station exits away from busking square.",
+    ];
+  }
+
+  if (areaName.toLowerCase() === "seongsu") {
+    return [
+      "Pick 2 stores max. Queue time kills schedules.",
+      "Visit weekdays before noon for shortest lines.",
+      "Use Seoul Forest side cafes as backup.",
+    ];
+  }
+
+  if (areaName.toLowerCase() === "bukchon") {
+    return [
+      "Go before 10am. Tour groups surge after lunch.",
+      "Keep voice low. People actually live there.",
+      "If packed, move to Samcheong-gil and return later.",
+    ];
+  }
+
+  return [
+    "Check peak crowd window before going.",
+    "Pick one core stop, then one backup nearby.",
+    "Leave early if queues start compounding.",
+  ];
+}
+
 export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
   const { lang, id } = await params;
   if (!isLang(lang)) notFound();
@@ -22,123 +53,81 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
 
   if (!area) notFound();
 
+  const topThree = getThreeThings(area.name);
+
   return (
-    <Container className="py-12 sm:py-16">
-      <Link href={`/${locale}/areas`} className="text-sm text-zinc-500">
+    <Container className="py-10 sm:py-14">
+      <Link href={`/${locale}/areas`} className="text-sm font-semibold text-zinc-600">
         {t.back}
       </Link>
-      <div className="mt-4 rounded-3xl border border-black/5 bg-white/90 p-7 shadow-[0_15px_50px_rgba(0,0,0,0.05)] sm:p-10">
-        {area.image ? (
-          <div className="relative mb-6 overflow-hidden rounded-2xl" style={{ aspectRatio: "16 / 9" }}>
-            <Image
-              src={area.image.src}
-              alt={area.image.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 80vw"
-              className="object-cover"
-            />
-          </div>
-        ) : null}
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{area.name}</h1>
-        <div className="mt-3 max-w-3xl space-y-2 text-base leading-7 text-zinc-700">
-          <p>{area.summary}</p>
-          {area.hook ? <p>{area.hook}</p> : null}
-          {area.friend_note ? <p>{area.friend_note}</p> : null}
-        </div>
-        <div className="mt-5 flex flex-wrap gap-2">
+
+      <section className="mt-4 rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{area.name}</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-300">{area.summary}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
           {area.tags.map((tag) => (
             <TagBadge key={tag}>{tag}</TagBadge>
           ))}
         </div>
+      </section>
 
-        <dl className="mt-8 grid gap-5 sm:grid-cols-2">
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Vibe</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.vibe}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Best time</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.best_time}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">How to get</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.how_to_get}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Must do</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.must_do}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Hidden tip</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.hidden_tip}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Do not</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.do_not}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Budget</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.budget}</dd>
-          </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Crowd</dt>
-            <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.crowd}</dd>
-          </div>
-          {area.photo_spot ? (
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Photo spot</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.photo_spot}</dd>
-            </div>
-          ) : null}
-          {area.food_pairing ? (
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Food pairing</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.food_pairing}</dd>
-            </div>
-          ) : null}
-          {area.rain_option ? (
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Rain option</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.rain_option}</dd>
-            </div>
-          ) : null}
-          {area.night_option ? (
-            <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Night option</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.night_option}</dd>
-            </div>
-          ) : null}
-          {area.one_line_route ? (
-            <div className="sm:col-span-2">
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">One-line route</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">{area.one_line_route}</dd>
-            </div>
-          ) : null}
-          {area.real_spots && area.real_spots.length > 0 ? (
-            <div className="sm:col-span-2">
-              <dt className="text-xs font-semibold uppercase tracking-wide text-zinc-500">Real spots</dt>
-              <dd className="mt-1 text-sm leading-6 text-zinc-800">
-                {area.real_spots
-                  .map((spot) => {
-                    const link = toSpotLink(spot);
-                    return (
-                      <a
-                        key={link.name}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-700"
-                      >
-                        {link.name}
-                      </a>
-                    );
-                  })
-                  .reduce<ReactNode[]>((acc, node, index) => (index === 0 ? [node] : [...acc, " / ", node]), [])}
-              </dd>
-            </div>
-          ) : null}
-        </dl>
-      </div>
+      <section className="mt-6 rounded-2xl border border-zinc-200 bg-red-50 p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">If you only remember 3 things:</h2>
+        <ul className="mt-3 space-y-2 text-sm font-semibold text-zinc-900">
+          {topThree.map((line) => (
+            <li key={line}>- {line}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-4 grid gap-4 sm:grid-cols-3">
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">What usually goes wrong?</h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-800">{area.crowd}. Visitors stack too many stops and lose time in lines.</p>
+        </article>
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">Why it happens?</h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-800">Main exits and social-media spots pull everyone into one block.</p>
+        </article>
+        <article className="rounded-2xl border border-zinc-200 bg-white p-5">
+          <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">What to do immediately?</h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-800">Anchor on {area.best_time}. Use {area.how_to_get}. Avoid this: {area.do_not}</p>
+        </article>
+      </section>
+
+      <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-lg font-black tracking-tight text-zinc-950">Quick local plan</h2>
+        <ul className="mt-3 space-y-2 text-sm leading-6 text-zinc-800">
+          <li><span className="font-bold">Must do:</span> {area.must_do}</li>
+          <li><span className="font-bold">Hidden tip:</span> {area.hidden_tip}</li>
+          <li><span className="font-bold">Budget:</span> {area.budget}</li>
+          {area.one_line_route ? <li><span className="font-bold">Route:</span> {area.one_line_route}</li> : null}
+        </ul>
+      </section>
+
+      {area.real_spots && area.real_spots.length > 0 ? (
+        <section className="mt-4 rounded-2xl border border-zinc-200 bg-white p-5">
+          <h2 className="text-lg font-black tracking-tight text-zinc-950">Real spots</h2>
+          <p className="mt-3 text-sm leading-6 text-zinc-800">
+            {area.real_spots
+              .map((spot) => {
+                const link = toSpotLink(spot);
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-700"
+                  >
+                    {link.name}
+                  </a>
+                );
+              })
+              .reduce<ReactNode[]>((acc, node, index) => (index === 0 ? [node] : [...acc, " / ", node]), [])}
+          </p>
+        </section>
+      ) : null}
     </Container>
   );
 }

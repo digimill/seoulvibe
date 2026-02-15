@@ -4,7 +4,7 @@ import { Card } from "@/components/Card";
 import { SectionBlock } from "@/components/SectionBlock";
 import { TagBadge } from "@/components/TagBadge";
 import { getAreas } from "@/lib/content";
-import { getCopy, isLang, type Lang } from "@/lib/i18n";
+import { isLang, type Lang } from "@/lib/i18n";
 
 type AreasPageProps = {
   params: Promise<{ lang: string }>;
@@ -15,11 +15,10 @@ export default async function AreasPage({ params }: AreasPageProps) {
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
-  const t = getCopy(locale);
   const areas = await getAreas(locale);
 
   return (
-    <SectionBlock title={t.nav.areas} description={t.discover}>
+    <SectionBlock title="Pick your base area" description="Choose where you sleep first. Most transport mistakes start here.">
       <AreasMiniMap lang={locale} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {areas.map((area) => (
