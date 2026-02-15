@@ -45,6 +45,22 @@ const ALL_CURRENCIES: Currency[] = ["USD", "EUR", "JPY", "CNY", "TWD", "HKD", "G
 const CALC_CURRENCY_KEY = "sv-calc-currency-v1";
 const CALC_LOG_KEY = "sv-real-cost-log-v1";
 
+function currencyFromNavigator(): Currency | null {
+  if (typeof navigator === "undefined") return null;
+  const locale = (navigator.language || "").toLowerCase();
+  if (locale.startsWith("ja")) return "JPY";
+  if (locale.startsWith("zh-cn")) return "CNY";
+  if (locale.startsWith("zh-tw")) return "TWD";
+  if (locale.startsWith("zh-hk")) return "HKD";
+  if (locale.startsWith("en-gb")) return "GBP";
+  if (locale.startsWith("en-au")) return "AUD";
+  if (locale.startsWith("en-ca")) return "CAD";
+  if (locale.startsWith("en-sg")) return "SGD";
+  if (locale.startsWith("th")) return "THB";
+  if (locale.startsWith("vi")) return "VND";
+  return "USD";
+}
+
 function parseKrwInput(value: string): number {
   const input = value.trim().toLowerCase();
   if (!input) return 0;
@@ -412,7 +428,13 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
 
   useEffect(() => {
     const rawCurrency = localStorage.getItem(CALC_CURRENCY_KEY) as Currency | null;
-    if (rawCurrency && RATES[rawCurrency]) setCurrency(rawCurrency);
+    if (rawCurrency && RATES[rawCurrency]) {
+      setCurrency(rawCurrency);
+    } else {
+      const navCurrency = currencyFromNavigator();
+      if (navCurrency && RATES[navCurrency]) setCurrency(navCurrency);
+      else setCurrency(localeDefault);
+    }
 
     const rawLogs = localStorage.getItem(CALC_LOG_KEY);
     if (!rawLogs) return;
@@ -422,7 +444,7 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
     } catch {
       setLogItems([]);
     }
-  }, []);
+  }, [localeDefault]);
 
   useEffect(() => {
     let cancelled = false;
