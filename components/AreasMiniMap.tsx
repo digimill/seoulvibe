@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Area } from "@/lib/types";
 import type { Lang } from "@/lib/i18n";
@@ -42,8 +43,6 @@ export function AreasMiniMap({ areas, lang }: AreasMiniMapProps) {
     lang === "ko"
       ? "핀을 누르면 해당 지역 상세로 이동합니다. (이 지도는 위치 비교용 고정 뷰)"
       : "Tap a pin to open area details. (This map is a fixed reference view.)";
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${MAP_BOUNDS.minLon}%2C${MAP_BOUNDS.minLat}%2C${MAP_BOUNDS.maxLon}%2C${MAP_BOUNDS.maxLat}&layer=mapnik`;
-
   return (
     <div className="mb-8 rounded-3xl border border-black/5 bg-white/90 p-5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] sm:p-6">
       <div className="mb-3">
@@ -52,11 +51,13 @@ export function AreasMiniMap({ areas, lang }: AreasMiniMapProps) {
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white">
         <div className="relative" style={{ aspectRatio: "16 / 9" }}>
-          <iframe
-            title={lang === "ko" ? "서울 지도" : "Seoul map"}
-            src={mapSrc}
-            className="pointer-events-none absolute inset-0 h-full w-full"
-            loading="lazy"
+          <Image
+            src="/images/areas/seoul-mini-map-new.png"
+            alt={lang === "ko" ? "서울 미니맵" : "Seoul mini map"}
+            fill
+            sizes="(max-width: 768px) 100vw, 900px"
+            className="object-cover"
+            priority={false}
           />
           {areas.map((area) => {
             const coord = areaCoords[area.id];
@@ -78,9 +79,6 @@ export function AreasMiniMap({ areas, lang }: AreasMiniMapProps) {
             );
           })}
         </div>
-        <p className="border-t border-zinc-200 bg-white px-3 py-2 text-[11px] text-zinc-500">
-          © OpenStreetMap contributors
-        </p>
       </div>
     </div>
   );
