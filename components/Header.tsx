@@ -17,15 +17,21 @@ export function Header({ lang }: HeaderProps) {
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const [languageCloseSignal, setLanguageCloseSignal] = useState(0);
   const t = copy[lang];
+  const labels =
+    lang === "ko"
+      ? { start: "시작", fixes: "문제해결", areas: "지역", problems: "문제 검색" }
+      : lang === "ja"
+        ? { start: "開始", fixes: "解決", areas: "エリア", problems: "問題ページ" }
+        : lang === "zh-cn"
+          ? { start: "开始", fixes: "解决", areas: "区域", problems: "问题页" }
+          : lang === "zh-tw" || lang === "zh-hk"
+            ? { start: "開始", fixes: "解決", areas: "地區", problems: "問題頁" }
+            : { start: "Start", fixes: "Fixes", areas: "Areas", problems: "Problems" };
   const navItems = [
-    { href: `/${lang}`, label: "Start" },
-    { href: `/${lang}/tips/kiosk-survival-flow`, label: "Kiosk" },
-    { href: `/${lang}/tips/subway-map-confusion-cuts`, label: "Subway" },
-    { href: `/${lang}/tips/oliveyoung-master-playbook`, label: "Olive" },
-    { href: `/${lang}/areas`, label: "Areas" },
-    { href: `/${lang}/crowded`, label: "Crowd" },
-    { href: `/${lang}/tips`, label: "All Fixes" },
-    ...(lang === "en" ? [{ href: "/en/problems", label: "Problems" }] : []),
+    { href: `/${lang}`, label: labels.start },
+    { href: `/${lang}/tips`, label: labels.fixes },
+    { href: `/${lang}/areas`, label: labels.areas },
+    ...(lang === "en" ? [{ href: "/en/problems", label: labels.problems }] : []),
   ];
 
   useEffect(() => {
