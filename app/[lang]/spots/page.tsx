@@ -6,7 +6,7 @@ import { getSpotPicks, toGoogleMapSearchUrl, toPerplexitySearchUrl, type SpotPic
 
 type SpotsPageProps = {
   params: Promise<{ lang: string }>;
-  searchParams: Promise<{ sort?: string }>;
+  searchParams: Promise<{ sort?: string; q?: string; area?: string | string[] }>;
 };
 
 function sortSpots(spots: SpotPick[], sort: string): SpotPick[] {
@@ -24,24 +24,78 @@ function sortSpots(spots: SpotPick[], sort: string): SpotPick[] {
   return copy;
 }
 
+function normalizeText(value: string): string {
+  return value.trim().toLocaleLowerCase();
+}
+
+function parseAreas(value: string | string[] | undefined): string[] {
+  if (!value) return [];
+  const raw = Array.isArray(value) ? value : [value];
+  return Array.from(
+    new Set(
+      raw
+        .flatMap((item) => item.split(","))
+        .map((item) => item.trim())
+        .filter(Boolean),
+    ),
+  );
+}
+
 export default async function SpotsPage({ params, searchParams }: SpotsPageProps) {
   const { lang } = await params;
-  const { sort } = await searchParams;
+  const { sort, q, area } = await searchParams;
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
   const sortKey = sort === "name" || sort === "area" ? sort : "default";
+  const query = (q ?? "").trim();
+  const queryLower = normalizeText(query);
   const t = getCopy(locale);
   const sourceLabel =
     locale === "ko"
       ? { area: "대략적 위치", map: "지도", pplx: "검색", spot: "스팟", note: "설명", price: "가격대(비용)", closed: "휴무일" }
       : { area: "Area", map: "Map", pplx: "Search", spot: "Spot", note: "Description", price: "Price", closed: "Closed days" };
   const spotPool = getSpotPicks(locale);
-  const curatedSpots = sortSpots(spotPool, sortKey);
+  const allAreas = Array.from(new Set(spotPool.map((spot) => spot.area))).sort((a, b) => a.localeCompare(b));
+  const selectedAreas = parseAreas(area).filter((item) => allAreas.includes(item));
+  const filteredSpots = spotPool.filter((spot) => {
+    const byArea = selectedAreas.length === 0 || selectedAreas.includes(spot.area);
+    if (!byArea) return false;
+    if (!queryLower) return true;
+    const searchable = normalizeText(`${spot.name} ${spot.area} ${spot.summary} ${spot.price} ${spot.closed}`);
+    return searchable.includes(queryLower);
+  });
+  const curatedSpots = sortSpots(filteredSpots, sortKey);
+  const toSpotsHref = (next: { sort?: string; q?: string; areas?: string[] }) => {
+    const params = new URLSearchParams();
+    if (next.sort && next.sort !== "default") params.set("sort", next.sort);
+    if (next.q && next.q.trim()) params.set("q", next.q.trim());
+    (next.areas ?? []).forEach((item) => params.append("area", item));
+    const queryString = params.toString();
+    return `/${locale}/spots${queryString ? `?${queryString}` : ""}`;
+  };
   const sortLabels =
     locale === "ko"
       ? { default: "기본순", name: "이름순", area: "권역순" }
       : { default: "Default", name: "By name", area: "By area" };
+  const ui =
+    locale === "ko"
+      ? {
+          searchPlaceholder: "이름·권역·설명으로 검색",
+          search: "검색",
+          areas: "권역 필터",
+          clear: "초기화",
+          noResult: "조건에 맞는 스팟이 없습니다.",
+          count: `${curatedSpots.length}${selectedAreas.length > 0 || query ? ` / 전체 ${spotPool.length}` : ""}개 스팟`,
+        }
+      : {
+          searchPlaceholder: "Search name, area, or notes",
+          search: "Search",
+          areas: "Filter by area",
+          clear: "Clear",
+          noResult: "No spots match the current filters.",
+          count: `${curatedSpots.length}${selectedAreas.length > 0 || query ? ` of ${spotPool.length}` : ""} spots`,
+        };
 
   return (
     <Container className="py-12 sm:py-16">
@@ -52,22 +106,65 @@ export default async function SpotsPage({ params, searchParams }: SpotsPageProps
             ? "요즘 서울 무드와 이동 동선을 같이 챙길 수 있는 장소만 모았습니다."
             : "A practical list of places that combine local mood and smooth movement."}
         </p>
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <TagBadge>{`${curatedSpots.length}${locale === "ko" ? "개 스팟" : " spots"}`}</TagBadge>
+        <form method="get" action={`/${locale}/spots`} className="mt-4 flex flex-wrap items-center gap-2">
+          <input
+            type="search"
+            name="q"
+            defaultValue={query}
+            placeholder={ui.searchPlaceholder}
+            className="h-9 w-full min-w-56 rounded-full border border-zinc-300 bg-white px-4 text-sm text-zinc-700 outline-none ring-zinc-300 focus:ring sm:w-auto sm:flex-1"
+          />
+          {sortKey !== "default" ? <input type="hidden" name="sort" value={sortKey} /> : null}
+          {selectedAreas.map((item) => (
+            <input key={item} type="hidden" name="area" value={item} />
+          ))}
+          <button
+            type="submit"
+            className="inline-flex h-9 items-center rounded-full border border-zinc-900 bg-zinc-900 px-4 text-xs font-medium text-white"
+          >
+            {ui.search}
+          </button>
           <a
             href={`/${locale}/spots`}
+            className="inline-flex h-9 items-center rounded-full border border-zinc-300 bg-white px-4 text-xs font-medium text-zinc-700"
+          >
+            {ui.clear}
+          </a>
+        </form>
+        <div className="mt-3">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-zinc-500">{ui.areas}</p>
+          <div className="flex flex-wrap gap-2">
+            {allAreas.map((item) => {
+              const isSelected = selectedAreas.includes(item);
+              const nextAreas = isSelected ? selectedAreas.filter((v) => v !== item) : [...selectedAreas, item];
+              return (
+                <a
+                  key={item}
+                  href={toSpotsHref({ sort: sortKey, q: query, areas: nextAreas })}
+                  className={`rounded-full border px-3 py-1 text-xs ${isSelected ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-700"}`}
+                >
+                  {item}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          <TagBadge>{ui.count}</TagBadge>
+          <a
+            href={toSpotsHref({ sort: "default", q: query, areas: selectedAreas })}
             className={`rounded-full border px-3 py-1 text-xs ${sortKey === "default" ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-700"}`}
           >
             {sortLabels.default}
           </a>
           <a
-            href={`/${locale}/spots?sort=name`}
+            href={toSpotsHref({ sort: "name", q: query, areas: selectedAreas })}
             className={`rounded-full border px-3 py-1 text-xs ${sortKey === "name" ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-700"}`}
           >
             {sortLabels.name}
           </a>
           <a
-            href={`/${locale}/spots?sort=area`}
+            href={toSpotsHref({ sort: "area", q: query, areas: selectedAreas })}
             className={`rounded-full border px-3 py-1 text-xs ${sortKey === "area" ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-700"}`}
           >
             {sortLabels.area}
@@ -75,6 +172,11 @@ export default async function SpotsPage({ params, searchParams }: SpotsPageProps
         </div>
       </div>
       <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+        {curatedSpots.length === 0 ? (
+          <div className="p-8 text-sm text-zinc-600">
+            <p>{ui.noResult}</p>
+          </div>
+        ) : null}
         <div className="space-y-3 p-3 md:hidden">
           {curatedSpots.map((spot) => (
             <div key={spot.id} className="rounded-2xl border border-black/5 bg-white p-4">
