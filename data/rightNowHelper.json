@@ -1,0 +1,377 @@
+{
+  "Hongdae": {
+    "Too crowded": {
+      "Afternoon": {
+        "action": "Leave the main street now.",
+        "move": "Walk toward Yeonnam back streets.",
+        "avoid": "Avoid queueing at viral cafes."
+      },
+      "Evening": {
+        "action": "Walk 5 minutes toward Yeonnam.",
+        "move": "Pick a small basement pub east of the main road.",
+        "avoid": "Avoid main club street after 9pm."
+      },
+      "Late night": {
+        "action": "Move to one quieter side block.",
+        "move": "Use side alleys near Donggyo-ro.",
+        "avoid": "Avoid crowded station exits."
+      }
+    },
+    "Hungry": {
+      "Afternoon": {
+        "action": "Pick one place within 10 minutes and go.",
+        "move": "Try the second row of lanes near Yeonnam.",
+        "avoid": "Avoid lines longer than 15 minutes."
+      },
+      "Evening": {
+        "action": "Skip famous lines and enter a side-street spot.",
+        "move": "Go one block east from main street.",
+        "avoid": "Avoid waiting before checking menu speed."
+      }
+    },
+    "Tired": {
+      "Afternoon": {
+        "action": "Take a 20-minute break now.",
+        "move": "Sit at a quieter cafe near Yeonnam edge.",
+        "avoid": "Avoid extra subway transfers."
+      },
+      "Evening": {
+        "action": "Cut your plan to one stop.",
+        "move": "Take a short taxi to the next area.",
+        "avoid": "Avoid standing in packed bars."
+      }
+    },
+    "Waiting in line": {
+      "Afternoon": {
+        "action": "Switch immediately after 10 minutes.",
+        "move": "Try a similar place 2 streets away.",
+        "avoid": "Avoid all top-ranked map results."
+      },
+      "Evening": {
+        "action": "Leave the line now.",
+        "move": "Go to basement bars with open seats.",
+        "avoid": "Avoid one-store-only plans."
+      }
+    },
+    "It's raining": {
+      "Afternoon": {
+        "action": "Stay under one indoor route.",
+        "move": "Use covered cafe-to-shop path near station.",
+        "avoid": "Avoid long outdoor walks."
+      },
+      "Evening": {
+        "action": "Move to indoor bars near exits.",
+        "move": "Pick places within 300m from station.",
+        "avoid": "Avoid umbrella-heavy main streets."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Pick one side-street stop and move now.",
+        "move": "Head away from the main street by 2 blocks.",
+        "avoid": "Avoid open-ended wandering."
+      }
+    }
+  },
+  "Seongsu": {
+    "Too crowded": {
+      "Afternoon": {
+        "action": "Skip first-row cafe clusters.",
+        "move": "Walk toward Seoul Forest side lanes.",
+        "avoid": "Avoid waiting at first viral cafe."
+      },
+      "Evening": {
+        "action": "Move off the main pop-up row.",
+        "move": "Head to side workshops near Seongsu station exit 3.",
+        "avoid": "Avoid one-cafe-only plans."
+      }
+    },
+    "Hungry": {
+      "Afternoon": {
+        "action": "Enter the first place with open seats.",
+        "move": "Try alleys behind the main factory street.",
+        "avoid": "Avoid photo-heavy brunch lines."
+      },
+      "Evening": {
+        "action": "Pick dinner first, dessert later.",
+        "move": "Go toward Ttukseom side streets.",
+        "avoid": "Avoid waiting at famous bakery lines."
+      }
+    },
+    "Tired": {
+      "Afternoon": {
+        "action": "Sit for 25 minutes and reset.",
+        "move": "Use a calm cafe near Seoul Forest path.",
+        "avoid": "Avoid crossing both bridges on foot."
+      },
+      "Evening": {
+        "action": "End Seongsu here and shift short-distance.",
+        "move": "Take a quick train to Jamsil or Euljiro.",
+        "avoid": "Avoid last-minute long queues."
+      }
+    },
+    "Waiting in line": {
+      "Afternoon": {
+        "action": "Leave after 8 minutes.",
+        "move": "Find a similar concept 1 block behind.",
+        "avoid": "Avoid waiting without indoor seats."
+      },
+      "Evening": {
+        "action": "Drop the queue and pivot now.",
+        "move": "Try small bars near side alleys.",
+        "avoid": "Avoid standing queues after sunset."
+      }
+    },
+    "It's raining": {
+      "Afternoon": {
+        "action": "Stick to indoor complex spots.",
+        "move": "Use connected stores near station exits.",
+        "avoid": "Avoid riverwalk plans."
+      },
+      "Evening": {
+        "action": "Move by short taxi between indoor stops.",
+        "move": "Choose one building cluster only.",
+        "avoid": "Avoid umbrella hopping across blocks."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Pick one indoor stop and lock it.",
+        "move": "Stay near station-side lanes.",
+        "avoid": "Avoid chasing every trending pin."
+      }
+    }
+  },
+  "Bukchon": {
+    "Too crowded": {
+      "Afternoon": {
+        "action": "Exit the top photo lanes now.",
+        "move": "Walk down to Samcheong-gil.",
+        "avoid": "Avoid peak photo alleys after noon."
+      },
+      "Evening": {
+        "action": "Wrap Bukchon and move out.",
+        "move": "Go to Anguk side for dinner.",
+        "avoid": "Avoid dark uphill lanes late."
+      }
+    },
+    "Hungry": {
+      "Afternoon": {
+        "action": "Eat first near Anguk station.",
+        "move": "Use side streets off Samcheong-ro.",
+        "avoid": "Avoid hilltop lines."
+      },
+      "Evening": {
+        "action": "Leave Bukchon and eat downhill.",
+        "move": "Move to Jongno or Euljiro dining blocks.",
+        "avoid": "Avoid searching uphill in the dark."
+      }
+    },
+    "Tired": {
+      "Afternoon": {
+        "action": "Take a seated break before more walking.",
+        "move": "Find a cafe near Anguk lower roads.",
+        "avoid": "Avoid additional steep climbs."
+      },
+      "Evening": {
+        "action": "Switch to flat routes now.",
+        "move": "Move to Euljiro by subway or taxi.",
+        "avoid": "Avoid hill detours at night."
+      }
+    },
+    "Waiting in line": {
+      "Afternoon": {
+        "action": "Skip line-heavy hanok cafes.",
+        "move": "Try nearby non-view cafes.",
+        "avoid": "Avoid waiting for window seats."
+      },
+      "Evening": {
+        "action": "Do not wait. Move to Jongno now.",
+        "move": "Pick a non-reservation spot near main roads.",
+        "avoid": "Avoid one-option plans."
+      }
+    },
+    "It's raining": {
+      "Afternoon": {
+        "action": "Cut outdoor route and go indoors.",
+        "move": "Use museum or tea houses near Anguk.",
+        "avoid": "Avoid slippery slopes."
+      },
+      "Evening": {
+        "action": "Leave Bukchon when roads get slick.",
+        "move": "Go to covered streets in Jongno.",
+        "avoid": "Avoid narrow uphill lanes."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Move downhill first.",
+        "move": "Stay around Anguk/Jongno main roads.",
+        "avoid": "Avoid additional uphill walking."
+      }
+    }
+  },
+  "Gangnam": {
+    "Too crowded": {
+      "Afternoon": {
+        "action": "Leave the core station block now.",
+        "move": "Walk one block off Teheran-ro.",
+        "avoid": "Avoid major mall entrances at rush windows."
+      },
+      "Evening": {
+        "action": "Skip hot main strips and pivot.",
+        "move": "Move toward side bars near Nonhyeon.",
+        "avoid": "Avoid Line 2 transfers in peak crowds."
+      }
+    },
+    "Hungry": {
+      "Afternoon": {
+        "action": "Choose quick food within one block.",
+        "move": "Use side streets behind main avenue.",
+        "avoid": "Avoid office-hour restaurant peaks."
+      },
+      "Evening": {
+        "action": "Pick seated places with fast turnover.",
+        "move": "Move toward Sinnonhyeon side lanes.",
+        "avoid": "Avoid premium queue restaurants."
+      }
+    },
+    "Tired": {
+      "Afternoon": {
+        "action": "Reset with one indoor stop only.",
+        "move": "Pick a cafe with seats near station exits.",
+        "avoid": "Avoid long cross-district moves."
+      },
+      "Evening": {
+        "action": "Cut itinerary to one final stop.",
+        "move": "Take short taxi hops only.",
+        "avoid": "Avoid additional subway transfers."
+      }
+    },
+    "Waiting in line": {
+      "Afternoon": {
+        "action": "Switch after 10 minutes max.",
+        "move": "Try business-lunch places off main roads.",
+        "avoid": "Avoid waiting at flagship stores."
+      },
+      "Evening": {
+        "action": "Drop queue and enter side-street venues.",
+        "move": "Move 2 blocks west from station core.",
+        "avoid": "Avoid standing lines near exits 10-11."
+      }
+    },
+    "It's raining": {
+      "Afternoon": {
+        "action": "Move between indoor hubs only.",
+        "move": "Use underground connected passages.",
+        "avoid": "Avoid long open-road walks."
+      },
+      "Evening": {
+        "action": "Use taxi for short hops.",
+        "move": "Pick one indoor cluster and stay there.",
+        "avoid": "Avoid hopping between distant bars."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Stay off station core lanes.",
+        "move": "Pick one nearby side street and commit.",
+        "avoid": "Avoid back-and-forth between hotspots."
+      }
+    }
+  },
+  "Myeongdong": {
+    "Too crowded": {
+      "Afternoon": {
+        "action": "Move one block off main shopping street.",
+        "move": "Head toward quieter side alleys.",
+        "avoid": "Avoid central cosmetic rows at peak."
+      },
+      "Evening": {
+        "action": "Cut through back streets now.",
+        "move": "Shift toward Euljiro-side exits.",
+        "avoid": "Avoid central food cart choke points."
+      }
+    },
+    "Hungry": {
+      "Afternoon": {
+        "action": "Pick quick meal before snack streets.",
+        "move": "Use side-lane diners first.",
+        "avoid": "Avoid food carts as full meal plan."
+      },
+      "Evening": {
+        "action": "Get seated dinner outside central strip.",
+        "move": "Walk toward Chungmuro side.",
+        "avoid": "Avoid waiting at famous street-stall lines."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Leave the core lane and reset.",
+        "move": "Take one side street route.",
+        "avoid": "Avoid standing in central crowd lanes."
+      }
+    }
+  },
+  "Airport": {
+    "Just arrived": {
+      "Afternoon": {
+        "action": "Buy T-money and cash up now.",
+        "move": "Take AREX or airport bus to your base area.",
+        "avoid": "Avoid expensive long-distance taxi first."
+      },
+      "Evening": {
+        "action": "Go direct to hotel with one transfer max.",
+        "move": "Use airport bus if carrying luggage.",
+        "avoid": "Avoid complex multi-line routes."
+      },
+      "Late night": {
+        "action": "Choose airport bus or official taxi now.",
+        "move": "Head straight to accommodation.",
+        "avoid": "Avoid last-train gamble with heavy bags."
+      }
+    },
+    "No plan": {
+      "Evening": {
+        "action": "Set one base area and move there first.",
+        "move": "Choose Hongdae or Myeongdong for easy setup.",
+        "avoid": "Avoid deciding while transferring."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Go to your lodging first.",
+        "move": "Use the simplest route with least transfers.",
+        "avoid": "Avoid optional detours before check-in."
+      }
+    }
+  },
+  "Other": {
+    "No plan": {
+      "Afternoon": {
+        "action": "Pick one nearby stop and go now.",
+        "move": "Find a place within 10 minutes on foot.",
+        "avoid": "Avoid adding multiple new stops."
+      },
+      "Evening": {
+        "action": "Choose one food stop, then one backup.",
+        "move": "Stay near your current station area.",
+        "avoid": "Avoid crossing the city twice."
+      }
+    },
+    "Too crowded": {
+      "Evening": {
+        "action": "Leave by two blocks first.",
+        "move": "Shift to side streets near a secondary station.",
+        "avoid": "Avoid queue-heavy hotspots."
+      }
+    },
+    "__fallback": {
+      "Evening": {
+        "action": "Simplify: one area, one action, move now.",
+        "move": "Stay within short walking distance.",
+        "avoid": "Avoid overplanning in place."
+      }
+    }
+  }
+}

@@ -24,6 +24,9 @@ type HomeCopy = {
   deep1: string;
   deep2: string;
   deep3: string;
+  rightNowTitle: string;
+  rightNowDesc: string;
+  rightNowButton: string;
   cards: [string, string, string, string];
   cardNotes: [string, string, string, string];
   areas: [string, string, string, string];
@@ -42,6 +45,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       deep1: "키오스크 카드 오류 상세",
       deep2: "티머니 충전 가이드",
       deep3: "올리브영 상세 가이드",
+      rightNowTitle: "지금 뭐 해야 할지 모르겠다면",
+      rightNowDesc: "상황 3개만 고르면 지금 행동 1개를 바로 제안합니다.",
+      rightNowButton: "What should I do right now?",
       cards: [
         "키오스크 카드 오류 바로 해결",
         "지금 맞는 지하철 노선 찾기",
@@ -69,6 +75,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       deep1: "キオスク決済エラー詳細",
       deep2: "T-moneyチャージガイド",
       deep3: "オリーブヤング詳細ガイド",
+      rightNowTitle: "今すぐ行動を決める",
+      rightNowDesc: "3ステップで、今やることを1つだけ提示。",
+      rightNowButton: "What should I do right now?",
       cards: [
         "キオスク決済エラーをすぐ解決",
         "地下鉄の正しい路線を今すぐ確認",
@@ -96,6 +105,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       deep1: "自助机刷卡失败详解",
       deep2: "T-money 充值指南",
       deep3: "Olive Young 详细指南",
+      rightNowTitle: "现在要做什么？",
+      rightNowDesc: "只选 3 项，立即给出一条动作建议。",
+      rightNowButton: "What should I do right now?",
       cards: [
         "马上处理自助机刷卡失败",
         "立刻选对地铁线路",
@@ -123,6 +135,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
       deep1: "自助機刷卡失敗詳解",
       deep2: "T-money 儲值指南",
       deep3: "Olive Young 詳細指南",
+      rightNowTitle: "現在先做什麼？",
+      rightNowDesc: "只要 3 步，立刻給你一條行動建議。",
+      rightNowButton: "What should I do right now?",
       cards: [
         "立即處理自助機刷卡失敗",
         "馬上選對地鐵路線",
@@ -149,6 +164,9 @@ function getHomeCopy(lang: Lang): HomeCopy {
     deep1: "Kiosk card rejected guide",
     deep2: "How much T-money you need",
     deep3: "Olive Young tourist guide",
+    rightNowTitle: "Need one immediate decision?",
+    rightNowDesc: "Pick 3 inputs. Get one direct move.",
+    rightNowButton: "What should I do right now?",
     cards: [
       "Fix card rejected at kiosk",
       "Pick the right subway line now",
@@ -213,6 +231,17 @@ export default async function HomePage({ params }: HomePageProps) {
       </section>
 
       <section className="mt-8 sm:mt-12">
+        <div className="mb-6 rounded-3xl border-2 border-zinc-900 bg-white p-5 sm:p-6">
+          <h2 className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.rightNowTitle}</h2>
+          <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.rightNowDesc}</p>
+          <Link
+            href={`/${locale}/tools/right-now`}
+            className="mt-4 inline-flex rounded-2xl border border-zinc-900 bg-zinc-900 px-4 py-3 text-sm font-black text-white"
+          >
+            {copy.rightNowButton}
+          </Link>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
           {emergencyCards.map((card) => (
             <Link

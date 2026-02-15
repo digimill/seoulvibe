@@ -2,268 +2,194 @@
 
 import { useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
+import {
+  RIGHT_NOW_LOCATIONS,
+  RIGHT_NOW_SITUATIONS,
+  RIGHT_NOW_TIMES,
+  type RightNowLocation,
+  type RightNowSituation,
+  type RightNowTime,
+  resolveRightNowRecommendation,
+} from "@/lib/right-now-helper";
 
-type Area = "hongdae" | "seongsu" | "bukchon" | "gangnam" | "euljiro" | "mangwon";
-type Status = "hungry" | "tired" | "crowded" | "arrived";
+type Step = 1 | 2 | 3 | 4;
 
 function copy(lang: Lang) {
   if (lang === "ko") {
     return {
-      title: "지금 어디로 가야 하지?",
-      desc: "현재 상태 기준으로 바로 움직일 동선을 제안합니다.",
-      area: "현재 지역",
-      time: "현재 시간",
-      state: "상태",
-      output: "지금 할 행동",
-      walk: "도보 대안",
-      avoid: "피해야 할 것",
-      states: {
-        hungry: "배고픔",
-        tired: "피곤함",
-        crowded: "너무 붐빔",
-        arrived: "방금 도착",
-      },
-      areas: {
-        hongdae: "홍대",
-        seongsu: "성수",
-        bukchon: "북촌",
-        gangnam: "강남",
-        euljiro: "을지로",
-        mangwon: "망원",
-      },
-    };
-  }
-  if (lang === "ja") {
-    return {
-      title: "今どこへ行くべき？",
-      desc: "今の状態で、すぐ動ける導線を出します。",
-      area: "現在エリア",
-      time: "現在時刻",
-      state: "状態",
-      output: "今やる行動",
-      walk: "徒歩代替",
-      avoid: "避けること",
-      states: {
-        hungry: "お腹が空いた",
-        tired: "疲れた",
-        crowded: "混みすぎ",
-        arrived: "到着したばかり",
-      },
-      areas: {
-        hongdae: "ホンデ",
-        seongsu: "ソンス",
-        bukchon: "プクチョン",
-        gangnam: "カンナム",
-        euljiro: "ウルチロ",
-        mangwon: "マンウォン",
-      },
-    };
-  }
-  if (lang === "zh-cn") {
-    return {
-      title: "我现在该去哪？",
-      desc: "按你当前状态给出立刻可执行路线。",
-      area: "当前区域",
-      time: "当前时间",
-      state: "状态",
-      output: "现在就做",
-      walk: "步行替代",
-      avoid: "避免",
-      states: {
-        hungry: "饿了",
-        tired: "累了",
-        crowded: "太拥挤",
-        arrived: "刚到",
-      },
-      areas: {
-        hongdae: "弘大",
-        seongsu: "圣水",
-        bukchon: "北村",
-        gangnam: "江南",
-        euljiro: "乙支路",
-        mangwon: "望远",
-      },
-    };
-  }
-  if (lang === "zh-tw" || lang === "zh-hk") {
-    return {
-      title: "我現在該去哪？",
-      desc: "依你目前狀態給可立刻執行的動線。",
-      area: "目前區域",
-      time: "目前時間",
-      state: "狀態",
-      output: "現在先做",
-      walk: "步行替代",
-      avoid: "避免",
-      states: {
-        hungry: "肚子餓",
-        tired: "累了",
-        crowded: "太擁擠",
-        arrived: "剛到",
-      },
-      areas: {
-        hongdae: "弘大",
-        seongsu: "聖水",
-        bukchon: "北村",
-        gangnam: "江南",
-        euljiro: "乙支路",
-        mangwon: "望遠",
-      },
+      title: "Right Now Helper",
+      subtitle: "10초 안에 지금 할 행동만 정합니다.",
+      step1: "1. 지금 어디예요?",
+      step2: "2. 지금 무슨 상황인가요?",
+      step3: "3. 시간대 선택",
+      result: "결과",
+      action: "🔥 지금 할 것",
+      move: "➡ 여기로 이동",
+      avoid: "⚠ 피할 것",
+      retry: "다른 상황 다시 보기",
+      labels: {
+        Hongdae: "홍대",
+        Seongsu: "성수",
+        Bukchon: "북촌",
+        Gangnam: "강남",
+        Myeongdong: "명동",
+        Airport: "공항",
+        Other: "기타",
+        "Too crowded": "너무 붐빔",
+        Hungry: "배고픔",
+        Tired: "피곤함",
+        "Waiting in line": "줄이 너무 김",
+        "It's raining": "비가 옴",
+        "Just arrived": "방금 도착",
+        "No plan": "아무 계획 없음",
+        Afternoon: "오후",
+        Evening: "저녁",
+        "Late night": "심야",
+      } as Record<string, string>,
     };
   }
   return {
-    title: "What should I do right now?",
-    desc: "Quick move plan from your current condition.",
-    area: "Current area",
-    time: "Current time",
-    state: "Status",
-    output: "Do this now",
-    walk: "Walking option",
-    avoid: "Avoid",
-    states: {
-      hungry: "Hungry",
-      tired: "Tired",
-      crowded: "Too crowded",
-      arrived: "Just arrived",
-    },
-    areas: {
-      hongdae: "Hongdae",
-      seongsu: "Seongsu",
-      bukchon: "Bukchon",
-      gangnam: "Gangnam",
-      euljiro: "Euljiro",
-      mangwon: "Mangwon",
-    },
+    title: "Right Now Helper",
+    subtitle: "No article. One immediate move in under 10 seconds.",
+    step1: "1. Where are you?",
+    step2: "2. What's happening?",
+    step3: "3. Time of day",
+    result: "Result",
+    action: "🔥 Do this now",
+    move: "➡ Move here instead",
+    avoid: "⚠ Avoid",
+    retry: "Try another situation",
+    labels: Object.fromEntries(
+      [...RIGHT_NOW_LOCATIONS, ...RIGHT_NOW_SITUATIONS, ...RIGHT_NOW_TIMES].map((x) => [x, x]),
+    ) as Record<string, string>,
   };
 }
 
-function areaTip(area: Area, lang: Lang) {
-  const en: Record<Area, { walk: string; avoid: string }> = {
-    hongdae: { walk: "Walk 5 minutes toward Yeonnam side.", avoid: "Do not queue over 20 minutes." },
-    seongsu: { walk: "Walk toward Seoul Forest side streets.", avoid: "Skip the first viral cafe line." },
-    bukchon: { walk: "Walk down to Samcheong-gil quietly.", avoid: "Avoid peak photo alleys after 11am." },
-    gangnam: { walk: "Walk one block off Teheran main road.", avoid: "Avoid Line 2 transfers at peak hour." },
-    euljiro: { walk: "Walk to side alleys behind main avenue.", avoid: "Avoid only following map top results." },
-    mangwon: { walk: "Walk inside Mangwon market back lanes.", avoid: "Avoid riverfront at sunset peak." },
-  };
-
-  if (lang === "ko") {
-    const ko: Record<Area, { walk: string; avoid: string }> = {
-      hongdae: { walk: "연남 방향으로 5분만 걸어가세요.", avoid: "20분 이상 줄은 서지 마세요." },
-      seongsu: { walk: "서울숲 방향 골목으로 이동하세요.", avoid: "첫 번째 바이럴 카페 줄은 피하세요." },
-      bukchon: { walk: "삼청길 방향으로 내려가세요.", avoid: "11시 이후 메인 포토 골목은 피하세요." },
-      gangnam: { walk: "테헤란로 메인에서 한 블록 벗어나세요.", avoid: "피크 시간 2호선 환승을 피하세요." },
-      euljiro: { walk: "대로 뒤편 골목으로 바로 들어가세요.", avoid: "지도 상단 결과만 따라가지 마세요." },
-      mangwon: { walk: "망원시장 안쪽 골목으로 이동하세요.", avoid: "일몰 시간 한강변 밀집 구간은 피하세요." },
-    };
-    return ko[area];
-  }
-
-  return en[area];
-}
-
-function buildActions(status: Status, hour: number, lang: Lang) {
-  const evening = hour >= 18;
-
-  if (lang === "ko") {
-    if (status === "hungry") {
-      return evening
-        ? ["줄 긴 메인 맛집은 바로 스킵.", "골목 2번째 식당으로 이동.", "단품 1개 먼저 주문해 속도 확인."]
-        : ["근처 10분 거리 식당 먼저 확정.", "브레이크 타임 여부 먼저 체크.", "대기 10분 넘으면 바로 이동."];
-    }
-    if (status === "tired") {
-      return ["카페에서 25분만 쉬기.", "다음 목적지 1곳만 남기기.", "지하철 환승 대신 버스/택시 단거리 사용."];
-    }
-    if (status === "crowded") {
-      return ["메인 거리에서 2블록 이탈.", "핫플 대기 줄은 즉시 포기.", "좁은 골목 지하 바/소형 매장으로 전환."];
-    }
-    return ["가장 중요한 1곳만 먼저 고르기.", "역 출구 방향을 먼저 확인.", "30분 내 끝낼 동선으로 시작."];
-  }
-
-  if (status === "hungry") {
-    return evening
-      ? ["Skip main line-up restaurants.", "Move to second-row side streets.", "Order one quick item first."]
-      : ["Pick one place within 10 minutes.", "Check break time first.", "Move if wait exceeds 10 minutes."];
-  }
-  if (status === "tired") {
-    return ["Sit for 25 minutes only.", "Keep one next stop, not three.", "Use short bus/taxi instead of extra transfer."];
-  }
-  if (status === "crowded") {
-    return ["Leave main street by 2 blocks.", "Drop hot-place queues instantly.", "Switch to small basement/side venues."];
-  }
-  return ["Pick one priority stop first.", "Confirm station exit direction.", "Start with a 30-minute route."];
+function OptionGrid({
+  options,
+  selected,
+  onSelect,
+  labelMap,
+}: {
+  options: readonly string[];
+  selected?: string;
+  onSelect: (value: string) => void;
+  labelMap: Record<string, string>;
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+      {options.map((value) => {
+        const active = selected === value;
+        return (
+          <button
+            key={value}
+            type="button"
+            onClick={() => onSelect(value)}
+            className={`rounded-2xl border px-4 py-4 text-left text-sm font-bold transition ${active ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-900 hover:border-zinc-900"}`}
+          >
+            {labelMap[value] ?? value}
+          </button>
+        );
+      })}
+    </div>
+  );
 }
 
 export function RightNowDecisionTool({ lang }: { lang: Lang }) {
   const c = copy(lang);
-  const now = new Date();
-  const [area, setArea] = useState<Area>("hongdae");
-  const [timeValue, setTimeValue] = useState(`${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`);
-  const [status, setStatus] = useState<Status>("crowded");
+  const [step, setStep] = useState<Step>(1);
+  const [location, setLocation] = useState<RightNowLocation | null>(null);
+  const [situation, setSituation] = useState<RightNowSituation | null>(null);
+  const [time, setTime] = useState<RightNowTime>("Evening");
 
-  const { actions, walk, avoid } = useMemo(() => {
-    const hour = Number(timeValue.split(":")[0] || 12);
-    const lines = buildActions(status, hour, lang);
-    const tip = areaTip(area, lang);
-    return { actions: lines, walk: tip.walk, avoid: tip.avoid };
-  }, [area, timeValue, status, lang]);
+  const result = useMemo(() => {
+    if (!location || !situation) return null;
+    return resolveRightNowRecommendation(location, situation, time);
+  }, [location, situation, time]);
 
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7">
+    <section className="rounded-3xl border border-zinc-900 bg-white p-5 sm:p-7">
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
-      <p className="mt-2 text-sm text-zinc-600">{c.desc}</p>
+      <p className="mt-1 text-sm font-semibold text-zinc-600">{c.subtitle}</p>
 
-      <div className="mt-4 grid gap-3 lg:grid-cols-3">
-        <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <p className="text-xs font-semibold text-zinc-600">{c.area}</p>
-          <select
-            value={area}
-            onChange={(e) => setArea(e.target.value as Area)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
-          >
-            <option value="hongdae">{c.areas.hongdae}</option>
-            <option value="seongsu">{c.areas.seongsu}</option>
-            <option value="bukchon">{c.areas.bukchon}</option>
-            <option value="gangnam">{c.areas.gangnam}</option>
-            <option value="euljiro">{c.areas.euljiro}</option>
-            <option value="mangwon">{c.areas.mangwon}</option>
-          </select>
-        </label>
+      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 min-h-[22rem] overflow-hidden">
+        {step === 1 ? (
+          <>
+            <p className="mb-3 text-sm font-black text-zinc-900">{c.step1}</p>
+            <OptionGrid
+              options={RIGHT_NOW_LOCATIONS}
+              selected={location ?? undefined}
+              labelMap={c.labels}
+              onSelect={(value) => {
+                setLocation(value as RightNowLocation);
+                setStep(2);
+              }}
+            />
+          </>
+        ) : null}
 
-        <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <p className="text-xs font-semibold text-zinc-600">{c.time}</p>
-          <input
-            type="time"
-            value={timeValue}
-            onChange={(e) => setTimeValue(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
-          />
-        </label>
+        {step === 2 ? (
+          <>
+            <p className="mb-3 text-sm font-black text-zinc-900">{c.step2}</p>
+            <OptionGrid
+              options={RIGHT_NOW_SITUATIONS}
+              selected={situation ?? undefined}
+              labelMap={c.labels}
+              onSelect={(value) => {
+                setSituation(value as RightNowSituation);
+                setStep(3);
+              }}
+            />
+          </>
+        ) : null}
 
-        <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <p className="text-xs font-semibold text-zinc-600">{c.state}</p>
-          <select
-            value={status}
-            onChange={(e) => setStatus(e.target.value as Status)}
-            className="mt-1 w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none"
-          >
-            <option value="hungry">{c.states.hungry}</option>
-            <option value="tired">{c.states.tired}</option>
-            <option value="crowded">{c.states.crowded}</option>
-            <option value="arrived">{c.states.arrived}</option>
-          </select>
-        </label>
-      </div>
+        {step === 3 ? (
+          <>
+            <p className="mb-3 text-sm font-black text-zinc-900">{c.step3}</p>
+            <OptionGrid
+              options={RIGHT_NOW_TIMES}
+              selected={time}
+              labelMap={c.labels}
+              onSelect={(value) => setTime(value as RightNowTime)}
+            />
+            <button
+              type="button"
+              onClick={() => setStep(4)}
+              className="mt-4 w-full rounded-2xl border border-zinc-900 bg-zinc-900 px-4 py-3 text-sm font-black text-white"
+            >
+              {c.result}
+            </button>
+          </>
+        ) : null}
 
-      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-        <h3 className="text-sm font-black text-zinc-900">{c.output}</h3>
-        <ul className="mt-2 space-y-2 text-sm font-semibold text-zinc-800">
-          {actions.map((line) => (
-            <li key={line}>• {line}</li>
-          ))}
-        </ul>
-        <p className="mt-3 text-sm font-semibold text-zinc-800">{c.walk}: {walk}</p>
-        <p className="mt-1 text-sm font-semibold text-red-700">{c.avoid}: {avoid}</p>
+        {step === 4 && result ? (
+          <article className="space-y-3">
+            <p className="text-sm font-black text-zinc-900">{c.result}</p>
+            <div className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-black text-zinc-500">{c.action}</p>
+              <p className="mt-1 text-sm font-bold text-zinc-900">{result.action}</p>
+            </div>
+            <div className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-black text-zinc-500">{c.move}</p>
+              <p className="mt-1 text-sm font-bold text-zinc-900">{result.move}</p>
+            </div>
+            <div className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-black text-zinc-500">{c.avoid}</p>
+              <p className="mt-1 text-sm font-bold text-zinc-900">{result.avoid}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setSituation(null);
+                setTime("Evening");
+                setStep(2);
+              }}
+              className="mt-2 w-full rounded-2xl border border-zinc-900 px-4 py-3 text-sm font-black text-zinc-900"
+            >
+              {c.retry}
+            </button>
+          </article>
+        ) : null}
       </div>
     </section>
   );
