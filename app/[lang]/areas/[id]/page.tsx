@@ -188,37 +188,37 @@ function getAreaSpotKeywords(areaId: string, locale: Lang): string[] {
       hongdae: ["연남-망원", "합정-상수"],
       seongsu: ["성수"],
       bukchon: ["서촌-삼청"],
-      gangnam: ["기타", "한남-용산"],
+      gangnam: [],
     },
     en: {
       hongdae: ["Yeonnam-Mangwon", "Hapjeong-Sangsu"],
       seongsu: ["Seongsu"],
       bukchon: ["Seochon-Samcheong"],
-      gangnam: ["Other", "Hannam-Yongsan"],
+      gangnam: [],
     },
     ja: {
       hongdae: ["延南-望遠", "合井-上水"],
       seongsu: ["聖水"],
       bukchon: ["西村-三清"],
-      gangnam: ["その他", "漢南-龍山"],
+      gangnam: [],
     },
     "zh-cn": {
       hongdae: ["延南-望远", "合井-上水"],
       seongsu: ["圣水"],
       bukchon: ["西村-三清"],
-      gangnam: ["其他", "汉南-龙山"],
+      gangnam: [],
     },
     "zh-tw": {
       hongdae: ["延南-望遠", "合井-上水"],
       seongsu: ["聖水"],
       bukchon: ["西村-三清"],
-      gangnam: ["其他", "漢南-龍山"],
+      gangnam: [],
     },
     "zh-hk": {
       hongdae: ["延南-望遠", "合井-上水"],
       seongsu: ["聖水"],
       bukchon: ["西村-三清"],
-      gangnam: ["其他", "漢南-龍山"],
+      gangnam: [],
     },
   };
 
