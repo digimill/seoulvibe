@@ -190,7 +190,6 @@ function getCopy(lang: Lang) {
 const STORAGE_KEY = "sv-expense-tracker-v1";
 const BUDGET_KEY = "sv-expense-budget-v1";
 const CURRENCY_KEY = "sv-expense-currency-v1";
-const RATE_KEY = "sv-expense-rate-v1";
 const QUICK_AMOUNTS = [4500, 10000, 15000, 30000];
 const DEFAULT_RATES: Record<Currency, number> = {
   USD: 1400,
@@ -281,6 +280,7 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
   const [budgetKrw, setBudgetKrw] = useState<number>(100000);
   const [currency, setCurrency] = useState<Currency>(defaultCurrency);
   const [rate, setRate] = useState<number>(rates[defaultCurrency]);
+  const [isLiveRate, setIsLiveRate] = useState(false);
   const [amountInput, setAmountInput] = useState("");
   const [categoryInput, setCategoryInput] = useState<Category>("food");
   const [noteInput, setNoteInput] = useState("");
@@ -291,7 +291,6 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
     const rawItems = localStorage.getItem(STORAGE_KEY);
     const rawBudget = localStorage.getItem(BUDGET_KEY);
     const rawCurrency = localStorage.getItem(CURRENCY_KEY) as Currency | null;
-    const rawRate = localStorage.getItem(RATE_KEY);
 
     if (rawItems) {
       try {
@@ -309,26 +308,55 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
       setCurrency(defaultCurrency);
       setRate(rates[defaultCurrency]);
     }
-    if (rawRate && !Number.isNaN(Number(rawRate))) setRate(Number(rawRate));
     setLoaded(true);
   }, [defaultCurrency, rates]);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      try {
-        const res = await fetch("/api/exchange-rates");
-        if (!res.ok) return;
-        const json = (await res.json()) as { ok: boolean; ratesKrwPerUnit?: Record<string, number> };
-        if (!json.ok || !json.ratesKrwPerUnit || cancelled) return;
+      const applyRates = (next: Record<Currency, number>) => {
+        if (cancelled) return;
         const merged = { ...DEFAULT_RATES } as Record<Currency, number>;
         for (const code of ALL_CURRENCIES) {
-          const v = json.ratesKrwPerUnit[code];
+          const v = next[code];
           if (typeof v === "number" && v > 0) merged[code] = v;
         }
         setRates(merged);
+        setIsLiveRate(true);
+      };
+
+      const tryInternal = async () => {
+        const res = await fetch("/api/exchange-rates");
+        if (!res.ok) return false;
+        const json = (await res.json()) as { ok: boolean; ratesKrwPerUnit?: Record<string, number> };
+        if (!json.ok || !json.ratesKrwPerUnit) return false;
+        applyRates(json.ratesKrwPerUnit as Record<Currency, number>);
+        return true;
+      };
+
+      const tryDirect = async () => {
+        const res = await fetch("https://open.er-api.com/v6/latest/KRW");
+        if (!res.ok) return false;
+        const json = (await res.json()) as { result?: string; conversion_rates?: Record<string, number> };
+        if (json.result !== "success" || !json.conversion_rates) return false;
+        const converted: Record<Currency, number> = { ...DEFAULT_RATES };
+        for (const code of ALL_CURRENCIES) {
+          const perKrw = json.conversion_rates[code];
+          if (typeof perKrw === "number" && perKrw > 0) converted[code] = Number((1 / perKrw).toFixed(6));
+        }
+        applyRates(converted);
+        return true;
+      };
+
+      try {
+        const okInternal = await tryInternal();
+        if (!okInternal) {
+          const okDirect = await tryDirect();
+          if (!okDirect && !cancelled) setIsLiveRate(false);
+        }
       } catch {
         // keep fallback rates
+        if (!cancelled) setIsLiveRate(false);
       }
     })();
     return () => {
@@ -350,11 +378,6 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
     if (!loaded) return;
     localStorage.setItem(CURRENCY_KEY, currency);
   }, [currency, loaded]);
-
-  useEffect(() => {
-    if (!loaded) return;
-    localStorage.setItem(RATE_KEY, String(rate));
-  }, [rate, loaded]);
 
   useEffect(() => {
     setRate(rates[currency]);
@@ -582,17 +605,12 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
             ))}
           </select>
         </label>
-        <label className="sm:col-span-2">
-          <p className="text-xs font-semibold text-zinc-600">{c.rate}</p>
-          <input
-            type="number"
-            min={0}
-            value={rate}
-            onChange={(e) => setRate(Math.max(0, Number(e.target.value) || 0))}
-            className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
-          />
-        </label>
       </div>
+      {!isLiveRate ? (
+        <p className="mt-2 text-[11px] font-semibold text-amber-700">
+          {lang === "ko" ? "실시간 환율을 불러오지 못해 기본값을 사용 중입니다." : "Live rate unavailable. Using fallback rate."}
+        </p>
+      ) : null}
 
       <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
         <h3 className="text-sm font-black text-zinc-900">{c.list}</h3>
