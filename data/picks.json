@@ -1,0 +1,3642 @@
+[
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonnam-dong side streets eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sangsu area eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonnam-dong side streets eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gyeongui Line Forest Park eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sangsu area eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sangsu area eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Hongdae main street eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gyeongui Line Forest Park eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gyeongui Line Forest Park coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonnam-dong side streets coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Hongdae main street coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonnam-dong side streets coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gyeongui Line Forest Park coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sangsu area coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gyeongui Line Forest Park coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sangsu area walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonnam-dong side streets walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gyeongui Line Forest Park walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonnam-dong side streets walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gyeongui Line Forest Park walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sangsu area walk option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Yeonnam-dong side streets walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Hongdae main street walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gyeongui Line Forest Park quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gyeongui Line Forest Park quiet option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonnam-dong side streets quiet option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gyeongui Line Forest Park quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sangsu area quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Hongdae main street quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area quiet option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonnam-dong side streets night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sangsu area night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Hongdae main street night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gyeongui Line Forest Park night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Hongdae main street night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonnam-dong side streets night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Hongdae main street night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gyeongui Line Forest Park local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Hongdae main street local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonnam-dong side streets local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gyeongui Line Forest Park local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Hongdae main street local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Hongdae main street local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Yeonnam-dong side streets local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonnam-dong side streets and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Yeonnam-dong side streets"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gyeongui Line Forest Park unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sangsu area unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Hongdae main street unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Hongdae main street and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Hongdae main street"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Sangsu area unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gyeongui Line Forest Park unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gyeongui Line Forest Park unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gyeongui Line Forest Park and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gyeongui Line Forest Park"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Hongdae",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sangsu area unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sangsu area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Sangsu area"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonmujang-gil eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonmujang-gil eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonmujang-gil eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seoul Forest eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seongsu back alleys coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seoul Forest coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Yeonmujang-gil coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seongsu back alleys walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seoul Forest walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonmujang-gil walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Yeonmujang-gil walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seongsu back alleys quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest quiet option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seongsu back alleys quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys quiet option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seoul Forest quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Yeonmujang-gil night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seongsu back alleys night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seoul Forest night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seoul Forest night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seongsu back alleys local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonmujang-gil local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seongsu back alleys local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Seoul Forest unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Seoul Forest unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Yeonmujang-gil unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Seongsu back alleys unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Seongsu back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seongsu back alleys"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Yeonmujang-gil unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Yeonmujang-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Yeonmujang-gil"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seoul Forest unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Seongsu",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Seoul Forest unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Seoul Forest and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Seoul Forest"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Samcheong-dong eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Bukchon Hanok Village eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong eat option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Samcheong-dong coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Samcheong-dong quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Bukchon Hanok Village night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Bukchon Hanok Village local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Bukchon Hanok Village unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Samcheong-dong unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Bukchon Hanok Village unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Samcheong-dong unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Bukchon Hanok Village unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Bukchon Hanok Village unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Bukchon Hanok Village and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Bukchon Hanok Village"
+  },
+  {
+    "area": "Bukchon",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Samcheong-dong unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Samcheong-dong and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Samcheong-dong"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gangnam rooftop zone eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gangnam rooftop zone eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "COEX area eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sinsa Garosu-gil eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sinsa Garosu-gil coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "COEX area coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gangnam rooftop zone coffee option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "COEX area walk option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sinsa Garosu-gil walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sinsa Garosu-gil walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sinsa Garosu-gil walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone walk option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sinsa Garosu-gil walk option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "COEX area quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Sinsa Garosu-gil quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area quiet option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sinsa Garosu-gil quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sinsa Garosu-gil quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "COEX area quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "COEX area night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Sinsa Garosu-gil night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gangnam rooftop zone night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "COEX area night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Sinsa Garosu-gil night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "COEX area night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "COEX area local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Sinsa Garosu-gil local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "COEX area local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Gangnam rooftop zone local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "COEX area local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gangnam rooftop zone local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "COEX area local option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "COEX area local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around COEX area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "COEX area"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Gangnam rooftop zone unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Sinsa Garosu-gil unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Sinsa Garosu-gil unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Sinsa Garosu-gil unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Sinsa Garosu-gil and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Sinsa Garosu-gil"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Gangnam rooftop zone unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Gangnam",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Gangnam rooftop zone unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Gangnam rooftop zone and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Gangnam rooftop zone"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area eat option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro back alleys eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Euljiro back alleys eat option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream eat option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro back alleys eat option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Cheonggyecheon stream eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Eat",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys eat option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro back alleys coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream coffee option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Euljiro 3-ga area coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro 3-ga area coffee option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro back alleys coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro 3-ga area coffee option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Coffee",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys coffee option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area walk option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream walk option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream walk option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys walk option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Walk",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro 3-ga area walk option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Cheonggyecheon stream quiet option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Cheonggyecheon stream quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream quiet option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro back alleys quiet option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro back alleys quiet option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Cheonggyecheon stream quiet option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Quiet",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys quiet option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro back alleys night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Cheonggyecheon stream night option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Euljiro back alleys night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream night option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro back alleys night option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys night option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Night",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro 3-ga area night option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro back alleys local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Euljiro back alleys local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Euljiro back alleys local option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Narrow stairs in older buildings.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro 3-ga area local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream local option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys local option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Try smaller venues without visible queues.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Local",
+    "companions": [
+      "Family"
+    ],
+    "title": "Cheonggyecheon stream local option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro 3-ga area unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Solo"
+    ],
+    "title": "Euljiro back alleys unique option",
+    "why_now": "Better chance of finding seats.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Couple"
+    ],
+    "title": "Cheonggyecheon stream unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Limited English menus possible.",
+    "plan_b": "Shift toward a park or open area.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Cheonggyecheon stream unique option",
+    "why_now": "Good balance of vibe and convenience.",
+    "do": "Explore around Cheonggyecheon stream and choose a place that fits your vibe.",
+    "risk": "Queues may build after 6pm.",
+    "plan_b": "Move one street over if crowded.",
+    "map_query": "Cheonggyecheon stream"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Friends"
+    ],
+    "title": "Euljiro 3-ga area unique option",
+    "why_now": "Less tourist-heavy than main strips.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Weekends can get crowded.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro 3-ga area"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro back alleys unique option",
+    "why_now": "Lower regret compared to viral spots.",
+    "do": "Explore around Euljiro back alleys and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Head toward a quieter side street.",
+    "map_query": "Euljiro back alleys"
+  },
+  {
+    "area": "Euljiro",
+    "mood": "Unique",
+    "companions": [
+      "Family"
+    ],
+    "title": "Euljiro 3-ga area unique option",
+    "why_now": "Feels more local and relaxed.",
+    "do": "Explore around Euljiro 3-ga area and choose a place that fits your vibe.",
+    "risk": "Some places prefer cash or tap.",
+    "plan_b": "Search nearby second-floor spots.",
+    "map_query": "Euljiro 3-ga area"
+  }
+]

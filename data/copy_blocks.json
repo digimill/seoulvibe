@@ -1,0 +1,16 @@
+{
+  "why_now": [
+    "Crowd pressure is rising now.",
+    "This option usually moves faster right now.",
+    "Low waiting risk at this hour.",
+    "Good chance to secure seats quickly.",
+    "You can recover the schedule with this move."
+  ],
+  "risk_addon": [
+    "Check queue before committing.",
+    "If it stalls, switch in 10 minutes.",
+    "Keep one backup in the same area.",
+    "Do not cross districts for this.",
+    "Avoid peak exits near station core."
+  ]
+}
