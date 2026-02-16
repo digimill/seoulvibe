@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
-type BrandId = "mega" | "compose" | "starbucks" | "lotteria" | "hansot";
+type BrandId = "mega" | "compose" | "lotteria";
 type LotteriaStage = "place" | "menu" | "confirm" | "card";
 type PracticeMode = "quick" | "full";
 type RiskKey = "lang" | "retry" | "timeout" | "membership";
@@ -125,21 +125,6 @@ const BRANDS: Brand[] = [
     },
   },
   {
-    id: "starbucks",
-    label: "스타벅스",
-    topTone: "bg-emerald-800",
-    topText: "text-emerald-50",
-    panelTone: "bg-emerald-700",
-    payTone: "bg-emerald-900",
-    langButton: "LANG",
-    langHint: "우상단 LANGUAGE",
-    payMethods: ["카드결제", "간편결제"],
-    categories: [{ id: "coffee", label: "커피", enLabel: "Coffee" }],
-    itemsByCategory: {
-      coffee: [{ id: "sb-1", name: "아메리카노", enName: "Americano", price: 4500, tint: "from-zinc-200 to-zinc-300" }],
-    },
-  },
-  {
     id: "lotteria",
     label: "롯데리아",
     topTone: "bg-zinc-900",
@@ -163,21 +148,6 @@ const BRANDS: Brand[] = [
       drink: [{ id: "lt-5", name: "콜라", enName: "Coke", price: 2000, tint: "from-zinc-100 to-zinc-200" }],
     },
   },
-  {
-    id: "hansot",
-    label: "한솥",
-    topTone: "bg-orange-700",
-    topText: "text-orange-50",
-    panelTone: "bg-orange-500",
-    payTone: "bg-zinc-900",
-    langButton: "LANG",
-    langHint: "상단 LANGUAGE 또는 설정",
-    payMethods: ["카드결제", "간편결제"],
-    categories: [{ id: "dosirak", label: "도시락", enLabel: "Lunch Box" }],
-    itemsByCategory: {
-      dosirak: [{ id: "hs-1", name: "도련님도시락", enName: "Doryeonnim Lunch Box", price: 5200, tint: "from-amber-100 to-orange-200" }],
-    },
-  },
 ];
 
 function toKrw(value: number): string {
@@ -189,23 +159,35 @@ function getCopy(lang: Lang) {
     return {
       title: "브랜드 키오스크 체험",
       subtitle: "한 번만 연습하고, 실전 실수를 줄이세요.",
-      modeQuick: "Quick scan (10초)",
-      modeFull: "Full simulation",
+      modeQuick: "빠른 스캔 (10초)",
+      modeFull: "전체 시뮬레이션",
       riskGuide: "탭해서 위험 구역 강조",
-      englishTitle: "실수 예방 체크",
-      englishDesc: "주문 전 확인: LANG 버튼 · 반복 재시도 금지 · 멤버십 스킵",
+      englishTitle: "주문 전 확인",
+      englishDesc: "LANG · 재시도 금지 · 멤버십 스킵",
+      focusHint: {
+        lang: "LANG 버튼은 우상단에서 먼저 찾으세요.",
+        retry: "같은 화면에서 다시 누르지 마세요.",
+        timeout: "타이머 빨간 구간 전에 다음 단계로 이동하세요.",
+        membership: "멤버십은 건너뛰고 비회원 결제를 선택하세요.",
+      },
       selected: "선택한 상품",
       remain: "남은시간",
       clear: "전체삭제",
       pay: "결제하기",
       qty: "개",
       total: "합계",
-      quickGuide: "지금 막혔어요 (Now Kiosk)",
+      quickGuide: "지금 막혔어요",
       deepGuide: "카드 거절 즉시 해결",
       payModalTitle: "결제 단계 체험",
       payModalDesc: "여기서는 흐름만 체험합니다. 실제 결제는 진행되지 않습니다.",
       close: "닫기",
       points: ["LANG 위치", "같은 화면 재시도 금지", "타임아웃 전에 이동", "멤버십 스킵"],
+      riskLabel: {
+        lang: "우상단 LANG",
+        retry: "다시 누르지 마세요",
+        timeout: "타임아웃 주의",
+        membership: "멤버십 스킵",
+      },
       riskHint: {
         lang: "LANG 버튼 위치를 먼저 확인하세요.",
         retry: "같은 화면에서 카드 재시도 반복 금지.",
@@ -218,23 +200,35 @@ function getCopy(lang: Lang) {
     return {
       title: "ブランド別キオスク体験",
       subtitle: "1回練習して実戦ミスを減らす。",
-      modeQuick: "Quick scan (10秒)",
-      modeFull: "Full simulation",
+      modeQuick: "クイックスキャン (10秒)",
+      modeFull: "全体シミュレーション",
       riskGuide: "タップして危険ポイントを強調",
-      englishTitle: "失敗防止チェック",
-      englishDesc: "注文前チェック: LANG位置・連打再試行禁止・会員スキップ",
+      englishTitle: "注文前チェック",
+      englishDesc: "LANG・再試行しない・会員スキップ",
+      focusHint: {
+        lang: "LANGボタンは右上を先に確認。",
+        retry: "同じ画面で再タップしない。",
+        timeout: "赤いタイマーになる前に次へ。",
+        membership: "会員登録をスキップしてゲスト決済へ。",
+      },
       selected: "選択した商品",
       remain: "残り時間",
       clear: "全削除",
       pay: "決済する",
       qty: "個",
       total: "合計",
-      quickGuide: "今つまずいている (Now Kiosk)",
+      quickGuide: "今つまずいている",
       deepGuide: "カード拒否を即解決",
       payModalTitle: "決済ステップ体験",
       payModalDesc: "ここでは流れのみ体験します。実決済は行われません。",
       close: "閉じる",
       points: ["LANG位置", "同画面で連打しない", "タイムアウト前に移動", "会員登録をスキップ"],
+      riskLabel: {
+        lang: "右上LANG",
+        retry: "再タップしない",
+        timeout: "タイムアウト注意",
+        membership: "会員スキップ",
+      },
       riskHint: {
         lang: "まずLANGボタン位置を確認。",
         retry: "同じ画面で再試行を繰り返さない。",
@@ -247,23 +241,35 @@ function getCopy(lang: Lang) {
     return {
       title: "品牌自助机体验",
       subtitle: "练一次，减少现场失误。",
-      modeQuick: "Quick scan (10秒)",
-      modeFull: "Full simulation",
+      modeQuick: "快速扫描 (10秒)",
+      modeFull: "完整模拟",
       riskGuide: "点击高亮风险区域",
-      englishTitle: "防失误检查",
-      englishDesc: "下单前检查: LANG按钮、不要反复重试、跳过会员",
+      englishTitle: "下单前检查",
+      englishDesc: "LANG · 不重试 · 跳过会员",
+      focusHint: {
+        lang: "先看右上角LANG按钮。",
+        retry: "同一页面不要重复点击。",
+        timeout: "变红前尽快进入下一步。",
+        membership: "跳过会员，优先游客结算。",
+      },
       selected: "已选商品",
       remain: "剩余时间",
       clear: "全部清空",
       pay: "去结算",
       qty: "件",
       total: "合计",
-      quickGuide: "现在卡住了 (Now Kiosk)",
+      quickGuide: "现在卡住了",
       deepGuide: "刷卡失败立即处理",
       payModalTitle: "支付步骤体验",
       payModalDesc: "此处仅用于流程体验，不会进行真实扣款。",
       close: "关闭",
       points: ["LANG位置", "不要重复点同一页", "超时前切换", "跳过会员"],
+      riskLabel: {
+        lang: "右上LANG",
+        retry: "不要重复点",
+        timeout: "注意超时",
+        membership: "跳过会员",
+      },
       riskHint: {
         lang: "先确认LANG按钮位置。",
         retry: "不要在同一页面反复重试。",
@@ -276,23 +282,35 @@ function getCopy(lang: Lang) {
     return {
       title: "品牌自助機體驗",
       subtitle: "練一次，減少現場失誤。",
-      modeQuick: "Quick scan (10秒)",
-      modeFull: "Full simulation",
+      modeQuick: "快速掃描 (10秒)",
+      modeFull: "完整模擬",
       riskGuide: "點擊高亮風險區域",
-      englishTitle: "防失誤檢查",
-      englishDesc: "下單前檢查: LANG按鈕、不要重複重試、跳過會員",
+      englishTitle: "下單前檢查",
+      englishDesc: "LANG · 不重試 · 跳過會員",
+      focusHint: {
+        lang: "先看右上角LANG按鈕。",
+        retry: "同一頁面不要重複點擊。",
+        timeout: "變紅前盡快進入下一步。",
+        membership: "跳過會員，優先訪客結帳。",
+      },
       selected: "已選商品",
       remain: "剩餘時間",
       clear: "全部清空",
       pay: "去結帳",
       qty: "件",
       total: "合計",
-      quickGuide: "現在卡住了 (Now Kiosk)",
+      quickGuide: "現在卡住了",
       deepGuide: "刷卡失敗立即處理",
       payModalTitle: "支付步驟體驗",
       payModalDesc: "此處僅供流程體驗，不會進行真實扣款。",
       close: "關閉",
       points: ["LANG位置", "不要重複點同一頁", "逾時前切換", "跳過會員"],
+      riskLabel: {
+        lang: "右上LANG",
+        retry: "不要重複點",
+        timeout: "注意逾時",
+        membership: "跳過會員",
+      },
       riskHint: {
         lang: "先確認LANG按鈕位置。",
         retry: "不要在同一頁面重複重試。",
@@ -308,8 +326,14 @@ function getCopy(lang: Lang) {
     modeQuick: "Quick scan (10s)",
     modeFull: "Full simulation",
     riskGuide: "Tap to highlight risk area",
-    englishTitle: "Mistake-prevention checks",
-    englishDesc: "Before ordering: LANG button, no repeated retry, skip membership.",
+    englishTitle: "Before ordering",
+    englishDesc: "LANG · No retry · Skip membership",
+    focusHint: {
+      lang: "Find the LANG button at top-right first.",
+      retry: "Do not tap again on the same screen.",
+      timeout: "Move before timer enters red zone.",
+      membership: "Skip membership and use guest checkout.",
+    },
     selected: "Selected",
     remain: "Time left",
     clear: "Clear",
@@ -322,6 +346,12 @@ function getCopy(lang: Lang) {
     payModalDesc: "Practice flow only. No real charge.",
     close: "Close",
     points: ["Find LANG", "Do not repeat on same screen", "Move before timeout", "Skip membership"],
+    riskLabel: {
+      lang: "Top-right LANG",
+      retry: "Don't tap again",
+      timeout: "Watch timeout",
+      membership: "Skip membership",
+    },
     riskHint: {
       lang: "Check where LANG is before ordering.",
       retry: "Do not retry card again on same screen.",
@@ -329,6 +359,23 @@ function getCopy(lang: Lang) {
       membership: "Skip membership and use guest checkout.",
     },
   };
+}
+
+function RiskOverlay({
+  activeRisk,
+  mode,
+  label,
+}: {
+  activeRisk: RiskKey;
+  mode: PracticeMode;
+  label: string;
+}) {
+  if (mode !== "quick") return null;
+  const base = "pointer-events-none absolute z-10 rounded-full border border-rose-500 bg-rose-50/95 px-2.5 py-1 text-[11px] font-black text-rose-700";
+  if (activeRisk === "lang") return <div className={`${base} right-3 top-2 animate-pulse`}>{label}</div>;
+  if (activeRisk === "retry") return <div className={`${base} bottom-4 right-3 animate-pulse`}>{label}</div>;
+  if (activeRisk === "timeout") return <div className={`${base} right-2 top-24 animate-pulse`}>{label}</div>;
+  return <div className={`${base} left-3 top-14 animate-pulse`}>{label}</div>;
 }
 
 function Header({ brand, highlightLang }: { brand: Brand; highlightLang: boolean }) {
@@ -393,9 +440,9 @@ function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, add
         </div>
 
         <aside className={`p-3 ${brand.panelTone}`}>
-          <div className={`rounded-xl bg-white p-2 text-center ${activeRisk === "timeout" ? "ring-2 ring-rose-500" : ""}`}>
+          <div className={`rounded-xl bg-white p-2 text-center ${activeRisk === "timeout" || activeRisk === "retry" ? "ring-2 ring-rose-500" : ""}`}>
             <p className="text-[11px] font-black text-zinc-700">{c.remain}</p>
-            <p className={`mt-1 text-3xl font-black ${activeRisk === "timeout" ? "text-red-700" : "text-rose-600"}`}>{timeLeft}</p>
+            <p className={`mt-1 text-3xl font-black ${activeRisk === "timeout" || activeRisk === "retry" ? "text-red-700" : "text-rose-600"}`}>{timeLeft}</p>
             <p className="text-[10px] font-bold text-zinc-600">sec</p>
           </div>
 
@@ -542,7 +589,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
         </button>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
+      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
         {BRANDS.map((b) => (
           <button
             key={b.id}
@@ -564,6 +611,9 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
       <div className="mt-3 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-bold text-zinc-800">
         {c.englishTitle}: {c.englishDesc}
       </div>
+      <div className="mt-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-bold text-zinc-800">
+        {c.focusHint[activeRisk]}
+      </div>
       <p className="mt-2 text-xs font-black uppercase tracking-[0.12em] text-zinc-500">{c.riskGuide}</p>
       <div className="mt-2 grid gap-2 sm:grid-cols-4">
         {riskKeys.map((key, index) => (
@@ -577,11 +627,13 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
           </button>
         ))}
       </div>
-      <div className="mt-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-bold text-zinc-700">
-        {c.riskHint[activeRisk]}
-      </div>
+      {mode === "full" ? (
+        <div className="mt-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-bold text-zinc-700">
+          {c.riskHint[activeRisk]}
+        </div>
+      ) : null}
       {mode === "quick" ? (
-        <div className="mt-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs font-semibold text-zinc-700">
+        <div className={`mt-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs font-semibold text-zinc-700 ${activeRisk === "membership" ? "ring-2 ring-rose-500 animate-pulse" : ""}`}>
           {brand.langHint}
         </div>
       ) : (
@@ -610,7 +662,8 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
       ) : null}
 
       <div className="mt-5 overflow-x-auto pb-2">
-        <div className="mx-auto w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
+        <div className="relative mx-auto w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
+          <RiskOverlay activeRisk={activeRisk} mode={mode} label={c.riskLabel[activeRisk]} />
           <Header brand={brand} highlightLang={activeRisk === "lang"} />
 
           {isLotteria && lotteriaStage === "place" ? (
