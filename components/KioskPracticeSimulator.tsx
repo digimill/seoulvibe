@@ -6,6 +6,7 @@ import type { Lang } from "@/lib/i18n";
 
 type BrandId = "mega" | "compose" | "starbucks" | "lotteria" | "hansot";
 type UiLang = "ko" | "en";
+type LotteriaStage = "place" | "menu" | "confirm" | "card";
 
 type MenuItem = {
   id: string;
@@ -66,19 +67,14 @@ const BRANDS: Brand[] = [
         { id: "mg-4", name: "체리콕에이드", enName: "Cherry Coke Ade", price: 4000, tint: "from-rose-200 to-red-300" },
         { id: "mg-5", name: "애플망고스무디", enName: "Mango Smoothie", price: 4300, tint: "from-lime-200 to-green-300" },
         { id: "mg-6", name: "딸기스무디", enName: "Strawberry Smoothie", price: 4000, tint: "from-pink-200 to-rose-300" },
-        { id: "mg-7", name: "딸기요거트스무디", enName: "Strawberry Yogurt", price: 4300, tint: "from-pink-100 to-fuchsia-200" },
-        { id: "mg-8", name: "레몬에이드", enName: "Lemon Ade", price: 3900, tint: "from-yellow-100 to-amber-200" },
-        { id: "mg-9", name: "블루레몬에이드", enName: "Blue Lemon Ade", price: 3900, tint: "from-cyan-100 to-sky-300" },
       ],
       "coffee-hot": [
         { id: "h-1", name: "아메리카노(HOT)", enName: "Americano(HOT)", price: 2000, tint: "from-amber-200 to-orange-300" },
         { id: "h-2", name: "카페라떼(HOT)", enName: "Cafe Latte(HOT)", price: 3200, tint: "from-orange-100 to-amber-200" },
-        { id: "h-3", name: "바닐라라떼(HOT)", enName: "Vanilla Latte(HOT)", price: 3500, tint: "from-yellow-100 to-orange-200" },
       ],
       "coffee-ice": [
         { id: "i-1", name: "아메리카노(ICE)", enName: "Americano(ICE)", price: 2300, tint: "from-cyan-200 to-blue-300" },
         { id: "i-2", name: "카페라떼(ICE)", enName: "Cafe Latte(ICE)", price: 3500, tint: "from-cyan-100 to-sky-200" },
-        { id: "i-3", name: "바닐라라떼(ICE)", enName: "Vanilla Latte(ICE)", price: 3800, tint: "from-sky-100 to-cyan-200" },
       ],
       tea: [
         { id: "t-1", name: "자몽티", enName: "Grapefruit Tea", price: 3500, tint: "from-orange-100 to-amber-200" },
@@ -115,8 +111,6 @@ const BRANDS: Brand[] = [
       coffee: [
         { id: "cp-1", name: "아메리카노", enName: "Americano", price: 2500, tint: "from-yellow-100 to-zinc-200" },
         { id: "cp-2", name: "카페라떼", enName: "Cafe Latte", price: 3900, tint: "from-yellow-100 to-amber-200" },
-        { id: "cp-3", name: "디카페인 디카페라떼", enName: "Decaf Cafe Latte", price: 4500, tint: "from-zinc-100 to-yellow-100" },
-        { id: "cp-4", name: "카푸치노", enName: "Cappuccino", price: 3900, tint: "from-yellow-50 to-zinc-200" },
       ],
       "non-coffee": [
         { id: "cp-5", name: "초코라떼", enName: "Choco Latte", price: 3900, tint: "from-amber-100 to-yellow-200" },
@@ -161,23 +155,31 @@ const BRANDS: Brand[] = [
   {
     id: "lotteria",
     label: "롯데리아",
-    topTone: "bg-red-700",
-    topText: "text-yellow-100",
-    panelTone: "bg-yellow-400",
+    topTone: "bg-zinc-900",
+    topText: "text-zinc-100",
+    panelTone: "bg-zinc-100",
     payTone: "bg-red-600",
-    langButton: "EN",
-    langHint: "상단 우측 LANG 또는 언어 버튼",
-    payMethods: ["카드결제", "간편결제"],
+    langButton: "LANG",
+    langHint: "상단 우측 언어 버튼",
+    payMethods: ["카드결제", "롯데잇츠페이", "쿠폰/복합결제"],
     categories: [
-      { id: "set", label: "세트", enLabel: "Set" },
+      { id: "burger", label: "버거", enLabel: "Burger" },
       { id: "side", label: "사이드", enLabel: "Side" },
+      { id: "drink", label: "음료", enLabel: "Drink" },
     ],
     itemsByCategory: {
-      set: [
-        { id: "lt-1", name: "핫크리스피버거 세트", enName: "Hot Crispy Burger Set", price: 7900, tint: "from-amber-100 to-orange-200" },
-        { id: "lt-2", name: "리아 불고기버거 세트", enName: "Bulgogi Burger Set", price: 8500, tint: "from-orange-100 to-amber-200" },
+      burger: [
+        { id: "lt-1", name: "핫크리스피버거", enName: "Hot Crispy Burger", price: 5900, tint: "from-amber-100 to-orange-200" },
+        { id: "lt-2", name: "리아 불고기버거", enName: "Bulgogi Burger", price: 5200, tint: "from-orange-100 to-amber-200" },
       ],
-      side: [{ id: "lt-3", name: "양념감자", enName: "Seasoned Fries", price: 2700, tint: "from-yellow-100 to-amber-200" }],
+      side: [
+        { id: "lt-3", name: "양념감자", enName: "Seasoned Fries", price: 2500, tint: "from-yellow-100 to-amber-200" },
+        { id: "lt-4", name: "치킨너겟", enName: "Chicken Nuggets", price: 3000, tint: "from-amber-100 to-yellow-200" },
+      ],
+      drink: [
+        { id: "lt-5", name: "콜라", enName: "Coke", price: 2000, tint: "from-zinc-100 to-zinc-200" },
+        { id: "lt-6", name: "사이다", enName: "Sprite", price: 2000, tint: "from-lime-100 to-green-100" },
+      ],
     },
   },
   {
@@ -225,10 +227,7 @@ function getCopy(lang: Lang) {
       deepGuide: "심화 가이드",
       payModalTitle: "결제 단계 체험",
       payModalDesc: "여기서는 흐름만 체험합니다. 실제 결제는 진행되지 않습니다.",
-      card: "카드 결제",
-      mobile: "모바일 결제",
       close: "닫기",
-      home: "처음 화면",
     };
   }
 
@@ -247,10 +246,7 @@ function getCopy(lang: Lang) {
     deepGuide: "Deep guide",
     payModalTitle: "Payment practice",
     payModalDesc: "Practice flow only. No real charge.",
-    card: "Card",
-    mobile: "Mobile",
     close: "Close",
-    home: "Home",
   };
 }
 
@@ -262,6 +258,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [paymentOpen, setPaymentOpen] = useState(false);
   const [timeLeft, setTimeLeft] = useState(120);
+  const [lotteriaStage, setLotteriaStage] = useState<LotteriaStage>("place");
 
   const brand = useMemo(() => BRANDS.find((b) => b.id === brandId) ?? BRANDS[0], [brandId]);
   const category = brand.categories[Math.max(0, Math.min(categoryIndex, brand.categories.length - 1))];
@@ -286,12 +283,14 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
     });
   }
 
+  const isLotteria = brand.id === "lotteria";
+
   return (
     <section className="rounded-3xl border border-zinc-900 bg-white p-4 sm:p-6">
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
       <p className="mt-1 text-sm font-semibold text-zinc-600">{c.subtitle}</p>
 
-      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
         {BRANDS.map((b) => (
           <button
             key={b.id}
@@ -302,6 +301,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
               setCategoryIndex(0);
               setCart([]);
               setPaymentOpen(false);
+              setLotteriaStage(b.id === "lotteria" ? "place" : "menu");
             }}
             className={`rounded-xl border px-3 py-3 text-sm font-black ${brandId === b.id ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-zinc-50 text-zinc-900"}`}
           >
@@ -314,10 +314,30 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
         {c.englishTitle}: {brand.langHint} · {c.englishDesc}
       </div>
 
+      {isLotteria ? (
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {([
+            ["place", "매장/포장 선택"],
+            ["menu", "메뉴 선택"],
+            ["confirm", "주문 확인"],
+            ["card", "카드 결제 안내"],
+          ] as const).map(([stage, label]) => (
+            <button
+              key={stage}
+              type="button"
+              onClick={() => setLotteriaStage(stage)}
+              className={`rounded-lg border px-3 py-2 text-xs font-black sm:text-sm ${lotteriaStage === stage ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-800"}`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       <div className="mt-5 mx-auto w-full max-w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
         <div className={`flex items-center justify-between px-4 py-3 ${brand.topTone} ${brand.topText}`}>
           <button type="button" className="text-lg font-black">⌂</button>
-          <p className="text-xl font-black tracking-tight">{brand.id === "compose" ? "COMPOSE COFFEE" : "Easy KIOSK"}</p>
+          <p className="text-xl font-black tracking-tight">{brand.id === "compose" ? "COMPOSE COFFEE" : brand.id === "lotteria" ? "LOTTERIA KIOSK" : "Easy KIOSK"}</p>
           <button
             type="button"
             onClick={() => setUiLang((prev) => (prev === "ko" ? "en" : "ko"))}
@@ -327,98 +347,157 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
           </button>
         </div>
 
-        <div className={`${brand.panelTone} px-3 py-2 text-zinc-900`}>
-          <div className="flex items-center gap-2 overflow-x-auto">
-            <button
-              type="button"
-              onClick={() => setCategoryIndex((v) => Math.max(0, v - 1))}
-              className="rounded-md bg-white px-2 py-1 text-sm font-black"
-            >
-              ←
-            </button>
-            {brand.categories.map((cat, idx) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setCategoryIndex(idx)}
-                className={`shrink-0 rounded-md px-3 py-1 text-sm font-black ${idx === categoryIndex ? brand.id === "compose" ? "bg-blue-600 text-white" : "bg-zinc-900 text-white" : "bg-white/90"}`}
-              >
-                {uiLang === "ko" ? cat.label : cat.enLabel}
-              </button>
-            ))}
-            <button
-              type="button"
-              onClick={() => setCategoryIndex((v) => Math.min(brand.categories.length - 1, v + 1))}
-              className="rounded-md bg-white px-2 py-1 text-sm font-black"
-            >
-              →
-            </button>
-          </div>
-        </div>
-
-        <div className="grid min-h-[42rem] grid-cols-[1fr_11rem] bg-zinc-50">
-          <div className="border-r border-zinc-300 p-3">
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => addToCart(item)}
-                  className="rounded-xl border border-zinc-200 bg-white p-2 text-left"
-                >
-                  <div className={`aspect-[4/5] rounded-lg bg-gradient-to-br ${item.tint}`} />
-                  <p className="mt-2 line-clamp-2 text-[11px] font-black text-zinc-900">{uiLang === "ko" ? item.name : item.enName}</p>
-                  <p className="mt-1 text-[11px] font-bold text-rose-600">{toKrw(item.price)}</p>
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-3 min-h-[9.5rem] rounded-xl border border-zinc-300 bg-white p-2">
-              <p className="text-xs font-black text-zinc-700">{c.selected}</p>
-              <div className="mt-2 space-y-1 text-xs font-semibold text-zinc-800">
-                {cart.length === 0 ? <p className="text-zinc-500">-</p> : cart.map((item) => <p key={item.id}>{uiLang === "ko" ? item.name : item.enName} x{item.qty}</p>)}
+        {isLotteria && lotteriaStage === "place" ? (
+          <div className="grid min-h-[42rem] place-items-center bg-zinc-100 p-6">
+            <div className="w-full max-w-md rounded-2xl border border-zinc-300 bg-white p-6">
+              <p className="text-center text-2xl font-black text-zinc-900">식사 장소를 선택해 주세요</p>
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                <button type="button" onClick={() => setLotteriaStage("menu")} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-6 text-sm font-black">매장식사</button>
+                <button type="button" onClick={() => setLotteriaStage("menu")} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-6 text-sm font-black">포장주문</button>
               </div>
             </div>
           </div>
+        ) : null}
 
-          <aside className={`p-3 ${brand.id === "compose" ? "bg-white border-l border-zinc-300" : brand.panelTone}`}>
-            <div className="rounded-xl bg-white p-2 text-center">
-              <p className="text-[11px] font-black text-zinc-700">{c.remain}</p>
-              <p className="mt-1 text-3xl font-black text-rose-600">{timeLeft}</p>
-              <p className="text-[10px] font-bold text-zinc-600">sec</p>
+        {isLotteria && lotteriaStage === "confirm" ? (
+          <div className="grid min-h-[42rem] bg-zinc-100 p-4">
+            <div className="rounded-xl border border-zinc-300 bg-white p-4">
+              <p className="text-xl font-black text-zinc-900">주문하신 내역을 확인해주세요</p>
+              <div className="mt-3 space-y-2">
+                {cart.length === 0 ? <p className="text-sm font-semibold text-zinc-500">장바구니가 비어 있습니다.</p> : cart.map((item) => (
+                  <div key={item.id} className="flex items-center justify-between rounded-lg border border-zinc-200 p-2 text-sm font-semibold">
+                    <span>{uiLang === "ko" ? item.name : item.enName} x{item.qty}</span>
+                    <span>{toKrw(item.qty * item.price)}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 flex items-center justify-between text-lg font-black">
+                <span>{c.total}</span>
+                <span>{toKrw(total)}</span>
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                <button type="button" onClick={() => setLotteriaStage("menu")} className="rounded-lg border border-zinc-300 px-4 py-3 text-sm font-black">메뉴로</button>
+                <button type="button" onClick={() => setLotteriaStage("card")} className="rounded-lg bg-red-600 px-4 py-3 text-sm font-black text-white">결제선택</button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {isLotteria && lotteriaStage === "card" ? (
+          <div className="grid min-h-[42rem] place-items-center bg-zinc-100 p-6">
+            <div className="w-full max-w-md rounded-2xl border border-zinc-300 bg-white p-6 text-center">
+              <p className="text-2xl font-black text-zinc-900">카드를 리더기에 올려주세요</p>
+              <div className="mx-auto mt-5 h-36 w-36 rounded-full bg-amber-100" />
+              <div className="mt-6 grid grid-cols-2 gap-2">
+                <button type="button" onClick={() => setLotteriaStage("confirm")} className="rounded-lg border border-zinc-300 px-4 py-3 text-sm font-black">취소</button>
+                <button type="button" onClick={() => setLotteriaStage("menu")} className="rounded-lg bg-red-600 px-4 py-3 text-sm font-black text-white">카드 인식 완료</button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {!isLotteria || lotteriaStage === "menu" ? (
+          <>
+            <div className={`${brand.panelTone} px-3 py-2 text-zinc-900`}>
+              <div className="flex items-center gap-2 overflow-x-auto">
+                <button
+                  type="button"
+                  onClick={() => setCategoryIndex((v) => Math.max(0, v - 1))}
+                  className="rounded-md bg-white px-2 py-1 text-sm font-black"
+                >
+                  ←
+                </button>
+                {brand.categories.map((cat, idx) => (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setCategoryIndex(idx)}
+                    className={`shrink-0 rounded-md px-3 py-1 text-sm font-black ${idx === categoryIndex ? brand.id === "compose" ? "bg-blue-600 text-white" : "bg-zinc-900 text-white" : "bg-white/90"}`}
+                  >
+                    {uiLang === "ko" ? cat.label : cat.enLabel}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => setCategoryIndex((v) => Math.min(brand.categories.length - 1, v + 1))}
+                  className="rounded-md bg-white px-2 py-1 text-sm font-black"
+                >
+                  →
+                </button>
+              </div>
             </div>
 
-            <button type="button" onClick={() => setCart([])} className="mt-2 w-full rounded-xl bg-white px-2 py-2 text-xs font-black text-zinc-900">
-              {c.clear}
-            </button>
+            <div className="grid min-h-[42rem] grid-cols-[1fr_11rem] bg-zinc-50">
+              <div className="border-r border-zinc-300 p-3">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => addToCart(item)}
+                      className="rounded-xl border border-zinc-200 bg-white p-2 text-left"
+                    >
+                      <div className={`aspect-[4/5] rounded-lg bg-gradient-to-br ${item.tint}`} />
+                      <p className="mt-2 line-clamp-2 text-[11px] font-black text-zinc-900">{uiLang === "ko" ? item.name : item.enName}</p>
+                      <p className="mt-1 text-[11px] font-bold text-rose-600">{toKrw(item.price)}</p>
+                    </button>
+                  ))}
+                </div>
 
-            <div className="mt-2 rounded-xl bg-white p-2 text-center">
-              <p className="text-[11px] font-black text-zinc-700">{c.selected}</p>
-              <p className="mt-1 text-xl font-black text-zinc-900">{selectedCount} {c.qty}</p>
+                <div className="mt-3 min-h-[9.5rem] rounded-xl border border-zinc-300 bg-white p-2">
+                  <p className="text-xs font-black text-zinc-700">{c.selected}</p>
+                  <div className="mt-2 space-y-1 text-xs font-semibold text-zinc-800">
+                    {cart.length === 0 ? <p className="text-zinc-500">-</p> : cart.map((item) => <p key={item.id}>{uiLang === "ko" ? item.name : item.enName} x{item.qty}</p>)}
+                  </div>
+                </div>
+              </div>
+
+              <aside className={`p-3 ${brand.id === "compose" ? "bg-white border-l border-zinc-300" : brand.panelTone}`}>
+                <div className="rounded-xl bg-white p-2 text-center">
+                  <p className="text-[11px] font-black text-zinc-700">{c.remain}</p>
+                  <p className="mt-1 text-3xl font-black text-rose-600">{timeLeft}</p>
+                  <p className="text-[10px] font-bold text-zinc-600">sec</p>
+                </div>
+
+                <button type="button" onClick={() => setCart([])} className="mt-2 w-full rounded-xl bg-white px-2 py-2 text-xs font-black text-zinc-900">
+                  {c.clear}
+                </button>
+
+                <div className="mt-2 rounded-xl bg-white p-2 text-center">
+                  <p className="text-[11px] font-black text-zinc-700">{c.selected}</p>
+                  <p className="mt-1 text-xl font-black text-zinc-900">{selectedCount} {c.qty}</p>
+                </div>
+
+                <div className="mt-2 rounded-xl bg-white p-2 text-center">
+                  <p className="text-[11px] font-black text-zinc-700">{c.total}</p>
+                  <p className="mt-1 text-lg font-black text-zinc-900">{toKrw(total)}</p>
+                </div>
+
+                <button
+                  type="button"
+                  disabled={cart.length === 0}
+                  onClick={() => {
+                    if (isLotteria) {
+                      setLotteriaStage("confirm");
+                      return;
+                    }
+                    setPaymentOpen(true);
+                  }}
+                  className={`mt-3 w-full rounded-xl px-2 py-4 text-sm font-black text-white ${cart.length > 0 ? brand.payTone : "bg-zinc-400"}`}
+                >
+                  {toKrw(total)} {c.pay}
+                </button>
+              </aside>
             </div>
-
-            <div className="mt-2 rounded-xl bg-white p-2 text-center">
-              <p className="text-[11px] font-black text-zinc-700">{c.total}</p>
-              <p className="mt-1 text-lg font-black text-zinc-900">{toKrw(total)}</p>
-            </div>
-
-            <button
-              type="button"
-              disabled={cart.length === 0}
-              onClick={() => setPaymentOpen(true)}
-              className={`mt-3 w-full rounded-xl px-2 py-4 text-sm font-black text-white ${cart.length > 0 ? brand.payTone : "bg-zinc-400"}`}
-            >
-              {toKrw(total)} {c.pay}
-            </button>
-          </aside>
-        </div>
+          </>
+        ) : null}
       </div>
 
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
-        <Link href={`/${lang}/tips/kiosk-survival-flow`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-sm font-bold text-zinc-900 text-center">
+        <Link href={`/${lang}/tips/kiosk-survival-flow`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">
           {c.quickGuide}
         </Link>
-        <Link href={`/${lang}/kiosk-card-rejected`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-sm font-bold text-zinc-900 text-center">
+        <Link href={`/${lang}/kiosk-card-rejected`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">
           {c.deepGuide}
         </Link>
       </div>
@@ -435,7 +514,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
                   type="button"
                   className={`w-full rounded-xl border px-4 py-3 text-sm font-black ${idx === 0 ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 text-zinc-900"}`}
                 >
-                  {uiLang === "ko" ? method : method}
+                  {method}
                 </button>
               ))}
             </div>
