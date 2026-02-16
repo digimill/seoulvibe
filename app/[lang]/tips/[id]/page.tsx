@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/Container";
 import { CopyPhraseButton } from "@/components/CopyPhraseButton";
 import { TagBadge } from "@/components/TagBadge";
@@ -418,8 +418,11 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
+  if (id === "kiosk-survival-flow") {
+    redirect(`/${locale}/now/kiosk`);
+  }
   const t = getCopy(locale);
-  const isKiosk = id === "kiosk-survival-flow";
+  const isKiosk = false;
   const isSubway = id === "subway-map-confusion-cuts";
   const isOliveYoung = id === "oliveyoung-master-playbook";
   const tip = isKiosk || isSubway || isOliveYoung ? null : (await getTips(locale)).find((item) => item.id === id);

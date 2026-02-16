@@ -11,7 +11,18 @@ export const dynamic = "force-dynamic";
 const TOP_LEVEL_PATHS = ["", "/plan", "/now", "/areas", "/themes", "/tips", "/korea-101", "/tools", "/crowded", "/problems", "/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
 
 const PLAN_SUB_PATHS = ["/where-to-stay", "/3-day-template", "/airport-to-city", "/daily-budget"] as const;
-const NOW_SUB_PATHS = ["/kiosk", "/card-payment", "/subway-help", "/t-money", "/crowd-escape", "/spend-log"] as const;
+const NOW_SUB_PATHS = [
+  "/kiosk",
+  "/kiosk/card-rejected",
+  "/kiosk/no-english",
+  "/kiosk/phone-number",
+  "/kiosk/frozen-timeout",
+  "/card-payment",
+  "/subway-help",
+  "/t-money",
+  "/crowd-escape",
+  "/spend-log",
+] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();

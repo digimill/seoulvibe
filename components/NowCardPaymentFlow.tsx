@@ -437,7 +437,7 @@ export function NowCardPaymentFlow({ lang }: { lang: Lang }) {
       <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <h2 className="text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.linksTitle}</h2>
         <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
-          <Link href={`/${lang}/kiosk-card-rejected`} className="rounded-full border border-zinc-900 px-4 py-2 text-zinc-900">
+          <Link href={`/${lang}/now/kiosk/card-rejected`} className="rounded-full border border-zinc-900 px-4 py-2 text-zinc-900">
             {c.l1}
           </Link>
           <Link href={`/${lang}/tips/payment`} className="rounded-full border border-zinc-300 px-4 py-2 text-zinc-700">

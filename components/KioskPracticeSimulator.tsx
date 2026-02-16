@@ -6,6 +6,8 @@ import type { Lang } from "@/lib/i18n";
 
 type BrandId = "mega" | "compose" | "starbucks" | "lotteria" | "hansot";
 type LotteriaStage = "place" | "menu" | "confirm" | "card";
+type PracticeMode = "quick" | "full";
+type RiskKey = "lang" | "retry" | "timeout" | "membership";
 
 type MenuItem = {
   id: string;
@@ -186,112 +188,162 @@ function getCopy(lang: Lang) {
   if (lang === "ko") {
     return {
       title: "브랜드 키오스크 체험",
-      subtitle: "상단에서 브랜드를 고르면 바로 실물형 화면으로 시작됩니다.",
-      englishTitle: "영어 메뉴 찾기",
-      englishDesc: "버튼 위치만 익히는 용도입니다. 체험 화면 텍스트는 한국어로 고정됩니다.",
+      subtitle: "한 번만 연습하고, 실전 실수를 줄이세요.",
+      modeQuick: "Quick scan (10초)",
+      modeFull: "Full simulation",
+      riskGuide: "탭해서 위험 구역 강조",
+      englishTitle: "실수 예방 체크",
+      englishDesc: "주문 전 확인: LANG 버튼 · 반복 재시도 금지 · 멤버십 스킵",
       selected: "선택한 상품",
       remain: "남은시간",
       clear: "전체삭제",
       pay: "결제하기",
       qty: "개",
       total: "합계",
-      quickGuide: "문제 해결 가이드",
-      deepGuide: "심화 가이드",
+      quickGuide: "지금 막혔어요 (Now Kiosk)",
+      deepGuide: "카드 거절 즉시 해결",
       payModalTitle: "결제 단계 체험",
       payModalDesc: "여기서는 흐름만 체험합니다. 실제 결제는 진행되지 않습니다.",
       close: "닫기",
+      points: ["LANG 위치", "같은 화면 재시도 금지", "타임아웃 전에 이동", "멤버십 스킵"],
+      riskHint: {
+        lang: "LANG 버튼 위치를 먼저 확인하세요.",
+        retry: "같은 화면에서 카드 재시도 반복 금지.",
+        timeout: "시간이 줄어들기 전에 결제 단계로 이동.",
+        membership: "멤버십 가입은 건너뛰고 비회원 결제를 찾으세요.",
+      },
     };
   }
   if (lang === "ja") {
     return {
       title: "ブランド別キオスク体験",
-      subtitle: "上でブランドを選ぶと、実機に近い画面構成ですぐ始まります。",
-      englishTitle: "英語メニューを探す",
-      englishDesc: "ボタン位置の練習用です。体験画面の本文UIは韓国語固定です。",
+      subtitle: "1回練習して実戦ミスを減らす。",
+      modeQuick: "Quick scan (10秒)",
+      modeFull: "Full simulation",
+      riskGuide: "タップして危険ポイントを強調",
+      englishTitle: "失敗防止チェック",
+      englishDesc: "注文前チェック: LANG位置・連打再試行禁止・会員スキップ",
       selected: "選択した商品",
       remain: "残り時間",
       clear: "全削除",
       pay: "決済する",
       qty: "個",
       total: "合計",
-      quickGuide: "問題解決ガイド",
-      deepGuide: "詳細ガイド",
+      quickGuide: "今つまずいている (Now Kiosk)",
+      deepGuide: "カード拒否を即解決",
       payModalTitle: "決済ステップ体験",
       payModalDesc: "ここでは流れのみ体験します。実決済は行われません。",
       close: "閉じる",
+      points: ["LANG位置", "同画面で連打しない", "タイムアウト前に移動", "会員登録をスキップ"],
+      riskHint: {
+        lang: "まずLANGボタン位置を確認。",
+        retry: "同じ画面で再試行を繰り返さない。",
+        timeout: "タイムアウト前に次へ進む。",
+        membership: "会員登録をスキップしてゲスト決済へ。",
+      },
     };
   }
   if (lang === "zh-cn") {
     return {
       title: "品牌自助机体验",
-      subtitle: "先选品牌，然后按接近实机的界面结构直接练习。",
-      englishTitle: "查找英文菜单",
-      englishDesc: "这里只训练按钮位置。体验界面正文固定为韩语。",
+      subtitle: "练一次，减少现场失误。",
+      modeQuick: "Quick scan (10秒)",
+      modeFull: "Full simulation",
+      riskGuide: "点击高亮风险区域",
+      englishTitle: "防失误检查",
+      englishDesc: "下单前检查: LANG按钮、不要反复重试、跳过会员",
       selected: "已选商品",
       remain: "剩余时间",
       clear: "全部清空",
       pay: "去结算",
       qty: "件",
       total: "合计",
-      quickGuide: "问题速解指南",
-      deepGuide: "进阶指南",
+      quickGuide: "现在卡住了 (Now Kiosk)",
+      deepGuide: "刷卡失败立即处理",
       payModalTitle: "支付步骤体验",
       payModalDesc: "此处仅用于流程体验，不会进行真实扣款。",
       close: "关闭",
+      points: ["LANG位置", "不要重复点同一页", "超时前切换", "跳过会员"],
+      riskHint: {
+        lang: "先确认LANG按钮位置。",
+        retry: "不要在同一页面反复重试。",
+        timeout: "超时前尽快进入下一步。",
+        membership: "跳过会员，优先游客结算。",
+      },
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
       title: "品牌自助機體驗",
-      subtitle: "先選品牌，再用接近實機的畫面結構直接練習。",
-      englishTitle: "找英文選單",
-      englishDesc: "這裡只訓練按鈕位置。體驗畫面正文固定為韓語。",
+      subtitle: "練一次，減少現場失誤。",
+      modeQuick: "Quick scan (10秒)",
+      modeFull: "Full simulation",
+      riskGuide: "點擊高亮風險區域",
+      englishTitle: "防失誤檢查",
+      englishDesc: "下單前檢查: LANG按鈕、不要重複重試、跳過會員",
       selected: "已選商品",
       remain: "剩餘時間",
       clear: "全部清空",
       pay: "去結帳",
       qty: "件",
       total: "合計",
-      quickGuide: "問題速解指南",
-      deepGuide: "進階指南",
+      quickGuide: "現在卡住了 (Now Kiosk)",
+      deepGuide: "刷卡失敗立即處理",
       payModalTitle: "支付步驟體驗",
       payModalDesc: "此處僅供流程體驗，不會進行真實扣款。",
       close: "關閉",
+      points: ["LANG位置", "不要重複點同一頁", "逾時前切換", "跳過會員"],
+      riskHint: {
+        lang: "先確認LANG按鈕位置。",
+        retry: "不要在同一頁面重複重試。",
+        timeout: "逾時前盡快進入下一步。",
+        membership: "跳過會員，優先訪客結帳。",
+      },
     };
   }
 
   return {
     title: "Brand Kiosk Practice",
-    subtitle: "Choose a brand and start with a realistic kiosk layout.",
-    englishTitle: "Find English menu",
-    englishDesc: "Button location training only. Kiosk UI text stays in Korean.",
+    subtitle: "Practice once. Reduce real kiosk mistakes.",
+    modeQuick: "Quick scan (10s)",
+    modeFull: "Full simulation",
+    riskGuide: "Tap to highlight risk area",
+    englishTitle: "Mistake-prevention checks",
+    englishDesc: "Before ordering: LANG button, no repeated retry, skip membership.",
     selected: "Selected",
     remain: "Time left",
     clear: "Clear",
     pay: "Pay",
     qty: "items",
     total: "Total",
-    quickGuide: "Quick guide",
-    deepGuide: "Deep guide",
+    quickGuide: "I’m stuck right now (Now Kiosk)",
+    deepGuide: "Card rejected quick fix",
     payModalTitle: "Payment practice",
     payModalDesc: "Practice flow only. No real charge.",
     close: "Close",
+    points: ["Find LANG", "Do not repeat on same screen", "Move before timeout", "Skip membership"],
+    riskHint: {
+      lang: "Check where LANG is before ordering.",
+      retry: "Do not retry card again on same screen.",
+      timeout: "Move before timeout gets too low.",
+      membership: "Skip membership and use guest checkout.",
+    },
   };
 }
 
-function Header({ brand }: { brand: Brand }) {
+function Header({ brand, highlightLang }: { brand: Brand; highlightLang: boolean }) {
   return (
     <div className={`flex items-center justify-between px-4 py-3 ${brand.topTone} ${brand.topText}`}>
       <button type="button" className="text-lg font-black">⌂</button>
       <p className="text-xl font-black tracking-tight">
         {brand.id === "compose" ? "COMPOSE COFFEE" : brand.id === "lotteria" ? "LOTTERIA KIOSK" : "Easy KIOSK"}
       </p>
-      <button type="button" className="rounded-lg bg-white/85 px-3 py-1 text-sm font-black text-zinc-900">{brand.langButton}</button>
+      <button type="button" className={`rounded-lg bg-white/85 px-3 py-1 text-sm font-black text-zinc-900 ${highlightLang ? "ring-2 ring-rose-500 animate-pulse" : ""}`}>{brand.langButton}</button>
     </div>
   );
 }
 
-function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, addToCart, setCart, c, timeLeft, selectedCount, total, onPay }: {
+function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, addToCart, setCart, c, timeLeft, selectedCount, total, onPay, activeRisk }: {
   brand: Brand;
   categoryIndex: number;
   setCategoryIndex: (v: number) => void;
@@ -304,6 +356,7 @@ function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, add
   selectedCount: number;
   total: number;
   onPay: () => void;
+  activeRisk: RiskKey;
 }) {
   return (
     <>
@@ -340,9 +393,9 @@ function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, add
         </div>
 
         <aside className={`p-3 ${brand.panelTone}`}>
-          <div className="rounded-xl bg-white p-2 text-center">
+          <div className={`rounded-xl bg-white p-2 text-center ${activeRisk === "timeout" ? "ring-2 ring-rose-500" : ""}`}>
             <p className="text-[11px] font-black text-zinc-700">{c.remain}</p>
-            <p className="mt-1 text-3xl font-black text-rose-600">{timeLeft}</p>
+            <p className={`mt-1 text-3xl font-black ${activeRisk === "timeout" ? "text-red-700" : "text-rose-600"}`}>{timeLeft}</p>
             <p className="text-[10px] font-bold text-zinc-600">sec</p>
           </div>
 
@@ -358,7 +411,7 @@ function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, add
             <p className="mt-1 text-lg font-black text-zinc-900">{toKrw(total)}</p>
           </div>
 
-          <button type="button" disabled={cart.length === 0} onClick={onPay} className={`mt-3 w-full rounded-xl px-2 py-4 text-sm font-black text-white ${cart.length > 0 ? brand.payTone : "bg-zinc-400"}`}>
+          <button type="button" disabled={cart.length === 0} onClick={onPay} className={`mt-3 w-full rounded-xl px-2 py-4 text-sm font-black text-white ${cart.length > 0 ? brand.payTone : "bg-zinc-400"} ${activeRisk === "retry" ? "ring-2 ring-amber-400" : ""}`}>
             {toKrw(total)} {c.pay}
           </button>
         </aside>
@@ -443,7 +496,10 @@ function ComposeBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, 
 
 export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
   const c = getCopy(lang);
+  const riskKeys: RiskKey[] = ["lang", "retry", "timeout", "membership"];
   const [brandId, setBrandId] = useState<BrandId>("mega");
+  const [mode, setMode] = useState<PracticeMode>("quick");
+  const [activeRisk, setActiveRisk] = useState<RiskKey>("lang");
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [paymentOpen, setPaymentOpen] = useState(false);
@@ -477,6 +533,15 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
       <p className="mt-1 text-sm font-semibold text-zinc-600">{c.subtitle}</p>
 
+      <div className="mt-3 inline-flex rounded-full border border-zinc-300 bg-zinc-50 p-1 text-xs font-black">
+        <button type="button" onClick={() => setMode("quick")} className={`rounded-full px-3 py-1 ${mode === "quick" ? "bg-zinc-900 text-white" : "text-zinc-700"}`}>
+          {c.modeQuick}
+        </button>
+        <button type="button" onClick={() => setMode("full")} className={`rounded-full px-3 py-1 ${mode === "full" ? "bg-zinc-900 text-white" : "text-zinc-700"}`}>
+          {c.modeFull}
+        </button>
+      </div>
+
       <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
         {BRANDS.map((b) => (
           <button
@@ -497,8 +562,37 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
       </div>
 
       <div className="mt-3 rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-bold text-zinc-800">
-        {c.englishTitle}: {brand.langHint} · {c.englishDesc}
+        {c.englishTitle}: {c.englishDesc}
       </div>
+      <p className="mt-2 text-xs font-black uppercase tracking-[0.12em] text-zinc-500">{c.riskGuide}</p>
+      <div className="mt-2 grid gap-2 sm:grid-cols-4">
+        {riskKeys.map((key, index) => (
+          <button
+            key={key}
+            type="button"
+            onClick={() => setActiveRisk(key)}
+            className={`rounded-lg border px-3 py-2 text-xs font-bold text-left ${activeRisk === key ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-200 bg-zinc-50 text-zinc-700"}`}
+          >
+            {c.points[index]}
+          </button>
+        ))}
+      </div>
+      <div className="mt-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-bold text-zinc-700">
+        {c.riskHint[activeRisk]}
+      </div>
+      {mode === "quick" ? (
+        <div className="mt-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs font-semibold text-zinc-700">
+          {brand.langHint}
+        </div>
+      ) : (
+        <div className="mt-2 grid gap-2 sm:grid-cols-4">
+          {c.points.map((point) => (
+            <div key={point} className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs font-bold text-zinc-700">
+            {point}
+          </div>
+          ))}
+        </div>
+      )}
 
       {isLotteria ? (
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -517,7 +611,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
 
       <div className="mt-5 overflow-x-auto pb-2">
         <div className="mx-auto w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
-          <Header brand={brand} />
+          <Header brand={brand} highlightLang={activeRisk === "lang"} />
 
           {isLotteria && lotteriaStage === "place" ? (
             <div className="grid min-h-[42rem] place-items-center bg-zinc-100 p-6">
@@ -595,6 +689,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
                 selectedCount={selectedCount}
                 total={total}
                 onPay={() => (isLotteria ? setLotteriaStage("confirm") : setPaymentOpen(true))}
+                activeRisk={activeRisk}
               />
             )
           ) : null}
@@ -602,8 +697,8 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
       </div>
 
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
-        <Link href={`/${lang}/tips/kiosk-survival-flow`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">{c.quickGuide}</Link>
-        <Link href={`/${lang}/kiosk-card-rejected`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">{c.deepGuide}</Link>
+        <Link href={`/${lang}/now/kiosk`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">{c.quickGuide}</Link>
+        <Link href={`/${lang}/now/kiosk/card-rejected`} className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-center text-sm font-bold text-zinc-900">{c.deepGuide}</Link>
       </div>
 
       {paymentOpen ? (
