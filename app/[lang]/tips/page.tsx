@@ -21,38 +21,43 @@ export default async function TipsPage({ params }: TipsPageProps) {
   const tips = await getTips(locale);
   const copy =
     locale === "ko"
-      ? { title: "문제 해결 가이드", desc: "뭐가 꼬이는지, 왜 꼬이는지, 지금 뭘 해야 하는지 바로 확인.", qTitle: "문제 리스트 (20)" }
+      ? { title: "문제 해결 가이드", desc: "뭐가 꼬이는지, 왜 꼬이는지, 지금 뭘 해야 하는지 바로 확인.", qTitle: "문제 리스트 (20)", cta: "지금 해결하기" }
       : locale === "ja"
-        ? { title: "トラブル解決ガイド", desc: "何が詰まりやすいか、なぜ起きるか、今どう動くかを即確認。", qTitle: "問題リスト（20）" }
+        ? { title: "トラブル解決ガイド", desc: "何が詰まりやすいか、なぜ起きるか、今どう動くかを即確認。", qTitle: "問題リスト（20）", cta: "今すぐ解決" }
         : locale === "zh-cn"
-          ? { title: "问题速解指南", desc: "先看哪里会出错、为什么会出错、现在该怎么做。", qTitle: "问题列表（20）" }
+          ? { title: "问题速解指南", desc: "先看哪里会出错、为什么会出错、现在该怎么做。", qTitle: "问题列表（20）", cta: "立即处理" }
           : locale === "zh-tw" || locale === "zh-hk"
-            ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。", qTitle: "問題列表（20）" }
-            : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now.", qTitle: "Problem list (20)" };
+            ? { title: "問題速解指南", desc: "先看哪裡會出錯、為什麼會出錯、現在該怎麼做。", qTitle: "問題列表（20）", cta: "立即處理" }
+            : { title: "Solve problems fast", desc: "What usually goes wrong, why it happens, and what to do now.", qTitle: "Problem list (20)", cta: "Fix this now" };
   const crowdCard =
     locale === "ko"
       ? {
           title: "혼잡 탈출",
           description: "사람 너무 많으면 버티지 말고 바로 빠져나오세요. 지역별 우회 동선을 바로 확인합니다.",
+          image: { src: "/images/tips/popup-radar-weekly.jpg", alt: "Crowded Seoul street at night" },
         }
       : locale === "ja"
         ? {
             title: "混雑から離脱",
             description: "人が多すぎる時は粘らず離脱。エリア別の回避ルートをすぐ確認。",
+            image: { src: "/images/tips/popup-radar-weekly.jpg", alt: "Crowded Seoul street at night" },
           }
         : locale === "zh-cn"
           ? {
               title: "拥挤脱离",
               description: "人太多就别硬撑，先撤离。按区域快速查看绕行路线。",
+              image: { src: "/images/tips/popup-radar-weekly.jpg", alt: "Crowded Seoul street at night" },
             }
           : locale === "zh-tw" || locale === "zh-hk"
             ? {
                 title: "擁擠脫離",
                 description: "人太多先離開，不要硬撐。按區域快速看避開路線。",
+                image: { src: "/images/tips/popup-radar-weekly.jpg", alt: "Crowded Seoul street at night" },
               }
             : {
                 title: "Escape crowds fast",
                 description: "If it is packed, do not force it. Check quick area-by-area exits now.",
+                image: { src: "/images/tips/popup-radar-weekly.jpg", alt: "Crowded Seoul street at night" },
               };
   const sorted = [...tips].sort((a, b) => {
     const ai = PRIORITY_IDS.indexOf(a.id);
@@ -70,6 +75,9 @@ export default async function TipsPage({ params }: TipsPageProps) {
           href={`/${locale}/crowded`}
           title={crowdCard.title}
           description={crowdCard.description}
+          image={crowdCard.image}
+          imageRatio="3 / 2"
+          ctaLabel={copy.cta}
         />
       </div>
 
@@ -81,6 +89,8 @@ export default async function TipsPage({ params }: TipsPageProps) {
             title={tip.title}
             description={tip.summary}
             image={tip.image}
+            imageRatio="3 / 2"
+            ctaLabel={copy.cta}
             footer={tip.tags.map((tag) => (
               <TagBadge key={tag}>{tag}</TagBadge>
             ))}

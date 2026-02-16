@@ -202,6 +202,63 @@ function getCopy(lang: Lang) {
       close: "닫기",
     };
   }
+  if (lang === "ja") {
+    return {
+      title: "ブランド別キオスク体験",
+      subtitle: "上でブランドを選ぶと、実機に近い画面構成ですぐ始まります。",
+      englishTitle: "英語メニューを探す",
+      englishDesc: "ボタン位置の練習用です。体験画面の本文UIは韓国語固定です。",
+      selected: "選択した商品",
+      remain: "残り時間",
+      clear: "全削除",
+      pay: "決済する",
+      qty: "個",
+      total: "合計",
+      quickGuide: "問題解決ガイド",
+      deepGuide: "詳細ガイド",
+      payModalTitle: "決済ステップ体験",
+      payModalDesc: "ここでは流れのみ体験します。実決済は行われません。",
+      close: "閉じる",
+    };
+  }
+  if (lang === "zh-cn") {
+    return {
+      title: "品牌自助机体验",
+      subtitle: "先选品牌，然后按接近实机的界面结构直接练习。",
+      englishTitle: "查找英文菜单",
+      englishDesc: "这里只训练按钮位置。体验界面正文固定为韩语。",
+      selected: "已选商品",
+      remain: "剩余时间",
+      clear: "全部清空",
+      pay: "去结算",
+      qty: "件",
+      total: "合计",
+      quickGuide: "问题速解指南",
+      deepGuide: "进阶指南",
+      payModalTitle: "支付步骤体验",
+      payModalDesc: "此处仅用于流程体验，不会进行真实扣款。",
+      close: "关闭",
+    };
+  }
+  if (lang === "zh-tw" || lang === "zh-hk") {
+    return {
+      title: "品牌自助機體驗",
+      subtitle: "先選品牌，再用接近實機的畫面結構直接練習。",
+      englishTitle: "找英文選單",
+      englishDesc: "這裡只訓練按鈕位置。體驗畫面正文固定為韓語。",
+      selected: "已選商品",
+      remain: "剩餘時間",
+      clear: "全部清空",
+      pay: "去結帳",
+      qty: "件",
+      total: "合計",
+      quickGuide: "問題速解指南",
+      deepGuide: "進階指南",
+      payModalTitle: "支付步驟體驗",
+      payModalDesc: "此處僅供流程體驗，不會進行真實扣款。",
+      close: "關閉",
+    };
+  }
 
   return {
     title: "Brand Kiosk Practice",

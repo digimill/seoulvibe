@@ -34,6 +34,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
           why: "왜 생기나",
           show: "직원에게 보여줄 한국어 문구",
           more: "자세한 버전",
+          backPractice: "키오스크 체험으로 돌아가기",
           moreLink: "키오스크 전체 가이드 보기",
           do1: "삽입 말고 탭 결제를 먼저 시도",
           do2: "다른 카드로 한 번 더 시도",
@@ -56,6 +57,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
             why: "なぜ起きるか",
             show: "スタッフに見せる韓国語フレーズ",
             more: "詳細版",
+            backPractice: "キオスク体験に戻る",
             moreLink: "キオスク完全ガイド",
             do1: "挿入より先にタッチ決済を試す",
             do2: "別カードを1回試す",
@@ -78,6 +80,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
               why: "为什么会发生",
               show: "给店员看的韩语句子",
               more: "详细版",
+              backPractice: "返回自助机体验",
               moreLink: "查看完整自助机指南",
               do1: "先试 tap，不要先插卡",
               do2: "换一张卡再试一次",
@@ -100,6 +103,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
                 why: "為什麼會發生",
                 show: "給店員看的韓語句子",
                 more: "詳細版",
+                backPractice: "返回自助機體驗",
                 moreLink: "查看完整自助機指南",
                 do1: "先試 tap，不要先插卡",
                 do2: "換一張卡再試一次",
@@ -121,6 +125,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
                 why: "Why it happens?",
                 show: "Show Korean phrases to staff",
                 more: "Need full detail?",
+                backPractice: "Back to kiosk practice",
                 moreLink: "Read the complete kiosk guide",
                 do1: "Try tap instead of insert.",
                 do2: "Try another card.",
@@ -223,7 +228,7 @@ function KioskEmergency({ locale }: { locale: Lang }) {
 
       <section className="mt-6 grid gap-2 sm:grid-cols-2">
         <Link href={`/${locale}/tools/kiosk-practice`} className="rounded-2xl border border-zinc-900 bg-zinc-900 px-4 py-3 text-center text-sm font-black text-white">
-          키오스크 체험으로 돌아가기 / Back to kiosk practice
+          {c.backPractice}
         </Link>
         <Link href={`/${locale}/kiosk-card-rejected`} className="rounded-2xl border border-zinc-900 px-4 py-3 text-center text-sm font-black text-zinc-900">
           {c.moreLink}
