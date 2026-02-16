@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { AreasQuickCompare } from "@/components/AreasQuickCompare";
 import { Card } from "@/components/Card";
 import { SectionBlock } from "@/components/SectionBlock";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -27,6 +28,10 @@ export default async function AreasPage({ params }: AreasPageProps) {
 
   return (
     <SectionBlock title={copy.title} description={copy.desc}>
+      <AreasQuickCompare
+        lang={locale}
+        areas={areas.map((area) => ({ id: area.id, name: area.name }))}
+      />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {areas.map((area) => (
           <Card
