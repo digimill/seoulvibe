@@ -419,7 +419,7 @@ function MegaBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, add
         </div>
       </div>
 
-      <div className="grid min-h-[42rem] grid-cols-[1fr_11rem] bg-zinc-50">
+      <div className="grid min-h-[30rem] grid-cols-[1fr_9rem] bg-zinc-50 sm:min-h-[42rem] sm:grid-cols-[1fr_11rem]">
         <div className="border-r border-zinc-300 p-3">
           <div className="grid grid-cols-3 gap-2">
             {menuItems.map((item) => (
@@ -502,7 +502,7 @@ function ComposeBody({ brand, categoryIndex, setCategoryIndex, menuItems, cart, 
         </div>
       </div>
 
-      <div className="grid min-h-[42rem] grid-rows-[1fr_7.5rem] bg-zinc-50">
+      <div className="grid min-h-[30rem] grid-rows-[1fr_7.5rem] bg-zinc-50 sm:min-h-[42rem]">
         <div className="p-3">
           <div className="grid grid-cols-4 gap-2">
             {menuItems.map((item) => (
@@ -661,13 +661,13 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
         </div>
       ) : null}
 
-      <div className="mt-5 overflow-x-auto pb-2">
-        <div className="relative mx-auto w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
+      <div className="mt-5 pb-2">
+        <div className="relative mx-auto w-full max-w-[720px] overflow-hidden rounded-[1.5rem] border-[6px] border-zinc-900 bg-zinc-900 shadow-2xl sm:rounded-[2rem] sm:border-[8px]">
           <RiskOverlay activeRisk={activeRisk} mode={mode} label={c.riskLabel[activeRisk]} />
           <Header brand={brand} highlightLang={activeRisk === "lang"} />
 
           {isLotteria && lotteriaStage === "place" ? (
-            <div className="grid min-h-[42rem] place-items-center bg-zinc-100 p-6">
+            <div className="grid min-h-[30rem] place-items-center bg-zinc-100 p-4 sm:min-h-[42rem] sm:p-6">
               <div className="w-full max-w-md rounded-2xl border border-zinc-300 bg-white p-6">
                 <p className="text-center text-2xl font-black text-zinc-900">식사 장소를 선택해 주세요</p>
                 <div className="mt-6 grid grid-cols-2 gap-3">
@@ -679,7 +679,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
           ) : null}
 
           {isLotteria && lotteriaStage === "confirm" ? (
-            <div className="grid min-h-[42rem] bg-zinc-100 p-4">
+            <div className="grid min-h-[30rem] bg-zinc-100 p-3 sm:min-h-[42rem] sm:p-4">
               <div className="rounded-xl border border-zinc-300 bg-white p-4">
                 <p className="text-xl font-black text-zinc-900">주문하신 내역을 확인해주세요</p>
                 <div className="mt-3 space-y-2">
@@ -703,7 +703,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
           ) : null}
 
           {isLotteria && lotteriaStage === "card" ? (
-            <div className="grid min-h-[42rem] place-items-center bg-zinc-100 p-6">
+            <div className="grid min-h-[30rem] place-items-center bg-zinc-100 p-4 sm:min-h-[42rem] sm:p-6">
               <div className="w-full max-w-md rounded-2xl border border-zinc-300 bg-white p-6 text-center">
                 <p className="text-2xl font-black text-zinc-900">카드를 리더기에 올려주세요</p>
                 <div className="mx-auto mt-5 h-36 w-36 rounded-full bg-amber-100" />

@@ -166,7 +166,7 @@ export default async function AreaDetailPage({ params, searchParams }: AreaDetai
         <ResponsiveImage
           src={area.image.src}
           alt={area.image.alt}
-          ratio="21 / 9"
+          ratio="16 / 9"
           sizes="(max-width: 768px) 100vw, 80vw"
           className="mb-5 rounded-2xl"
           imageClassName="brightness-[0.95]"
