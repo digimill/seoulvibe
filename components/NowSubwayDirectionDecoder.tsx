@@ -1,0 +1,325 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import type { Lang } from "@/lib/i18n";
+
+type ConfuseKey = "color" | "direction" | "express" | "exit";
+type StationKey =
+  | "hongdae"
+  | "cityhall"
+  | "euljiro3"
+  | "ddp"
+  | "wangsimni"
+  | "seongsu"
+  | "konkuk"
+  | "gangnam"
+  | "jamsil"
+  | "samseong";
+
+type StationDef = {
+  key: StationKey;
+  en: string;
+  ko: string;
+  ja: string;
+  "zh-cn": string;
+  "zh-tw": string;
+  "zh-hk": string;
+  aliases: string[];
+};
+
+type LineKey = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+
+const LINE_STYLES: Record<LineKey, { label: string; bg: string; text: string; border: string }> = {
+  "1": { label: "Line 1", bg: "#0052A4", text: "#FFFFFF", border: "#00417F" },
+  "2": { label: "Line 2", bg: "#00A84D", text: "#FFFFFF", border: "#008A3F" },
+  "3": { label: "Line 3", bg: "#EF7C1C", text: "#FFFFFF", border: "#C76616" },
+  "4": { label: "Line 4", bg: "#00A5DE", text: "#FFFFFF", border: "#0088B7" },
+  "5": { label: "Line 5", bg: "#996CAC", text: "#FFFFFF", border: "#7E588E" },
+  "6": { label: "Line 6", bg: "#CD7C2F", text: "#FFFFFF", border: "#A86426" },
+  "7": { label: "Line 7", bg: "#747F00", text: "#FFFFFF", border: "#5E6700" },
+  "8": { label: "Line 8", bg: "#E6186C", text: "#FFFFFF", border: "#BD1358" },
+  "9": { label: "Line 9", bg: "#BDB092", text: "#1A1A1A", border: "#9D9279" },
+};
+
+const STATIONS: StationDef[] = [
+  { key: "hongdae", en: "Hongdae", ko: "홍대입구", ja: "弘大入口", "zh-cn": "弘大入口", "zh-tw": "弘大入口", "zh-hk": "弘大入口", aliases: ["hongdae", "hongik", "hongikuniv", "hongikuniversity", "홍대", "홍대입구"] },
+  { key: "cityhall", en: "City Hall", ko: "시청", ja: "市庁", "zh-cn": "市厅", "zh-tw": "市廳", "zh-hk": "市廳", aliases: ["cityhall", "city hall", "시청"] },
+  { key: "euljiro3", en: "Euljiro 3-ga", ko: "을지로3가", ja: "乙支路3街", "zh-cn": "乙支路3街", "zh-tw": "乙支路3街", "zh-hk": "乙支路3街", aliases: ["euljiro3", "euljiro3ga", "euljiro 3-ga", "을지로3가", "을지로 3가"] },
+  { key: "ddp", en: "Dongdaemun History & Culture Park", ko: "동대문역사문화공원", ja: "東大門歴史文化公園", "zh-cn": "东大门历史文化公园", "zh-tw": "東大門歷史文化公園", "zh-hk": "東大門歷史文化公園", aliases: ["dongdaemun", "ddp", "dongdaemun history", "동대문", "동대문역사문화공원"] },
+  { key: "wangsimni", en: "Wangsimni", ko: "왕십리", ja: "往十里", "zh-cn": "往十里", "zh-tw": "往十里", "zh-hk": "往十里", aliases: ["wangsimni", "왕십리"] },
+  { key: "seongsu", en: "Seongsu", ko: "성수", ja: "聖水", "zh-cn": "圣水", "zh-tw": "聖水", "zh-hk": "聖水", aliases: ["seongsu", "성수"] },
+  { key: "konkuk", en: "Konkuk Univ.", ko: "건대입구", ja: "建大入口", "zh-cn": "建大入口", "zh-tw": "建大入口", "zh-hk": "建大入口", aliases: ["konkuk", "konkukuniv", "konkuk university", "건대", "건대입구"] },
+  { key: "gangnam", en: "Gangnam", ko: "강남", ja: "江南", "zh-cn": "江南", "zh-tw": "江南", "zh-hk": "江南", aliases: ["gangnam", "강남"] },
+  { key: "jamsil", en: "Jamsil", ko: "잠실", ja: "蚕室", "zh-cn": "蚕室", "zh-tw": "蠶室", "zh-hk": "蠶室", aliases: ["jamsil", "잠실"] },
+  { key: "samseong", en: "Samseong", ko: "삼성", ja: "三成", "zh-cn": "三成", "zh-tw": "三成", "zh-hk": "三成", aliases: ["samseong", "coex", "코엑스", "삼성"] },
+] as const;
+
+const LINE2_ORDER: StationKey[] = ["cityhall", "euljiro3", "ddp", "wangsimni", "seongsu", "konkuk", "gangnam", "jamsil", "samseong", "hongdae"];
+
+const STATION_MAP = new Map(STATIONS.map((item) => [item.key, item]));
+
+function normalizeName(value: string): string {
+  return value
+    .normalize("NFKD")
+    .toLowerCase()
+    .trim()
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\s\-_.(),'"&]/g, "");
+}
+
+const ALIAS_TO_KEY = (() => {
+  const map = new Map<string, StationKey>();
+  STATIONS.forEach((station) => {
+    const all = [station.en, station.ko, station.ja, station["zh-cn"], station["zh-tw"], station["zh-hk"], ...station.aliases];
+    all.forEach((alias) => {
+      map.set(normalizeName(alias), station.key);
+    });
+  });
+  return map;
+})();
+
+function toStationKey(value: string): StationKey | null {
+  return ALIAS_TO_KEY.get(normalizeName(value)) ?? null;
+}
+
+function stationLabel(key: StationKey, lang: Lang): string {
+  const station = STATION_MAP.get(key);
+  if (!station) return key;
+  if (lang === "ko") return station.ko;
+  if (lang === "ja") return station.ja;
+  if (lang === "zh-cn") return station["zh-cn"];
+  if (lang === "zh-tw") return station["zh-tw"];
+  if (lang === "zh-hk") return station["zh-hk"];
+  return station.en;
+}
+
+function calcDirection(from: StationKey, to: StationKey) {
+  const fromIdx = LINE2_ORDER.indexOf(from);
+  const toIdx = LINE2_ORDER.indexOf(to);
+  const n = LINE2_ORDER.length;
+  const clockwise = (toIdx - fromIdx + n) % n;
+  const counter = (fromIdx - toIdx + n) % n;
+
+  const towardKey: StationKey = clockwise <= counter ? "seongsu" : "cityhall";
+  return {
+    lineKey: "2" as const,
+    towardKey,
+  };
+}
+
+function copy(lang: Lang) {
+  if (lang === "ko") {
+    return {
+      title: "Direction & Map Decoder",
+      subtitle: "타기 직전 10초 체크 도구",
+      s1: "Step 1",
+      s2: "Step 2",
+      from: "From",
+      to: "To",
+      fromPlaceholder: "예: 홍대입구 / Hongdae",
+      toPlaceholder: "예: 성수 / Seongsu",
+      result: "결과",
+      follow: "Follow trains toward:",
+      line: "노선",
+      anchor: "서울 지하철은 색보다 '종점 이름'이 더 중요합니다.",
+      expressWarnTitle: "Express warning",
+      expressWarnBody: "급행은 역을 건너뜁니다. 승강장 LED에 내릴 역이 보이는지 먼저 확인하세요.",
+      mapReadTitle: "How to read Seoul subway map",
+      confuses: "What confuses you?",
+      tabs: {
+        color: "Color",
+        direction: "Direction",
+        express: "Express",
+        exit: "Exit",
+      },
+      explain: {
+        color: "노선 색은 힌트일 뿐입니다. 최종 판단은 종착역 이름으로 하세요.",
+        direction: "모든 노선은 양방향입니다. 같은 노선이라도 종착역이 다를 수 있습니다.",
+        express: "급행/완행을 구분하세요. 내릴 역이 LED에 없으면 건너뜁니다.",
+        exit: "대형역은 출구가 10개 이상입니다. 거리 이름보다 출구 번호가 더 중요합니다.",
+      },
+      diagramTitle: "Quick abstract view",
+      invalid: "From/To를 정확히 입력하세요. (예: 홍대입구, Seongsu)",
+    };
+  }
+
+  return {
+    title: "Direction & Map Decoder",
+    subtitle: "10-second check before boarding",
+    s1: "Step 1",
+    s2: "Step 2",
+    from: "From",
+    to: "To",
+    fromPlaceholder: "Ex: Hongdae / 홍대입구",
+    toPlaceholder: "Ex: Seongsu / 성수",
+    result: "Result",
+    follow: "Follow trains toward:",
+    line: "Line",
+    anchor: "Always follow the final station name, not just the color.",
+    expressWarnTitle: "Express warning",
+    expressWarnBody: "Express trains skip stations. Verify your station appears on the platform LED first.",
+    mapReadTitle: "How to read Seoul subway map",
+    confuses: "What confuses you?",
+    tabs: {
+      color: "Color",
+      direction: "Direction",
+      express: "Express",
+      exit: "Exit",
+    },
+    explain: {
+      color: "Line color is only a hint. Final decision should be terminal station name.",
+      direction: "Every line has two directions. Same line does not mean same terminal.",
+      express: "Check express vs local. If your station is not on LED, it may be skipped.",
+      exit: "Large stations can have 10+ exits. Exit number matters more than street name.",
+    },
+    diagramTitle: "Quick abstract view",
+    invalid: "Enter valid From and To (e.g., Hongdae, Seongsu, 홍대입구).",
+  };
+}
+
+export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
+  const c = copy(lang);
+  const [from, setFrom] = useState<string>(lang === "ko" ? "홍대입구" : "Hongdae");
+  const [to, setTo] = useState<string>(lang === "ko" ? "성수" : "Seongsu");
+  const [tab, setTab] = useState<ConfuseKey>("direction");
+  const stationOptions = useMemo(() => {
+    const set = new Set<string>();
+    STATIONS.forEach((station) => {
+      [
+        station.ko,
+        station.en,
+        station.ja,
+        station["zh-cn"],
+        station["zh-tw"],
+        station["zh-hk"],
+        ...station.aliases,
+      ].forEach((value) => {
+        const cleaned = value.trim();
+        if (cleaned.length >= 2) set.add(cleaned);
+      });
+    });
+    return Array.from(set);
+  }, []);
+
+  const result = useMemo(() => {
+    const fromKey = toStationKey(from);
+    const toKey = toStationKey(to);
+    if (!fromKey || !toKey) return null;
+    if (fromKey === toKey) return { lineKey: "2" as const, towardKey: fromKey };
+    return calcDirection(fromKey, toKey);
+  }, [from, to]);
+
+  return (
+    <section className="space-y-5">
+      <header className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{c.title}</h1>
+        <p className="mt-2 text-sm font-semibold text-zinc-300">{c.subtitle}</p>
+      </header>
+
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <article>
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-500">{c.s1}</p>
+            <label className="mt-2 block text-sm font-black text-zinc-900">{c.from}</label>
+            <input
+              value={from}
+              onChange={(event) => setFrom(event.target.value)}
+              list="line2-stations"
+              className="mt-2 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900"
+              placeholder={c.fromPlaceholder}
+            />
+          </article>
+          <article>
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-500">{c.s2}</p>
+            <label className="mt-2 block text-sm font-black text-zinc-900">{c.to}</label>
+            <input
+              value={to}
+              onChange={(event) => setTo(event.target.value)}
+              list="line2-stations"
+              className="mt-2 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900"
+              placeholder={c.toPlaceholder}
+            />
+          </article>
+        </div>
+
+        <datalist id="line2-stations">
+          {stationOptions.map((name) => (
+            <option key={name} value={name} />
+          ))}
+        </datalist>
+
+        <div className="mt-4 rounded-2xl border border-zinc-900 bg-zinc-50 p-4">
+          <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.result}</p>
+          {result ? (
+            <>
+              <p className="mt-2 flex items-center gap-2 text-sm font-semibold text-zinc-700">
+                {c.line}:
+                <span
+                  className="inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-black"
+                  style={{
+                    backgroundColor: LINE_STYLES[result.lineKey].bg,
+                    color: LINE_STYLES[result.lineKey].text,
+                    borderColor: LINE_STYLES[result.lineKey].border,
+                  }}
+                >
+                  {LINE_STYLES[result.lineKey].label}
+                </span>
+              </p>
+              <p className="mt-1 text-lg font-black text-zinc-900">{c.follow} {stationLabel(result.towardKey, lang)}</p>
+            </>
+          ) : (
+            <p className="mt-2 text-sm font-semibold text-zinc-700">{c.invalid}</p>
+          )}
+          <p className="mt-3 text-xs font-bold text-zinc-600">{c.anchor}</p>
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-zinc-300 bg-zinc-50 p-5">
+        <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.expressWarnTitle}</h2>
+        <p className="mt-2 text-sm font-semibold text-zinc-700">{c.expressWarnBody}</p>
+      </section>
+
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+        <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.mapReadTitle}</h2>
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">{c.confuses}</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {(["color", "direction", "express", "exit"] as const).map((item) => {
+            const active = tab === item;
+            return (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setTab(item)}
+                className={`rounded-full border px-3 py-1.5 text-xs font-bold ${active ? "border-zinc-900 bg-zinc-900 text-white" : "border-zinc-300 bg-white text-zinc-700"}`}
+              >
+                {c.tabs[item]}
+              </button>
+            );
+          })}
+        </div>
+
+        <article className="mt-4 rounded-xl border border-zinc-200 p-4">
+          <p className="text-sm font-semibold text-zinc-800">{c.explain[tab]}</p>
+        </article>
+
+        <article className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+          <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-500">{c.diagramTitle}</p>
+          <p className="mt-2 text-sm font-bold text-zinc-800">
+            <span
+              className="mr-2 inline-flex rounded-full border px-2 py-0.5 text-xs font-black"
+              style={{
+                backgroundColor: LINE_STYLES["2"].bg,
+                color: LINE_STYLES["2"].text,
+                borderColor: LINE_STYLES["2"].border,
+              }}
+            >
+              {LINE_STYLES["2"].label}
+            </span>
+            Hongdae —— City Hall —— Seongsu
+          </p>
+        </article>
+
+      </section>
+    </section>
+  );
+}
