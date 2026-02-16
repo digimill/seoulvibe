@@ -518,7 +518,7 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
   );
   const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  const ranking = useMemo(() => {
+  const scoreResult = useMemo(() => {
     const scores = initScores();
     const reasonsByArea: Record<TravelAreaId, Array<{ weight: number; text: string }>> = {
       hongdae: [],
@@ -542,7 +542,7 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
       });
     });
 
-    return areas
+    const ranking = areas
       .map((area) => ({
         ...area,
         score: scores[area.id],
@@ -550,6 +550,10 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
       }))
       .sort((a, b) => b.score - a.score)
       .slice(0, 3);
+
+    const serialized = TRAVEL_AREA_IDS.map((id) => `${id}:${scores[id]}`).join(",");
+
+    return { ranking, serialized };
   }, [answers, areas, questions]);
 
   const answeredCount = Object.keys(answers).length;
@@ -602,7 +606,7 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
             <p className="mt-3 text-sm text-zinc-600">{c.empty}</p>
           ) : (
             <div className="mt-3 space-y-3">
-              {ranking.map((area) => (
+              {scoreResult.ranking.map((area) => (
                 <article key={area.id} className="rounded-xl border border-zinc-200 bg-white p-3">
                   <p className="text-base font-black text-zinc-950">{area.name}</p>
                   <p className="mt-1 text-xs font-semibold text-zinc-600">{c.score}: {area.score}</p>
@@ -616,7 +620,7 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
                   <p className="mt-3 text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.caution}</p>
                   <p className="mt-1 text-xs text-zinc-700">- {area.avoidIf[0]}</p>
                   <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-                    <Link href={`/${lang}/areas/${area.id}`} className="rounded-full border border-zinc-900 px-3 py-1 text-zinc-900">
+                    <Link href={`/${lang}/areas/${area.id}?ms=${encodeURIComponent(scoreResult.serialized)}`} className="rounded-full border border-zinc-900 px-3 py-1 text-zinc-900">
                       {c.openArea}
                     </Link>
                     <Link href={`/${lang}/now`} className="rounded-full border border-zinc-300 px-3 py-1 text-zinc-700">

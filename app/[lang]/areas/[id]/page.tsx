@@ -7,7 +7,26 @@ import { getTravelArea, getTravelAreaName } from "@/lib/travel-ia";
 
 type AreaDetailPageProps = {
   params: Promise<{ lang: string; id: string }>;
+  searchParams: Promise<{ ms?: string | string[] }>;
 };
+
+type MatchScores = Record<string, number>;
+
+function parseMatchScores(raw: string | string[] | undefined): MatchScores | null {
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  if (!value) return null;
+
+  const out: MatchScores = {};
+  value.split(",").forEach((pair) => {
+    const [key, scoreRaw] = pair.split(":");
+    if (!key || !scoreRaw) return;
+    const score = Number(scoreRaw);
+    if (!Number.isFinite(score)) return;
+    out[key] = score;
+  });
+
+  return Object.keys(out).length > 0 ? out : null;
+}
 
 function getSectionCopy(lang: Lang) {
   if (lang === "ko") {
@@ -21,7 +40,10 @@ function getSectionCopy(lang: Lang) {
       connections: "Connected routes",
       openArea: "지역 열기",
       match: "Match score",
-      matchPlaceholder: "Where-to-stay 결과와 연결 예정 (MVP 자리 확보)",
+      matchPlaceholder: "where-to-stay를 완료하면 개인 점수/순위가 표시됩니다.",
+      matchMine: "내 점수",
+      matchRank: "내 순위",
+      matchTop: "상위 추천",
       nowCta: "여행 중 문제 해결로 이동",
       planCta: "숙소 위치 매칭 다시 하기",
       areasBack: "Areas 목록으로",
@@ -38,7 +60,10 @@ function getSectionCopy(lang: Lang) {
       connections: "Connected routes",
       openArea: "エリアを開く",
       match: "Match score",
-      matchPlaceholder: "where-to-stay の個別スコア連携領域（MVP）",
+      matchPlaceholder: "where-to-stay を完了すると個別スコア/順位が表示されます。",
+      matchMine: "あなたのスコア",
+      matchRank: "あなたの順位",
+      matchTop: "上位おすすめ",
       nowCta: "旅行中の即時解決へ",
       planCta: "宿泊エリアマッチングを再実行",
       areasBack: "Areas一覧へ",
@@ -55,7 +80,10 @@ function getSectionCopy(lang: Lang) {
       connections: "Connected routes",
       openArea: "打开区域",
       match: "Match score",
-      matchPlaceholder: "预留给 where-to-stay 个性化分数（MVP）",
+      matchPlaceholder: "完成 where-to-stay 后会显示你的个性化分数和排名。",
+      matchMine: "我的分数",
+      matchRank: "我的排名",
+      matchTop: "Top 推荐",
       nowCta: "前往即时解决",
       planCta: "重新做住宿匹配",
       areasBack: "返回 Areas 列表",
@@ -72,7 +100,10 @@ function getSectionCopy(lang: Lang) {
       connections: "Connected routes",
       openArea: "開啟區域",
       match: "Match score",
-      matchPlaceholder: "預留給 where-to-stay 個人化分數（MVP）",
+      matchPlaceholder: "完成 where-to-stay 後會顯示你的個人化分數與排名。",
+      matchMine: "我的分數",
+      matchRank: "我的排名",
+      matchTop: "Top 推薦",
       nowCta: "前往即時解決",
       planCta: "重新做住宿配對",
       areasBack: "返回 Areas 列表",
@@ -89,23 +120,41 @@ function getSectionCopy(lang: Lang) {
     connections: "Connected routes",
     openArea: "Open area",
     match: "Match score",
-    matchPlaceholder: "Reserved for personalized score from the where-to-stay matcher (MVP placeholder)",
+    matchPlaceholder: "Complete where-to-stay to see your personalized score and rank here.",
+    matchMine: "Your score",
+    matchRank: "Your rank",
+    matchTop: "Top area",
     nowCta: "Go to live fixes",
     planCta: "Run where-to-stay matcher",
     areasBack: "Back to Areas",
   };
 }
 
-export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
+export default async function AreaDetailPage({ params, searchParams }: AreaDetailPageProps) {
   const { lang, id } = await params;
+  const qs = await searchParams;
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
   const t = getCopy(locale);
   const c = getSectionCopy(locale);
   const area = getTravelArea(locale, id);
+  const matchScores = parseMatchScores(qs.ms);
+  const serializedMatch = Array.isArray(qs.ms) ? qs.ms[0] : qs.ms;
 
   if (!area) notFound();
+
+  const rankedAreas = matchScores
+    ? Object.entries(matchScores)
+        .sort((a, b) => b[1] - a[1])
+        .map(([areaId], index) => ({ areaId, rank: index + 1 }))
+    : [];
+  const currentScore = matchScores ? matchScores[area.id] ?? 0 : null;
+  const currentRank = rankedAreas.find((item) => item.areaId === area.id)?.rank ?? null;
+  const topArea = rankedAreas.length > 0 ? getTravelArea(locale, rankedAreas[0].areaId)?.name ?? null : null;
+  const maxScore = matchScores ? Math.max(...Object.values(matchScores), 1) : null;
+  const scorePercent = currentScore !== null && maxScore ? Math.round((currentScore / maxScore) * 100) : null;
+  const withMatch = (areaId: string) => (serializedMatch ? `/${locale}/areas/${areaId}?ms=${encodeURIComponent(serializedMatch)}` : `/${locale}/areas/${areaId}`);
 
   return (
     <Container className="py-10 sm:py-14">
@@ -167,7 +216,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
         <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">{c.alternatives}</h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           {area.alternatives.map((item) => (
-            <Link key={item.id} href={`/${locale}/areas/${item.id}`} className="rounded-xl border border-zinc-200 p-3 hover:bg-zinc-50">
+            <Link key={item.id} href={withMatch(item.id)} className="rounded-xl border border-zinc-200 p-3 hover:bg-zinc-50">
               <p className="text-sm font-black text-zinc-950">{getTravelAreaName(locale, item.id)}</p>
               <p className="mt-1 text-xs leading-5 text-zinc-700">{item.reason}</p>
             </Link>
@@ -184,7 +233,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
               <p className="mt-1 text-xs leading-5 text-zinc-700">{item.why}</p>
               <p className="mt-1 text-xs font-semibold text-zinc-600">{item.move}</p>
               <div className="mt-2">
-                <Link href={`/${locale}/areas/${item.to}`} className="text-xs font-semibold underline text-zinc-700">
+                <Link href={withMatch(item.to)} className="text-xs font-semibold underline text-zinc-700">
                   {c.openArea}
                 </Link>
               </div>
@@ -195,7 +244,26 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
 
       <section className="mt-4 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-5">
         <h2 className="text-xs font-black uppercase tracking-[0.16em] text-zinc-900">{c.match}</h2>
-        <p className="mt-3 text-sm leading-6 text-zinc-700">{c.matchPlaceholder}</p>
+        {currentScore === null ? (
+          <p className="mt-3 text-sm leading-6 text-zinc-700">{c.matchPlaceholder}</p>
+        ) : (
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <article className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.matchMine}</p>
+              <p className="mt-1 text-xl font-black text-zinc-950">{currentScore}</p>
+              <p className="text-xs text-zinc-600">{scorePercent}%</p>
+            </article>
+            <article className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.matchRank}</p>
+              <p className="mt-1 text-xl font-black text-zinc-950">{currentRank ?? "-"}</p>
+              <p className="text-xs text-zinc-600">/ {rankedAreas.length}</p>
+            </article>
+            <article className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.matchTop}</p>
+              <p className="mt-1 text-base font-black text-zinc-950">{topArea ?? "-"}</p>
+            </article>
+          </div>
+        )}
       </section>
 
       <section className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
