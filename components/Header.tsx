@@ -12,6 +12,15 @@ type HeaderProps = {
   lang: Lang;
 };
 
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden>
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20L16.65 16.65" />
+    </svg>
+  );
+}
+
 export function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
@@ -20,18 +29,19 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { fixes: "문제해결", areas: "지역", tools: "도구", subtitle: "서울 문제 해결 가이드", menu: "메뉴" }
+      ? { plan: "Plan", now: "Now", areas: "Areas", search: "검색", subtitle: "Seoul decision guide", menu: "메뉴" }
       : lang === "ja"
-        ? { fixes: "解決", areas: "エリア", tools: "ツール", subtitle: "ソウル即対応ガイド", menu: "メニュー" }
+        ? { plan: "Plan", now: "Now", areas: "Areas", search: "検索", subtitle: "Seoul decision guide", menu: "メニュー" }
         : lang === "zh-cn"
-          ? { fixes: "解决", areas: "区域", tools: "工具", subtitle: "首尔问题速解", menu: "菜单" }
+          ? { plan: "Plan", now: "Now", areas: "Areas", search: "搜索", subtitle: "Seoul decision guide", menu: "菜单" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { fixes: "解決", areas: "地區", tools: "工具", subtitle: "首爾問題速解", menu: "選單" }
-            : { fixes: "Fixes", areas: "Areas", tools: "Tools", subtitle: "Seoul problem solver", menu: "Menu" };
+            ? { plan: "Plan", now: "Now", areas: "Areas", search: "搜尋", subtitle: "Seoul decision guide", menu: "選單" }
+            : { plan: "Plan", now: "Now", areas: "Areas", search: "Search", subtitle: "Seoul decision guide", menu: "Menu" };
+
   const navItems = [
-    { href: `/${lang}/tips`, label: labels.fixes },
+    { href: `/${lang}/plan`, label: labels.plan },
+    { href: `/${lang}/now`, label: labels.now },
     { href: `/${lang}/areas`, label: labels.areas },
-    { href: `/${lang}/tools`, label: labels.tools },
   ];
 
   useEffect(() => {
@@ -77,6 +87,10 @@ export function Header({ lang }: HeaderProps) {
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
+            <Link href={`/${lang}/tips#problem-list`} className="inline-flex items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-semibold text-zinc-700">
+              <SearchIcon />
+              <span>{labels.search}</span>
+            </Link>
             <LanguageSwitcher lang={lang} compact onOpen={closeMobileMenu} closeSignal={languageCloseSignal} />
             <details
               ref={mobileMenuRef}
@@ -113,6 +127,10 @@ export function Header({ lang }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
+            <Link href={`/${lang}/tips#problem-list`} className="inline-flex items-center gap-1 font-semibold transition-colors hover:text-zinc-900" aria-label={labels.search}>
+              <SearchIcon />
+              <span>{labels.search}</span>
+            </Link>
             <LanguageSwitcher lang={lang} />
           </nav>
         </div>

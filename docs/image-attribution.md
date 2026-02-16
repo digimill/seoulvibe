@@ -1,8 +1,9 @@
 # Image Attribution
 
-These images are sourced from Unsplash under the Unsplash License.
-- License: https://unsplash.com/license
+Most images are sourced from Unsplash under the Unsplash License.
+- Unsplash License: https://unsplash.com/license
 - Note: Instagram photos should not be scraped or reused without explicit creator permission.
+Additional area images are sourced from Wikimedia Commons with per-file licenses noted below.
 
 ## Hero
 - `/images/hero-seoul.jpg`: https://unsplash.com/photos/Mwvhyd22Lyw
@@ -13,6 +14,10 @@ These images are sourced from Unsplash under the Unsplash License.
 - `/images/areas/hongdae.jpg`: https://unsplash.com/photos/04CjpSDvy3A
 - `/images/areas/euljiro.jpg`: https://unsplash.com/photos/GKt9AFGeXUY
 - `/images/areas/mangwon.jpg`: https://unsplash.com/photos/v6kBG7PSqpk
+- `/images/areas/myeongdong.jpg`: https://commons.wikimedia.org/wiki/File:Myeong-dong_street_by_night.JPG (CC BY-SA 3.0)
+- `/images/areas/gangnam.jpg`: https://commons.wikimedia.org/wiki/File:A_street_in_Gangnam_residential_area,_Seoul.jpg (Public domain)
+- `/images/areas/itaewon-v2.jpg`: https://commons.wikimedia.org/wiki/File:20231103_-_Itaewon_-_3.jpg (CC BY 2.0)
+- `/images/areas/jamsil-v2.jpg`: https://commons.wikimedia.org/wiki/File:Lotte_World_Tower_near_Cheongdam_Bridge_2022.jpg (CC BY 3.0)
 
 ## Themes
 - `/images/themes/cafe-day.jpg`: https://unsplash.com/photos/1hlkNPz2SHg

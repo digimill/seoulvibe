@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { Card } from "@/components/Card";
 import { SectionBlock } from "@/components/SectionBlock";
-import { TagBadge } from "@/components/TagBadge";
-import { getAreas } from "@/lib/content";
 import { isLang, type Lang } from "@/lib/i18n";
+import { getTravelAreas } from "@/lib/travel-ia";
 
 type AreasPageProps = {
   params: Promise<{ lang: string }>;
@@ -14,17 +13,17 @@ export default async function AreasPage({ params }: AreasPageProps) {
   if (!isLang(lang)) notFound();
 
   const locale = lang as Lang;
-  const areas = await getAreas(locale);
+  const areas = getTravelAreas(locale);
   const copy =
     locale === "ko"
-      ? { title: "숙소 기준 지역 선택", desc: "어디서 자는지 먼저 정하세요. 교통 실수는 여기서 줄일 수 있어요." }
+      ? { title: "Areas: 판단형 지역 가이드", desc: "소개보다 결정이 먼저입니다. Stay here if / Avoid if를 먼저 확인하세요.", cta: "지금 판단하기" }
       : locale === "ja"
-        ? { title: "滞在エリアを先に決める", desc: "まず宿の場所を基準に。移動ミスを一番減らせます。" }
+        ? { title: "Areas: 判断型エリアガイド", desc: "紹介より判断が先。Stay here if / Avoid if を先に確認してください。", cta: "今すぐ判断" }
         : locale === "zh-cn"
-          ? { title: "先定住宿片区", desc: "先按住哪里来选区域，交通失误会少很多。" }
+          ? { title: "Areas：判断型区域指南", desc: "先做决定，再看介绍。先看 Stay here if / Avoid if。", cta: "立即判断" }
           : locale === "zh-tw" || locale === "zh-hk"
-            ? { title: "先選住宿區域", desc: "先以住哪裡為基準，交通失誤會少很多。" }
-            : { title: "Pick your base area", desc: "Choose where you sleep first. Most transport mistakes start here." };
+            ? { title: "Areas：判斷型區域指南", desc: "先做決定，再看介紹。先看 Stay here if / Avoid if。", cta: "立即判斷" }
+      : { title: "Areas: Decide, don't browse", desc: "Start with fit and mismatch signals. Then commit your base.", cta: "Decide now" };
 
   return (
     <SectionBlock title={copy.title} description={copy.desc}>
@@ -36,9 +35,8 @@ export default async function AreasPage({ params }: AreasPageProps) {
             title={area.name}
             description={area.summary}
             image={area.image}
-            footer={area.tags.map((tag) => (
-              <TagBadge key={tag}>{tag}</TagBadge>
-            ))}
+            imageRatio="16 / 10"
+            ctaLabel={copy.cta}
           />
         ))}
       </div>
