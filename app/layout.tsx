@@ -14,9 +14,13 @@ export const metadata: Metadata = {
   },
   description: "Seoul Vibe - 거의 서울에 관한 모든 것.",
   icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [
+      { url: "/images/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/icons/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/images/icons/favicon-32.png",
+    apple: "/images/icons/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
