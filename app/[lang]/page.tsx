@@ -49,7 +49,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "사람 많은 구역 빠져나오기",
       ],
       cardNotes: [
-        "1분/3분 모드로 커피·식당 주문 미리 연습",
+        "브랜드별 실제 키오스크 구조를 미리 체험",
         "숙소 기준 노선부터 먼저 확인",
         "기본 세트 먼저 담고 끝내기",
         "빨리 빠져나와 동선 재설정",
@@ -76,7 +76,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "混雑エリアから素早く離脱",
       ],
       cardNotes: [
-        "1分/3分モードでコーヒー・食事注文を練習",
+        "ブランド別の実機に近い構成を先に体験",
         "宿基準で路線を先に決める",
         "基本セットを先に確保",
         "すぐ離脱して動線を再設定",
@@ -103,7 +103,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "快速离开拥挤区域",
       ],
       cardNotes: [
-        "1分钟/3分钟模式预练咖啡和餐饮流程",
+        "先体验不同品牌的真实结构流程",
         "先按住宿位置选线",
         "先拿基础组合再停手",
         "先脱离拥挤再重排路线",
@@ -130,7 +130,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
         "快速離開人潮區域",
       ],
       cardNotes: [
-        "1分鐘/3分鐘模式預練咖啡與餐飲流程",
+        "先體驗不同品牌的真實結構流程",
         "先按住宿位置選線",
         "先拿基本組合再停手",
         "先離開人潮再重排行程",
@@ -156,7 +156,7 @@ function getHomeCopy(lang: Lang): HomeCopy {
       "Escape a crowded area",
     ],
     cardNotes: [
-      "1-minute or 3-minute simulation for coffee and food orders",
+      "Practice with brand-specific kiosk structures first",
       "Start with your base line.",
       "Get the basic set first.",
       "Exit fast. Reset route.",
