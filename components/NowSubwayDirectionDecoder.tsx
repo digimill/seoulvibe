@@ -119,11 +119,13 @@ function copy(lang: Lang) {
       fromPlaceholder: "예: 홍대입구 / Hongdae",
       toPlaceholder: "예: 성수 / Seongsu",
       result: "결과",
-      follow: "Follow trains toward:",
+      towardSuffix: "방향",
+      boardHintPrefix: "전광판에",
+      boardHintSuffix: "표시 열차를 타세요.",
       line: "노선",
       anchor: "서울 지하철은 색보다 '종점 이름'이 더 중요합니다.",
       expressWarnTitle: "Express warning",
-      expressWarnBody: "급행은 역을 건너뜁니다. 승강장 LED에 내릴 역이 보이는지 먼저 확인하세요.",
+      expressWarnBody: "내릴 역이 열차 LED에 없으면 타지 마세요.",
       mapReadTitle: "How to read Seoul subway map",
       confuses: "What confuses you?",
       tabs: {
@@ -134,12 +136,131 @@ function copy(lang: Lang) {
       },
       explain: {
         color: "노선 색은 힌트일 뿐입니다. 최종 판단은 종착역 이름으로 하세요.",
-        direction: "모든 노선은 양방향입니다. 같은 노선이라도 종착역이 다를 수 있습니다.",
+        direction: "같은 색. 반대 방향.",
         express: "급행/완행을 구분하세요. 내릴 역이 LED에 없으면 건너뜁니다.",
         exit: "대형역은 출구가 10개 이상입니다. 거리 이름보다 출구 번호가 더 중요합니다.",
       },
       diagramTitle: "Quick abstract view",
+      directionNow: "지금 방향은",
+      directionToward: "방향입니다.",
       invalid: "From/To를 정확히 입력하세요. (예: 홍대입구, Seongsu)",
+    };
+  }
+
+  if (lang === "ja") {
+    return {
+      title: "Direction & Map Decoder",
+      subtitle: "乗車前10秒チェック",
+      s1: "Step 1",
+      s2: "Step 2",
+      from: "From",
+      to: "To",
+      fromPlaceholder: "例: 弘大入口 / Hongdae",
+      toPlaceholder: "例: 聖水 / Seongsu",
+      result: "結果",
+      towardSuffix: "方面",
+      boardHintPrefix: "電光掲示板で",
+      boardHintSuffix: "表示の列車に乗ってください。",
+      line: "路線",
+      anchor: "ソウル地下鉄は色より終点名が重要です。",
+      expressWarnTitle: "Express warning",
+      expressWarnBody: "降車駅が車内LEDに無ければ乗らないでください。",
+      mapReadTitle: "How to read Seoul subway map",
+      confuses: "What confuses you?",
+      tabs: {
+        color: "Color",
+        direction: "Direction",
+        express: "Express",
+        exit: "Exit",
+      },
+      explain: {
+        color: "路線の色はヒントです。最終判断は終点名でしてください。",
+        direction: "同じ色でも逆方向があります。",
+        express: "急行/各駅停車を確認してください。LEDに無い駅は通過の可能性があります。",
+        exit: "大きい駅は出口が10以上あります。通り名より出口番号が重要です。",
+      },
+      diagramTitle: "Quick abstract view",
+      directionNow: "今の方向は",
+      directionToward: "方面です。",
+      invalid: "From/Toを正確に入力してください。（例: 弘大入口, Seongsu）",
+    };
+  }
+
+  if (lang === "zh-cn") {
+    return {
+      title: "Direction & Map Decoder",
+      subtitle: "上车前10秒检查",
+      s1: "Step 1",
+      s2: "Step 2",
+      from: "From",
+      to: "To",
+      fromPlaceholder: "例: 弘大入口 / Hongdae",
+      toPlaceholder: "例: 圣水 / Seongsu",
+      result: "结果",
+      towardSuffix: "方向",
+      boardHintPrefix: "请乘坐站台屏幕显示",
+      boardHintSuffix: "的列车。",
+      line: "线路",
+      anchor: "首尔地铁比颜色更重要的是终点站名。",
+      expressWarnTitle: "Express warning",
+      expressWarnBody: "如果车内LED没有你的站名，就不要上车。",
+      mapReadTitle: "How to read Seoul subway map",
+      confuses: "What confuses you?",
+      tabs: {
+        color: "Color",
+        direction: "Direction",
+        express: "Express",
+        exit: "Exit",
+      },
+      explain: {
+        color: "线路颜色只是提示。最终判断请看终点站名。",
+        direction: "同样颜色，也可能是反方向。",
+        express: "先看急行/普通。LED没有你的站，可能会跳站。",
+        exit: "大型车站常有10个以上出口。出口编号比街道名更重要。",
+      },
+      diagramTitle: "Quick abstract view",
+      directionNow: "你当前方向是",
+      directionToward: "方向。",
+      invalid: "请正确输入From/To（例如: 弘大入口, Seongsu）。",
+    };
+  }
+
+  if (lang === "zh-tw" || lang === "zh-hk") {
+    return {
+      title: "Direction & Map Decoder",
+      subtitle: "上車前10秒檢查",
+      s1: "Step 1",
+      s2: "Step 2",
+      from: "From",
+      to: "To",
+      fromPlaceholder: "例: 弘大入口 / Hongdae",
+      toPlaceholder: "例: 聖水 / Seongsu",
+      result: "結果",
+      towardSuffix: "方向",
+      boardHintPrefix: "請搭乘月台螢幕顯示",
+      boardHintSuffix: "的列車。",
+      line: "路線",
+      anchor: "首爾地鐵比顏色更重要的是終點站名。",
+      expressWarnTitle: "Express warning",
+      expressWarnBody: "如果車內LED沒有你的站名，就不要上車。",
+      mapReadTitle: "How to read Seoul subway map",
+      confuses: "What confuses you?",
+      tabs: {
+        color: "Color",
+        direction: "Direction",
+        express: "Express",
+        exit: "Exit",
+      },
+      explain: {
+        color: "路線顏色只是提示，最終判斷請看終點站名。",
+        direction: "同樣顏色，也可能是相反方向。",
+        express: "先看急行/普通。LED沒有你的站，可能會跳站。",
+        exit: "大型車站常有10個以上出口。出口編號比街道名更重要。",
+      },
+      diagramTitle: "Quick abstract view",
+      directionNow: "你目前方向是",
+      directionToward: "方向。",
+      invalid: "請正確輸入From/To（例如: 弘大入口, Seongsu）。",
     };
   }
 
@@ -153,11 +274,13 @@ function copy(lang: Lang) {
     fromPlaceholder: "Ex: Hongdae / 홍대입구",
     toPlaceholder: "Ex: Seongsu / 성수",
     result: "Result",
-    follow: "Follow trains toward:",
+    towardSuffix: "direction",
+    boardHintPrefix: "Board the train showing",
+    boardHintSuffix: "on the platform sign.",
     line: "Line",
     anchor: "Always follow the final station name, not just the color.",
     expressWarnTitle: "Express warning",
-    expressWarnBody: "Express trains skip stations. Verify your station appears on the platform LED first.",
+    expressWarnBody: "If your station is NOT on the train LED, do not board.",
     mapReadTitle: "How to read Seoul subway map",
     confuses: "What confuses you?",
     tabs: {
@@ -168,11 +291,13 @@ function copy(lang: Lang) {
     },
     explain: {
       color: "Line color is only a hint. Final decision should be terminal station name.",
-      direction: "Every line has two directions. Same line does not mean same terminal.",
+      direction: "Same color. Opposite direction.",
       express: "Check express vs local. If your station is not on LED, it may be skipped.",
       exit: "Large stations can have 10+ exits. Exit number matters more than street name.",
     },
     diagramTitle: "Quick abstract view",
+    directionNow: "Your direction is moving toward",
+    directionToward: "",
     invalid: "Enter valid From and To (e.g., Hongdae, Seongsu, 홍대입구).",
   };
 }
@@ -265,13 +390,18 @@ export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
                   {LINE_STYLES[result.lineKey].label}
                 </span>
               </p>
-              <p className="mt-1 text-lg font-black text-zinc-900">{c.follow} {stationLabel(result.towardKey, lang)}</p>
+              <p className="mt-3 text-4xl font-black leading-none text-zinc-950 sm:text-5xl">
+                {stationLabel(result.towardKey, lang)} {c.towardSuffix}
+              </p>
+              <p className="mt-3 text-sm font-bold text-zinc-700">
+                {c.boardHintPrefix} <span className="text-zinc-950">{stationLabel(result.towardKey, lang)}</span> {c.boardHintSuffix}
+              </p>
             </>
           ) : (
             <p className="mt-2 text-sm font-semibold text-zinc-700">{c.invalid}</p>
           )}
-          <p className="mt-3 text-xs font-bold text-zinc-600">{c.anchor}</p>
         </div>
+        <p className="mt-3 text-xs font-bold text-zinc-600">{c.anchor}</p>
       </section>
 
       <section className="rounded-2xl border border-zinc-300 bg-zinc-50 p-5">
@@ -304,6 +434,11 @@ export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
 
         <article className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
           <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-500">{c.diagramTitle}</p>
+          {result ? (
+            <p className="mt-2 text-sm font-bold text-zinc-800">
+              {c.directionNow} <span className="text-zinc-950">{stationLabel(result.towardKey, lang)}</span>{c.directionToward ? ` ${c.directionToward}` : ""}
+            </p>
+          ) : null}
           <p className="mt-2 text-sm font-bold text-zinc-800">
             <span
               className="mr-2 inline-flex rounded-full border px-2 py-0.5 text-xs font-black"
@@ -315,7 +450,7 @@ export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
             >
               {LINE_STYLES["2"].label}
             </span>
-            Hongdae —— City Hall —— Seongsu
+            Hongdae → City Hall → <span className="font-black text-zinc-950">Seongsu</span>
           </p>
         </article>
 
