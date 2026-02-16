@@ -221,7 +221,16 @@ function KioskEmergency({ locale }: { locale: Lang }) {
         </div>
       </section>
 
-      <section className="mt-6 text-sm font-semibold text-zinc-700">
+      <section className="mt-6 grid gap-2 sm:grid-cols-2">
+        <Link href={`/${locale}/tools/kiosk-practice?mode=quick`} className="rounded-2xl border border-zinc-900 bg-zinc-900 px-4 py-3 text-center text-sm font-black text-white">
+          1분 체험 / 1-min practice
+        </Link>
+        <Link href={`/${locale}/tools/kiosk-practice?mode=deep`} className="rounded-2xl border border-zinc-900 px-4 py-3 text-center text-sm font-black text-zinc-900">
+          3분 실전 / 3-min run
+        </Link>
+      </section>
+
+      <section className="mt-3 text-sm font-semibold text-zinc-700">
         {c.more} <Link href={`/${locale}/kiosk-card-rejected`} className="underline">{c.moreLink}</Link>.
       </section>
     </>

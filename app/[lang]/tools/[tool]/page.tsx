@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
+import { KioskPracticeSimulator } from "@/components/KioskPracticeSimulator";
 import { OliveYoungBudgetBuilder } from "@/components/OliveYoungBudgetBuilder";
 import { TMoneyLoadCalculator } from "@/components/TMoneyLoadCalculator";
 import { TravelCalculator } from "@/components/TravelCalculator";
@@ -18,7 +19,8 @@ function isToolId(value: string): value is ToolId {
 function ToolComponent({ lang, tool }: { lang: Lang; tool: ToolId }) {
   if (tool === "real-cost") return <TravelCalculator lang={lang} />;
   if (tool === "tmoney-load") return <TMoneyLoadCalculator lang={lang} />;
-  return <OliveYoungBudgetBuilder lang={lang} />;
+  if (tool === "olive-budget") return <OliveYoungBudgetBuilder lang={lang} />;
+  return <KioskPracticeSimulator lang={lang} />;
 }
 
 export default async function ToolDetailPage({ params }: ToolPageProps) {
