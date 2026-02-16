@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
 type BrandId = "mega" | "compose" | "starbucks" | "lotteria" | "hansot";
-type UiLang = "ko" | "en";
 type LotteriaStage = "place" | "menu" | "confirm" | "card";
 
 type MenuItem = {
@@ -64,9 +63,6 @@ const BRANDS: Brand[] = [
         { id: "mg-1", name: "메가리카노", enName: "Mega Americano", price: 3000, tint: "from-cyan-200 to-blue-300" },
         { id: "mg-2", name: "꿀복숭아 아이스티", enName: "Peach Iced Tea", price: 3500, tint: "from-amber-200 to-orange-300" },
         { id: "mg-3", name: "수박주스", enName: "Watermelon Juice", price: 4000, tint: "from-rose-300 to-red-400" },
-        { id: "mg-4", name: "체리콕에이드", enName: "Cherry Coke Ade", price: 4000, tint: "from-rose-200 to-red-300" },
-        { id: "mg-5", name: "애플망고스무디", enName: "Mango Smoothie", price: 4300, tint: "from-lime-200 to-green-300" },
-        { id: "mg-6", name: "딸기스무디", enName: "Strawberry Smoothie", price: 4000, tint: "from-pink-200 to-rose-300" },
       ],
       "coffee-hot": [
         { id: "h-1", name: "아메리카노(HOT)", enName: "Americano(HOT)", price: 2000, tint: "from-amber-200 to-orange-300" },
@@ -78,15 +74,12 @@ const BRANDS: Brand[] = [
       ],
       tea: [
         { id: "t-1", name: "자몽티", enName: "Grapefruit Tea", price: 3500, tint: "from-orange-100 to-amber-200" },
-        { id: "t-2", name: "레몬티", enName: "Lemon Tea", price: 3300, tint: "from-yellow-100 to-orange-200" },
       ],
       ade: [
         { id: "a-1", name: "청포도 에이드", enName: "Green Grape Ade", price: 3900, tint: "from-lime-100 to-green-200" },
-        { id: "a-2", name: "블루레몬 에이드", enName: "Blue Lemon Ade", price: 3900, tint: "from-cyan-100 to-sky-200" },
       ],
       dessert: [
         { id: "d-1", name: "크로플", enName: "Croffle", price: 3300, tint: "from-amber-100 to-yellow-200" },
-        { id: "d-2", name: "허니브레드", enName: "Honey Bread", price: 4800, tint: "from-yellow-100 to-orange-200" },
       ],
     },
   },
@@ -114,19 +107,15 @@ const BRANDS: Brand[] = [
       ],
       "non-coffee": [
         { id: "cp-5", name: "초코라떼", enName: "Choco Latte", price: 3900, tint: "from-amber-100 to-yellow-200" },
-        { id: "cp-6", name: "바닐라라떼", enName: "Vanilla Latte", price: 4100, tint: "from-yellow-100 to-orange-100" },
       ],
       smoothie: [
         { id: "cp-7", name: "쿠키프라페", enName: "Cookie Frappe", price: 4500, tint: "from-zinc-100 to-blue-100" },
-        { id: "cp-8", name: "딸기스무디", enName: "Strawberry Smoothie", price: 4500, tint: "from-rose-100 to-pink-200" },
       ],
       tea: [
         { id: "cp-9", name: "자몽차", enName: "Grapefruit Tea", price: 4100, tint: "from-orange-100 to-yellow-100" },
-        { id: "cp-10", name: "레몬차", enName: "Lemon Tea", price: 4000, tint: "from-yellow-100 to-lime-100" },
       ],
       dessert: [
         { id: "cp-11", name: "크로플", enName: "Croffle", price: 3900, tint: "from-amber-100 to-yellow-200" },
-        { id: "cp-12", name: "와플", enName: "Waffle", price: 4300, tint: "from-yellow-100 to-amber-200" },
       ],
     },
   },
@@ -147,7 +136,6 @@ const BRANDS: Brand[] = [
     itemsByCategory: {
       coffee: [
         { id: "sb-1", name: "아메리카노", enName: "Americano", price: 4500, tint: "from-zinc-200 to-zinc-300" },
-        { id: "sb-2", name: "카페라떼", enName: "Cafe Latte", price: 5200, tint: "from-amber-100 to-yellow-200" },
       ],
       tea: [{ id: "sb-3", name: "유자 민트티", enName: "Yuja Mint Tea", price: 6100, tint: "from-lime-100 to-green-200" }],
     },
@@ -174,11 +162,9 @@ const BRANDS: Brand[] = [
       ],
       side: [
         { id: "lt-3", name: "양념감자", enName: "Seasoned Fries", price: 2500, tint: "from-yellow-100 to-amber-200" },
-        { id: "lt-4", name: "치킨너겟", enName: "Chicken Nuggets", price: 3000, tint: "from-amber-100 to-yellow-200" },
       ],
       drink: [
         { id: "lt-5", name: "콜라", enName: "Coke", price: 2000, tint: "from-zinc-100 to-zinc-200" },
-        { id: "lt-6", name: "사이다", enName: "Sprite", price: 2000, tint: "from-lime-100 to-green-100" },
       ],
     },
   },
@@ -199,7 +185,6 @@ const BRANDS: Brand[] = [
     itemsByCategory: {
       dosirak: [
         { id: "hs-1", name: "도련님도시락", enName: "Doryeonnim Lunch Box", price: 5200, tint: "from-amber-100 to-orange-200" },
-        { id: "hs-2", name: "치킨마요", enName: "Chicken Mayo", price: 4500, tint: "from-lime-100 to-green-200" },
       ],
       extra: [{ id: "hs-3", name: "계란후라이 추가", enName: "Add Fried Egg", price: 800, tint: "from-yellow-100 to-zinc-100" }],
     },
@@ -216,7 +201,7 @@ function getCopy(lang: Lang) {
       title: "브랜드 키오스크 체험",
       subtitle: "상단에서 브랜드를 고르면 바로 실물형 화면으로 시작됩니다.",
       englishTitle: "영어 메뉴 찾기",
-      englishDesc: "대부분 우상단 LANG/EN 버튼에서 영어 메뉴를 켤 수 있습니다.",
+      englishDesc: "버튼 위치만 익히는 용도입니다. 체험 화면 텍스트는 한국어로 고정됩니다.",
       selected: "선택한 상품",
       remain: "남은시간",
       clear: "전체삭제",
@@ -235,7 +220,7 @@ function getCopy(lang: Lang) {
     title: "Brand Kiosk Practice",
     subtitle: "Choose a brand and start with a realistic kiosk layout.",
     englishTitle: "Find English menu",
-    englishDesc: "Use the top-right LANG/EN button on most kiosks.",
+    englishDesc: "Button location training only. Kiosk UI text stays in Korean.",
     selected: "Selected",
     remain: "Time left",
     clear: "Clear",
@@ -253,7 +238,6 @@ function getCopy(lang: Lang) {
 export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
   const c = getCopy(lang);
   const [brandId, setBrandId] = useState<BrandId>("mega");
-  const [uiLang, setUiLang] = useState<UiLang>("ko");
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [paymentOpen, setPaymentOpen] = useState(false);
@@ -263,6 +247,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
   const brand = useMemo(() => BRANDS.find((b) => b.id === brandId) ?? BRANDS[0], [brandId]);
   const category = brand.categories[Math.max(0, Math.min(categoryIndex, brand.categories.length - 1))];
   const menuItems = brand.itemsByCategory[category.id] ?? [];
+  const isLotteria = brand.id === "lotteria";
 
   useEffect(() => {
     setTimeLeft(120);
@@ -283,8 +268,6 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
     });
   }
 
-  const isLotteria = brand.id === "lotteria";
-
   return (
     <section className="rounded-3xl border border-zinc-900 bg-white p-4 sm:p-6">
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
@@ -297,7 +280,6 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
             type="button"
             onClick={() => {
               setBrandId(b.id);
-              setUiLang("ko");
               setCategoryIndex(0);
               setCart([]);
               setPaymentOpen(false);
@@ -334,15 +316,12 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
         </div>
       ) : null}
 
-      <div className="mt-5 mx-auto w-full max-w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
+      <div className="mt-5 overflow-x-auto pb-2">
+      <div className="mx-auto w-[720px] overflow-hidden rounded-[2rem] border-[8px] border-zinc-900 bg-zinc-900 shadow-2xl">
         <div className={`flex items-center justify-between px-4 py-3 ${brand.topTone} ${brand.topText}`}>
           <button type="button" className="text-lg font-black">⌂</button>
           <p className="text-xl font-black tracking-tight">{brand.id === "compose" ? "COMPOSE COFFEE" : brand.id === "lotteria" ? "LOTTERIA KIOSK" : "Easy KIOSK"}</p>
-          <button
-            type="button"
-            onClick={() => setUiLang((prev) => (prev === "ko" ? "en" : "ko"))}
-            className="rounded-lg bg-white/85 px-3 py-1 text-sm font-black text-zinc-900"
-          >
+          <button type="button" className="rounded-lg bg-white/85 px-3 py-1 text-sm font-black text-zinc-900">
             {brand.langButton}
           </button>
         </div>
@@ -366,7 +345,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
               <div className="mt-3 space-y-2">
                 {cart.length === 0 ? <p className="text-sm font-semibold text-zinc-500">장바구니가 비어 있습니다.</p> : cart.map((item) => (
                   <div key={item.id} className="flex items-center justify-between rounded-lg border border-zinc-200 p-2 text-sm font-semibold">
-                    <span>{uiLang === "ko" ? item.name : item.enName} x{item.qty}</span>
+                    <span>{item.name} x{item.qty}</span>
                     <span>{toKrw(item.qty * item.price)}</span>
                   </div>
                 ))}
@@ -414,7 +393,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
                     onClick={() => setCategoryIndex(idx)}
                     className={`shrink-0 rounded-md px-3 py-1 text-sm font-black ${idx === categoryIndex ? brand.id === "compose" ? "bg-blue-600 text-white" : "bg-zinc-900 text-white" : "bg-white/90"}`}
                   >
-                    {uiLang === "ko" ? cat.label : cat.enLabel}
+                    {cat.label}
                   </button>
                 ))}
                 <button
@@ -429,7 +408,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
 
             <div className="grid min-h-[42rem] grid-cols-[1fr_11rem] bg-zinc-50">
               <div className="border-r border-zinc-300 p-3">
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                <div className="grid grid-cols-3 gap-2">
                   {menuItems.map((item) => (
                     <button
                       key={item.id}
@@ -438,7 +417,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
                       className="rounded-xl border border-zinc-200 bg-white p-2 text-left"
                     >
                       <div className={`aspect-[4/5] rounded-lg bg-gradient-to-br ${item.tint}`} />
-                      <p className="mt-2 line-clamp-2 text-[11px] font-black text-zinc-900">{uiLang === "ko" ? item.name : item.enName}</p>
+                      <p className="mt-2 line-clamp-2 text-[11px] font-black text-zinc-900">{item.name}</p>
                       <p className="mt-1 text-[11px] font-bold text-rose-600">{toKrw(item.price)}</p>
                     </button>
                   ))}
@@ -447,7 +426,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
                 <div className="mt-3 min-h-[9.5rem] rounded-xl border border-zinc-300 bg-white p-2">
                   <p className="text-xs font-black text-zinc-700">{c.selected}</p>
                   <div className="mt-2 space-y-1 text-xs font-semibold text-zinc-800">
-                    {cart.length === 0 ? <p className="text-zinc-500">-</p> : cart.map((item) => <p key={item.id}>{uiLang === "ko" ? item.name : item.enName} x{item.qty}</p>)}
+                    {cart.length === 0 ? <p className="text-zinc-500">-</p> : cart.map((item) => <p key={item.id}>{item.name} x{item.qty}</p>)}
                   </div>
                 </div>
               </div>
@@ -491,6 +470,7 @@ export function KioskPracticeSimulator({ lang }: { lang: Lang }) {
             </div>
           </>
         ) : null}
+      </div>
       </div>
 
       <div className="mt-4 grid gap-2 sm:grid-cols-2">
