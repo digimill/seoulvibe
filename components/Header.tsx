@@ -16,6 +16,7 @@ export function Header({ lang }: HeaderProps) {
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const [languageCloseSignal, setLanguageCloseSignal] = useState(0);
+  const [showLogo, setShowLogo] = useState(false);
   const t = copy[lang];
   const labels =
     lang === "ko"
@@ -39,6 +40,14 @@ export function Header({ lang }: HeaderProps) {
     }
   }, [pathname]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const probe = new window.Image();
+    probe.onload = () => setShowLogo(true);
+    probe.onerror = () => setShowLogo(false);
+    probe.src = "/images/logo.png";
+  }, []);
+
   const closeMobileMenu = () => {
     if (mobileMenuRef.current) {
       mobileMenuRef.current.open = false;
@@ -49,11 +58,22 @@ export function Header({ lang }: HeaderProps) {
     <header className="sticky top-0 z-40 border-b border-black/10 bg-white/95 backdrop-blur-xl">
       <Container className="py-2">
         <div className="flex min-h-16 items-center justify-between gap-3">
-          <Link href={`/${lang}`} className="min-w-0 leading-tight md:shrink-0">
-            <span className="block text-sm font-bold tracking-normal">{t.appName}</span>
-            <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] font-semibold text-zinc-500 sm:max-w-none sm:text-[11px]">
-              {labels.subtitle}
-            </span>
+          <Link href={`/${lang}`} className="min-w-0 md:shrink-0">
+            <div className="flex items-center gap-2">
+              {showLogo ? (
+                <img
+                  src="/images/logo.png"
+                  alt="Seoul Vibe logo"
+                  className="h-8 w-8 shrink-0 rounded-md object-contain"
+                />
+              ) : null}
+              <div className="min-w-0 leading-tight">
+                <span className="block text-sm font-bold tracking-normal">{t.appName}</span>
+                <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] font-semibold text-zinc-500 sm:max-w-none sm:text-[11px]">
+                  {labels.subtitle}
+                </span>
+              </div>
+            </div>
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">

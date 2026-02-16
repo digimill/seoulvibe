@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     template: "%s | Seoul Vibe",
   },
   description: "Seoul Vibe - 거의 서울에 관한 모든 것.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
