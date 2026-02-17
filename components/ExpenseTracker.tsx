@@ -693,11 +693,11 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
   }
 
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-4 sm:p-6">
+    <section className="rounded-2xl border border-zinc-200 bg-white p-3 sm:rounded-3xl sm:p-6">
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
       <p className="mt-2 text-sm text-zinc-600">{c.desc}</p>
 
-      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 sm:p-4">
+      <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3 sm:rounded-2xl sm:p-4">
         <p className="text-xs font-semibold text-zinc-600">{c.remain}</p>
         <p className={`mt-1 text-2xl font-black ${remainToday >= 0 ? "text-emerald-700" : "text-red-700"}`}>₩{remainToday.toLocaleString()}</p>
         <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-zinc-200">
@@ -706,17 +706,18 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
         <p className="mt-2 text-xs font-semibold text-zinc-600">
           {usedPercent.toFixed(1)}% {lang === "ko" ? "사용" : "used"}
         </p>
-        <p className="mt-1 text-xs font-semibold text-zinc-600">
-          {c.budget} ₩{budgetKrw.toLocaleString()}{" "}
-          <Link href={planBudgetHref} className="inline-flex align-middle text-zinc-500 hover:text-zinc-900" aria-label={lang === "ko" ? "예산 수정" : "Edit budget"}>
+        <div className="mt-1 flex items-center gap-1 text-xs font-semibold text-zinc-600">
+          <span>{c.budget} ₩{budgetKrw.toLocaleString()}</span>
+          <Link href={planBudgetHref} className="inline-flex shrink-0 align-middle text-zinc-500 hover:text-zinc-900" aria-label={lang === "ko" ? "예산 수정" : "Edit budget"}>
             ✎
           </Link>
-          {" · "}
+        </div>
+        <p className="mt-0.5 text-xs font-semibold text-zinc-600">
           {lang === "ko" ? "사용" : c.total} ₩{totalToday.toLocaleString()}
         </p>
       </div>
 
-      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 sm:p-4">
+      <div className="mt-4 rounded-xl bg-white p-0 sm:rounded-2xl sm:border sm:border-zinc-200 sm:bg-zinc-50 sm:p-4">
         <label className="block rounded-xl border border-zinc-200 bg-white p-3">
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-semibold text-zinc-600">{c.amount}</p>
@@ -749,7 +750,7 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
         </label>
 
         <div className="mt-3">
-          <label className="rounded-xl border border-zinc-200 bg-white p-3">
+          <label className="block rounded-xl bg-white p-2.5 sm:border sm:border-zinc-200 sm:p-3">
             <p className="text-xs font-semibold text-zinc-600">{c.category}</p>
             <p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-zinc-700">
               <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_COLOR[categoryInput] }} aria-hidden />
@@ -769,7 +770,7 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
           </label>
         </div>
 
-        <div className="mt-3 rounded-xl border border-zinc-200 bg-white p-3">
+        <div className="mt-3 rounded-xl bg-white p-2.5 sm:border sm:border-zinc-200 sm:p-3">
           <p className="text-xs font-semibold text-zinc-600">{c.noteOptional}</p>
           <input
             type="text"
@@ -895,7 +896,7 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
         </p>
       ) : null}
 
-      <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+      <div className="mt-6 rounded-xl border border-zinc-200 bg-zinc-50 p-3 sm:rounded-2xl sm:p-4">
         <h3 className="text-sm font-black text-zinc-900">{c.list}</h3>
         <div className="mt-2 grid gap-1 text-xs font-semibold text-zinc-700 sm:grid-cols-2">
           <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.transport }} aria-hidden />{c.categories.transport}: ₩{categoryTotals.transport.toLocaleString()}</p>

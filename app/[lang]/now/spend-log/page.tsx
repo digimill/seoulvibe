@@ -85,9 +85,9 @@ export default async function NowSpendLogPage({ params }: PageProps) {
       <p className="mt-2 text-sm leading-6 text-zinc-700">{c.lead}</p>
       <SpendLogOnboarding useTitle={c.useTitle} useBody={c.useBody} diffTitle={c.diffTitle} diffBody={c.diffBody} />
 
-      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
+      <section className="mt-6">
         <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.tracker}</h2>
-        <div className="mt-4">
+        <div className="mt-3">
           <ExpenseTracker lang={locale} readOnlyBudget />
         </div>
       </section>
