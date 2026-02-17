@@ -78,13 +78,14 @@ const RATES_KRW_PER_UNIT: Record<Currency, number> = {
 };
 
 const CATEGORY_ORDER: Category[] = ["food", "transport", "experience", "shopping", "buffer"];
-const CATEGORY_TONE: Record<Category, string> = {
-  food: "bg-emerald-500",
-  transport: "bg-sky-500",
-  experience: "bg-violet-500",
-  shopping: "bg-fuchsia-500",
-  buffer: "bg-zinc-500",
+const CATEGORY_COLOR: Record<Category, string> = {
+  food: "#10b981",
+  transport: "#0ea5e9",
+  experience: "#8b5cf6",
+  shopping: "#d946ef",
+  buffer: "#71717a",
 };
+const PLAN_CURRENCIES: Currency[] = ["USD", "EUR", "JPY", "CNY", "TWD", "HKD"];
 
 const CATEGORY_GUIDE: Record<Category, { low: number; high: number }> = {
   food: { low: 25, high: 40 },
@@ -256,7 +257,7 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
 
     if (rawBudget && !Number.isNaN(Number(rawBudget))) setDailyBudgetKrw(Math.max(0, Number(rawBudget)));
     if (rawDays && !Number.isNaN(Number(rawDays))) setDays(Math.max(1, Math.round(Number(rawDays))));
-    if (rawCurrency && rawCurrency in RATES_KRW_PER_UNIT) setCurrency(rawCurrency);
+    if (rawCurrency && PLAN_CURRENCIES.includes(rawCurrency)) setCurrency(rawCurrency);
 
     if (rawAllocation) {
       try {
@@ -505,11 +506,11 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
 
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
         <h3 className="text-xl font-black tracking-tight text-zinc-950">{c.title}</h3>
         <p className="mt-2 text-sm leading-6 text-zinc-600">{c.lead}</p>
 
-        <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+        <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3.5 sm:p-4">
           <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.step1}</p>
           <p className="mt-2 text-xs font-semibold text-zinc-600">{c.avgGuide}</p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -545,8 +546,8 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
 
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-zinc-200 bg-white p-3">
-              <div className="flex items-end justify-between gap-3">
-                <label className="flex-1">
+              <div className="grid gap-3 sm:grid-cols-[1fr_8rem] sm:items-end">
+                <label className="min-w-0">
                   <p className="text-xs font-semibold text-zinc-600">{c.dailyBudget} (KRW)</p>
                   <input
                     ref={budgetInputRef}
@@ -561,14 +562,14 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
                     className="mt-1 w-full bg-transparent text-lg font-black text-zinc-900 outline-none"
                   />
                 </label>
-                <label className="w-[7rem]">
+                <label>
                   <p className="text-xs font-semibold text-zinc-600">{c.budgetCurrency}</p>
                   <select
                     value={currency}
                     onChange={(e) => setCurrency(e.target.value as Currency)}
                     className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-2 py-1 text-sm font-bold text-zinc-900 outline-none"
                   >
-                    {(Object.keys(RATES_KRW_PER_UNIT) as Currency[]).map((code) => (
+                    {PLAN_CURRENCIES.map((code) => (
                       <option key={code} value={code}>
                         {code}
                       </option>
@@ -582,13 +583,31 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
             </div>
             <label className="rounded-xl border border-zinc-200 bg-white p-3">
               <p className="text-xs font-semibold text-zinc-600">{c.tripDays}</p>
-              <input
-                type="number"
-                min={1}
-                value={safeDays}
-                onChange={(e) => setDays(Math.max(1, toNumber(e.target.value) || 1))}
-                className="mt-1 w-full bg-transparent text-lg font-black text-zinc-900 outline-none"
-              />
+              <div className="mt-1 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setDays((prev) => Math.max(1, prev - 1))}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-300 text-base font-black text-zinc-700"
+                  aria-label={lang === "ko" ? "여행 일수 줄이기" : "Decrease trip days"}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  min={1}
+                  value={safeDays}
+                  onChange={(e) => setDays(Math.max(1, toNumber(e.target.value) || 1))}
+                  className="w-full bg-transparent text-lg font-black text-zinc-900 outline-none"
+                />
+                <button
+                  type="button"
+                  onClick={() => setDays((prev) => prev + 1)}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-300 text-base font-black text-zinc-700"
+                  aria-label={lang === "ko" ? "여행 일수 늘리기" : "Increase trip days"}
+                >
+                  +
+                </button>
+              </div>
             </label>
           </div>
           <p className="mt-2 text-[11px] font-semibold text-zinc-500">{c.krwFixed}</p>
@@ -599,7 +618,7 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
 
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
         <div className="flex items-center justify-between gap-2">
           <h4 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.step2}</h4>
           <button
@@ -639,7 +658,7 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
         <div className="mt-3 h-4 w-full overflow-hidden rounded-full bg-zinc-100">
           <div className="flex h-full w-full">
             {CATEGORY_ORDER.map((key) => (
-              <div key={key} className={CATEGORY_TONE[key]} style={{ width: `${Math.max(0, actualShare[key])}%` }} />
+              <div key={key} style={{ width: `${Math.max(0, actualShare[key])}%`, backgroundColor: CATEGORY_COLOR[key] }} />
             ))}
           </div>
         </div>
@@ -650,7 +669,10 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
             return (
               <article key={key} className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
                 <div className="grid gap-2 sm:grid-cols-[1fr_190px_140px_150px] sm:items-center">
-                  <p className="text-sm font-black text-zinc-900">{c.categories[key]}</p>
+                  <p className="flex items-center gap-2 text-sm font-black text-zinc-900">
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_COLOR[key] }} aria-hidden />
+                    {c.categories[key]}
+                  </p>
                   <div>
                     <p className="text-xs font-semibold text-zinc-600">{c.mode}</p>
                     <div className="mt-1 flex gap-1">
@@ -694,7 +716,7 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
         <p className="mt-3 text-xs font-semibold text-zinc-600">{c.allocationWarn}</p>
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
         <div className="flex items-center justify-between gap-2">
           <h4 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.assumptionsTitle}</h4>
           <button
@@ -756,7 +778,7 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
         ) : null}
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
         <h4 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.step3}</h4>
         <p className="mt-1 text-xs font-semibold text-zinc-600">{c.guidanceTitle}</p>
         <div className="mt-3 space-y-2 text-sm leading-6 text-zinc-800">

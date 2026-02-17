@@ -60,12 +60,12 @@ export default async function DailyBudgetPage({ params }: PageProps) {
 
   return (
     <Container className="py-10 sm:py-14">
-      <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-6 text-zinc-100 sm:p-8">
+      <section className="rounded-3xl border border-zinc-900 bg-zinc-950 p-4 text-zinc-100 sm:p-8">
         <h1 className="text-3xl font-black tracking-tight sm:text-4xl">{c.title}</h1>
         <p className="mt-3 text-sm leading-6 text-zinc-300">{c.lead}</p>
       </section>
 
-      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
+      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
         <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.baselineTitle}</h2>
         <div className="mt-4">
           <PlanBudgetDesigner lang={locale} />

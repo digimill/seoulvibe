@@ -79,7 +79,7 @@ export function Header({ lang }: HeaderProps) {
               ) : null}
               <div className="min-w-0 leading-tight">
                 <span className="block text-sm font-bold tracking-normal">{t.appName}</span>
-                <span className="mt-0.5 block max-w-[10rem] truncate text-[10px] font-semibold text-zinc-500 sm:max-w-none sm:text-[11px]">
+                <span className="mt-0.5 block max-w-[12rem] text-[10px] font-semibold leading-tight whitespace-normal text-zinc-500 sm:max-w-none sm:text-[11px]">
                   {labels.subtitle}
                 </span>
               </div>
@@ -87,9 +87,8 @@ export function Header({ lang }: HeaderProps) {
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
-            <Link href={`/${lang}/tips`} className="inline-flex items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-semibold text-zinc-700">
+            <Link href={`/${lang}/tips`} aria-label={labels.search} className="inline-flex items-center rounded-full border border-zinc-300 p-2 text-zinc-700">
               <SearchIcon />
-              <span>{labels.search}</span>
             </Link>
             <LanguageSwitcher lang={lang} compact onOpen={closeMobileMenu} closeSignal={languageCloseSignal} />
             <details

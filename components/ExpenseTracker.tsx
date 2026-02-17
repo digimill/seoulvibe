@@ -296,6 +296,13 @@ const DEFAULT_RATES: Record<Currency, number> = {
   VND: 0.055,
 };
 const ALL_CURRENCIES: Currency[] = ["KRW", "USD", "EUR", "JPY", "CNY", "TWD", "HKD", "GBP", "AUD", "CAD", "SGD", "THB", "VND"];
+const CATEGORY_COLOR: Record<Category, string> = {
+  transport: "#0ea5e9",
+  food: "#10b981",
+  experience: "#8b5cf6",
+  shopping: "#d946ef",
+  other: "#71717a",
+};
 
 function getDefaultCurrencyByLocale(lang: Lang): Currency {
   if (lang === "ko") return "KRW";
@@ -686,11 +693,11 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
   }
 
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7">
+    <section className="rounded-3xl border border-zinc-200 bg-white p-4 sm:p-6">
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
       <p className="mt-2 text-sm text-zinc-600">{c.desc}</p>
 
-      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 sm:p-4">
         <p className="text-xs font-semibold text-zinc-600">{c.remain}</p>
         <p className={`mt-1 text-2xl font-black ${remainToday >= 0 ? "text-emerald-700" : "text-red-700"}`}>₩{remainToday.toLocaleString()}</p>
         <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-zinc-200">
@@ -709,7 +716,7 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
         </p>
       </div>
 
-      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+      <div className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 sm:p-4">
         <label className="block rounded-xl border border-zinc-200 bg-white p-3">
           <div className="flex items-center justify-between gap-2">
             <p className="text-xs font-semibold text-zinc-600">{c.amount}</p>
@@ -741,9 +748,13 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
           </p>
         </label>
 
-        <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto] sm:items-end">
+        <div className="mt-3">
           <label className="rounded-xl border border-zinc-200 bg-white p-3">
             <p className="text-xs font-semibold text-zinc-600">{c.category}</p>
+            <p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-zinc-700">
+              <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_COLOR[categoryInput] }} aria-hidden />
+              {c.categories[categoryInput]}
+            </p>
             <select
               value={categoryInput}
               onChange={(e) => setCategoryInput(e.target.value as Category)}
@@ -756,13 +767,6 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
               <option value="other">{c.categories.other}</option>
             </select>
           </label>
-          <button
-            type="button"
-            onClick={() => addItem(amountInputKrw)}
-            className="rounded-xl border border-zinc-900 bg-zinc-900 px-4 py-2.5 text-sm font-bold text-white hover:bg-zinc-800"
-          >
-            {c.add}
-          </button>
         </div>
 
         <div className="mt-3 rounded-xl border border-zinc-200 bg-white p-3">
@@ -791,6 +795,14 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
             </div>
           ) : null}
         </div>
+
+        <button
+          type="button"
+          onClick={() => addItem(amountInputKrw)}
+          className="mt-3 w-full rounded-xl border border-zinc-900 bg-zinc-900 px-4 py-2.5 text-sm font-bold text-white hover:bg-zinc-800"
+        >
+          {c.add}
+        </button>
       </div>
 
       {categoryRemain ? (
@@ -886,11 +898,11 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
       <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
         <h3 className="text-sm font-black text-zinc-900">{c.list}</h3>
         <div className="mt-2 grid gap-1 text-xs font-semibold text-zinc-700 sm:grid-cols-2">
-          <p>{c.categories.transport}: ₩{categoryTotals.transport.toLocaleString()}</p>
-          <p>{c.categories.food}: ₩{categoryTotals.food.toLocaleString()}</p>
-          <p>{c.categories.experience}: ₩{categoryTotals.experience.toLocaleString()}</p>
-          <p>{c.categories.shopping}: ₩{categoryTotals.shopping.toLocaleString()}</p>
-          <p>{c.categories.other}: ₩{categoryTotals.other.toLocaleString()}</p>
+          <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.transport }} aria-hidden />{c.categories.transport}: ₩{categoryTotals.transport.toLocaleString()}</p>
+          <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.food }} aria-hidden />{c.categories.food}: ₩{categoryTotals.food.toLocaleString()}</p>
+          <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.experience }} aria-hidden />{c.categories.experience}: ₩{categoryTotals.experience.toLocaleString()}</p>
+          <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.shopping }} aria-hidden />{c.categories.shopping}: ₩{categoryTotals.shopping.toLocaleString()}</p>
+          <p className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full" style={{ backgroundColor: CATEGORY_COLOR.other }} aria-hidden />{c.categories.other}: ₩{categoryTotals.other.toLocaleString()}</p>
         </div>
         <div className="mt-3 space-y-2">
           {todayItems.length === 0 ? (
@@ -899,7 +911,10 @@ export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerP
             todayItems.map((item) => (
               <article key={item.id} className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-3 py-2">
                 <div>
-                  <p className="text-sm font-bold text-zinc-900">₩{item.amountKrw.toLocaleString()} · {c.categories[item.category]}</p>
+                  <p className="flex items-center gap-1.5 text-sm font-bold text-zinc-900">
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_COLOR[item.category] }} aria-hidden />
+                    ₩{item.amountKrw.toLocaleString()} · {c.categories[item.category]}
+                  </p>
                   <p className="text-xs text-zinc-500">{item.note || "-"}</p>
                 </div>
                 {pendingDeleteId === item.id ? (

@@ -432,6 +432,14 @@ function initScores(): Scores {
   };
 }
 
+function scoreTagTone(score: number, maxScore: number) {
+  if (maxScore <= 0) return "border-zinc-300 bg-zinc-100 text-zinc-700";
+  const ratio = score / maxScore;
+  if (ratio >= 0.8) return "border-emerald-300 bg-emerald-50 text-emerald-700";
+  if (ratio >= 0.5) return "border-amber-300 bg-amber-50 text-amber-700";
+  return "border-zinc-300 bg-zinc-100 text-zinc-700";
+}
+
 function getCopy(lang: Lang) {
   if (lang === "ko") {
     return {
@@ -606,10 +614,19 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
             <p className="mt-3 text-sm text-zinc-600">{c.empty}</p>
           ) : (
             <div className="mt-3 space-y-3">
+              {(() => {
+                const topScore = scoreResult.ranking[0]?.score ?? 0;
+                const topAreaId = scoreResult.ranking[0]?.id;
+                return (
+                  <>
               {scoreResult.ranking.map((area) => (
                 <article key={area.id} className="rounded-xl border border-zinc-200 bg-white p-3">
-                  <p className="text-base font-black text-zinc-950">{area.name}</p>
-                  <p className="mt-1 text-xs font-semibold text-zinc-600">{c.score}: {area.score}</p>
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-base font-black text-zinc-950">{area.name}</p>
+                    <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-bold ${scoreTagTone(area.score, topScore)}`}>
+                      {c.score} {area.score}
+                    </span>
+                  </div>
                   <p className="mt-2 text-sm text-zinc-700">{area.oneLineConclusion}</p>
                   <p className="mt-3 text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.why}</p>
                   <ul className="mt-1 space-y-1 text-xs text-zinc-700">
@@ -619,16 +636,22 @@ export function WhereToStayMatcher({ lang }: { lang: Lang }) {
                   </ul>
                   <p className="mt-3 text-xs font-black uppercase tracking-[0.14em] text-zinc-900">{c.caution}</p>
                   <p className="mt-1 text-xs text-zinc-700">- {area.avoidIf[0]}</p>
-                  <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-                    <Link href={`/${lang}/areas/${area.id}?ms=${encodeURIComponent(scoreResult.serialized)}`} className="rounded-full border border-zinc-900 px-3 py-1 text-zinc-900">
-                      {c.openArea}
-                    </Link>
-                    <Link href={`/${lang}/now`} className="rounded-full border border-zinc-300 px-3 py-1 text-zinc-700">
-                      {c.openNow}
-                    </Link>
-                  </div>
                 </article>
               ))}
+                    <div className="flex flex-wrap gap-2 pt-1 text-xs font-semibold">
+                      <Link
+                        href={`/${lang}/areas/${topAreaId ?? "myeongdong"}?ms=${encodeURIComponent(scoreResult.serialized)}`}
+                        className="rounded-full border border-zinc-900 px-3 py-1 text-zinc-900"
+                      >
+                        {c.openArea}
+                      </Link>
+                      <Link href={`/${lang}/now`} className="rounded-full border border-zinc-300 px-3 py-1 text-zinc-700">
+                        {c.openNow}
+                      </Link>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           )}
         </div>

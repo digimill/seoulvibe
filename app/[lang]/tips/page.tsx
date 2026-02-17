@@ -273,7 +273,7 @@ export default async function TipsPage({ params, searchParams }: TipsPageProps) 
           <button type="submit" className="rounded-xl border border-zinc-900 bg-zinc-900 px-4 py-2 text-sm font-bold text-white">
             {copy.searchBtn}
           </button>
-          <Link href={`/${locale}/tips`} className="rounded-xl border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700">
+          <Link href={`/${locale}/tips`} className="inline-flex items-center px-2 py-2 text-xs font-semibold text-zinc-500 underline-offset-2 hover:text-zinc-800 hover:underline">
             {copy.clearBtn}
           </Link>
         </form>
