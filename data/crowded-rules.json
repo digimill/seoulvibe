@@ -1,0 +1,69 @@
+{
+  "areas": [
+    {
+      "key": "hongdae",
+      "labels": { "ko": "홍대", "default": "Hongdae" },
+      "peakWindow": "17:00 - 20:00",
+      "bottleneck": {
+        "ko": ["출구 집중", "메인 거리 동선 겹침"],
+        "default": ["Exit concentration", "Main-street flow overlap"]
+      },
+      "escapePattern": {
+        "ko": ["반대 방향 1정거장 이동", "2블록 우회", "완화 구간 확인 후 재진입"],
+        "default": ["Move one stop opposite direction", "Detour by two blocks", "Re-enter after easing stage"]
+      }
+    },
+    {
+      "key": "seongsu",
+      "labels": { "ko": "성수", "default": "Seongsu" },
+      "peakWindow": "14:00 - 19:00",
+      "bottleneck": {
+        "ko": ["출구 집중", "대기열 고정화"],
+        "default": ["Exit concentration", "Queue lock-in"]
+      },
+      "escapePattern": {
+        "ko": ["첫 대기열 건너뛰기", "2블록 우회", "완화 구간 확인 후 재진입"],
+        "default": ["Skip first queue", "Detour by two blocks", "Re-enter after easing stage"]
+      }
+    },
+    {
+      "key": "bukchon",
+      "labels": { "ko": "북촌", "default": "Bukchon" },
+      "peakWindow": "10:30 - 15:00",
+      "bottleneck": {
+        "ko": ["단일 동선 병목", "촬영 스팟 집중"],
+        "default": ["Single-route bottleneck", "Photo-spot concentration"]
+      },
+      "escapePattern": {
+        "ko": ["반대 골목 진입", "2블록 우회", "완화 구간 확인 후 재진입"],
+        "default": ["Enter opposite alley", "Detour by two blocks", "Re-enter after easing stage"]
+      }
+    },
+    {
+      "key": "gangnam",
+      "labels": { "ko": "강남", "default": "Gangnam" },
+      "peakWindow": "18:00 - 21:00",
+      "bottleneck": {
+        "ko": ["환승 유입", "특정 출구 밀집"],
+        "default": ["Transfer inflow", "Specific-exit clustering"]
+      },
+      "escapePattern": {
+        "ko": ["반대 방향 1정거장 이동", "2블록 우회", "완화 구간 확인 후 재진입"],
+        "default": ["Move one stop opposite direction", "Detour by two blocks", "Re-enter after easing stage"]
+      }
+    },
+    {
+      "key": "myeongdong",
+      "labels": { "ko": "명동", "default": "Myeongdong" },
+      "peakWindow": "16:00 - 20:00",
+      "bottleneck": {
+        "ko": ["메인 도로 집중", "쇼핑 동선 중첩"],
+        "default": ["Main-road concentration", "Shopping route overlap"]
+      },
+      "escapePattern": {
+        "ko": ["골목 측면 이동", "2블록 우회", "완화 구간 확인 후 재진입"],
+        "default": ["Move through side alleys", "Detour by two blocks", "Re-enter after easing stage"]
+      }
+    }
+  ]
+}
