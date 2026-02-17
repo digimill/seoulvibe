@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { isLang, type Lang } from "@/lib/i18n";
@@ -96,14 +97,41 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <section className="mt-8 grid gap-4 sm:grid-cols-3">
         <Link href={`/${locale}/plan/where-to-stay`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
+          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+            <Image
+              src="/images/find-stay-card.png"
+              alt="Find where to stay thumbnail"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </div>
           <p className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.ctaStay}</p>
           <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.stayDesc}</p>
         </Link>
         <Link href={`/${locale}/now`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
+          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+            <Image
+              src="/images/fix-now-card.png"
+              alt="Fix something now thumbnail"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </div>
           <p className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.ctaNow}</p>
           <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.nowDesc}</p>
         </Link>
         <Link href={`/${locale}/areas`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
+          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+            <Image
+              src="/images/explore-area-card.png"
+              alt="Explore by area thumbnail"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </div>
           <p className="text-xl font-extrabold tracking-tight text-zinc-950">{copy.ctaArea}</p>
           <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.areaDesc}</p>
         </Link>
