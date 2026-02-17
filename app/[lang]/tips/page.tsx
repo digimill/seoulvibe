@@ -33,7 +33,7 @@ const TIP_CATEGORY_BY_ID: Record<string, "payment" | "transport" | "data" | "air
   "pharmacy-hospital-emergency": "medical",
   "one-manwon-seoul-loop": "shopping",
 };
-const GRID_EXCLUDED_TIP_IDS = new Set(["transport"]);
+const GRID_EXCLUDED_TIP_IDS = new Set(["subway-map-confusion-cuts"]);
 
 function indexCardTitle(lang: Lang, tipId: string, fallbackTitle: string): string {
   if (lang !== "ko") return fallbackTitle;
