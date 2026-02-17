@@ -224,6 +224,12 @@ function toNumber(value: unknown): number {
   return Number.isFinite(n) ? n : 0;
 }
 
+function normalizeIntegerInput(value: string): number {
+  const digits = value.replace(/[^\d]/g, "");
+  if (!digits) return 0;
+  return Math.max(0, Math.round(Number(digits)));
+}
+
 function statusTone(status: "relaxed" | "tight" | "risk"): string {
   if (status === "relaxed") return "text-emerald-700";
   if (status === "tight") return "text-amber-700";
@@ -551,13 +557,12 @@ export function PlanBudgetDesigner({ lang }: { lang: Lang }) {
                   <p className="text-xs font-semibold text-zinc-600">{c.dailyBudget} (KRW)</p>
                   <input
                     ref={budgetInputRef}
-                    type="number"
-                    min={0}
-                    step={1000}
-                    value={safeBudget}
+                    type="text"
+                    inputMode="numeric"
+                    value={safeBudget.toLocaleString()}
                     onChange={(e) => {
                       setBudgetPreset("custom");
-                      setDailyBudgetKrw(Math.max(0, Math.round(toNumber(e.target.value))));
+                      setDailyBudgetKrw(normalizeIntegerInput(e.target.value));
                     }}
                     className="mt-1 w-full bg-transparent text-lg font-black text-zinc-900 outline-none"
                   />
