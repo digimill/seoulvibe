@@ -34,6 +34,14 @@ const TIP_CATEGORY_BY_ID: Record<string, "payment" | "transport" | "data" | "air
   "one-manwon-seoul-loop": "shopping",
 };
 
+function indexCardTitle(lang: Lang, tipId: string, fallbackTitle: string): string {
+  if (lang !== "ko") return fallbackTitle;
+  const overrides: Record<string, string> = {
+    "subway-map-confusion-cuts": "지하철에서 헷갈리지 않는 법",
+  };
+  return overrides[tipId] ?? fallbackTitle;
+}
+
 function quickLabels(lang: Lang): Record<(typeof QUICK_NAV)[number]["key"], string> {
   if (lang === "ko") {
     return {
@@ -244,7 +252,7 @@ export default async function TipsPage({ params, searchParams }: TipsPageProps) 
           <Card
             key={tip.id}
             href={`/${locale}/tips/${tip.id}`}
-            title={tip.title}
+            title={indexCardTitle(locale, tip.id, tip.title)}
             description={tip.summary}
             image={tip.image}
             imageRatio="3 / 2"
