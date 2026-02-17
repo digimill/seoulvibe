@@ -1,0 +1,30 @@
+
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="white"/>
+  
+  <!-- Left Pin -->
+  <g stroke="#000000" stroke-width="4" fill="none">
+    <path d="M120 180 C120 140, 180 140, 180 180 C180 220, 150 260, 150 260 C150 260, 120 220, 120 180 Z"/>
+    <circle cx="150" cy="180" r="18"/>
+  </g>
+  
+  <!-- Center Pin (highlighted) -->
+  <g stroke="#E24A2B" stroke-width="4" fill="none">
+    <path d="M226 180 C226 140, 286 140, 286 180 C286 220, 256 260, 256 260 C256 260, 226 220, 226 180 Z"/>
+    <circle cx="256" cy="180" r="18"/>
+  </g>
+  
+  <!-- Right Pin -->
+  <g stroke="#000000" stroke-width="4" fill="none">
+    <path d="M332 180 C332 140, 392 140, 392 180 C392 220, 362 260, 362 260 C362 260, 332 220, 332 180 Z"/>
+    <circle cx="362" cy="180" r="18"/>
+  </g>
+  
+  <!-- Hotel Icon below center -->
+  <g stroke="#000000" stroke-width="4" fill="none">
+    <rect x="216" y="300" width="80" height="90"/>
+    <rect x="246" y="340" width="20" height="50"/>
+    <rect x="230" y="315" width="15" height="15"/>
+    <rect x="267" y="315" width="15" height="15"/>
+  </g>
+</svg>

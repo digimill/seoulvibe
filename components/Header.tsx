@@ -29,13 +29,13 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { plan: "Plan", now: "Now", areas: "Areas", search: "검색", subtitle: "Seoul decision guide", menu: "메뉴" }
+      ? { plan: "여행 전", now: "지금 해결", areas: "지역", search: "검색", subtitle: "Seoul decision guide", menu: "메뉴" }
       : lang === "ja"
-        ? { plan: "Plan", now: "Now", areas: "Areas", search: "検索", subtitle: "Seoul decision guide", menu: "メニュー" }
+        ? { plan: "計画", now: "今すぐ解決", areas: "エリア", search: "検索", subtitle: "Seoul decision guide", menu: "メニュー" }
         : lang === "zh-cn"
-          ? { plan: "Plan", now: "Now", areas: "Areas", search: "搜索", subtitle: "Seoul decision guide", menu: "菜单" }
+          ? { plan: "规划", now: "即时解决", areas: "区域", search: "搜索", subtitle: "Seoul decision guide", menu: "菜单" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { plan: "Plan", now: "Now", areas: "Areas", search: "搜尋", subtitle: "Seoul decision guide", menu: "選單" }
+            ? { plan: "規劃", now: "即時解決", areas: "區域", search: "搜尋", subtitle: "Seoul decision guide", menu: "選單" }
             : { plan: "Plan", now: "Now", areas: "Areas", search: "Search", subtitle: "Seoul decision guide", menu: "Menu" };
 
   const navItems = [

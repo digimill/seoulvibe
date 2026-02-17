@@ -1,9 +1,29 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { isLang, type Lang } from "@/lib/i18n";
 
 type PageProps = { params: Promise<{ lang: string }> };
+
+function nowCardImage(href: string) {
+  switch (href) {
+    case "kiosk":
+      return "/images/now-cards/now-card-kiosk.png";
+    case "card-payment":
+      return "/images/now-cards/now-card-card-payment.png";
+    case "subway-help":
+      return "/images/now-cards/now-card-subway-help.png";
+    case "t-money":
+      return "/images/now-cards/now-card-t-money.png";
+    case "crowd-escape":
+      return "/images/now-cards/now-card-crowd-escape.png";
+    case "spend-log":
+      return "/images/now-cards/now-card-spend-log.png";
+    default:
+      return "";
+  }
+}
 
 function copy(lang: Lang) {
   if (lang === "ko") {
@@ -107,9 +127,23 @@ export default async function NowPage({ params }: PageProps) {
 
       <section className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {c.cards.map((card) => (
-          <Link key={card.href} href={`/${locale}/now/${card.href}`} className="rounded-2xl border-2 border-zinc-900 bg-white p-5 shadow-[0_8px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
-            <h2 className="text-xl font-black tracking-tight text-zinc-950">{card.title}</h2>
-            <p className="mt-2 text-sm leading-6 text-zinc-700">{card.desc}</p>
+          <Link key={card.href} href={`/${locale}/now/${card.href}`} className="rounded-2xl border-2 border-zinc-900 bg-white p-4 shadow-[0_8px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
+            <div className="flex items-center gap-4">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden">
+                <Image
+                  src={nowCardImage(card.href)}
+                  alt=""
+                  fill
+                  sizes="96px"
+                  unoptimized
+                  className="object-contain [clip-path:inset(2px)]"
+                />
+              </div>
+              <div>
+                <h2 className="text-xl font-black tracking-tight text-zinc-950">{card.title}</h2>
+                <p className="mt-2 text-sm leading-6 text-zinc-700">{card.desc}</p>
+              </div>
+            </div>
           </Link>
         ))}
       </section>
@@ -120,7 +154,7 @@ export default async function NowPage({ params }: PageProps) {
           <Link href={`/${locale}/plan/daily-budget`} className="rounded-full border border-zinc-900 px-4 py-2 text-zinc-900">
             {c.quickBudget}
           </Link>
-          <Link href={`/${locale}/plan/daily-budget#olive-young-budget`} className="rounded-full border border-zinc-300 px-4 py-2 text-zinc-700">
+          <Link href={`/${locale}/plan/olive-young`} className="rounded-full border border-zinc-300 px-4 py-2 text-zinc-700">
             {c.quickOlive}
           </Link>
         </div>

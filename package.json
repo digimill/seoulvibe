@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "images:audit": "node scripts/images-audit.mjs"
+    "images:audit": "node scripts/images-audit.mjs",
+    "i18n:smoke": "node scripts/i18n-smoke.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

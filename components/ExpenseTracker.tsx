@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
@@ -15,6 +16,7 @@ type ExpenseItem = {
 
 type ExpenseTrackerProps = {
   lang: Lang;
+  readOnlyBudget?: boolean;
 };
 type ViewMode = "today" | "all";
 
@@ -39,6 +41,10 @@ function getCopy(lang: Lang) {
       budget: "오늘 예산 (KRW)",
       total: "오늘 합계",
       remain: "남은 예산",
+      usedPct: "예산 사용률",
+      repeatFromInput: "현재 입력 기준 반복 가능",
+      budgetFromPlan: "예산 설정은 Plan > Daily budget에서 변경할 수 있습니다.",
+      goPlanBudget: "Plan 예산 페이지로 이동",
       list: "기록",
       empty: "아직 기록이 없습니다.",
       remove: "삭제",
@@ -75,6 +81,10 @@ function getCopy(lang: Lang) {
       budget: "今日の予算 (KRW)",
       total: "今日の合計",
       remain: "残り予算",
+      usedPct: "予算使用率",
+      repeatFromInput: "現在入力基準での繰り返し回数",
+      budgetFromPlan: "予算の変更は Plan > Daily budget で行ってください。",
+      goPlanBudget: "Plan予算ページへ",
       list: "記録",
       empty: "まだ記録がありません。",
       remove: "削除",
@@ -111,6 +121,10 @@ function getCopy(lang: Lang) {
       budget: "今日预算 (KRW)",
       total: "今日合计",
       remain: "剩余预算",
+      usedPct: "预算使用率",
+      repeatFromInput: "按当前输入可重复次数",
+      budgetFromPlan: "预算请在 Plan > Daily budget 中调整。",
+      goPlanBudget: "前往 Plan 预算页",
       list: "记录",
       empty: "还没有记录。",
       remove: "删除",
@@ -147,6 +161,10 @@ function getCopy(lang: Lang) {
       budget: "今日預算 (KRW)",
       total: "今日總計",
       remain: "剩餘預算",
+      usedPct: "預算使用率",
+      repeatFromInput: "按目前輸入可重複次數",
+      budgetFromPlan: "預算請在 Plan > Daily budget 內調整。",
+      goPlanBudget: "前往 Plan 預算頁",
       list: "紀錄",
       empty: "還沒有紀錄。",
       remove: "刪除",
@@ -182,6 +200,10 @@ function getCopy(lang: Lang) {
     budget: "Daily budget (KRW)",
     total: "Today total",
     remain: "Budget left",
+    usedPct: "Budget used",
+    repeatFromInput: "Repeatable by current input",
+    budgetFromPlan: "Budget is managed in Plan > Daily budget.",
+    goPlanBudget: "Go to Plan budget page",
     list: "Entries",
     empty: "No entries yet.",
     remove: "Remove",
@@ -294,7 +316,7 @@ function todayKey(date = new Date()) {
   return `${y}-${m}-${d}`;
 }
 
-export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
+export function ExpenseTracker({ lang, readOnlyBudget = false }: ExpenseTrackerProps) {
   const c = getCopy(lang);
   const presets = getPricePresets(lang);
   const defaultCurrency = getDefaultCurrencyByLocale(lang);
@@ -412,6 +434,9 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
   const todayItems = useMemo(() => items.filter((item) => item.createdAt.startsWith(today)), [items, today]);
   const totalToday = useMemo(() => todayItems.reduce((sum, item) => sum + item.amountKrw, 0), [todayItems]);
   const remainToday = budgetKrw - totalToday;
+  const usedPercent = budgetKrw > 0 ? Math.min(999, (totalToday / budgetKrw) * 100) : 0;
+  const amountInputKrw = Math.max(0, Number(amountInput) || 0);
+  const repeatFromInput = amountInputKrw > 0 ? Math.floor(Math.max(0, remainToday) / amountInputKrw) : 0;
 
   const categoryTotals = useMemo(() => {
     return todayItems.reduce<Record<Category, number>>(
@@ -476,16 +501,26 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
       <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
       <p className="mt-2 text-sm text-zinc-600">{c.desc}</p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
         <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
           <p className="text-xs font-semibold text-zinc-600">{c.budget}</p>
-          <input
-            type="number"
-            min={0}
-            value={budgetKrw}
-            onChange={(e) => setBudgetKrw(Math.max(0, Number(e.target.value) || 0))}
-            className="mt-1 w-full bg-transparent text-lg font-bold text-zinc-900 outline-none"
-          />
+          {readOnlyBudget ? (
+            <>
+              <p className="mt-1 text-lg font-bold text-zinc-900">{budgetKrw.toLocaleString()} KRW</p>
+              <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.budgetFromPlan}</p>
+              <Link href={`/${lang}/plan/daily-budget`} className="mt-2 inline-flex rounded-full border border-zinc-300 px-2.5 py-1 text-[11px] font-bold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900">
+                {c.goPlanBudget}
+              </Link>
+            </>
+          ) : (
+            <input
+              type="number"
+              min={0}
+              value={budgetKrw}
+              onChange={(e) => setBudgetKrw(Math.max(0, Number(e.target.value) || 0))}
+              className="mt-1 w-full bg-transparent text-lg font-bold text-zinc-900 outline-none"
+            />
+          )}
         </label>
         <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
           <p className="text-xs font-semibold text-zinc-600">{c.total}</p>
@@ -494,6 +529,14 @@ export function ExpenseTracker({ lang }: ExpenseTrackerProps) {
         <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
           <p className="text-xs font-semibold text-zinc-600">{c.remain}</p>
           <p className={`mt-1 text-lg font-black ${remainToday >= 0 ? "text-emerald-700" : "text-red-700"}`}>{remainToday.toLocaleString()} KRW</p>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+          <p className="text-xs font-semibold text-zinc-600">{c.usedPct}</p>
+          <p className="mt-1 text-lg font-black text-zinc-900">{usedPercent.toFixed(1)}%</p>
+        </div>
+        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+          <p className="text-xs font-semibold text-zinc-600">{c.repeatFromInput}</p>
+          <p className="mt-1 text-lg font-black text-zinc-900">{repeatFromInput.toLocaleString()}x</p>
         </div>
         <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
           <p className="text-xs font-semibold text-zinc-600">{c.convert}</p>

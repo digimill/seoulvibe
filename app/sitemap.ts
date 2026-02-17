@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 const TOP_LEVEL_PATHS = ["", "/plan", "/now", "/areas", "/themes", "/tips", "/korea-101", "/tools", "/crowded", "/problems", "/kiosk-card-rejected", "/how-much-tmoney", "/olive-young-tourist-guide"] as const;
 
-const PLAN_SUB_PATHS = ["/where-to-stay", "/3-day-template", "/airport-to-city", "/daily-budget"] as const;
+const PLAN_SUB_PATHS = ["/where-to-stay", "/3-day-template", "/airport-to-city", "/daily-budget", "/olive-young"] as const;
 const NOW_SUB_PATHS = [
   "/kiosk",
   "/kiosk/card-rejected",

@@ -45,6 +45,7 @@ const ALL_CURRENCIES: Currency[] = ["USD", "EUR", "JPY", "CNY", "TWD", "HKD", "G
 
 const CALC_CURRENCY_KEY = "sv-calc-currency-v1";
 const CALC_LOG_KEY = "sv-real-cost-log-v1";
+const DAILY_BUDGET_KEY = "sv-expense-budget-v1";
 
 function currencyFromNavigator(): Currency | null {
   if (typeof navigator === "undefined") return null;
@@ -260,6 +261,23 @@ function copy(lang: Lang) {
       remove: "삭제",
       sumKrw: "합계 (KRW)",
       sumCurrency: "합계 (선택 통화)",
+      purposePlan: "Plan 모드: 기준 예산을 먼저 정하고 지출 영향을 시뮬레이션합니다.",
+      purposeNow: "Now 모드: 기록 중 필요한 금액만 빠르게 환산합니다.",
+      budgetBaseline: "하루 기준 예산 (KRW)",
+      budgetImpact: "현재 입력 금액의 예산 영향",
+      projectedLeft: "예산 잔여 예상",
+      projectedOver: "예산 초과 예상",
+      planHeadline: "이 금액을 쓰면 예산이 얼마나 남나요?",
+      planQuestion1: "이거 사도 되나?",
+      planQuestion2: "이 금액이면 몇 번 반복 가능할까?",
+      plannedSpend: "예상 지출 금액 (KRW)",
+      remainingBudget: "예상 잔액",
+      usedPercent: "예산 사용률",
+      repeatPossible: "반복 가능 횟수",
+      exchangeAssist: "환율 보조 정보",
+      usageSafe: "안전 구간",
+      usageWarn: "주의 구간",
+      usageRisk: "위험 구간",
     };
   }
   if (lang === "ja") {
@@ -295,6 +313,23 @@ function copy(lang: Lang) {
       remove: "削除",
       sumKrw: "合計 (KRW)",
       sumCurrency: "合計 (選択通貨)",
+      purposePlan: "Plan mode: set baseline budget and simulate spend impact.",
+      purposeNow: "Now mode: quick conversion while logging spend.",
+      budgetBaseline: "Daily baseline budget (KRW)",
+      budgetImpact: "Budget impact of current input",
+      projectedLeft: "Projected budget left",
+      projectedOver: "Projected budget over",
+      planHeadline: "How much budget remains after this spend?",
+      planQuestion1: "Can I afford this?",
+      planQuestion2: "How many times can I repeat this?",
+      plannedSpend: "Planned spend (KRW)",
+      remainingBudget: "Projected remaining",
+      usedPercent: "Budget used",
+      repeatPossible: "Repeatable count",
+      exchangeAssist: "Exchange (assist only)",
+      usageSafe: "Safe",
+      usageWarn: "Watch",
+      usageRisk: "Risk",
     };
   }
   if (lang === "zh-cn") {
@@ -330,6 +365,23 @@ function copy(lang: Lang) {
       remove: "删除",
       sumKrw: "合计 (KRW)",
       sumCurrency: "合计 (所选货币)",
+      purposePlan: "Plan mode: set baseline budget and simulate spend impact.",
+      purposeNow: "Now mode: quick conversion while logging spend.",
+      budgetBaseline: "Daily baseline budget (KRW)",
+      budgetImpact: "Budget impact of current input",
+      projectedLeft: "Projected budget left",
+      projectedOver: "Projected budget over",
+      planHeadline: "How much budget remains after this spend?",
+      planQuestion1: "Can I afford this?",
+      planQuestion2: "How many times can I repeat this?",
+      plannedSpend: "Planned spend (KRW)",
+      remainingBudget: "Projected remaining",
+      usedPercent: "Budget used",
+      repeatPossible: "Repeatable count",
+      exchangeAssist: "Exchange (assist only)",
+      usageSafe: "Safe",
+      usageWarn: "Watch",
+      usageRisk: "Risk",
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
@@ -365,6 +417,23 @@ function copy(lang: Lang) {
       remove: "刪除",
       sumKrw: "總計 (KRW)",
       sumCurrency: "總計 (所選貨幣)",
+      purposePlan: "Plan mode: set baseline budget and simulate spend impact.",
+      purposeNow: "Now mode: quick conversion while logging spend.",
+      budgetBaseline: "Daily baseline budget (KRW)",
+      budgetImpact: "Budget impact of current input",
+      projectedLeft: "Projected budget left",
+      projectedOver: "Projected budget over",
+      planHeadline: "How much budget remains after this spend?",
+      planQuestion1: "Can I afford this?",
+      planQuestion2: "How many times can I repeat this?",
+      plannedSpend: "Planned spend (KRW)",
+      remainingBudget: "Projected remaining",
+      usedPercent: "Budget used",
+      repeatPossible: "Repeatable count",
+      exchangeAssist: "Exchange (assist only)",
+      usageSafe: "Safe",
+      usageWarn: "Watch",
+      usageRisk: "Risk",
     };
   }
   return {
@@ -399,11 +468,36 @@ function copy(lang: Lang) {
     remove: "Remove",
     sumKrw: "Total (KRW)",
     sumCurrency: "Total (selected currency)",
+    purposePlan: "Plan mode: set baseline budget and simulate spend impact.",
+    purposeNow: "Now mode: quick conversion while logging spend.",
+    budgetBaseline: "Daily baseline budget (KRW)",
+    budgetImpact: "Budget impact of current input",
+    projectedLeft: "Projected budget left",
+    projectedOver: "Projected budget over",
+    planHeadline: "How much budget remains after this spend?",
+    planQuestion1: "Can I afford this?",
+    planQuestion2: "How many times can I repeat this?",
+    plannedSpend: "Planned spend (KRW)",
+    remainingBudget: "Projected remaining",
+    usedPercent: "Budget used",
+    repeatPossible: "Repeatable count",
+    exchangeAssist: "Exchange (assist only)",
+    usageSafe: "Safe",
+    usageWarn: "Watch",
+    usageRisk: "Risk",
   };
 }
 
-export function TravelCalculator({ lang }: { lang: Lang }) {
+type TravelCalculatorProps = {
+  lang: Lang;
+  mode?: "default" | "plan" | "now";
+  showHeader?: boolean;
+};
+
+export function TravelCalculator({ lang, mode = "default", showHeader = true }: TravelCalculatorProps) {
   const c = copy(lang);
+  const isPlanMode = mode === "plan";
+  const isNowMode = mode === "now";
   const presetList = presetsForLang(lang);
   const notePresets = notePresetsForLang(lang);
   const localeDefault = localeCurrency(lang);
@@ -421,9 +515,24 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
   const [showQuickMath, setShowQuickMath] = useState(false);
   const [mathN, setMathN] = useState("4");
   const [activeInput, setActiveInput] = useState<"krw" | "foreign" | null>(null);
+  const [dailyBudgetKrw, setDailyBudgetKrw] = useState(100000);
 
   const currentRate = rates[currency] ?? RATES[currency];
   const converted = currentRate > 0 ? amountKrw / currentRate : 0;
+  const budgetDelta = dailyBudgetKrw - amountKrw;
+  const budgetUsedPercent = dailyBudgetKrw > 0 ? Math.min(999, (amountKrw / dailyBudgetKrw) * 100) : 0;
+  const repeatPossible = amountKrw > 0 ? Math.floor(dailyBudgetKrw / amountKrw) : 0;
+  const usageStatus = budgetUsedPercent >= 100 ? "risk" : budgetUsedPercent >= 70 ? "warn" : "safe";
+  const usageLabel = usageStatus === "risk" ? c.usageRisk : usageStatus === "warn" ? c.usageWarn : c.usageSafe;
+  const usageTone = usageStatus === "risk" ? "text-red-700" : usageStatus === "warn" ? "text-amber-700" : "text-emerald-700";
+  const usageBarTone = usageStatus === "risk" ? "bg-red-600" : usageStatus === "warn" ? "bg-amber-500" : "bg-emerald-600";
+  const usageBarWidth = Math.min(100, Math.max(0, budgetUsedPercent));
+  const remainingCardTone =
+    usageStatus === "risk"
+      ? "border-red-200 bg-red-50"
+      : usageStatus === "warn"
+        ? "border-amber-200 bg-amber-50"
+        : "border-emerald-200 bg-emerald-50";
   const totalKrw = useMemo(() => logItems.reduce((sum, item) => sum + item.amountKrw, 0), [logItems]);
   const totalInSelectedCurrency = currentRate > 0 ? totalKrw / currentRate : 0;
 
@@ -433,6 +542,10 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
 
   useEffect(() => {
     const rawCurrency = localStorage.getItem(CALC_CURRENCY_KEY) as Currency | null;
+    const rawBudget = localStorage.getItem(DAILY_BUDGET_KEY);
+    if (rawBudget && !Number.isNaN(Number(rawBudget))) {
+      setDailyBudgetKrw(Math.max(0, Number(rawBudget)));
+    }
     if (rawCurrency && RATES[rawCurrency]) {
       setCurrency(rawCurrency);
     } else {
@@ -517,6 +630,11 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
   }, [logItems]);
 
   useEffect(() => {
+    if (!isPlanMode) return;
+    localStorage.setItem(DAILY_BUDGET_KEY, String(dailyBudgetKrw));
+  }, [dailyBudgetKrw, isPlanMode]);
+
+  useEffect(() => {
     if (activeInput !== "foreign") {
       setForeignInput(formatForeignInput(converted));
     }
@@ -590,13 +708,135 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
     }
   }
 
-  return (
-    <div className="space-y-4">
-      <section className="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7">
-        <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
-        <p className="mt-2 text-sm text-zinc-600">{c.desc}</p>
+  if (isPlanMode) {
+    return (
+      <div className="space-y-4">
+        <section className="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7">
+          {showHeader ? (
+            <>
+              <h2 className="text-2xl font-black tracking-tight text-zinc-950">{c.title}</h2>
+              <p className="mt-2 text-sm text-zinc-600">{c.purposePlan}</p>
+            </>
+          ) : null}
 
-        <div className="mt-4 rounded-2xl border border-emerald-300 bg-emerald-50/70 p-4">
+          <div className={`${showHeader ? "mt-4" : ""} rounded-2xl border border-zinc-900 bg-zinc-950 p-4 text-zinc-100`}>
+            <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-300">{c.planQuestion1}</p>
+            <p className="mt-2 text-xl font-black tracking-tight text-white">{c.planHeadline}</p>
+            <p className="mt-1 text-xs font-semibold text-zinc-400">{c.planQuestion2}</p>
+          </div>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.budgetBaseline}</p>
+              <input
+                type="number"
+                min={0}
+                value={dailyBudgetKrw}
+                onChange={(e) => setDailyBudgetKrw(Math.max(0, Number(e.target.value) || 0))}
+                className="mt-1 w-full bg-transparent text-xl font-black text-zinc-900 outline-none"
+              />
+            </label>
+            <label className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.plannedSpend}</p>
+              <input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9,만천.]*"
+                enterKeyHint="done"
+                autoComplete="off"
+                value={amountInput}
+                onChange={(e) => handleAmountInputChange(e.target.value)}
+                onBlur={() => handleCalcInputBlur("krw")}
+                className="mt-1 w-full bg-transparent text-xl font-black text-zinc-900 outline-none"
+              />
+            </label>
+          </div>
+
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <div className={`rounded-xl border p-3 ${remainingCardTone}`}>
+              <p className="text-xs font-semibold text-zinc-600">{c.remainingBudget}</p>
+              <p className={`mt-1 text-lg font-black ${usageTone}`}>{budgetDelta.toLocaleString()} KRW</p>
+            </div>
+            <div className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.usedPercent}</p>
+              <div className="mt-1 flex items-center gap-2">
+                <p className={`text-lg font-black ${usageTone}`}>{budgetUsedPercent.toFixed(1)}%</p>
+                <span className={`rounded-full border px-2 py-0.5 text-[10px] font-black ${usageTone}`}>{usageLabel}</span>
+              </div>
+              <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-zinc-200">
+                <div className={`h-full rounded-full ${usageBarTone}`} style={{ width: `${usageBarWidth}%` }} />
+              </div>
+            </div>
+            <div className="rounded-xl border border-zinc-200 bg-white p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.repeatPossible}</p>
+              <p className="mt-1 text-lg font-black text-zinc-900">{repeatPossible.toLocaleString()}x</p>
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-xs font-semibold text-zinc-600">{c.exchangeAssist}</p>
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as Currency)}
+                className="rounded-lg border border-zinc-300 bg-white px-2 py-1 text-xs font-bold text-zinc-900 outline-none focus:border-zinc-900"
+                aria-label={c.currency}
+              >
+                {ALL_CURRENCIES.map((code) => (
+                  <option key={code} value={code}>
+                    {code}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <p className="mt-2 text-sm font-black text-zinc-900">
+              ₩{amountKrw.toLocaleString()} = {converted.toFixed(2)} {currency}
+            </p>
+            <p className="mt-1 text-[11px] font-semibold text-zinc-500">
+              {c.liveRate}: 1 {currency} = ₩{currentRate.toLocaleString(undefined, { maximumFractionDigits: 3 })}
+            </p>
+            {!isLiveRate ? <p className="mt-1 text-[11px] font-semibold text-amber-700">{c.fallback}</p> : null}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  return (
+    <div className={isNowMode ? "space-y-3" : "space-y-4"}>
+      <section className={`rounded-3xl border border-zinc-200 bg-white ${isNowMode ? "p-4" : "p-5 sm:p-7"}`}>
+        {showHeader ? (
+          <>
+            <h2 className={`${isNowMode ? "text-lg" : "text-2xl"} font-black tracking-tight text-zinc-950`}>{c.title}</h2>
+            <p className="mt-2 text-sm text-zinc-600">{isPlanMode ? c.purposePlan : isNowMode ? c.purposeNow : c.desc}</p>
+          </>
+        ) : null}
+
+        {isPlanMode ? (
+          <div className={`${showHeader ? "mt-4" : ""} rounded-2xl border border-zinc-200 bg-zinc-50 p-4`}>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="rounded-xl border border-zinc-200 bg-white p-3">
+                <p className="text-xs font-semibold text-zinc-600">{c.budgetBaseline}</p>
+                <input
+                  type="number"
+                  min={0}
+                  value={dailyBudgetKrw}
+                  onChange={(e) => setDailyBudgetKrw(Math.max(0, Number(e.target.value) || 0))}
+                  className="mt-1 w-full bg-transparent text-xl font-black text-zinc-900 outline-none"
+                />
+              </label>
+              <div className="rounded-xl border border-zinc-200 bg-white p-3">
+                <p className="text-xs font-semibold text-zinc-600">{c.budgetImpact}</p>
+                <p className={`mt-1 text-lg font-black ${budgetDelta >= 0 ? "text-emerald-700" : "text-red-700"}`}>
+                  {budgetDelta.toLocaleString()} KRW
+                </p>
+                <p className="mt-1 text-[11px] font-semibold text-zinc-500">{budgetDelta >= 0 ? c.projectedLeft : c.projectedOver}</p>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        <div className={`${showHeader || isPlanMode ? "mt-4" : ""} rounded-2xl border border-emerald-300 bg-emerald-50/70 p-4`}>
           <div className="grid gap-3 sm:grid-cols-2">
             <label className="rounded-xl border border-zinc-200 bg-white p-3">
               <p className="text-xs font-semibold text-zinc-600">{c.amountKrw}</p>
@@ -659,196 +899,202 @@ export function TravelCalculator({ lang }: { lang: Lang }) {
           {!isLiveRate ? <p className="mt-1 text-[11px] font-semibold text-amber-700">{c.fallback}</p> : null}
         </div>
 
-        <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-xs font-semibold text-zinc-600">{c.mathTitle}</p>
-            <button
-              type="button"
-              onClick={() =>
-                setShowQuickMath((prev) => {
-                  const next = !prev;
-                  track("travel_calculator_quick_math_toggle", { open: next });
-                  return next;
-                })
-              }
-              className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
-            >
-              {showQuickMath ? c.mathLess : c.mathMore}
-            </button>
-          </div>
-          {showQuickMath ? (
-            <>
-              <p className="mt-1 text-sm font-black text-zinc-900">
-                {c.mathCurrent}: ₩{amountKrw.toLocaleString()} = {converted.toFixed(2)} {currency}
-              </p>
-              <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.mathHint}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <button type="button" onClick={() => multiplyBy(2)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">×2</button>
-                <button type="button" onClick={() => multiplyBy(3)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">×3</button>
-                <button type="button" onClick={() => divideBy(2)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">÷2</button>
-                <button type="button" onClick={() => divideBy(3)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">÷3</button>
-              </div>
-              <div className="mt-2 grid gap-2 sm:grid-cols-[120px_auto_auto]">
-                <input
-                  type="tel"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  enterKeyHint="done"
-                  min={1}
-                  value={mathN}
-                  onChange={(e) => setMathN(e.target.value)}
-                  aria-label={c.mathInput}
-                  className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
-                />
+        {!isNowMode ? (
+          <>
+            <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs font-semibold text-zinc-600">{c.mathTitle}</p>
                 <button
                   type="button"
-                  onClick={() => multiplyBy(Number(mathN) || 1)}
-                  className="rounded-xl border border-zinc-900 bg-zinc-900 px-3 py-2 text-sm font-bold text-white hover:bg-zinc-800"
+                  onClick={() =>
+                    setShowQuickMath((prev) => {
+                      const next = !prev;
+                      track("travel_calculator_quick_math_toggle", { open: next });
+                      return next;
+                    })
+                  }
+                  className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
                 >
-                  × n {c.mathMultiply}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => divideBy(Number(mathN) || 1)}
-                  className="rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-bold text-zinc-800 hover:border-zinc-900"
-                >
-                  ÷ n {c.mathDivide}
+                  {showQuickMath ? c.mathLess : c.mathMore}
                 </button>
               </div>
-            </>
-          ) : null}
-        </div>
-
-        <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-xs font-semibold text-zinc-600">{c.refTitle}</p>
-            <button
-              type="button"
-              onClick={() =>
-                setShowAllPresets((prev) => {
-                  const next = !prev;
-                  track("travel_calculator_presets_toggle", { open: next });
-                  return next;
-                })
-              }
-              className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
-            >
-              {showAllPresets ? c.refLess : c.refMore}
-            </button>
-          </div>
-          {showAllPresets ? (
-            <div className="mt-2 grid gap-2 sm:grid-cols-2">
-              {presetList.map((preset) => (
-                <button
-                  key={preset.id}
-                  type="button"
-                  onClick={() => applyPreset(preset.id, preset.amountKrw)}
-                  className="flex items-center justify-between rounded-xl border border-zinc-300 bg-white px-3 py-2 text-left hover:border-zinc-900"
-                >
-                  <span className="text-sm font-semibold text-zinc-800">{preset.label}</span>
-                  <span className="text-sm font-black text-zinc-900">₩{preset.amountKrw.toLocaleString()}</span>
-                </button>
-              ))}
-            </div>
-          ) : null}
-        </div>
-
-        <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_auto]">
-          <label>
-            <p className="text-xs font-semibold text-zinc-600">{c.memo}</p>
-            <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.noteQuick}</p>
-            <div className="mt-1 flex flex-wrap gap-2">
-              {notePresets.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => addNotePreset(item.label)}
-                  className="rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900"
-                  aria-label={`${c.noteQuick}: ${item.label}`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-            <input
-              type="text"
-              value={memoInput}
-              onChange={(e) => setMemoInput(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
-            />
-          </label>
-          <button
-            type="button"
-            onClick={saveCurrentResult}
-            className="self-end rounded-xl border border-zinc-900 bg-zinc-900 px-3 py-2 text-sm font-bold text-white hover:bg-zinc-800"
-          >
-            {c.saveResult}
-          </button>
-        </div>
-      </section>
-
-      <section className="rounded-2xl border border-zinc-200 bg-white p-4">
-        <div className="flex items-center justify-between gap-2">
-          <div>
-            <h3 className="text-sm font-black text-zinc-900">{c.logTitle}</h3>
-            <p className="mt-1 text-xs text-zinc-600">{c.logDesc}</p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              track("travel_calculator_log_clear", { count: logItems.length });
-              setLogItems([]);
-            }}
-            className="rounded-lg border border-zinc-300 px-2.5 py-1.5 text-xs font-bold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900"
-          >
-            {c.clearAll}
-          </button>
-        </div>
-
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
-          <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-            <p className="text-xs font-semibold text-zinc-600">{c.sumKrw}</p>
-            <p className="mt-1 text-lg font-black text-zinc-900">₩{totalKrw.toLocaleString()}</p>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-            <p className="text-xs font-semibold text-zinc-600">{c.sumCurrency}</p>
-            <p className="mt-1 text-lg font-black text-zinc-900">{totalInSelectedCurrency.toFixed(2)} {currency}</p>
-          </div>
-        </div>
-
-        <div className="mt-3 space-y-2">
-          {logItems.length === 0 ? (
-            <p className="text-sm text-zinc-500">{c.logEmpty}</p>
-          ) : (
-            logItems.map((item) => (
-              <article key={item.id} className="rounded-xl border border-zinc-200 bg-white p-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-sm font-black text-zinc-900">₩{item.amountKrw.toLocaleString()} -&gt; {item.converted.toFixed(2)} {item.currency}</p>
-                    <p className="mt-1 text-xs font-semibold text-zinc-500">
-                      1 {item.currency} = ₩{item.rateKrwPerUnit.toLocaleString(undefined, { maximumFractionDigits: 3 })} · {new Date(item.createdAt).toLocaleString()}
-                    </p>
+              {showQuickMath ? (
+                <>
+                  <p className="mt-1 text-sm font-black text-zinc-900">
+                    {c.mathCurrent}: ₩{amountKrw.toLocaleString()} = {converted.toFixed(2)} {currency}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.mathHint}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <button type="button" onClick={() => multiplyBy(2)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">×2</button>
+                    <button type="button" onClick={() => multiplyBy(3)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">×3</button>
+                    <button type="button" onClick={() => divideBy(2)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">÷2</button>
+                    <button type="button" onClick={() => divideBy(3)} className="rounded-full border border-zinc-300 bg-white px-3 py-1 text-xs font-bold text-zinc-800 hover:border-zinc-900">÷3</button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => setLogItems((prev) => prev.filter((x) => x.id !== item.id))}
-                    className="text-xs font-semibold text-zinc-500 hover:text-zinc-900"
-                  >
-                    {c.remove}
-                  </button>
+                  <div className="mt-2 grid gap-2 sm:grid-cols-[120px_auto_auto]">
+                    <input
+                      type="tel"
+                      inputMode="numeric"
+                      pattern="[0-9]*"
+                      enterKeyHint="done"
+                      min={1}
+                      value={mathN}
+                      onChange={(e) => setMathN(e.target.value)}
+                      aria-label={c.mathInput}
+                      className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => multiplyBy(Number(mathN) || 1)}
+                      className="rounded-xl border border-zinc-900 bg-zinc-900 px-3 py-2 text-sm font-bold text-white hover:bg-zinc-800"
+                    >
+                      × n {c.mathMultiply}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => divideBy(Number(mathN) || 1)}
+                      className="rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-bold text-zinc-800 hover:border-zinc-900"
+                    >
+                      ÷ n {c.mathDivide}
+                    </button>
+                  </div>
+                </>
+              ) : null}
+            </div>
+
+            <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-xs font-semibold text-zinc-600">{c.refTitle}</p>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setShowAllPresets((prev) => {
+                      const next = !prev;
+                      track("travel_calculator_presets_toggle", { open: next });
+                      return next;
+                    })
+                  }
+                  className="text-xs font-bold text-zinc-700 hover:text-zinc-900"
+                >
+                  {showAllPresets ? c.refLess : c.refMore}
+                </button>
+              </div>
+              {showAllPresets ? (
+                <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                  {presetList.map((preset) => (
+                    <button
+                      key={preset.id}
+                      type="button"
+                      onClick={() => applyPreset(preset.id, preset.amountKrw)}
+                      className="flex items-center justify-between rounded-xl border border-zinc-300 bg-white px-3 py-2 text-left hover:border-zinc-900"
+                    >
+                      <span className="text-sm font-semibold text-zinc-800">{preset.label}</span>
+                      <span className="text-sm font-black text-zinc-900">₩{preset.amountKrw.toLocaleString()}</span>
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_auto]">
+              <label>
+                <p className="text-xs font-semibold text-zinc-600">{c.memo}</p>
+                <p className="mt-1 text-[11px] font-semibold text-zinc-500">{c.noteQuick}</p>
+                <div className="mt-1 flex flex-wrap gap-2">
+                  {notePresets.map((item) => (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => addNotePreset(item.label)}
+                      className="rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900"
+                      aria-label={`${c.noteQuick}: ${item.label}`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
                 </div>
                 <input
                   type="text"
-                  value={item.note}
-                  onChange={(e) => updateNote(item.id, e.target.value)}
-                  placeholder={c.memo}
-                  className="mt-2 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
+                  value={memoInput}
+                  onChange={(e) => setMemoInput(e.target.value)}
+                  className="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
                 />
-              </article>
-            ))
-          )}
-        </div>
+              </label>
+              <button
+                type="button"
+                onClick={saveCurrentResult}
+                className="self-end rounded-xl border border-zinc-900 bg-zinc-900 px-3 py-2 text-sm font-bold text-white hover:bg-zinc-800"
+              >
+                {c.saveResult}
+              </button>
+            </div>
+          </>
+        ) : null}
       </section>
+
+      {!isNowMode ? (
+        <section className="rounded-2xl border border-zinc-200 bg-white p-4">
+          <div className="flex items-center justify-between gap-2">
+            <div>
+              <h3 className="text-sm font-black text-zinc-900">{c.logTitle}</h3>
+              <p className="mt-1 text-xs text-zinc-600">{c.logDesc}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                track("travel_calculator_log_clear", { count: logItems.length });
+                setLogItems([]);
+              }}
+              className="rounded-lg border border-zinc-300 px-2.5 py-1.5 text-xs font-bold text-zinc-700 hover:border-zinc-900 hover:text-zinc-900"
+            >
+              {c.clearAll}
+            </button>
+          </div>
+
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.sumKrw}</p>
+              <p className="mt-1 text-lg font-black text-zinc-900">₩{totalKrw.toLocaleString()}</p>
+            </div>
+            <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+              <p className="text-xs font-semibold text-zinc-600">{c.sumCurrency}</p>
+              <p className="mt-1 text-lg font-black text-zinc-900">{totalInSelectedCurrency.toFixed(2)} {currency}</p>
+            </div>
+          </div>
+
+          <div className="mt-3 space-y-2">
+            {logItems.length === 0 ? (
+              <p className="text-sm text-zinc-500">{c.logEmpty}</p>
+            ) : (
+              logItems.map((item) => (
+                <article key={item.id} className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-sm font-black text-zinc-900">₩{item.amountKrw.toLocaleString()} -&gt; {item.converted.toFixed(2)} {item.currency}</p>
+                      <p className="mt-1 text-xs font-semibold text-zinc-500">
+                        1 {item.currency} = ₩{item.rateKrwPerUnit.toLocaleString(undefined, { maximumFractionDigits: 3 })} · {new Date(item.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setLogItems((prev) => prev.filter((x) => x.id !== item.id))}
+                      className="text-xs font-semibold text-zinc-500 hover:text-zinc-900"
+                    >
+                      {c.remove}
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    value={item.note}
+                    onChange={(e) => updateNote(item.id, e.target.value)}
+                    placeholder={c.memo}
+                    className="mt-2 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-900 outline-none focus:border-zinc-900"
+                  />
+                </article>
+              ))
+            )}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

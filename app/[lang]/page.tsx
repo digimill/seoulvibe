@@ -97,9 +97,9 @@ export default async function HomePage({ params }: HomePageProps) {
 
       <section className="mt-8 grid gap-4 sm:grid-cols-3">
         <Link href={`/${locale}/plan/where-to-stay`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
-          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+          <div className="relative mb-3 h-32 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
             <Image
-              src="/images/find-stay-card.png"
+              src="/images/home-card-plan-where-to-stay.png"
               alt="Find where to stay thumbnail"
               fill
               className="object-cover object-center"
@@ -110,9 +110,9 @@ export default async function HomePage({ params }: HomePageProps) {
           <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.stayDesc}</p>
         </Link>
         <Link href={`/${locale}/now`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
-          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+          <div className="relative mb-3 h-32 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
             <Image
-              src="/images/fix-now-card.png"
+              src="/images/home-card-now-fix.png"
               alt="Fix something now thumbnail"
               fill
               className="object-cover object-center"
@@ -123,9 +123,9 @@ export default async function HomePage({ params }: HomePageProps) {
           <p className="mt-2 text-sm font-semibold text-zinc-700">{copy.nowDesc}</p>
         </Link>
         <Link href={`/${locale}/areas`} className="rounded-3xl border-2 border-zinc-900 bg-white p-5 shadow-[0_10px_0_0_rgba(24,24,27,0.95)] transition hover:-translate-y-0.5">
-          <div className="relative mb-3 h-28 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
+          <div className="relative mb-3 h-32 overflow-hidden rounded-2xl border border-zinc-200 bg-[#efefef]">
             <Image
-              src="/images/explore-area-card.png"
+              src="/images/home-card-areas-explore.png"
               alt="Explore by area thumbnail"
               fill
               className="object-cover object-center"

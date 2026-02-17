@@ -29,16 +29,16 @@ type StationDef = {
 
 type LineKey = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
-const LINE_STYLES: Record<LineKey, { label: string; bg: string; text: string; border: string }> = {
-  "1": { label: "Line 1", bg: "#0052A4", text: "#FFFFFF", border: "#00417F" },
-  "2": { label: "Line 2", bg: "#00A84D", text: "#FFFFFF", border: "#008A3F" },
-  "3": { label: "Line 3", bg: "#EF7C1C", text: "#FFFFFF", border: "#C76616" },
-  "4": { label: "Line 4", bg: "#00A5DE", text: "#FFFFFF", border: "#0088B7" },
-  "5": { label: "Line 5", bg: "#996CAC", text: "#FFFFFF", border: "#7E588E" },
-  "6": { label: "Line 6", bg: "#CD7C2F", text: "#FFFFFF", border: "#A86426" },
-  "7": { label: "Line 7", bg: "#747F00", text: "#FFFFFF", border: "#5E6700" },
-  "8": { label: "Line 8", bg: "#E6186C", text: "#FFFFFF", border: "#BD1358" },
-  "9": { label: "Line 9", bg: "#BDB092", text: "#1A1A1A", border: "#9D9279" },
+const LINE_STYLES: Record<LineKey, { bg: string; text: string; border: string }> = {
+  "1": { bg: "#0052A4", text: "#FFFFFF", border: "#00417F" },
+  "2": { bg: "#00A84D", text: "#FFFFFF", border: "#008A3F" },
+  "3": { bg: "#EF7C1C", text: "#FFFFFF", border: "#C76616" },
+  "4": { bg: "#00A5DE", text: "#FFFFFF", border: "#0088B7" },
+  "5": { bg: "#996CAC", text: "#FFFFFF", border: "#7E588E" },
+  "6": { bg: "#CD7C2F", text: "#FFFFFF", border: "#A86426" },
+  "7": { bg: "#747F00", text: "#FFFFFF", border: "#5E6700" },
+  "8": { bg: "#E6186C", text: "#FFFFFF", border: "#BD1358" },
+  "9": { bg: "#BDB092", text: "#1A1A1A", border: "#9D9279" },
 };
 
 const STATIONS: StationDef[] = [
@@ -91,6 +91,14 @@ function stationLabel(key: StationKey, lang: Lang): string {
   if (lang === "zh-tw") return station["zh-tw"];
   if (lang === "zh-hk") return station["zh-hk"];
   return station.en;
+}
+
+function lineLabel(lineKey: LineKey, lang: Lang): string {
+  if (lang === "ko") return `${lineKey}호선`;
+  if (lang === "ja") return `${lineKey}号線`;
+  if (lang === "zh-cn") return `${lineKey}号线`;
+  if (lang === "zh-tw" || lang === "zh-hk") return `${lineKey}號線`;
+  return `Line ${lineKey}`;
 }
 
 function calcDirection(from: StationKey, to: StationKey) {
@@ -149,12 +157,12 @@ function copy(lang: Lang) {
 
   if (lang === "ja") {
     return {
-      title: "Direction & Map Decoder",
+      title: "方向チェック & 路線図デコーダー",
       subtitle: "乗車前10秒チェック",
-      s1: "Step 1",
-      s2: "Step 2",
-      from: "From",
-      to: "To",
+      s1: "ステップ 1",
+      s2: "ステップ 2",
+      from: "出発駅",
+      to: "到着駅",
       fromPlaceholder: "例: 弘大入口 / Hongdae",
       toPlaceholder: "例: 聖水 / Seongsu",
       result: "結果",
@@ -163,15 +171,15 @@ function copy(lang: Lang) {
       boardHintSuffix: "表示の列車に乗ってください。",
       line: "路線",
       anchor: "ソウル地下鉄は色より終点名が重要です。",
-      expressWarnTitle: "Express warning",
+      expressWarnTitle: "急行注意",
       expressWarnBody: "降車駅が車内LEDに無ければ乗らないでください。",
-      mapReadTitle: "How to read Seoul subway map",
-      confuses: "What confuses you?",
+      mapReadTitle: "ソウル地下鉄の見方",
+      confuses: "何が分かりづらいですか？",
       tabs: {
-        color: "Color",
-        direction: "Direction",
-        express: "Express",
-        exit: "Exit",
+        color: "色",
+        direction: "方向",
+        express: "急行",
+        exit: "出口",
       },
       explain: {
         color: "路線の色はヒントです。最終判断は終点名でしてください。",
@@ -179,21 +187,21 @@ function copy(lang: Lang) {
         express: "急行/各駅停車を確認してください。LEDに無い駅は通過の可能性があります。",
         exit: "大きい駅は出口が10以上あります。通り名より出口番号が重要です。",
       },
-      diagramTitle: "Quick abstract view",
+      diagramTitle: "方向の簡易表示",
       directionNow: "今の方向は",
       directionToward: "方面です。",
-      invalid: "From/Toを正確に入力してください。（例: 弘大入口, Seongsu）",
+      invalid: "出発駅/到着駅を正確に入力してください。（例: 弘大入口, 聖水）",
     };
   }
 
   if (lang === "zh-cn") {
     return {
-      title: "Direction & Map Decoder",
+      title: "方向检查与路线图解读",
       subtitle: "上车前10秒检查",
-      s1: "Step 1",
-      s2: "Step 2",
-      from: "From",
-      to: "To",
+      s1: "步骤 1",
+      s2: "步骤 2",
+      from: "出发站",
+      to: "到达站",
       fromPlaceholder: "例: 弘大入口 / Hongdae",
       toPlaceholder: "例: 圣水 / Seongsu",
       result: "结果",
@@ -202,15 +210,15 @@ function copy(lang: Lang) {
       boardHintSuffix: "的列车。",
       line: "线路",
       anchor: "首尔地铁比颜色更重要的是终点站名。",
-      expressWarnTitle: "Express warning",
+      expressWarnTitle: "急行提醒",
       expressWarnBody: "如果车内LED没有你的站名，就不要上车。",
-      mapReadTitle: "How to read Seoul subway map",
-      confuses: "What confuses you?",
+      mapReadTitle: "首尔地铁图怎么读",
+      confuses: "你最容易混淆的是？",
       tabs: {
-        color: "Color",
-        direction: "Direction",
-        express: "Express",
-        exit: "Exit",
+        color: "颜色",
+        direction: "方向",
+        express: "急行",
+        exit: "出口",
       },
       explain: {
         color: "线路颜色只是提示。最终判断请看终点站名。",
@@ -218,21 +226,21 @@ function copy(lang: Lang) {
         express: "先看急行/普通。LED没有你的站，可能会跳站。",
         exit: "大型车站常有10个以上出口。出口编号比街道名更重要。",
       },
-      diagramTitle: "Quick abstract view",
+      diagramTitle: "方向快速示意",
       directionNow: "你当前方向是",
       directionToward: "方向。",
-      invalid: "请正确输入From/To（例如: 弘大入口, Seongsu）。",
+      invalid: "请正确输入出发站/到达站（例如：弘大入口、圣水）。",
     };
   }
 
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
-      title: "Direction & Map Decoder",
+      title: "方向檢查與路線圖解讀",
       subtitle: "上車前10秒檢查",
-      s1: "Step 1",
-      s2: "Step 2",
-      from: "From",
-      to: "To",
+      s1: "步驟 1",
+      s2: "步驟 2",
+      from: "出發站",
+      to: "到達站",
       fromPlaceholder: "例: 弘大入口 / Hongdae",
       toPlaceholder: "例: 聖水 / Seongsu",
       result: "結果",
@@ -241,15 +249,15 @@ function copy(lang: Lang) {
       boardHintSuffix: "的列車。",
       line: "路線",
       anchor: "首爾地鐵比顏色更重要的是終點站名。",
-      expressWarnTitle: "Express warning",
+      expressWarnTitle: "急行提醒",
       expressWarnBody: "如果車內LED沒有你的站名，就不要上車。",
-      mapReadTitle: "How to read Seoul subway map",
-      confuses: "What confuses you?",
+      mapReadTitle: "首爾地鐵圖怎麼看",
+      confuses: "你最容易混淆的是？",
       tabs: {
-        color: "Color",
-        direction: "Direction",
-        express: "Express",
-        exit: "Exit",
+        color: "顏色",
+        direction: "方向",
+        express: "急行",
+        exit: "出口",
       },
       explain: {
         color: "路線顏色只是提示，最終判斷請看終點站名。",
@@ -257,10 +265,10 @@ function copy(lang: Lang) {
         express: "先看急行/普通。LED沒有你的站，可能會跳站。",
         exit: "大型車站常有10個以上出口。出口編號比街道名更重要。",
       },
-      diagramTitle: "Quick abstract view",
+      diagramTitle: "方向快速示意",
       directionNow: "你目前方向是",
       directionToward: "方向。",
-      invalid: "請正確輸入From/To（例如: 弘大入口, Seongsu）。",
+      invalid: "請正確輸入出發站/到達站（例如：弘大入口、聖水）。",
     };
   }
 
@@ -304,8 +312,10 @@ function copy(lang: Lang) {
 
 export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
   const c = copy(lang);
-  const [from, setFrom] = useState<string>(lang === "ko" ? "홍대입구" : "Hongdae");
-  const [to, setTo] = useState<string>(lang === "ko" ? "성수" : "Seongsu");
+  const defaultFrom = lang === "ko" ? "홍대입구" : lang === "ja" ? "弘大入口" : lang === "zh-cn" ? "弘大入口" : (lang === "zh-tw" || lang === "zh-hk") ? "弘大入口" : "Hongdae";
+  const defaultTo = lang === "ko" ? "성수" : lang === "ja" ? "聖水" : lang === "zh-cn" ? "圣水" : (lang === "zh-tw" || lang === "zh-hk") ? "聖水" : "Seongsu";
+  const [from, setFrom] = useState<string>(defaultFrom);
+  const [to, setTo] = useState<string>(defaultTo);
   const [tab, setTab] = useState<ConfuseKey>("direction");
   const stationOptions = useMemo(() => {
     const set = new Set<string>();
@@ -387,7 +397,7 @@ export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
                     borderColor: LINE_STYLES[result.lineKey].border,
                   }}
                 >
-                  {LINE_STYLES[result.lineKey].label}
+                  {lineLabel(result.lineKey, lang)}
                 </span>
               </p>
               <p className="mt-3 text-4xl font-black leading-none text-zinc-950 sm:text-5xl">
@@ -448,9 +458,9 @@ export function NowSubwayDirectionDecoder({ lang }: { lang: Lang }) {
                 borderColor: LINE_STYLES["2"].border,
               }}
             >
-              {LINE_STYLES["2"].label}
+              {lineLabel("2", lang)}
             </span>
-            Hongdae → City Hall → <span className="font-black text-zinc-950">Seongsu</span>
+            {stationLabel("hongdae", lang)} → {stationLabel("cityhall", lang)} → <span className="font-black text-zinc-950">{stationLabel("seongsu", lang)}</span>
           </p>
         </article>
 

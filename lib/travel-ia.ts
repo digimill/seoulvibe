@@ -53,7 +53,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "適合夜生活、深夜餐飲與高活力社交氛圍。",
       "zh-hk": "適合夜生活、宵夜同高活力社交氛圍。",
     },
-    image: { src: "/images/areas/hongdae.jpg", alt: "Hongdae street at night" },
+    image: { src: "/images/areas/area-hongdae-v1.png", alt: "Hongdae street at night" },
     oneLineConclusion: {
       en: "Choose Hongdae if you want maximum energy and don't mind noise.",
       ko: "활기와 야간 동선이 중요하고 소음을 감수할 수 있다면 홍대가 맞습니다.",
@@ -96,7 +96,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "購物中心區，首訪旅客也容易上手。",
       "zh-hk": "購物中心區，第一次去都好易上手。",
     },
-    image: { src: "/images/areas/myeongdong.jpg", alt: "Myeongdong street at night" },
+    image: { src: "/images/areas/area-myeongdong-v1.png", alt: "Myeongdong street at night" },
     oneLineConclusion: {
       en: "Choose Myeongdong for convenience and central positioning over local vibe.",
       ko: "로컬 감성보다 중심 접근성과 편의를 우선하면 명동이 유리합니다.",
@@ -142,7 +142,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "適合現代首爾動線、商務行程與穩定住宿品質。",
       "zh-hk": "適合現代首爾動線、商務行程同穩定住宿品質。",
     },
-    image: { src: "/images/areas/gangnam.jpg", alt: "Street in Gangnam, Seoul" },
+    image: { src: "/images/areas/area-gangnam-v1.png", alt: "Street in Gangnam, Seoul" },
     oneLineConclusion: {
       en: "Choose Gangnam for polished infrastructure and predictable comfort.",
       ko: "정돈된 인프라와 예측 가능한 편의가 중요하면 강남이 맞습니다.",
@@ -185,7 +185,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "適合設計咖啡館、精選購物與白天探索。",
       "zh-hk": "適合設計Cafe、精選購物同日間探索。",
     },
-    image: { src: "/images/areas/seongsu.jpg", alt: "Seongsu cafes and industrial streets" },
+    image: { src: "/images/areas/area-seongsu-v1.png", alt: "Seongsu cafes and industrial streets" },
     oneLineConclusion: {
       en: "Choose Seongsu for trend discovery with less nightlife chaos than Hongdae.",
       ko: "홍대보다 덜 혼잡한 밤 환경에서 트렌드 탐색을 원하면 성수가 맞습니다.",
@@ -228,7 +228,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "國際餐飲選擇豐富，夜間玩法彈性高。",
       "zh-hk": "國際餐飲選擇多，夜晚玩法彈性高。",
     },
-    image: { src: "/images/areas/itaewon-v2.jpg", alt: "Itaewon street scene in Seoul" },
+    image: { src: "/images/areas/area-itaewon-v1.png", alt: "Itaewon street scene in Seoul" },
     oneLineConclusion: {
       en: "Choose Itaewon for international food range and mixed nightlife access.",
       ko: "다국적 식사 선택지와 혼합형 나이트라이프를 원하면 이태원이 적합합니다.",
@@ -271,7 +271,7 @@ const AREA_DRAFTS: Record<TravelAreaId, TravelAreaDraft> = {
       "zh-tw": "適合家庭行程，環境整潔，夜間相對安靜。",
       "zh-hk": "適合家庭行程，環境整潔，夜晚相對寧靜。",
     },
-    image: { src: "/images/areas/jamsil-v2.jpg", alt: "Jamsil skyline with Lotte World Tower" },
+    image: { src: "/images/areas/area-jamsil-v1.png", alt: "Jamsil skyline with Lotte World Tower" },
     oneLineConclusion: {
       en: "Choose Jamsil for calmer nights and stable family-friendly logistics.",
       ko: "조용한 밤과 가족 친화 동선이 중요하면 잠실이 적합합니다.",

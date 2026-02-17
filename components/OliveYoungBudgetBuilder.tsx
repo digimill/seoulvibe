@@ -70,7 +70,7 @@ function currencyFromNavigator(): Currency | null {
 function copy(lang: Lang) {
   if (lang === "ko") {
     return {
-      title: "Olive Young Budget Builder",
+      title: "Olive Young 예산 빌더",
       desc: "체크하면서 고르고, 예산 안에서 끝냅니다.",
       fastMode: "30분 빠른 모드",
       fastOn: "켜짐",
@@ -80,6 +80,7 @@ function copy(lang: Lang) {
       budgetGuide: "원화 기준으로 고른 뒤, 아래 통화로 환산해 보세요.",
       budgetKrw: "선택 예산 (KRW)",
       budgetByCurrency: "표시 통화",
+      allCurrencies: "전체 통화",
       purpose: "목적",
       skin: "피부 타입",
       skinHelp: "셀프 선택 시에만 반영됩니다.",
@@ -116,7 +117,7 @@ function copy(lang: Lang) {
   }
   if (lang === "ja") {
     return {
-      title: "Olive Young Budget Builder",
+      title: "Olive Young 予算ビルダー",
       desc: "チェックしながら選んで、予算内で終える。",
       fastMode: "30分クイックモード",
       fastOn: "ON",
@@ -126,6 +127,7 @@ function copy(lang: Lang) {
       budgetGuide: "KRW基準で選んで、下の通貨に換算してください。",
       budgetKrw: "選択予算 (KRW)",
       budgetByCurrency: "表示通貨",
+      allCurrencies: "全通貨",
       purpose: "目的",
       skin: "肌タイプ",
       skinHelp: "自分用を選んだときのみ反映。",
@@ -144,7 +146,7 @@ function copy(lang: Lang) {
       swap: "候補を変更",
       total: "全体合計",
       checkedTotal: "チェック合計",
-      tax: "Tax refund",
+      tax: "免税",
       taxYes: "可能（パスポート必須・店舗条件あり）",
       taxNo: "難しい（購入額が低い）",
       liveRate: "ライブ為替",
@@ -162,7 +164,7 @@ function copy(lang: Lang) {
   }
   if (lang === "zh-cn") {
     return {
-      title: "Olive Young Budget Builder",
+      title: "Olive Young预算规划器",
       desc: "边选边勾选，控制在预算内。",
       fastMode: "30分钟快速模式",
       fastOn: "开启",
@@ -172,6 +174,7 @@ function copy(lang: Lang) {
       budgetGuide: "先按韩元选择档位，再换算到你的货币。",
       budgetKrw: "所选预算 (KRW)",
       budgetByCurrency: "显示货币",
+      allCurrencies: "全部货币",
       purpose: "目的",
       skin: "肤质",
       skinHelp: "仅在选择自用时生效。",
@@ -208,7 +211,7 @@ function copy(lang: Lang) {
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
     return {
-      title: "Olive Young Budget Builder",
+      title: "Olive Young預算規劃器",
       desc: "邊選邊勾，控制在預算內。",
       fastMode: "30分鐘快速模式",
       fastOn: "開啟",
@@ -218,6 +221,7 @@ function copy(lang: Lang) {
       budgetGuide: "先按韓元選檔位，再換算成你的貨幣。",
       budgetKrw: "所選預算 (KRW)",
       budgetByCurrency: "顯示貨幣",
+      allCurrencies: "全部貨幣",
       purpose: "目的",
       skin: "膚質",
       skinHelp: "僅在選擇自用時生效。",
@@ -263,6 +267,7 @@ function copy(lang: Lang) {
     budgetGuide: "Choose KRW first, then view in your currency.",
     budgetKrw: "Selected budget (KRW)",
     budgetByCurrency: "Display currency",
+    allCurrencies: "All currencies",
     purpose: "Purpose",
     skin: "Skin type",
     skinHelp: "Applied only when purpose is Self.",
@@ -295,6 +300,118 @@ function copy(lang: Lang) {
     skipItems: ["10-step routine sets", "Items without English labels", "Random hype products only"],
     routeTitle: "In-store route (fast)",
     routeItems: ["Grab masks/cleanser first", "Add only key color items", "Check tax refund eligibility before paying"],
+  };
+}
+
+function localizeOliveText(lang: Lang, text: string): string {
+  if (lang === "en" || lang === "ko") return text;
+  const mapJa: Array<[RegExp, string]> = [
+    [/Cleanser/gi, "洗顔料"],
+    [/Toner pads/gi, "トナーパッド"],
+    [/Toner/gi, "化粧水"],
+    [/Cotton pads/gi, "コットンパッド"],
+    [/Sheet mask/gi, "シートマスク"],
+    [/Mask gift pack/gi, "マスクギフトパック"],
+    [/Mask bundle/gi, "マスクバンドル"],
+    [/Mask pack/gi, "マスクパック"],
+    [/Lip tint/gi, "リップティント"],
+    [/Lip balm/gi, "リップバーム"],
+    [/Lip gloss/gi, "リップグロス"],
+    [/Lip care/gi, "リップケア"],
+    [/Sunscreen/gi, "日焼け止め"],
+    [/Sun stick/gi, "サンスティック"],
+    [/Hand cream/gi, "ハンドクリーム"],
+    [/Body lotion/gi, "ボディローション"],
+    [/Body wash/gi, "ボディウォッシュ"],
+    [/Body care set/gi, "ボディケアセット"],
+    [/Foot care set/gi, "フットケアセット"],
+    [/Foot mask/gi, "フットマスク"],
+    [/Mini fragrance/gi, "ミニ香水"],
+    [/Roll-on perfume/gi, "ロールオン香水"],
+    [/Cushion/gi, "クッション"],
+    [/refill/gi, "リフィル"],
+    [/foundation/gi, "ファンデーション"],
+    [/serum/gi, "セラム"],
+    [/ampoule/gi, "アンプル"],
+    [/Spot patch/gi, "スポットパッチ"],
+    [/Trouble pad/gi, "トラブルパッド"],
+    [/Extra sun care/gi, "追加日焼け対策"],
+  ];
+  const mapZhCn: Array<[RegExp, string]> = [
+    [/Cleanser/gi, "洁面"],
+    [/Toner pads/gi, "爽肤棉片"],
+    [/Toner/gi, "化妆水"],
+    [/Cotton pads/gi, "化妆棉"],
+    [/Sheet mask/gi, "面膜"],
+    [/Mask gift pack/gi, "面膜礼盒"],
+    [/Mask bundle/gi, "面膜组合"],
+    [/Mask pack/gi, "面膜包"],
+    [/Lip tint/gi, "唇釉"],
+    [/Lip balm/gi, "润唇膏"],
+    [/Lip gloss/gi, "唇彩"],
+    [/Lip care/gi, "唇部护理"],
+    [/Sunscreen/gi, "防晒霜"],
+    [/Sun stick/gi, "防晒棒"],
+    [/Hand cream/gi, "护手霜"],
+    [/Body lotion/gi, "身体乳"],
+    [/Body wash/gi, "沐浴露"],
+    [/Body care set/gi, "身体护理套装"],
+    [/Foot care set/gi, "足部护理套装"],
+    [/Foot mask/gi, "足膜"],
+    [/Mini fragrance/gi, "迷你香氛"],
+    [/Roll-on perfume/gi, "滚珠香水"],
+    [/Cushion/gi, "气垫"],
+    [/refill/gi, "替换芯"],
+    [/foundation/gi, "粉底"],
+    [/serum/gi, "精华"],
+    [/ampoule/gi, "安瓶"],
+    [/Spot patch/gi, "痘痘贴"],
+    [/Trouble pad/gi, "祛痘棉片"],
+    [/Extra sun care/gi, "补充防晒"],
+  ];
+  const mapZhTw: Array<[RegExp, string]> = [
+    [/Cleanser/gi, "潔面"],
+    [/Toner pads/gi, "化妝棉片"],
+    [/Toner/gi, "化妝水"],
+    [/Cotton pads/gi, "化妝棉"],
+    [/Sheet mask/gi, "面膜"],
+    [/Mask gift pack/gi, "面膜禮盒"],
+    [/Mask bundle/gi, "面膜組合"],
+    [/Mask pack/gi, "面膜包"],
+    [/Lip tint/gi, "唇釉"],
+    [/Lip balm/gi, "潤唇膏"],
+    [/Lip gloss/gi, "唇彩"],
+    [/Lip care/gi, "唇部護理"],
+    [/Sunscreen/gi, "防曬霜"],
+    [/Sun stick/gi, "防曬棒"],
+    [/Hand cream/gi, "護手霜"],
+    [/Body lotion/gi, "身體乳"],
+    [/Body wash/gi, "沐浴露"],
+    [/Body care set/gi, "身體護理套裝"],
+    [/Foot care set/gi, "足部護理套裝"],
+    [/Foot mask/gi, "足膜"],
+    [/Mini fragrance/gi, "迷你香氛"],
+    [/Roll-on perfume/gi, "滾珠香水"],
+    [/Cushion/gi, "氣墊"],
+    [/refill/gi, "替換芯"],
+    [/foundation/gi, "粉底"],
+    [/serum/gi, "精華"],
+    [/ampoule/gi, "安瓶"],
+    [/Spot patch/gi, "痘痘貼"],
+    [/Trouble pad/gi, "痘痘棉片"],
+    [/Extra sun care/gi, "補充防曬"],
+  ];
+  const pairs = lang === "ja" ? mapJa : lang === "zh-cn" ? mapZhCn : mapZhTw;
+  let out = text;
+  for (const [pattern, replacement] of pairs) out = out.replace(pattern, replacement);
+  return out;
+}
+
+function localizePick(lang: Lang, item: PickItem): PickItem {
+  return {
+    ...item,
+    name: localizeOliveText(lang, item.name),
+    alt: item.alt ? localizeOliveText(lang, item.alt) : undefined,
   };
 }
 
@@ -590,7 +707,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
 
   const picks = useMemo(() => {
     const base = buildList(lang, budgetTier, purpose, skin, giftStyle, rushMode);
-    if (rushMode) return base;
+    if (rushMode) return base.map((item) => localizePick(lang, item));
 
     const topUps: PickItem[] = [
       { name: lang === "ko" ? "토너 패드" : "Toner pads", priceKrw: 15000, alt: lang === "ko" ? "코튼 패드" : "Cotton pads" },
@@ -612,7 +729,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
       total += topUps[i].priceKrw;
       i += 1;
     }
-    return out;
+    return out.map((item) => localizePick(lang, item));
   }, [lang, budgetTier, purpose, skin, giftStyle, rushMode, budgetKrw]);
 
   const baseItems = useMemo<BaseItem[]>(() => {
@@ -717,7 +834,7 @@ export function OliveYoungBudgetBuilder({ lang }: { lang: Lang }) {
                   {code}
                 </option>
               ))}
-              <optgroup label="All">
+              <optgroup label={c.allCurrencies}>
                 {ALL_CURRENCIES.filter((code) => !TOP_CURRENCIES.includes(code)).map((code) => (
                   <option key={code} value={code}>
                     {code}
