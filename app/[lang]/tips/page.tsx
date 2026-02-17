@@ -11,13 +11,13 @@ type TipsPageProps = {
   searchParams?: Promise<{ q?: string; cat?: string }>;
 };
 
-const PRIORITY_IDS = ["kiosk-survival-flow", "subway-map-confusion-cuts", "oliveyoung-master-playbook"];
+const PRIORITY_IDS = ["kiosk-survival-flow", "transport", "oliveyoung-master-playbook"];
 const QUICK_NAV = [
   { key: "payment", id: "payment", group: "urgent" },
   { key: "sim", id: "sim-wifi", group: "urgent" },
   { key: "airport", id: "airport-to-city", group: "urgent" },
   { key: "medical", id: "pharmacy-hospital-emergency", group: "urgent" },
-  { key: "subway", id: "subway-map-confusion-cuts", group: "confusing" },
+  { key: "subway", id: "transport", group: "confusing" },
   { key: "kiosk", id: "kiosk-survival-flow", group: "confusing" },
   { key: "order", id: "cafe-ordering", group: "confusing" },
   { key: "crowd", id: "popup-radar-weekly", group: "confusing" },
@@ -38,7 +38,7 @@ const GRID_EXCLUDED_TIP_IDS = new Set(["subway-map-confusion-cuts"]);
 function indexCardTitle(lang: Lang, tipId: string, fallbackTitle: string): string {
   if (lang !== "ko") return fallbackTitle;
   const overrides: Record<string, string> = {
-    "subway-map-confusion-cuts": "지하철에서 헷갈리지 않는 법",
+    transport: "지하철에서 헷갈리지 않는 법",
   };
   return overrides[tipId] ?? fallbackTitle;
 }

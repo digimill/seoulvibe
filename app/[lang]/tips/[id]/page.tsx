@@ -421,6 +421,9 @@ export default async function TipDetailPage({ params }: TipDetailPageProps) {
   if (id === "kiosk-survival-flow") {
     redirect(`/${locale}/now/kiosk`);
   }
+  if (id === "subway-map-confusion-cuts") {
+    redirect(`/${locale}/tips/transport`);
+  }
   const t = getCopy(locale);
   const isKiosk = false;
   const isSubway = id === "subway-map-confusion-cuts";

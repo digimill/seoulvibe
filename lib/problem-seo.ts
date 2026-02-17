@@ -159,7 +159,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "Take airport bus to Hongdae-area stop.",
       "Use taxi if arrival is very late with heavy bags.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Subway direction fix page",
   },
   {
@@ -180,7 +180,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "If wrong train, get off next station and reverse.",
       "Use bus for short cross-neighborhood moves.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Subway confusion main fix",
   },
   {
@@ -201,7 +201,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "If too late, switch to taxi for final leg.",
       "Use nearby cafe break and restart route calmly.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Missed-stop subway fix",
   },
   {
@@ -222,7 +222,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "If confused, stay inside paid area and ask station staff.",
       "For short final leg, switch to taxi or bus outside station.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Subway transfer + exit guide",
   },
   {
@@ -348,7 +348,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "Take taxi to known landmark/station instead of random drop-off.",
       "Use convenience store staff help for quick direction reset.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Offline navigation fallback guide",
   },
   {
@@ -411,7 +411,7 @@ export const problemSeoItems: ProblemSeoItem[] = [
       "If rail confusion starts, switch to airport bus.",
       "If midnight timing is tight, use taxi and recover sleep.",
     ],
-    mainFixHref: "/en/tips/subway-map-confusion-cuts",
+    mainFixHref: "/en/tips/transport",
     mainFixLabel: "Airport-to-city movement fix",
   },
   {

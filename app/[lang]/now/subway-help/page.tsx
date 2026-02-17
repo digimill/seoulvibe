@@ -53,7 +53,7 @@ export default async function NowSubwayHelpPage({ params }: PageProps) {
       <NowSubwayDirectionDecoder lang={locale} />
 
       <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-        <Link href={`/${locale}/tips/subway-map-confusion-cuts`} className="rounded-full border border-zinc-900 px-4 py-2 text-zinc-900">{c.a1}</Link>
+        <Link href={`/${locale}/tips/transport`} className="rounded-full border border-zinc-900 px-4 py-2 text-zinc-900">{c.a1}</Link>
         <Link href={`/${locale}/now/t-money`} className="rounded-full border border-zinc-300 px-4 py-2 text-zinc-700">{c.a2}</Link>
         <Link href={`/${locale}/now/crowd-escape`} className="rounded-full border border-zinc-300 px-4 py-2 text-zinc-700">{c.a3}</Link>
       </div>
