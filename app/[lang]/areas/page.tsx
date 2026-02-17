@@ -17,14 +17,14 @@ export default async function AreasPage({ params }: AreasPageProps) {
   const areas = getTravelAreas(locale);
   const copy =
     locale === "ko"
-      ? { title: "Areas: 가격 맥락 가이드", desc: "지역별 체류 감각과 소비 밀도를 비교해 Plan 예산을 조정하세요.", cta: "가격 맥락 보기" }
+      ? { title: "Areas: 지역 비교 가이드", desc: "지역별 분위기와 소비 성향을 비교해 내 여행 베이스를 정하세요.", cta: "지역 비교 보기" }
       : locale === "ja"
-        ? { title: "Areas: 価格コンテキストガイド", desc: "エリアごとの滞在感と消費密度を見て、Plan予算を調整します。", cta: "価格感を確認" }
+        ? { title: "Areas: エリア比較ガイド", desc: "エリアごとの雰囲気と支出傾向を比べて、自分に合う滞在ベースを決めましょう。", cta: "エリア比較を見る" }
         : locale === "zh-cn"
-          ? { title: "Areas：价格语境指南", desc: "比较不同区域的停留节奏与消费密度，再调整 Plan 预算。", cta: "查看价格语境" }
+          ? { title: "Areas：区域比较指南", desc: "比较各区域的氛围与消费倾向，选出最适合你的住宿基点。", cta: "查看区域比较" }
           : locale === "zh-tw" || locale === "zh-hk"
-            ? { title: "Areas：價格語境指南", desc: "比較不同區域的停留節奏與消費密度，再調整 Plan 預算。", cta: "查看價格語境" }
-      : { title: "Areas: Price context guide", desc: "Compare spend intensity by area, then tune your Plan budget.", cta: "View price context" };
+            ? { title: "Areas：區域比較指南", desc: "比較各區域的氛圍與消費傾向，找出最適合你的住宿據點。", cta: "查看區域比較" }
+      : { title: "Areas: Comparison guide", desc: "Compare neighborhood vibe and spend patterns to choose your best base.", cta: "Compare areas" };
 
   return (
     <SectionBlock title={copy.title} description={copy.desc}>
