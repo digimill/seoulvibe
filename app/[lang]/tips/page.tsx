@@ -52,8 +52,56 @@ function quickLabels(lang: Lang): Record<(typeof QUICK_NAV)[number]["key"], stri
       airport: "공항에서 길을 못 찾을 때",
       sim: "인터넷이 안 될 때",
       crowd: "사람이 너무 많을 때",
-      medical: "아프거나 다쳤을 때",
+      medical: "아플 때 병원·약국 대응법",
       order: "주문이 어렵게 느껴질 때",
+    };
+  }
+  if (lang === "ja") {
+    return {
+      payment: "決済が通らないとき",
+      kiosk: "キオスクで詰まったとき",
+      subway: "地下鉄で迷ったとき",
+      airport: "空港で移動が分からないとき",
+      sim: "ネットがつながらないとき",
+      crowd: "人が多すぎるとき",
+      medical: "体調不良時の病院・薬局対応",
+      order: "注文で困ったとき",
+    };
+  }
+  if (lang === "zh-cn") {
+    return {
+      payment: "刷卡失败时",
+      kiosk: "自助点餐机卡住时",
+      subway: "地铁方向搞混时",
+      airport: "机场去市区没头绪时",
+      sim: "网络不可用时",
+      crowd: "人太多时",
+      medical: "生病时医院/药店应对",
+      order: "点单困难时",
+    };
+  }
+  if (lang === "zh-tw") {
+    return {
+      payment: "刷卡失敗時",
+      kiosk: "點餐機卡住時",
+      subway: "地鐵方向搞混時",
+      airport: "機場進市區沒頭緒時",
+      sim: "網路不可用時",
+      crowd: "人太多時",
+      medical: "身體不適時醫院/藥局應對",
+      order: "點餐困難時",
+    };
+  }
+  if (lang === "zh-hk") {
+    return {
+      payment: "刷卡失敗時",
+      kiosk: "點餐機卡住時",
+      subway: "地鐵方向搞亂時",
+      airport: "機場去市區冇頭緒時",
+      sim: "網絡不可用時",
+      crowd: "人太多時",
+      medical: "唔舒服時醫院/藥房應對",
+      order: "落單有困難時",
     };
   }
   return {
