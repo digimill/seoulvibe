@@ -33,6 +33,7 @@ const TIP_CATEGORY_BY_ID: Record<string, "payment" | "transport" | "data" | "air
   "pharmacy-hospital-emergency": "medical",
   "one-manwon-seoul-loop": "shopping",
 };
+const GRID_EXCLUDED_TIP_IDS = new Set(["transport"]);
 
 function indexCardTitle(lang: Lang, tipId: string, fallbackTitle: string): string {
   if (lang !== "ko") return fallbackTitle;
@@ -186,6 +187,7 @@ export default async function TipsPage({ params, searchParams }: TipsPageProps) 
           shopping: "Shopping",
         };
   const filteredTips = sorted.filter((tip) => {
+    if (GRID_EXCLUDED_TIP_IDS.has(tip.id)) return false;
     const cat = TIP_CATEGORY_BY_ID[tip.id] ?? "other";
     if (selectedCategory !== "all" && selectedCategory !== cat) return false;
     if (!query) return true;
