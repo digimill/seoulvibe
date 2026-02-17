@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
 type AreaId =
@@ -22,6 +22,13 @@ const AREA_COST: Record<AreaId, number> = {
   airportSide: 6500,
   outsideSeoul: 8200,
   other: 6200,
+};
+
+const PLAN_CONFIG_KEY = "sv-plan-budget-config-v1";
+
+type PlanBudgetConfig = {
+  dailyBudgetKrw: number;
+  tripDays: number;
 };
 
 function copy(lang: Lang) {
@@ -49,6 +56,7 @@ function copy(lang: Lang) {
       breakdown: "기준",
       airportLabel: "공항",
       bufferLabel: "여유",
+      planGuide: "Plan 기준 교통 예산 가이드(약 18%)",
     };
   }
   if (lang === "ja") {
@@ -75,6 +83,7 @@ function copy(lang: Lang) {
       breakdown: "内訳",
       airportLabel: "空港",
       bufferLabel: "予備",
+      planGuide: "Plan基準の交通予算ガイド(約18%)",
     };
   }
   if (lang === "zh-cn") {
@@ -101,6 +110,7 @@ function copy(lang: Lang) {
       breakdown: "构成",
       airportLabel: "机场",
       bufferLabel: "余量",
+      planGuide: "按 Plan 估算的交通预算(约18%)",
     };
   }
   if (lang === "zh-tw" || lang === "zh-hk") {
@@ -127,6 +137,7 @@ function copy(lang: Lang) {
       breakdown: "組成",
       airportLabel: "機場",
       bufferLabel: "預留",
+      planGuide: "按 Plan 估算的交通預算(約18%)",
     };
   }
   return {
@@ -152,6 +163,7 @@ function copy(lang: Lang) {
     breakdown: "Breakdown",
     airportLabel: "Airport",
     bufferLabel: "Buffer",
+    planGuide: "Transport guide from Plan (about 18%)",
   };
 }
 
@@ -160,6 +172,24 @@ export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
   const [days, setDays] = useState(4);
   const [area, setArea] = useState<AreaId>("hongdaeMapo");
   const [airportRoundTrip, setAirportRoundTrip] = useState(true);
+  const [planGuideKrw, setPlanGuideKrw] = useState<number | null>(null);
+
+  useEffect(() => {
+    const rawPlan = localStorage.getItem(PLAN_CONFIG_KEY);
+    if (!rawPlan) return;
+    try {
+      const parsed = JSON.parse(rawPlan) as PlanBudgetConfig;
+      if (Number.isFinite(parsed.tripDays) && parsed.tripDays > 0) {
+        setDays(Math.max(1, Math.round(parsed.tripDays)));
+      }
+      if (Number.isFinite(parsed.dailyBudgetKrw) && Number.isFinite(parsed.tripDays)) {
+        const guide = Math.round(parsed.dailyBudgetKrw * parsed.tripDays * 0.18);
+        setPlanGuideKrw(Math.max(0, guide));
+      }
+    } catch {
+      setPlanGuideKrw(null);
+    }
+  }, []);
 
   const { baseTotal, perDay, airportCost, buffer, recommended } = useMemo(() => {
     const safeDays = Math.max(1, days);
@@ -243,6 +273,11 @@ export function TMoneyLoadCalculator({ lang }: { lang: Lang }) {
       <p className="mt-3 text-xs font-semibold text-zinc-600">
         {c.breakdown} ₩{baseTotal.toLocaleString()} + {c.airportLabel} ₩{airportCost.toLocaleString()} + {c.bufferLabel} ₩{buffer.toLocaleString()}
       </p>
+      {planGuideKrw ? (
+        <p className="mt-1 text-xs font-semibold text-zinc-600">
+          {c.planGuide}: ₩{planGuideKrw.toLocaleString()}
+        </p>
+      ) : null}
       <p className="mt-1 text-xs text-zinc-500">{c.tip}</p>
     </section>
   );

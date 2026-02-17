@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { ExpenseTracker } from "@/components/ExpenseTracker";
-import { TravelCalculator } from "@/components/TravelCalculator";
+import { SpendLogOnboarding } from "@/components/SpendLogOnboarding";
 import { isLang, type Lang } from "@/lib/i18n";
 
 type PageProps = { params: Promise<{ lang: string }> };
@@ -17,7 +17,6 @@ function copy(lang: Lang) {
       diffTitle: "Daily budget와 차이",
       diffBody: "Daily budget는 출발 전 기준선을 잡는 페이지이고, Spend log는 현장에서 실제 사용액을 추적하는 페이지입니다.",
       tracker: "실사용 지출 기록",
-      quick: "기록 보조용 빠른 환산",
       a1: "Plan에서 기준선 다시 잡기",
       a2: "올리브영 예산",
     };
@@ -31,7 +30,6 @@ function copy(lang: Lang) {
       diffTitle: "Difference from Daily budget",
       diffBody: "Daily budget sets a baseline before the day. Spend log tracks real spending during the day.",
       tracker: "実支出トラッカー",
-      quick: "為替クイックチェック",
       a1: "Plan 予算ページ",
       a2: "Olive Young予算",
     };
@@ -45,7 +43,6 @@ function copy(lang: Lang) {
       diffTitle: "Difference from Daily budget",
       diffBody: "Daily budget sets a baseline before the day. Spend log tracks real spending during the day.",
       tracker: "实际支出记录",
-      quick: "汇率快速换算",
       a1: "Plan 预算页",
       a2: "Olive Young预算",
     };
@@ -59,7 +56,6 @@ function copy(lang: Lang) {
       diffTitle: "Difference from Daily budget",
       diffBody: "Daily budget sets a baseline before the day. Spend log tracks real spending during the day.",
       tracker: "實際支出紀錄",
-      quick: "匯率快速換算",
       a1: "Plan 預算頁",
       a2: "Olive Young預算",
     };
@@ -72,7 +68,6 @@ function copy(lang: Lang) {
     diffTitle: "Difference from Daily budget",
     diffBody: "Daily budget sets a baseline before the day. Spend log tracks real spending during the day.",
     tracker: "Real spend tracker",
-    quick: "Quick exchange check",
     a1: "Plan budget page",
     a2: "Olive Young budget",
   };
@@ -88,24 +83,12 @@ export default async function NowSpendLogPage({ params }: PageProps) {
     <Container className="py-10 sm:py-14">
       <h1 className="text-3xl font-black tracking-tight text-zinc-950 sm:text-4xl">{c.title}</h1>
       <p className="mt-2 text-sm leading-6 text-zinc-700">{c.lead}</p>
-      <section className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-        <p className="text-xs font-black uppercase tracking-[0.14em] text-zinc-700">{c.useTitle}</p>
-        <p className="mt-2 text-sm leading-6 text-zinc-700">{c.useBody}</p>
-        <p className="mt-3 text-xs font-black uppercase tracking-[0.14em] text-zinc-700">{c.diffTitle}</p>
-        <p className="mt-2 text-sm leading-6 text-zinc-700">{c.diffBody}</p>
-      </section>
+      <SpendLogOnboarding useTitle={c.useTitle} useBody={c.useBody} diffTitle={c.diffTitle} diffBody={c.diffBody} />
 
       <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
         <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.tracker}</h2>
         <div className="mt-4">
           <ExpenseTracker lang={locale} readOnlyBudget />
-        </div>
-      </section>
-
-      <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5">
-        <h2 className="text-sm font-black uppercase tracking-[0.14em] text-zinc-900">{c.quick}</h2>
-        <div className="mt-4">
-          <TravelCalculator lang={locale} mode="now" showHeader={false} />
         </div>
       </section>
 
