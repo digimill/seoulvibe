@@ -18,6 +18,17 @@ type LocalizedProblemBlock = {
   mainFixLabel: string;
 };
 
+const NO_OVERRIDE_SLUGS = new Set([
+  "do-korean-cafes-accept-foreign-credit-cards",
+  "is-line-2-confusing-for-tourists",
+  "is-gangnam-crowded-at-night",
+  "best-olive-young-products-for-first-time-visitors",
+  "what-should-i-buy-at-olive-young-under-50",
+  "can-tourists-get-tax-refund-at-olive-young",
+  "is-olive-young-cheaper-than-duty-free",
+  "is-taxi-from-airport-expensive-in-seoul",
+]);
+
 function copy(lang: Lang) {
   if (lang === "ko") return { a: "짧은 답", b: "왜 생기나", c: "지금 할 일", d: "백업 플랜", e: "메인 해결 페이지", all: "20개 문제 모두 보기" };
   if (lang === "ja") return { a: "短い回答", b: "なぜ起きる", c: "やること", d: "バックアップ", e: "メイン解決ページ", all: "20ページを一覧で見る" };
@@ -36,6 +47,7 @@ function getProblemKey(slug: string): "payment" | "tmoney" | "subway" | "crowd" 
 }
 
 function getLocalizedProblemBlock(slug: string, lang: Lang): LocalizedProblemBlock | null {
+  if (NO_OVERRIDE_SLUGS.has(slug)) return null;
   if (lang === "en") return null;
   const key = getProblemKey(slug);
 
@@ -266,6 +278,15 @@ function getLocalizedProblemBlock(slug: string, lang: Lang): LocalizedProblemBlo
 }
 
 function getSuggestedQueries(slug: string, lang: Lang): string[] {
+  if (NO_OVERRIDE_SLUGS.has(slug)) {
+    const item = getProblemSeoBySlug(slug);
+    const q = item ? getProblemQuestion(item, lang) : slug.replaceAll("-", " ");
+    if (lang === "ko") {
+      return [`${q} 해결 순서`, `${q} 실전 팁`, `${q} 여행자 기준 체크리스트`];
+    }
+    return [`${q} quick steps`, `${q} practical tips`, `${q} traveler checklist`];
+  }
+
   const key = getProblemKey(slug);
   const byLang: Record<Lang, Record<ReturnType<typeof getProblemKey>, string[]>> = {
     ko: {

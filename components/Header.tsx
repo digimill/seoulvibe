@@ -29,14 +29,14 @@ export function Header({ lang }: HeaderProps) {
   const t = copy[lang];
   const labels =
     lang === "ko"
-      ? { plan: "여행 전", now: "지금 해결", areas: "지역", search: "검색", subtitle: "Seoul decision guide", menu: "메뉴" }
+      ? { plan: "여행 전", now: "지금 해결", areas: "지역", search: "문제 인덱스", subtitle: "Seoul decision guide", menu: "메뉴" }
       : lang === "ja"
-        ? { plan: "計画", now: "今すぐ解決", areas: "エリア", search: "検索", subtitle: "Seoul decision guide", menu: "メニュー" }
+        ? { plan: "計画", now: "今すぐ解決", areas: "エリア", search: "問題インデックス", subtitle: "Seoul decision guide", menu: "メニュー" }
         : lang === "zh-cn"
-          ? { plan: "规划", now: "即时解决", areas: "区域", search: "搜索", subtitle: "Seoul decision guide", menu: "菜单" }
+          ? { plan: "规划", now: "即时解决", areas: "区域", search: "问题索引", subtitle: "Seoul decision guide", menu: "菜单" }
           : lang === "zh-tw" || lang === "zh-hk"
-            ? { plan: "規劃", now: "即時解決", areas: "區域", search: "搜尋", subtitle: "Seoul decision guide", menu: "選單" }
-            : { plan: "Plan", now: "Now", areas: "Areas", search: "Search", subtitle: "Seoul decision guide", menu: "Menu" };
+            ? { plan: "規劃", now: "即時解決", areas: "區域", search: "問題索引", subtitle: "Seoul decision guide", menu: "選單" }
+            : { plan: "Plan", now: "Now", areas: "Areas", search: "Issue Index", subtitle: "Seoul decision guide", menu: "Menu" };
 
   const navItems = [
     { href: `/${lang}/plan`, label: labels.plan },
@@ -87,7 +87,7 @@ export function Header({ lang }: HeaderProps) {
           </Link>
 
           <div className="flex items-center gap-2 md:hidden">
-            <Link href={`/${lang}/tips#problem-list`} className="inline-flex items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-semibold text-zinc-700">
+            <Link href={`/${lang}/tips`} className="inline-flex items-center gap-1 rounded-full border border-zinc-300 px-2.5 py-1 text-xs font-semibold text-zinc-700">
               <SearchIcon />
               <span>{labels.search}</span>
             </Link>
@@ -127,7 +127,7 @@ export function Header({ lang }: HeaderProps) {
                 {item.label}
               </Link>
             ))}
-            <Link href={`/${lang}/tips#problem-list`} className="inline-flex items-center gap-1 font-semibold transition-colors hover:text-zinc-900" aria-label={labels.search}>
+            <Link href={`/${lang}/tips`} className="inline-flex items-center gap-1 font-semibold transition-colors hover:text-zinc-900" aria-label={labels.search}>
               <SearchIcon />
               <span>{labels.search}</span>
             </Link>
