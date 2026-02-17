@@ -543,7 +543,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/payment.jpg",
+        "src": "/images/tips/tips-payment-illust.png",
         "alt": "카드 결제 단말기"
       },
       "real_spots": [
@@ -583,7 +583,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/transport.jpg",
+        "src": "/images/tips/tips-transport-illust.png",
         "alt": "서울 지하철 내부"
       },
       "real_spots": [
@@ -623,7 +623,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/etiquette.jpg",
+        "src": "/images/tips/tips-etiquette-illust.png",
         "alt": "서울 횡단보도 풍경"
       },
       "real_spots": [
@@ -663,7 +663,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/airport-to-city.jpg",
+        "src": "/images/tips/tips-airport-to-city-illust.png",
         "alt": "공항철도 플랫폼"
       },
       "real_spots": [
@@ -703,7 +703,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/sim-wifi.jpg",
+        "src": "/images/tips/tips-sim-wifi-illust.png",
         "alt": "서울에서 지도 보는 스마트폰"
       },
       "real_spots": [
@@ -744,7 +744,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-cafe-ordering-illust.png",
         "alt": "서울 카페 카운터"
       },
       "real_spots": [
@@ -784,7 +784,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/areas/mangwon.jpg",
+        "src": "/images/tips/tips-restaurant-culture-illust.png",
         "alt": "서울 로컬 식당과 시장 풍경"
       }
     },
@@ -819,7 +819,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/convenience-life-hub.jpg",
+        "src": "/images/tips/tips-convenience-life-hub-illust.png",
         "alt": "서울 도심 생활 인프라 풍경"
       }
     },
@@ -854,7 +854,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/rainy-seoul.jpg",
+        "src": "/images/tips/tips-season-weather-dust-illust.png",
         "alt": "비 오는 서울 거리와 계절 분위기"
       }
     },
@@ -889,7 +889,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/morning-seoul.jpg",
+        "src": "/images/tips/tips-pharmacy-hospital-emergency-illust.png",
         "alt": "아침 서울 거리와 이동 동선"
       }
     },
@@ -1055,7 +1055,7 @@
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-kiosk-survival-flow-illust.png",
         "alt": "키오스크 60초 생존 가이드"
       },
       "blocks": [

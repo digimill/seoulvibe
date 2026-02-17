@@ -491,7 +491,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/payment.jpg",
+        "src": "/images/tips/tips-payment-illust.png",
         "alt": "カード決済端末"
       }
     },
@@ -526,7 +526,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/transport.jpg",
+        "src": "/images/tips/tips-transport-illust.png",
         "alt": "ソウル地下鉄の車内"
       }
     },
@@ -561,7 +561,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/etiquette.jpg",
+        "src": "/images/tips/tips-etiquette-illust.png",
         "alt": "ソウルの横断歩道"
       }
     },
@@ -596,7 +596,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/airport-to-city.jpg",
+        "src": "/images/tips/tips-airport-to-city-illust.png",
         "alt": "空港鉄道ホーム"
       }
     },
@@ -631,7 +631,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/sim-wifi.jpg",
+        "src": "/images/tips/tips-sim-wifi-illust.png",
         "alt": "ソウルの電話地図"
       }
     },
@@ -666,7 +666,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-cafe-ordering-illust.png",
         "alt": "ソウルのカフェカウンター"
       }
     },
@@ -701,7 +701,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/areas/mangwon.jpg",
+        "src": "/images/tips/tips-restaurant-culture-illust.png",
         "alt": "ソウルのローカル食堂と市場の風景"
       }
     },
@@ -736,7 +736,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/convenience-life-hub.jpg",
+        "src": "/images/tips/tips-convenience-life-hub-illust.png",
         "alt": "ソウル都心の生活インフラ風景"
       }
     },
@@ -771,7 +771,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/rainy-seoul.jpg",
+        "src": "/images/tips/tips-season-weather-dust-illust.png",
         "alt": "雨のソウルと季節ムード"
       }
     },
@@ -806,7 +806,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/morning-seoul.jpg",
+        "src": "/images/tips/tips-pharmacy-hospital-emergency-illust.png",
         "alt": "朝のソウルと移動動線"
       }
     },
@@ -824,7 +824,7 @@
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-kiosk-survival-flow-illust.png",
         "alt": "キオスク60秒サバイバル"
       },
       "blocks": [

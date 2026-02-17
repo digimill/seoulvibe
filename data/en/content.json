@@ -541,7 +541,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/payment.jpg",
+        "src": "/images/tips/tips-payment-illust.png",
         "alt": "Card payment terminal"
       },
       "real_spots": [
@@ -581,7 +581,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/transport.jpg",
+        "src": "/images/tips/tips-transport-illust.png",
         "alt": "Seoul subway interior"
       },
       "real_spots": [
@@ -621,7 +621,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/etiquette.jpg",
+        "src": "/images/tips/tips-etiquette-illust.png",
         "alt": "Pedestrian crossing in Seoul"
       },
       "real_spots": [
@@ -661,7 +661,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/airport-to-city.jpg",
+        "src": "/images/tips/tips-airport-to-city-illust.png",
         "alt": "Airport rail platform"
       },
       "real_spots": [
@@ -701,7 +701,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/sim-wifi.jpg",
+        "src": "/images/tips/tips-sim-wifi-illust.png",
         "alt": "Phone map in Seoul"
       },
       "real_spots": [
@@ -742,7 +742,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-cafe-ordering-illust.png",
         "alt": "Cafe counter in Seoul"
       },
       "real_spots": [
@@ -782,7 +782,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/areas/mangwon.jpg",
+        "src": "/images/tips/tips-restaurant-culture-illust.png",
         "alt": "Local Seoul restaurant and market scene"
       }
     },
@@ -817,7 +817,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/tips/convenience-life-hub.jpg",
+        "src": "/images/tips/tips-convenience-life-hub-illust.png",
         "alt": "Seoul urban daily infrastructure"
       }
     },
@@ -852,7 +852,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/rainy-seoul.jpg",
+        "src": "/images/tips/tips-season-weather-dust-illust.png",
         "alt": "Rainy Seoul street and seasonal mood"
       }
     },
@@ -887,7 +887,7 @@
       "status": "published",
       "updated_at": "2026-02-14",
       "image": {
-        "src": "/images/themes/morning-seoul.jpg",
+        "src": "/images/tips/tips-pharmacy-hospital-emergency-illust.png",
         "alt": "Morning Seoul street and movement flow"
       }
     },
@@ -905,7 +905,7 @@
       "status": "published",
       "updated_at": "2026-02-15",
       "image": {
-        "src": "/images/tips/cafe-ordering.jpg",
+        "src": "/images/tips/tips-kiosk-survival-flow-illust.png",
         "alt": "Kiosk Survival in 60 Seconds"
       },
       "blocks": [
