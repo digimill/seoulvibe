@@ -512,7 +512,7 @@
   "tips": [
     {
       "id": "payment",
-      "title": "Payment",
+      "title": "How to reduce foreign card payment failures",
       "summary": "Cards are widely accepted, but not every global card works equally.",
       "hook": "Seoul is card-friendly, but backup is still the smart move.",
       "friend_note": "I always carry two cards and enough cash for one meal + one taxi.",
@@ -552,7 +552,7 @@
     },
     {
       "id": "transport",
-      "title": "Transport",
+      "title": "How to avoid confusion on Seoul subway and buses",
       "summary": "Subway + bus is the easiest way to move fast across neighborhoods.",
       "hook": "One transit card solves 80 percent of city movement.",
       "friend_note": "Plan your big cross-city move before dinner peak, not during it.",
@@ -632,7 +632,7 @@
     },
     {
       "id": "airport-to-city",
-      "title": "Airport to City",
+      "title": "How to get from airport to city with less fatigue",
       "summary": "AREX + short taxi is often the smoothest first-day combo.",
       "hook": "Do not overthink your first transfer. Keep it simple and low-friction.",
       "friend_note": "If you land tired, spend a little more for the final 10-minute taxi.",
@@ -672,7 +672,7 @@
     },
     {
       "id": "sim-wifi",
-      "title": "SIM and Wi-Fi",
+      "title": "How to keep your internet working with SIM and Wi-Fi",
       "summary": "Reliable data makes every map, booking, and translation easier.",
       "hook": "Good connection is not optional in Seoul travel, it is core infrastructure.",
       "friend_note": "Set this up before leaving the airport and your first day gets much easier.",
@@ -713,7 +713,7 @@
     },
     {
       "id": "cafe-ordering",
-      "title": "Cafe Ordering",
+      "title": "How to order quickly at busy cafes",
       "summary": "Many popular cafes use kiosk ordering and quick pick-up flow.",
       "hook": "Cafe lines move fast here if you know the pattern.",
       "friend_note": "Decide your menu before you reach the kiosk. It keeps everyone happy.",
@@ -753,7 +753,7 @@
     },
     {
       "id": "restaurant-culture",
-      "title": "Local Restaurant Rhythm That Actually Works",
+      "title": "Local restaurant rules that prevent mistakes",
       "summary": "If you understand call buttons, side-dish refills, and fast ordering flow, meals get much easier.",
       "hook": "Perfect Korean is less important than reading the restaurant rhythm.",
       "friend_note": "Fast staff tempo is often operational rhythm, not rudeness.",
@@ -788,7 +788,7 @@
     },
     {
       "id": "convenience-life-hub",
-      "title": "Using Convenience Stores as a Survival Hub",
+      "title": "How to use convenience stores as your life hub",
       "summary": "In Korea, convenience stores solve small travel problems quickly, not just snacks.",
       "hook": "When your plan breaks, a convenience store usually gives the first solution.",
       "friend_note": "Meals, charging, transit card top-up, and basics can often be handled in one stop.",
@@ -823,7 +823,7 @@
     },
     {
       "id": "season-weather-dust",
-      "title": "Seasons, Weather, and Fine Dust: Outfit Strategy",
+      "title": "How to prepare for seasons, weather, and fine dust",
       "summary": "Seoul changes sharply by season, so day-level weather response matters.",
       "hook": "The same city feels completely different by weather and season.",
       "friend_note": "Layering and a quick dust check can change your whole day quality.",
@@ -858,7 +858,7 @@
     },
     {
       "id": "pharmacy-hospital-emergency",
-      "title": "Pharmacy vs Hospital: Calm Response When Sick",
+      "title": "How to handle pharmacy and hospital visits when sick",
       "summary": "Knowing the basic medical flow helps you stay calm in sudden situations.",
       "hook": "Small prep prevents big panic.",
       "friend_note": "Save your hotel address in Korean and passport copy early.",
@@ -893,7 +893,7 @@
     },
     {
       "id": "kiosk-survival-flow",
-      "title": "Kiosk Survival in 60 Seconds",
+      "title": "How to get through kiosks quickly",
       "summary": "People usually freeze at Seoul kiosks not because of language, but because they lose track of screen flow under time pressure. In busy cafes and restaurants, understanding the sequence matters more than reading every label in detail.",
       "hook": "Treat kiosks as a sequence game, not a translation test.",
       "tags": [
@@ -948,7 +948,7 @@
     },
     {
       "id": "subway-map-confusion-cuts",
-      "title": "Seoul Subway Confusion Cuts: 7 First-Timer Mistakes",
+      "title": "How to avoid confusion on the Seoul subway",
       "summary": "Seoul subway feels confusing not because lines are impossible, but because direction errors create cascading delays. If you check terminal direction and express/local type first, most first-time mistakes disappear quickly.",
       "hook": "Direction judgment beats map memorization.",
       "tags": [

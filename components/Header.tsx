@@ -74,7 +74,7 @@ export function Header({ lang }: HeaderProps) {
                 <img
                   src="/images/logo.png"
                   alt="Seoul Vibe logo"
-                  className="h-8 w-8 shrink-0 rounded-md object-contain"
+                  className="block h-9 w-9 shrink-0 object-contain sm:h-8 sm:w-8"
                 />
               ) : null}
               <div className="min-w-0 leading-tight">
